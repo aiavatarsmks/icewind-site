@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ICE WIND — Web Development Studio &amp; Consulting</title>
-<meta name="description" content="ICE WIND is a full-cycle web development studio. Websites, web apps, e-commerce, automation, AI integration, infrastructure — we build it and we consult on it.">
+<meta name="description" content="ICE WIND builds websites, web apps, mobile apps and Telegram Mini Apps for businesses in London and beyond.">
+<link rel="canonical" href="https://www.icewinddaleconsulting.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,14 +23,18 @@
   --radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:'Inter',system-ui,sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
   overflow-x:hidden;
+  width:100%;
 }
+img,svg,canvas{max-width:100%}
+/* Long unbreakable strings (emails, URLs) must wrap, not overflow the viewport. */
+a[href^="mailto:"],.mail,.legal a{overflow-wrap:anywhere;word-break:break-word}
 h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.15}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
@@ -138,7 +143,7 @@ section{padding:96px 0;position:relative}
 }
 .contact-card h2{font-size:clamp(1.9rem,3.8vw,2.8rem)}
 .contact-card p{color:var(--muted);margin:16px auto 34px;max-width:520px}
-.mail{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;color:var(--ice);margin-top:26px;display:inline-block}
+.mail{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;color:var(--ice);margin-top:26px;display:inline-block;max-width:100%}
 .mail:hover{text-decoration:underline}
 
 /* footer */
@@ -147,6 +152,28 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
 .foot .legal{max-width:520px}
 .foot b{color:var(--text);font-weight:600}
 @media(prefers-reduced-motion:reduce){#wind{display:none}}
+
+/* ---------- mobile polish ---------- */
+@media(max-width:600px){
+  .wrap{padding:0 18px}
+  .nav{height:64px}
+  .logo-word{font-size:1rem;letter-spacing:.2em}
+  .btn{padding:10px 18px;font-size:.88rem}
+  section{padding:64px 0}
+  .hero-inner{padding:112px 0 64px}
+  .hero p.lead{font-size:1.05rem}
+  .hero-cta{gap:12px;margin-top:30px}
+  .hero-cta .btn{flex:1 1 auto;text-align:center}
+  .hero-stats{gap:24px;margin-top:44px}
+  .sec-head{margin-bottom:38px}
+  .svc{padding:26px 22px}
+  .consult{padding:32px 20px;gap:26px}
+  .contact-card{padding:52px 22px}
+  .contact-card p{margin:14px auto 28px}
+  .step,.why{padding:24px 20px}
+  footer{padding:36px 0 44px}
+  .foot{gap:16px}
+}
 </style>
 </head>
 <body>
@@ -182,7 +209,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
       <a href="#why">Why us</a>
       <a href="#process">Process</a>
     </nav>
-    <a class="btn" href="#contact">Start a project</a>
+    <a class="btn" href="/project/">Start a project</a>
   </div>
 </header>
 
@@ -195,7 +222,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
       <h1>We engineer the web.<br><span class="grad">End to end.</span></h1>
       <p class="lead">From a one-page landing to a full-scale platform with AI inside — we design, build, ship and support digital products. And everything we build, we also consult on.</p>
       <div class="hero-cta">
-        <a class="btn" href="#contact">Discuss your project</a>
+        <a class="btn" href="/project/">Start a project</a>
         <a class="btn ghost" href="#services">Explore capabilities</a>
       </div>
       <div class="hero-stats">
@@ -354,7 +381,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
   <div class="wrap foot">
     <div class="legal">
       <b>Icewind Dale Consulting Limited</b><br>
-      347 Barking Road, London, E13 8EE, England<br>
+      178-188 Kensington High Street, 28 Stafford Court, London, W8 7DL, England<br>
       <a href="mailto:manager@icewinddaleconsulting.com" style="color:var(--ice)">manager@icewinddaleconsulting.com</a>
     </div>
     <div>© 2026 Icewind Dale Consulting Limited. All rights reserved.</div>

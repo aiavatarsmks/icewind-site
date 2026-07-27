@@ -130,6 +130,23 @@ section{padding:96px 0;position:relative}
 .svc li{position:relative;padding-left:22px;color:var(--muted);font-size:.96rem}
 .svc li::before{content:"❄";position:absolute;left:0;top:0;font-size:.7rem;color:var(--ice);opacity:.8}
 
+/* specialisations */
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.spec-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.spec-grid{grid-template-columns:1fr}}
+.spec{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;
+  background:linear-gradient(160deg,var(--panel),rgba(148,199,255,.015));transition:border-color .25s,transform .25s,box-shadow .25s}
+.spec:hover{border-color:rgba(125,211,252,.4);transform:translateY(-4px);box-shadow:0 18px 50px rgba(3,10,22,.6),0 0 30px rgba(56,189,248,.08)}
+.spec:focus-visible{outline:3px solid rgba(125,211,252,.55);outline-offset:3px}
+.spec .icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:rgba(56,189,248,.1);border:1px solid var(--line);margin-bottom:18px}
+.spec h3{font-size:1.2rem;color:var(--frost);margin-bottom:8px}
+.spec p{color:var(--muted);font-size:.95rem;flex:1}
+.spec .more{margin-top:16px;display:inline-flex;align-items:center;gap:7px;color:var(--ice);font-size:.9rem;font-weight:600}
+.spec .more svg{transition:transform .2s}
+.spec:hover .more svg{transform:translateX(3px)}
+a:focus-visible,.btn:focus-visible{outline:3px solid rgba(125,211,252,.55);outline-offset:3px}
+
 /* consulting band */
 .consult{
   border:1px solid rgba(125,211,252,.25);border-radius:24px;padding:56px 48px;
@@ -183,6 +200,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
 .foot-links{display:flex;flex-wrap:wrap;gap:8px 15px;margin-top:12px}
 .foot-links a{color:var(--frost);text-decoration:underline;text-decoration-color:rgba(125,211,252,.35);text-underline-offset:3px}
 .foot-links a:hover{color:var(--ice)}
+.foot-spec{display:flex;flex-direction:column;gap:9px}
+.foot-spec b{color:var(--text);font-weight:600;font-family:'Space Grotesk',sans-serif;margin-bottom:2px}
+.foot-spec a{color:var(--frost);text-decoration:none}
+.foot-spec a:hover{color:var(--ice)}
 @media(prefers-reduced-motion:reduce){#wind{display:none}}
 
 /* ---------- mobile polish ---------- */
@@ -353,6 +374,55 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
     </div>
   </section>
 
+  <!-- SPECIALISATIONS -->
+  <section id="specialisations" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Specialisations</span>
+        <h2>Explore our specialisations</h2>
+        <p>Five focused areas of our work. Each has a dedicated page explaining what we build, the problems we solve and how we deliver.</p>
+      </div>
+      <div class="spec-grid">
+
+        <a class="spec" href="/web-development/">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 5h18v12H3z"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <h3>Web Development</h3>
+          <p>Fast, reliable websites and digital platforms built around real business goals.</p>
+          <span class="more">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="spec" href="/game-development/">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h4M8 7v4M15 8h.01M18 10h.01"/><path d="M17.3 5H6.7a4.7 4.7 0 0 0-4.6 5.5l.8 4.8a2.8 2.8 0 0 0 5 1.2L9.5 14h5l1.6 2.5a2.8 2.8 0 0 0 5-1.2l.8-4.8A4.7 4.7 0 0 0 17.3 5z"/></svg></div>
+          <h3>Game Development</h3>
+          <p>Browser, mobile and interactive game experiences developed from concept to launch.</p>
+          <span class="more">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="spec" href="/web-app-development/">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 9h18M8 9v10"/></svg></div>
+          <h3>Web App Development</h3>
+          <p>Custom web applications, SaaS products, dashboards and internal business systems.</p>
+          <span class="more">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="spec" href="/ai-automation/">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z"/></svg></div>
+          <h3>AI Automation</h3>
+          <p>Practical AI integrations and automated workflows that reduce repetitive work.</p>
+          <span class="more">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+        <a class="spec" href="/web-design/">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7dd3fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l4-1 9-9-3-3-9 9-1 4z"/><path d="M13.5 6.5l3 3"/></svg></div>
+          <h3>Web Design</h3>
+          <p>Clear, modern and conversion-focused interfaces designed for real users.</p>
+          <span class="more">Explore <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONSULTING -->
   <section id="consulting" style="padding-top:0">
     <div class="wrap">
@@ -438,6 +508,14 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
         <a href="/terms/">Terms</a>
       </nav>
     </div>
+    <nav class="foot-spec" aria-label="Service specialisations">
+      <b>Specialisations</b>
+      <a href="/web-development/">Web Development</a>
+      <a href="/game-development/">Game Development</a>
+      <a href="/web-app-development/">Web App Development</a>
+      <a href="/ai-automation/">AI Automation</a>
+      <a href="/web-design/">Web Design</a>
+    </nav>
     <div>© 2026 ICEWIND DALE CONSULTING LTD. All rights reserved.</div>
   </div>
 </footer>

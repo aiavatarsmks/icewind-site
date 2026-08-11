@@ -16,7 +16,7 @@
     ['/#consulting', 'Consulting'],
     ['/#why', 'Why us'],
     ['/#process', 'Process'],
-    ['/blog/how-much-does-a-website-cost-uk/', 'Guides'],
+    ['/blog/', 'Blog'],
     ['/trust/', 'Trust & Compliance']
   ];
 

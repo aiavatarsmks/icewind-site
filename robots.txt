@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /demo/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /demo/
 
 Sitemap: https://www.icewinddaleconsulting.com/sitemap.xml

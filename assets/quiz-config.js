@@ -8,7 +8,7 @@
  * free text verbatim instead of having the guide respond to it.
  */
 window.IW_QUIZ_CONFIG = {
-  proxyUrl: '',
+  proxyUrl: 'https://icewind-quiz-proxy.icewinddale.workers.dev',
 
   /* Where the finished enquiry is posted. Same destination as the plain form. */
   formAction: 'https://formsubmit.co/manager@icewinddaleconsulting.com',

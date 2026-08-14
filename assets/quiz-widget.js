@@ -200,6 +200,10 @@
   var busy = false;
   var finished = false;
   var modelAlive = !!CFG.proxyUrl;
+  if (!modelAlive && window.console) {
+    console.warn('[iw-quiz] no proxyUrl in config — running scripted-only. ' +
+                 'If you expected the guide to answer, this file is probably cached.');
+  }
   var modelWarned = false;
   var workingModel = null;
 
@@ -459,6 +463,10 @@
     }
 
     if (!modelAlive) {
+      if (!modelWarned) {
+        modelWarned = true;
+        note('I cannot reach the guide at the moment, so I am writing your words down exactly as you put them. The questions still work.');
+      }
       record(value);
       wait(400).then(function () {
         if (index >= STEPS.length) return finish();

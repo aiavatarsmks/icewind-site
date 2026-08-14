@@ -1,0 +1,123 @@
+/* ICE WIND — shared styles for project case-study pages (/work/<slug>/).
+   Loaded after /assets/service.css, which supplies the tokens, header,
+   footer, section rhythm, .kicker, .btn, .prob and .cta-card. Everything
+   here is case-specific: breadcrumb, project snapshot, browser frames,
+   reading column and the featured-work card used on the homepage.
+   The client's own colours stay inside the screenshots; the page itself
+   remains ICE WIND navy, frost and cyan. */
+
+:root{--gold:rgba(201,168,106,.55)}
+
+.visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* six primary links need a slightly tighter gap on narrow desktops */
+@media(max-width:1000px){nav.links{gap:20px}}
+
+/* ---------- breadcrumb ---------- */
+.crumbs{font-size:.83rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.crumbs a{color:var(--frost);text-decoration:underline;text-decoration-color:rgba(125,211,252,.35);text-underline-offset:3px}
+.crumbs a:hover{color:var(--ice)}
+.crumbs span[aria-current]{color:var(--muted)}
+.crumbs .sep{opacity:.5}
+
+/* ---------- case hero ---------- */
+.case-hero{position:relative;overflow:hidden;
+  background:radial-gradient(1100px 560px at 78% -10%,rgba(56,189,248,.16),transparent 60%),
+             radial-gradient(820px 460px at 8% 120%,rgba(14,165,233,.12),transparent 62%),var(--bg)}
+.case-hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:118px 24px 72px}
+.case-hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);font-weight:700;margin:22px 0 0;letter-spacing:-.01em;max-width:20ch}
+.case-hero h1 .grad{background:linear-gradient(95deg,#fff 10%,var(--ice) 55%,var(--ice-strong));-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold-rule{width:74px;height:1px;margin:26px 0 22px;background:linear-gradient(90deg,var(--gold),transparent)}
+.case-hero .standfirst{max-width:660px;font-size:1.12rem;color:var(--frost)}
+.case-hero-cta{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;align-items:center}
+.ext{display:inline-flex;align-items:center;gap:9px}
+.ext svg{flex:none}
+
+/* ---------- project snapshot ---------- */
+.snapshot{margin-top:44px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+@media(max-width:900px){.snapshot{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.snapshot{grid-template-columns:1fr}}
+.snapshot > div{padding:20px 22px;border-right:1px solid var(--line);min-width:0}
+.snapshot > div:last-child{border-right:0}
+@media(max-width:900px){
+  .snapshot > div{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .snapshot > div:nth-child(2n){border-right:0}
+  .snapshot > div:nth-last-child(-n+2){border-bottom:0}
+}
+@media(max-width:520px){
+  .snapshot > div{border-right:0;border-bottom:1px solid var(--line)}
+  .snapshot > div:last-child{border-bottom:0}
+}
+.snapshot dt{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85;margin-bottom:7px}
+.snapshot dd{font-size:.96rem;color:var(--frost);overflow-wrap:anywhere}
+.snapshot dd a{color:var(--frost);text-decoration:underline;text-decoration-color:rgba(125,211,252,.35);text-underline-offset:3px}
+.snapshot dd a:hover{color:var(--ice)}
+
+/* ---------- tags ---------- */
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:7px 15px;background:rgba(148,199,255,.045);
+  color:var(--muted);font-size:.82rem}
+
+/* ---------- browser frame ---------- */
+figure{margin:0}
+.frame{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#07101f;
+  box-shadow:0 26px 70px rgba(3,10,22,.55);border-top-color:rgba(125,211,252,.22)}
+.frame .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(148,199,255,.07),rgba(148,199,255,.02))}
+.frame .dot{width:9px;height:9px;border-radius:50%;background:rgba(125,211,252,.25);flex:none}
+.frame .url{margin-left:8px;font-size:.74rem;color:var(--muted);letter-spacing:.04em;overflow:hidden;
+  white-space:nowrap;text-overflow:ellipsis}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#07101f}
+figcaption{margin-top:14px;font-size:.88rem;color:var(--muted);max-width:62ch}
+
+/* ---------- reading column ---------- */
+.prose{max-width:70ch}
+.prose h2{font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:20px}
+.prose h3{font-size:1.15rem;color:var(--frost);margin:30px 0 8px}
+.prose p{color:var(--muted);font-size:1.03rem}
+.prose p + p{margin-top:16px}
+
+/* alternating panel band */
+.band{background:linear-gradient(180deg,var(--bg),var(--bg-2) 45%,var(--bg));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* ---------- delivered list ---------- */
+.tick{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px;margin-top:6px}
+@media(max-width:720px){.tick{grid-template-columns:1fr}}
+.tick li{position:relative;padding-left:24px;color:var(--muted);font-size:.98rem}
+.tick li::before{content:"\2744";position:absolute;left:0;top:1px;font-size:.72rem;color:var(--ice);opacity:.85}
+
+/* ---------- two-up figures ---------- */
+.fig-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+@media(max-width:860px){.fig-2{grid-template-columns:1fr}}
+
+/* ---------- homepage featured-work card ---------- */
+.work-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;
+  border:1px solid rgba(125,211,252,.25);border-radius:24px;padding:44px;
+  background:radial-gradient(700px 300px at 85% 0%,rgba(56,189,248,.13),transparent 65%),linear-gradient(150deg,#0a1830,#060e1e)}
+@media(max-width:900px){.work-card{grid-template-columns:1fr;padding:28px 22px;gap:26px}}
+.work-card .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.9}
+.work-card h3{font-size:1.05rem;color:var(--frost);margin-top:14px;font-weight:600;letter-spacing:.02em}
+.work-card .head{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,3vw,2.15rem);font-weight:700;
+  color:var(--frost);line-height:1.15;margin-top:6px}
+.work-card p{color:var(--muted);margin-top:14px;font-size:1.02rem;max-width:46ch}
+.work-card .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.work-card .link-ghost{color:var(--frost);font-size:.92rem;display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(125,211,252,.3);padding-bottom:2px}
+.work-card .link-ghost:hover{color:var(--ice);border-bottom-color:var(--ice)}
+.work-card .frame{box-shadow:0 30px 80px rgba(2,8,18,.6)}
+
+@media(prefers-reduced-motion:reduce){
+  #wind{display:none}
+  html{scroll-behavior:auto}
+  .frame,.btn,.work-card .link-ghost{transition:none}
+}
+
+@media(max-width:600px){
+  .case-hero-inner{padding:96px 18px 56px}
+  .case-hero-cta{gap:12px}
+  .case-hero-cta .btn{flex:1 1 auto;text-align:center;justify-content:center}
+  .snapshot{margin-top:32px}
+  figcaption{font-size:.85rem}
+}

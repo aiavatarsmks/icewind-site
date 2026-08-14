@@ -138,6 +138,7 @@ header{
 .logo-word{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.28em;
   background:linear-gradient(90deg,var(--frost),var(--ice));-webkit-background-clip:text;background-clip:text;color:transparent}
 nav.links{display:flex;gap:30px;font-size:.92rem;color:var(--muted)}
+@media(max-width:1000px){nav.links{gap:20px}}
 nav.links a{transition:color .2s}
 nav.links a:hover{color:var(--frost)}
 .btn{
@@ -216,6 +217,34 @@ section{padding:96px 0;position:relative}
 .spec:hover .more svg{transform:translateX(3px)}
 a:focus-visible,.btn:focus-visible{outline:3px solid rgba(125,211,252,.55);outline-offset:3px}
 
+/* featured work */
+.work-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;
+  border:1px solid rgba(125,211,252,.25);border-radius:24px;padding:44px;
+  background:radial-gradient(700px 300px at 85% 0%,rgba(56,189,248,.13),transparent 65%),linear-gradient(150deg,#0a1830,#060e1e)}
+@media(max-width:900px){.work-card{grid-template-columns:1fr;padding:30px 22px;gap:26px}}
+.work-card .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.9}
+.work-card h3{font-size:1.05rem;color:var(--frost);margin-top:14px;font-weight:600;letter-spacing:.02em}
+.work-card .head{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,3vw,2.15rem);font-weight:700;
+  color:var(--frost);line-height:1.15;margin-top:6px}
+.work-card p.body{color:var(--muted);margin-top:14px;font-size:1.02rem;max-width:46ch}
+.work-card .pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.work-card .pill{border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:rgba(148,199,255,.045);
+  color:var(--muted);font-size:.8rem}
+.work-card .actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:28px}
+.work-card .link-ghost{color:var(--frost);font-size:.92rem;display:inline-flex;align-items:center;gap:8px;
+  border-bottom:1px solid rgba(125,211,252,.3);padding-bottom:2px;transition:color .2s,border-color .2s}
+.work-card .link-ghost:hover{color:var(--ice);border-bottom-color:var(--ice)}
+.frame{display:block;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#07101f;
+  box-shadow:0 30px 80px rgba(2,8,18,.6);transition:border-color .25s,transform .25s}
+a.frame:hover{border-color:rgba(125,211,252,.42);transform:translateY(-3px)}
+.frame .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(148,199,255,.07),rgba(148,199,255,.02))}
+.frame .dot{width:9px;height:9px;border-radius:50%;background:rgba(125,211,252,.25);flex:none}
+.frame .url{margin-left:8px;font-size:.74rem;color:var(--muted);letter-spacing:.04em;overflow:hidden;
+  white-space:nowrap;text-overflow:ellipsis}
+.frame img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#07101f}
+figure{margin:0}
+
 /* consulting band */
 .consult{
   border:1px solid rgba(125,211,252,.25);border-radius:24px;padding:56px 48px;
@@ -273,7 +302,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
 .foot-spec b{color:var(--text);font-weight:600;font-family:'Space Grotesk',sans-serif;margin-bottom:2px}
 .foot-spec a{color:var(--frost);text-decoration:none}
 .foot-spec a:hover{color:var(--ice)}
-@media(prefers-reduced-motion:reduce){#wind{display:none}}
+@media(prefers-reduced-motion:reduce){#wind{display:none}a.frame{transition:none}a.frame:hover{transform:none}}
 
 /* ---------- mobile polish ---------- */
 @media(max-width:600px){
@@ -329,6 +358,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
     </a>
     <nav class="links">
       <a href="#services">Services</a>
+      <a href="#work">Work</a>
       <a href="#consulting">Consulting</a>
       <a href="#why">Why us</a>
       <a href="#process">Process</a>
@@ -497,6 +527,43 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
     </div>
   </section>
 
+  <!-- FEATURED WORK -->
+  <section id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Featured work</span>
+        <h2>Built, launched and live.</h2>
+      </div>
+      <div class="work-card">
+        <div>
+          <span class="eyebrow">Featured work &middot; Web design &amp; development</span>
+          <h3>Lamar Academy</h3>
+          <p class="head">One brand. Two clear journeys.</p>
+          <p class="body">A premium digital home for a Mayfair aesthetic clinic and training academy &mdash; designed to guide patients and practitioners without splitting the brand.</p>
+          <div class="pills">
+            <span class="pill">Web Design</span>
+            <span class="pill">Web Development</span>
+            <span class="pill">Content Architecture</span>
+            <span class="pill">London</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="/work/lamar-academy/">View case study</a>
+            <a class="link-ghost" href="https://www.lamar.academy/" target="_blank" rel="noopener noreferrer">Live site
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            </a>
+          </div>
+        </div>
+        <a class="frame" href="/work/lamar-academy/" aria-label="View the Lamar Academy case study">
+          <span class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.lamar.academy</span></span>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 600px" srcset="/assets/work/lamar-academy/01-lamar-hero-640.webp 640w, /assets/work/lamar-academy/01-lamar-hero.webp 1280w">
+            <img src="/assets/work/lamar-academy/01-lamar-hero.jpg" sizes="(max-width:900px) 100vw, 600px" srcset="/assets/work/lamar-academy/01-lamar-hero-640.jpg 640w, /assets/work/lamar-academy/01-lamar-hero.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Lamar Academy website hero for a Mayfair aesthetic clinic.">
+          </picture>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONSULTING -->
   <section id="consulting" style="padding-top:0">
     <div class="wrap">
@@ -591,6 +658,10 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
       <a href="/web-app-development/">Web App Development</a>
       <a href="/ai-automation/">AI Automation</a>
       <a href="/web-design/">Web Design</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Selected work">
+      <b>Work</b>
+      <a href="/work/lamar-academy/">Lamar Academy</a>
     </nav>
     <nav class="foot-spec" aria-label="Guides">
       <b>Guides</b>

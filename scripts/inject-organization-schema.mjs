@@ -49,8 +49,11 @@ function normalizeServiceProviders(html) {
 
 for (const page of await findPages(root)) {
   let html = await readFile(page, 'utf8');
-  html = html.replace(new RegExp(`${startMarker}[\s\S]*?${endMarker}`, 'g'), schemaBlock);
-  html = replacePrimaryOrganization(html);
+  if (html.includes(startMarker)) {
+    html = html.replace(new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'g'), schemaBlock);
+  } else {
+    html = replacePrimaryOrganization(html);
+  }
   html = normalizeServiceProviders(html);
   if (!html.includes(startMarker)) html = html.replace('</head>', `${schemaBlock}\n</head>`);
   await writeFile(page, html);

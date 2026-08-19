@@ -8,6 +8,9 @@
   var SERVICES = [
     ['/web-development/', 'Web Development'],
     ['/web-design/', 'Web Design'],
+    ['/website-redesign/', 'Website Redesign'],
+    ['/seo/', 'SEO'],
+    ['/ai-search-optimisation/', 'AI Search Optimisation'],
     ['/web-app-development/', 'Web App Development'],
     ['/game-development/', 'Game Development'],
     ['/ai-automation/', 'AI Automation']

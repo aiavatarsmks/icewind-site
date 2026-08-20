@@ -16,7 +16,7 @@
     ['/ai-automation/', 'AI Automation']
   ];
   var COMPANY = [
-    ['/work/lamar-academy/', 'Work'],
+    ['/work/', 'Work'],
     ['/#consulting', 'Consulting'],
     ['/#why', 'Why us'],
     ['/#process', 'Process'],

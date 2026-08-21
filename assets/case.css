@@ -150,9 +150,15 @@ figcaption{margin-top:14px;font-size:.88rem;color:var(--muted);max-width:62ch}
 }
 
 @media(max-width:600px){
-  .case-hero-inner{padding:96px 18px 56px}
+  .case-hero-inner{padding:88px 18px 40px}
   .case-hero-cta{gap:12px}
   .case-hero-cta .btn{flex:1 1 auto;text-align:center;justify-content:center}
-  .snapshot{margin-top:32px}
+  .snapshot{margin-top:24px}
   figcaption{font-size:.85rem}
+  main > section{padding:56px 0}
+  main > section[style*="padding:56px 0 0"]{padding:32px 0 0!important}
+  .sec-head{margin-bottom:30px}
+  main figure[style*="margin-top"],.fig-2[style*="margin-top"]{margin-top:30px!important}
+  #outcome > .wrap > p[style*="margin-top:34px"]{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+  #outcome > .wrap > p[style*="margin-top:34px"] .btn{width:100%;text-align:center;justify-content:center}
 }

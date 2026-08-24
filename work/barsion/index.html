@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#050b16">
-<title>Barsion &mdash; a bilingual dark-premium site that loads in half a second | ICE WIND</title>
+<title>Barsion Website Case Study: 7.7s to &lt;0.5s | ICE WIND</title>
 <meta name="description" content="ICE WIND rebuilt Barsion&rsquo;s website: from 90 requests and a 7.7s first paint to 12 requests and 0.49s DOMContentLoaded, in English and Estonian, fully portable.">
 <link rel="canonical" href="https://www.icewinddaleconsulting.com/work/barsion/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ICE WIND">
-<meta property="og:title" content="Barsion &mdash; a bilingual dark-premium site that loads in half a second | ICE WIND">
+<meta property="og:title" content="Barsion Website Case Study: 7.7s to &lt;0.5s | ICE WIND">
 <meta property="og:description" content="ICE WIND rebuilt Barsion&rsquo;s website: from 90 requests and a 7.7s first paint to 12 requests and 0.49s DOMContentLoaded, in English and Estonian, fully portable.">
 <meta property="og:url" content="https://www.icewinddaleconsulting.com/work/barsion/">
 <meta property="og:locale" content="en_GB">
@@ -19,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Barsion website hero on a near-black navy background with a pale cyan accent.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Barsion &mdash; a bilingual dark-premium site that loads in half a second | ICE WIND">
+<meta name="twitter:title" content="Barsion Website Case Study: 7.7s to &lt;0.5s | ICE WIND">
 <meta name="twitter:description" content="ICE WIND rebuilt Barsion&rsquo;s website: from 90 requests and a 7.7s first paint to 12 requests and 0.49s DOMContentLoaded, in English and Estonian, fully portable.">
 <meta name="twitter:image" content="https://www.icewinddaleconsulting.com/assets/work/barsion/og-barsion.jpg">
 <script type="application/ld+json">
@@ -206,7 +206,7 @@
         <h2 style="margin-top:20px">A slow site in a business that sells speed</h2>
         <p>The old site was a WordPress build with a page-builder and a stack of plugins: 90 network requests, 45 stylesheets and 29 scripts for one page. First contentful paint came at 7.7 seconds and the page kept loading for nearly a minute. A company whose pitch is &ldquo;we keep your systems fast&rdquo; was greeting visitors with eight seconds of blank white.</p>
         <p>The design had the same problem as the performance: a grid of identical icon-and-paragraph cards, stock office photography, a blue-and-white corporate palette &mdash; competent, and indistinguishable from a thousand other IT outsourcers.</p>
-        <p>Three constraints came with the rebuild: two languages from day one, GDPR compliance for an EU company collecting enquiries, and a hand-over the client could host anywhere without touching the code.</p>
+        <p>Three constraints came with the <a href="/website-redesign/" style="color:var(--ice)">website redesign</a>: two languages from day one, GDPR compliance for an EU company collecting enquiries, and a hand-over the client could host anywhere without touching the code.</p>
       </div>
     </div>
   </section>
@@ -217,7 +217,7 @@
       <div class="prose">
         <span class="kicker">The approach</span>
         <h2 style="margin-top:20px">One light source, and nothing that glows for decoration</h2>
-        <p>We built the visual system around a single rule: cyan is a <em>light source</em>, not a fill. Every bright element has to be justified by where the light comes from &mdash; a lit hairline, a screen glow, an edge catching the light. No coloured drop shadows, no neon halos, no gradient on everything. That one rule is the difference between a page that looks engineered and a page that looks generated.</p>
+        <p>We built the visual system around a single rule: cyan is a <em>light source</em>, not a fill. Every bright element has to be justified by where the light comes from &mdash; a lit hairline, a screen glow, an edge catching the light. No coloured drop shadows, no neon halos, no gradient on everything. That one rule is the difference between a page that looks engineered and a page that looks generated. Setting a rule like that early is how we start every <a href="/web-design/" style="color:var(--ice)">web design</a> project.</p>
         <p>The palette is a near-black navy (<code>#090F23</code>) with pale cyan as the only accent, set in Geologica at weight 200 for headings &mdash; thin, wide, technical. Hairline rules do the structural work that cards and boxes usually do, so the page stays quiet until you interact with it. Photography is duotoned into the same two colours, so stock imagery never breaks the palette.</p>
       </div>
 
@@ -322,7 +322,7 @@
       <div class="prose">
         <span class="kicker">Technical delivery</span>
         <h2 style="margin-top:20px">How the site is built</h2>
-        <p>Hand-written HTML, CSS and JavaScript. No framework, no build step, no <code>node_modules</code> &mdash; the entire site is a folder you upload. Geologica ships as subsetted <code>woff2</code> split by <code>unicode-range</code>, so a Latin-only visitor downloads only the Latin cut.</p>
+        <p>Hand-written HTML, CSS and JavaScript. No framework, no build step, no <code>node_modules</code> &mdash; the entire site is a folder you upload. Geologica ships as subsetted <code>woff2</code> split by <code>unicode-range</code>, so a Latin-only visitor downloads only the Latin cut. Static delivery like this is our default for <a href="/web-development/" style="color:var(--ice)">web development</a> projects that do not need a CMS behind them.</p>
         <p>The mascot is delivered as H.264 with a VP9 fallback, encoded as a ping-pong loop so it never visibly restarts, lazy-loaded through an IntersectionObserver and paused off-screen. Mask compositing uses standard <code>mask-composite</code> with a prefixed fallback gated behind <code>@supports</code>, so older Safari degrades to a simpler but still borderless mascot rather than a rectangle.</p>
       </div>
 
@@ -474,7 +474,7 @@
       <b>For your business</b>
       <a href="/websites-for-barbershops/">Barbershops</a>
       <a href="/websites-for-beauty-salons/">Beauty Salons</a>
-      <a href="/websites-for-small-shops/">Small Shops</a>
+      <a href="/small-business-web-design/">Small Business Web Design</a>
     </nav>
     <nav class="foot-spec" aria-label="Selected work">
       <b>Work</b>

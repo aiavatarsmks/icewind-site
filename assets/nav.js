@@ -13,7 +13,8 @@
     ['/ai-search-optimisation/', 'AI Search Optimisation'],
     ['/web-app-development/', 'Web App Development'],
     ['/game-development/', 'Game Development'],
-    ['/ai-automation/', 'AI Automation']
+    ['/ai-automation/', 'AI Automation'],
+    ['/request-an-audit/', 'Request an audit']
   ];
   var COMPANY = [
     ['/work/', 'Work'],

@@ -146,6 +146,9 @@
       next.value=window.location.origin+window.location.pathname+'?sent=true';
       const showStatus=(message,error=false)=>{status.textContent=message;status.classList.add('show');status.classList.toggle('error-state',error)};
       if(new URLSearchParams(location.search).has('sent')){showStatus('Thank you — your request has been sent. We will reply within one business day.');form.reset();sticky.hidden=true;}
+      /* Carry the audit type over from a service page CTA: /request-an-audit/?type=seo */
+      else{var wanted={website:'Website audit',seo:'SEO audit','ai-search':'AI search visibility audit',redesign:'Website redesign assessment'}[new URLSearchParams(location.search).get('type')];
+        if(wanted){var preset=form.querySelector('input[name="Audit type"][value="'+wanted+'"]');if(preset)preset.checked=true;}}
       document.querySelectorAll('.project-link').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();formCard.scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});setTimeout(()=>document.getElementById('name').focus({preventScroll:true}),reduced?0:420)}));
       const setError=(id,message)=>{const field=document.getElementById(id+'-field'),error=document.getElementById(id+'-error');field.classList.add('invalid');error.textContent=message};
       const clearErrors=()=>document.querySelectorAll('.invalid').forEach(element=>{element.classList.remove('invalid');const error=element.querySelector('.error');if(error)error.textContent=''});

@@ -839,19 +839,19 @@ footer{background:#edf4fb}
     ctx.setTransform(dpr,0,0,dpr,0,0);
   }
   size();addEventListener('resize',size);
-  const N=Math.min(96,Math.floor(innerWidth/8));
+  const N=Math.min(64,Math.max(24,Math.floor(innerWidth/11)));
   for(let i=0;i<N;i++)parts.push(spawn(true));
   function spawn(anywhere){
     const depth=Math.random(); // 0 = far, 1 = near
     return{
       x:Math.random()*W,
       y:anywhere?Math.random()*H:-14,
-      r:depth*1.35+1.05,
-      vy:depth*.16+.045,                       // soft, snow-like descent
+      size:8+depth*7,
+      vy:depth*.11+.035,                        // soft, snow-like descent
       sway:Math.random()*Math.PI*2,
       ss:Math.random()*.012+.003,
       amp:Math.random()*.55+.25,
-      o:depth*.42+.16
+      o:depth*.22+.14
     };
   }
   (function tick(){
@@ -862,17 +862,12 @@ footer{background:#edf4fb}
       p.x+=Math.sin(p.sway)*p.amp;
       if(p.y>H+10)Object.assign(p,spawn(false));
       if(p.x>W+10)p.x=-10; if(p.x<-10)p.x=W+10;
-      ctx.strokeStyle='rgba(8,125,192,'+p.o+')';
-      ctx.lineWidth=.8;
-      ctx.lineCap='round';
-      ctx.beginPath();
-      // Three short crossing strokes make each particle read as a snowflake, not rain.
-      for(let arm=0;arm<3;arm++){
-        const a=arm*Math.PI/3;
-        ctx.moveTo(p.x-Math.cos(a)*p.r,p.y-Math.sin(a)*p.r);
-        ctx.lineTo(p.x+Math.cos(a)*p.r,p.y+Math.sin(a)*p.r);
-      }
-      ctx.stroke();
+      ctx.fillStyle='rgba(8,125,192,'+p.o+')';
+      ctx.font=p.size+'px Arial, sans-serif';
+      ctx.textAlign='center';
+      ctx.textBaseline='middle';
+      // U+FE0E forces the ordinary text snowflake instead of an emoji glyph.
+      ctx.fillText('❄︎',p.x,p.y);
     }
     requestAnimationFrame(tick);
   })();

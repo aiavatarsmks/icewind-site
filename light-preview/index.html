@@ -359,34 +359,40 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
 /* ---------- light concept preview ---------- */
 /* This block deliberately overrides the dark production palette without changing the page structure. */
 :root{
-  --bg:#f6f9fd;
-  --bg-2:#edf4fb;
-  --panel:rgba(255,255,255,.84);
-  --line:rgba(14,69,110,.16);
-  --ice:#087dc0;
-  --ice-strong:#0ba5e5;
-  --frost:#102d47;
-  --text:#18364f;
-  --muted:#5b7186;
+  --bg:#edf3f7;
+  --bg-2:#dfeaf2;
+  --panel:rgba(248,252,254,.88);
+  --line:rgba(9,55,88,.22);
+  --ice:#056caa;
+  --ice-strong:#078dc5;
+  --frost:#08243b;
+  --text:#12324a;
+  --muted:#50697d;
 }
 body{background:var(--bg)}
-header{background:rgba(248,251,255,.82);box-shadow:0 8px 28px rgba(19,61,94,.08)}
-.hero{background:radial-gradient(1000px 560px at 80% -8%,rgba(11,165,229,.19),transparent 62%),radial-gradient(780px 520px at 4% 105%,rgba(8,125,192,.10),transparent 65%),var(--bg)}
-.hero h1 .grad{background:linear-gradient(95deg,#153651 8%,#087dc0 54%,#0ba5e5);-webkit-background-clip:text;background-clip:text;color:transparent}
-.kicker,.trust-strip,.clutch-fallback,.svc,.spec,.why,.step{background:rgba(255,255,255,.74)}
-.btn{color:#fff;box-shadow:0 10px 24px rgba(11,132,200,.22)}
-.btn:hover{box-shadow:0 14px 32px rgba(11,132,200,.28)}
-.btn.ghost{background:rgba(255,255,255,.72);color:var(--frost);box-shadow:none}
-.svc,.spec,.why,.step{box-shadow:0 12px 32px rgba(31,80,114,.055)}
-.svc:hover,.spec:hover{box-shadow:0 18px 42px rgba(31,80,114,.11),0 0 26px rgba(56,189,248,.08)}
-.work-card,.consult,.contact-card{background:radial-gradient(700px 300px at 85% 0%,rgba(11,165,229,.12),transparent 66%),linear-gradient(145deg,#fff,#eef7fd);box-shadow:0 18px 45px rgba(31,80,114,.08)}
+header{background:rgba(235,243,248,.90);box-shadow:0 8px 28px rgba(9,45,72,.11)}
+.hero{background:radial-gradient(1000px 560px at 80% -8%,rgba(7,141,197,.20),transparent 62%),radial-gradient(780px 520px at 4% 105%,rgba(5,108,170,.12),transparent 65%),var(--bg)}
+.hero h1 .grad{background:linear-gradient(95deg,#08243b 8%,#075f96 54%,#079bd0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kicker,.trust-strip,.svc,.spec,.why,.step{background:rgba(248,252,254,.84)}
+.btn{color:#fff;box-shadow:0 10px 24px rgba(5,108,170,.27)}
+.btn:hover{box-shadow:0 14px 32px rgba(5,108,170,.34)}
+.btn.ghost{background:rgba(248,252,254,.78);color:var(--frost);box-shadow:none}
+.svc,.spec,.why,.step{box-shadow:0 12px 32px rgba(9,45,72,.075)}
+.svc:hover,.spec:hover{box-shadow:0 18px 42px rgba(9,45,72,.14),0 0 26px rgba(7,141,197,.10)}
+.work-card,.consult,.contact-card{background:radial-gradient(700px 300px at 85% 0%,rgba(7,141,197,.14),transparent 66%),linear-gradient(145deg,#f9fcfe,#e4eff6);box-shadow:0 18px 45px rgba(9,45,72,.11)}
 .frame{background:#fff;box-shadow:0 22px 48px rgba(31,80,114,.14)}
-.frame .bar{background:linear-gradient(180deg,rgba(231,243,251,.92),rgba(250,253,255,.94))}
-.frame img{background:#eef5fa}
-footer{background:#edf4fb}
-.contact-social{background:rgba(11,165,229,.08);box-shadow:0 7px 18px rgba(11,132,200,.10)}
-.preview-note{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:7px 11px;border:1px solid rgba(14,69,110,.16);border-radius:999px;background:rgba(255,255,255,.74);color:#557087;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
-.preview-note::before{content:"";width:7px;height:7px;border-radius:50%;background:#0ba5e5;box-shadow:0 0 9px rgba(11,165,229,.55)}
+.frame .bar{background:linear-gradient(180deg,rgba(222,237,246,.96),rgba(247,251,253,.96))}
+.frame img{background:#e6f0f6}
+footer{background:#dfeaf2}
+.contact-social{background:rgba(7,141,197,.10);box-shadow:0 7px 18px rgba(5,108,170,.13)}
+.preview-note{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:7px 11px;border:1px solid rgba(9,55,88,.22);border-radius:999px;background:rgba(248,252,254,.82);color:#415f76;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.preview-note::before{content:"";width:7px;height:7px;border-radius:50%;background:#078dc5;box-shadow:0 0 9px rgba(7,141,197,.58)}
+.clutch-badge{display:flex;align-items:center;justify-content:center;width:max-content;max-width:100%;padding:10px 16px;border:1px solid rgba(5,108,170,.28);border-radius:16px;background:linear-gradient(145deg,#0b2d49,#071d31);box-shadow:0 14px 30px rgba(7,29,49,.20)}
+.clutch-badge iframe{display:block;max-width:100%}
+.clutch-badge .clutch-fallback{border-color:rgba(125,211,252,.24);background:transparent;color:#f2f8fc}
+.clutch-badge .clutch-fallback span{color:#c3d8e7}
+.clutch-badge .fallback-stars{color:#ff3d2e;font-size:.96rem;letter-spacing:.04em}
+.snowflake{color:rgba(5,103,158,var(--opacity))}
 </style>
 </head>
 <body>
@@ -451,8 +457,8 @@ footer{background:#edf4fb}
         </ul>
       </aside>
       <div class="clutch-badge">
-        <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="false" data-expandifr="true" data-scale="100" data-clutchcompany-id="2693063"></div>
-        <a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="View ICE WIND on Clutch"><strong>Clutch<i>.</i></strong><span>View our profile</span></a>
+        <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="2" data-height="45" data-nofollow="false" data-expandifr="true" data-scale="100" data-darkbg="true" data-clutchcompany-id="2693063"></div>
+        <a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="View ICE WIND on Clutch"><strong>Clutch<i>.</i></strong><span class="fallback-stars" aria-hidden="true">★★★★★</span><span>1 review</span></a>
       </div>
       <div class="hero-stats">
         <div class="stat"><b>Full-cycle</b><span>idea → launch → support</span></div>

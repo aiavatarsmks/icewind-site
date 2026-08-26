@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>CanaCore Case Study &mdash; Technical SEO &amp; Content Overhaul of a Live Construction Platform | ICE WIND</title>
+<meta name="description" content="How ICE WIND took CanaCore, a live construction-services platform we did not build, and made it secure, legible to search and safe to change — closing API access-control gaps, fixing canonical and structured-data foundations, adding CI and 126 tests, and re-architecting titles, FAQs and landing pages. No redesign.">
+<link rel="canonical" href="https://www.icewinddaleconsulting.com/work/canacore/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:title" content="CanaCore Case Study — Technical SEO &amp; Content Overhaul of a Live Construction Platform | ICE WIND">
+<meta property="og:description" content="Securing, fixing and re-architecting an existing construction-services platform for search — technical SEO, structured data, unique per-page FAQs and new landing pages, without a redesign.">
+<meta property="og:url" content="https://www.icewinddaleconsulting.com/work/canacore/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://www.icewinddaleconsulting.com/assets/work/canacore/og-canacore.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CanaCore construction-services homepage after the technical-SEO and content overhaul.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CanaCore Case Study — Technical SEO &amp; Content Overhaul of a Live Construction Platform | ICE WIND">
+<meta name="twitter:description" content="Securing, fixing and re-architecting an existing construction-services platform for search — technical SEO, structured data, unique per-page FAQs and new landing pages, without a redesign.">
+<meta name="twitter:image" content="https://www.icewinddaleconsulting.com/assets/work/canacore/og-canacore.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","@id":"https://www.icewinddaleconsulting.com/work/canacore/#case","name":"CanaCore — technical SEO, security and content-architecture overhaul","headline":"We didn't build this construction platform — we made it secure, and made search understand it","creator":{"@id":"https://www.icewinddaleconsulting.com/#organization"},"publisher":{"@id":"https://www.icewinddaleconsulting.com/#organization"},"about":"Technical-SEO, application-security and content-architecture engagement on CanaCore, an existing construction-services platform: closing API access-control and rate-limit gaps, making the canonical domain a single guarded source of truth, adding canonical tags and structured data, keyword-mapped titles and meta descriptions, unique per-page FAQs, cannibalisation fixes, new commercial and home-addition landing pages, internal-linking, and a CI pipeline and test suite where there had been none — applied to the live CMS without changing the site's design or build.","url":"https://cana-core.com/","inLanguage":"en-GB","image":"https://www.icewinddaleconsulting.com/assets/work/canacore/og-canacore.jpg","keywords":"Technical SEO, Application-security hardening, Keyword architecture, On-page optimisation, Structured data, Content design, Internal linking, CI and automated testing, CMS content operations"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.icewinddaleconsulting.com/"},{"@type":"ListItem","position":2,"name":"Work","item":"https://www.icewinddaleconsulting.com/work/"},{"@type":"ListItem","position":3,"name":"CanaCore","item":"https://www.icewinddaleconsulting.com/work/canacore/"}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<link rel="stylesheet" href="/assets/case.css?v=20260826">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.icewinddaleconsulting.com/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://www.icewinddaleconsulting.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.icewinddaleconsulting.com/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://www.icewinddaleconsulting.com/assets/og-cover.jpg",
+  "email": "manager@icewinddaleconsulting.com",
+  "telephone": "+44 7345 058863",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "178-188 Kensington High Street, 28 Stafford Court",
+    "addressLocality": "London",
+    "postalCode": "W8 7DL",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "manager@icewinddaleconsulting.com",
+      "telephone": "+44 7345 058863",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260826b">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="ICE WIND home">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/work/">Work</a>
+      <a href="/#consulting">Consulting</a>
+      <a href="/#why">Why us</a>
+      <a href="/#process">Process</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <a class="btn" href="/start-a-project/">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="case-hero-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="/work/">Work</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">CanaCore</span>
+      </nav>
+      <div style="margin-top:22px"><span class="kicker">CanaCore &middot; SEO, technical SEO &amp; content architecture &middot; Canada</span></div>
+      <h1>We didn&rsquo;t build this construction platform &mdash; we made it secure, and <span class="grad">made search understand it</span></h1>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="standfirst">CanaCore Construction Alliance is a live platform that connects Canadian homeowners and developers with verified contractors. The site was already built and running &mdash; but it was quietly exposing form submissions through its own API, it told search engines that every page was the homepage, and it had no tests and no build checks, so nothing could be changed safely. We were brought in to fix the foundation and make the platform legible to search &mdash; without touching its design, its brand or the product itself.</p>
+      <div class="case-hero-cta">
+        <a class="btn ext" href="https://cana-core.com/" target="_blank" rel="noopener noreferrer">Visit live website
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
+        <a class="btn ghost" href="/request-an-audit/">Request an audit</a>
+      </div>
+
+      <dl class="snapshot cols-5">
+        <div><dt>Client</dt><dd>CanaCore Construction Alliance</dd></div>
+        <div><dt>Sector</dt><dd>Construction &amp; contractor marketplace</dd></div>
+        <div><dt>Market</dt><dd>Canada</dd></div>
+        <div><dt>Engagement</dt><dd>Technical SEO, application-security hardening &amp; content architecture on an existing site</dd></div>
+        <div><dt>Live website</dt><dd><a href="https://cana-core.com/" target="_blank" rel="noopener noreferrer">cana-core.com</a></dd></div>
+      </dl>
+
+      <p style="margin-top:26px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85">Services</p>
+      <div class="pills">
+        <span class="pill">Technical SEO</span>
+        <span class="pill">Application-security hardening</span>
+        <span class="pill">Keyword architecture</span>
+        <span class="pill">On-page optimisation</span>
+        <span class="pill">Structured data</span>
+        <span class="pill">Content design</span>
+        <span class="pill">Internal linking</span>
+        <span class="pill">CI &amp; automated testing</span>
+        <span class="pill">CMS content operations</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SCREENSHOT -->
+  <section style="padding:56px 0 0">
+    <div class="wrap">
+      <figure>
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/01-canacore-hero-640.webp 640w, /assets/work/canacore/01-canacore-hero.webp 1440w">
+            <img src="/assets/work/canacore/01-canacore-hero.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/01-canacore-hero-640.jpg 640w, /assets/work/canacore/01-canacore-hero.jpg 1440w" width="1440" height="1000" decoding="async" alt="CanaCore construction-services homepage with its keyword-mapped headline.">
+          </picture>
+        </div>
+        <figcaption>The homepage leads with a keyword-mapped H1 built around how people actually search for a contractor.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">The challenge</span>
+        <h2 style="margin-top:20px">A site that worked &mdash; but could not be trusted, changed or found</h2>
+        <p>Nothing on CanaCore looked broken. It was live, it looked right, and people could use it. Underneath, three separate problems meant it could not be trusted, could not be changed safely, and could not be found.</p>
+        <p>It could not be trusted. Client form submissions were reachable through the platform&rsquo;s own API without so much as a login, and a public endpoint that ran up a real bill on every call had no rate limiting and no bot protection at all. The safeguard that was supposed to gate content previews never actually checked anything.</p>
+        <p>It could not be changed safely. There were no automated tests, no continuous-integration checks, and a type-check that did not pass &mdash; so any change, however small, was a gamble. The production build was even pointed at the wrong domain, and the image pipeline was quietly rejecting images because of it.</p>
+        <p>And it could not be found. The site served no canonical tags at all, and a metadata bug had every page reporting the homepage&rsquo;s address to search engines. The four most valuable pages &mdash; the service hubs &mdash; all served one identical, machine-generated title, and around fifteen pages carried machine-generated descriptions that were already live in Google. Content was thin and duplicated, internal linking between the guide and the services was non-existent, a real contact number was a placeholder on twenty-five pages, and one hub was stuck in a redirect loop that made it unreachable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">The approach</span>
+        <h2 style="margin-top:20px">Fix the foundation first, measure everything, then re-architect the content</h2>
+        <p>We worked in a deliberate order, and entirely inside the site that already existed.</p>
+        <p>Foundation before polish. First we closed the access-control and rate-limiting gaps and put bot protection in front of the public endpoints, so the platform was safe. Then we made the canonical domain a single, guarded source of truth, gave every page a correct canonical and its own metadata, and fixed the crawl rules and the image pipeline &mdash; the plumbing that decides whether search can read a site at all.</p>
+        <p>Then the safety net. We stood up a continuous-integration pipeline and a test suite where there had been neither, so that from that point on every change could ship with confidence instead of hope.</p>
+        <p>Only then the content. Distinct, keyword-mapped titles and descriptions across the service pages; a unique FAQ on every one, so no two pages publish the same structured data; headings and positioning rewritten around real search intent; and three new landing pages for the commercial and home-addition demand the site had no answer for.</p>
+        <p>Throughout, we measured on the live site &mdash; every defect reproduced and confirmed before and after the fix, never judged from the code alone. All of it went into the existing CMS behind a full backup and version history. The design, the brand and the product were never touched.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com &mdash; services</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/02-homepage-services-640.webp 640w, /assets/work/canacore/02-homepage-services.webp 1440w">
+            <img src="/assets/work/canacore/02-homepage-services.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/02-homepage-services-640.jpg 640w, /assets/work/canacore/02-homepage-services.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="CanaCore homepage services grid including new commercial construction and project management entry points.">
+          </picture>
+        </div>
+        <figcaption>New homepage entry points to commercial construction and project management &mdash; pages that were previously unreachable from the top of the site.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DELIVERED -->
+  <section id="delivered">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">What we delivered</span>
+        <h2>The full engagement, foundation to content</h2>
+      </div>
+
+      <h3 class="deliv-head">Security &amp; platform integrity</h3>
+      <ul class="tick">
+        <li>Closed an access-control gap that let the platform&rsquo;s own API return client form submissions without authentication &mdash; and closed a second instance of the same class in the media API</li>
+        <li>Added bot protection, per-IP rate limits, input-length ceilings and request timeouts to the public submission and assistant endpoints, which previously had none</li>
+        <li>Fixed a preview-authentication check that never actually verified the user</li>
+      </ul>
+
+      <h3 class="deliv-head">Technical SEO foundation</h3>
+      <ul class="tick">
+        <li>Made the canonical domain a single source of truth, rejecting the hosting-provider origin, with a regression guard so it cannot silently break again</li>
+        <li>Added canonical tags across the site &mdash; there were none &mdash; and fixed per-page Open Graph and Twitter metadata that had every page reporting the homepage</li>
+        <li>Rewrote robots.txt with an explicit policy for search and AI crawlers, and stopped it blocking the media path that serves every image and social preview</li>
+        <li>Cleaned the sitemap &mdash; removed stub and internal-search pages, added missing routes &mdash; and added permanent redirects from retired URLs that were returning 404</li>
+        <li>Fixed an image pipeline that had been rejecting images because it resolved to the wrong host</li>
+      </ul>
+
+      <h3 class="deliv-head">Search legibility &amp; metadata</h3>
+      <ul class="tick">
+        <li>Replaced the identical machine-generated title on the four service hubs with distinct, keyword-mapped titles, H1s and descriptions</li>
+        <li>Replaced machine-generated meta descriptions on around fifteen pages that were already live in search &mdash; only where the text was demonstrably auto-generated, never where an editor had written it</li>
+        <li>Gave five articles that had no title or description real, page-specific metadata</li>
+        <li>Added BreadcrumbList, Service and BlogPosting structured data, and fixed a &ldquo;Home &gt; Home&rdquo; breadcrumb on the homepage</li>
+      </ul>
+
+      <figure style="margin-top:44px">
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com &mdash; blueprinting services</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/03-hub-faq-640.webp 640w, /assets/work/canacore/03-hub-faq.webp 1440w">
+            <img src="/assets/work/canacore/03-hub-faq.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/03-hub-faq-640.jpg 640w, /assets/work/canacore/03-hub-faq.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="CanaCore blueprinting services hub showing its bespoke frequently-asked-questions section.">
+          </picture>
+        </div>
+        <figcaption>Each of the four service hubs now has its own keyword-targeted title and a bespoke FAQ &mdash; they had all served one identical generated title.</figcaption>
+      </figure>
+
+      <h3 class="deliv-head" style="margin-top:44px">Content &amp; architecture</h3>
+      <ul class="tick">
+        <li>Keyword-mapped titles and descriptions across roughly thirty service pages</li>
+        <li>A unique three-question FAQ on all twenty-five service detail pages, plus bespoke hub-level FAQs, so no two pages publish the same FAQPage markup</li>
+        <li>Three new landing pages &mdash; commercial construction, commercial renovations and home additions &mdash; with real decision-making content: process from estimate to handover, permits and inspections, code compliance, quality control, change orders and what a quote needs</li>
+        <li>Cross-linked thirty guide articles and twenty-five service pages in both directions, where there had been no linking at all, and added homepage and hub entry points to the previously unreachable commercial and project-management pages</li>
+        <li>Fixed joined-word headings across seven page templates, replaced a placeholder phone number on twenty-five pages, corrected US-specific wording for the Canadian market, and stopped a redirect loop that had made a service hub unreachable</li>
+      </ul>
+
+      <h3 class="deliv-head">The safety net</h3>
+      <ul class="tick">
+        <li>Built a continuous-integration pipeline &mdash; type-check, lint, tests and a production build on every change &mdash; where none had existed</li>
+        <li>Grew the automated test suite from zero to 126 tests, including a regression guard on the canonical domain, and got the type-check passing for the first time</li>
+      </ul>
+
+      <figure style="margin-top:44px">
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com &mdash; framing</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/04-page-faq-640.webp 640w, /assets/work/canacore/04-page-faq.webp 1440w">
+            <img src="/assets/work/canacore/04-page-faq.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/04-page-faq-640.jpg 640w, /assets/work/canacore/04-page-faq.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="CanaCore framing page showing its own page-specific FAQ.">
+          </picture>
+        </div>
+        <figcaption>Every service page carries its own three-question FAQ, so no two pages publish the same structured data.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section id="decisions" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Key decisions</span>
+        <h2>The four decisions that shaped the work</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Foundation before polish</h3>
+          <span>You cannot responsibly optimise a site that is exposing data or that you cannot change safely. So the order was fixed: close the security gaps, fix the canonical and crawl foundation, and stand up tests and continuous integration first &mdash; and only then touch a word of content. The unglamorous work came first because everything else depended on it.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Measure on the live site &mdash; and re-verify every finding</h3>
+          <span>Every defect was reproduced on the live site before we fixed it and confirmed on the live site after &mdash; never judged from the code alone. That discipline extended to an independent audit that ran alongside the work: we re-tested each of its findings rather than taking them on trust. Half described problems that no longer existed and were dropped; four were real, and we fixed them. We trust measurements, not claims &mdash; including our own.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Correct the machine, respect the human</h3>
+          <span>The metadata fixes only ever replace a value that is demonstrably machine-generated &mdash; a title that reduces to the page&rsquo;s own slug, a description in the generator&rsquo;s boilerplate shape. The moment an editor writes real metadata, our layer steps aside and the human wins. It cleaned up hundreds of auto-generated fields without ever fighting the people who maintain the site.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Depth where the decision is made</h3>
+          <span>The commercial and home-addition pages carry the highest-value intents on the site, so they got the most content &mdash; how a project runs from estimate to handover, how permits and inspections work, how change orders and quotes are handled. Search rewards the page that answers the decision, and so do the people making it. Thin pages get neither, which is why every service page also got its own FAQ rather than a shared one.</span>
+        </div>
+      </div>
+
+      <div class="fig-2" style="margin-top:52px">
+        <figure>
+          <div class="frame shot-36-25">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com &mdash; commercial</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/05-commercial-page-640.webp 640w, /assets/work/canacore/05-commercial-page.webp 1440w">
+              <img src="/assets/work/canacore/05-commercial-page.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/05-commercial-page-640.jpg 640w, /assets/work/canacore/05-commercial-page.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="CanaCore commercial construction page showing process, permits and change-order sections.">
+            </picture>
+          </div>
+          <figcaption>A new commercial-construction page with real decision-making content: process, permits, inspections, change orders and handover.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame shot-36-25">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com &mdash; building permits</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/06-separated-intent-640.webp 640w, /assets/work/canacore/06-separated-intent.webp 1440w">
+              <img src="/assets/work/canacore/06-separated-intent.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/06-separated-intent-640.jpg 640w, /assets/work/canacore/06-separated-intent.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="CanaCore building-permit drawings page, separated from the renovation-drawings page.">
+            </picture>
+          </div>
+          <figcaption>Two pages that had been competing for the same searches, separated onto distinct intents &mdash; building-permit drawings here, renovation and addition plans on its sibling.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DELIVERY -->
+  <section id="technical">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Technical delivery</span>
+        <h2 style="margin-top:20px">How the work was built and shipped</h2>
+        <p>CanaCore runs on a headless CMS and a modern React framework, with pages assembled from CMS content and served through a dynamic route. Our work sat at every layer of that.</p>
+        <p>On security, we closed the access-control gaps in the built-in content APIs and put bot protection, per-IP rate limits and input and timeout ceilings in front of the public submission and assistant endpoints. On the search foundation, the canonical domain became a single source of truth that rejects the hosting-provider origin, backed by a regression test so it cannot silently regress; canonical tags, per-page social metadata and corrected crawl rules followed.</p>
+        <p>For the content layer we added a resolver that decides, field by field, whether the stored value or a curated one wins &mdash; and the stored value always wins when a human wrote it. A single taxonomy function classifies every page and drives its Service schema, its FAQ set and its article-to-service links, so a page&rsquo;s category is derived once and used everywhere, and FAQPage markup is only ever built from questions shown on the page.</p>
+        <p>All of it shipped through a continuous-integration pipeline we introduced &mdash; type-check, lint, a suite that grew from zero to 126 tests, and a production build on every change. Content reached production through idempotent scripts run against the live database, each safe to re-run and each reusing existing media, behind a full database backup and the CMS&rsquo;s own document versioning so any change could be rolled back.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section id="outcome" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">The outcome</span>
+        <h2 style="margin-top:20px">Secure, legible, and safe to change</h2>
+        <p>The platform no longer exposes form data through its API, and every public endpoint is rate-limited and bot-protected. Every page now carries a correct canonical and its own metadata; the four hubs have distinct, keyword-targeted titles; every service page has a unique FAQ and its own structured data; the cannibalising pages are separated and the orphaned ones linked back in; and three new pages answer commercial and home-addition demand the site previously ignored. Where there had been no tests and no build checks, there are now 126 tests and a continuous-integration pipeline &mdash; so the site is, at last, safe to change. It is all live on cana-core.com and all pointable-to.</p>
+        <p>One honest note, and we think it matters. CanaCore has no analytics and no Search Console connected, so the effect of this work on rankings and traffic cannot yet be measured &mdash; and we will not put invented numbers on this page to suggest otherwise. Connecting measurement is the first thing we would do next. Everything claimed here was verified on the live site, before and after; the work is the proof, not a graph.</p>
+        <p>For ICE WIND it is the reference project for a specific kind of engagement: taking a business that already exists, on a platform we did not build, and making it safe, legible and maintainable &mdash; without a redesign. That work sits under <a href="/seo/" style="color:var(--ice)">SEO</a> and <a href="/ai-search-optimisation/" style="color:var(--ice)">AI search optimisation</a>; when the answer really is a rebuild, it sits under <a href="/website-redesign/" style="color:var(--ice)">website redesign</a> instead.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-wide">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com &mdash; footer</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/07-footer-credit-640.webp 640w, /assets/work/canacore/07-footer-credit.webp 1440w">
+            <img src="/assets/work/canacore/07-footer-credit.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/07-footer-credit-640.jpg 640w, /assets/work/canacore/07-footer-credit.jpg 1440w" width="1440" height="600" loading="lazy" decoding="async" alt="CanaCore footer showing the &quot;Developed by ICE WIND&quot; credit.">
+          </picture>
+        </div>
+        <figcaption>ICE WIND credited in the footer of the live platform.</figcaption>
+      </figure>
+
+      <p style="margin-top:34px">
+        <a class="btn ext" href="https://cana-core.com/" target="_blank" rel="noopener noreferrer">Visit live website
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
+        <a class="btn ghost" href="/work/barsion/">Next case: Barsion</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Request an audit</span>
+        <h2 style="margin-top:18px">Have a site that works &mdash; but can&rsquo;t be trusted or found?</h2>
+        <p>An existing business, a site you already like, and problems you can&rsquo;t see from the front end: data reachable that shouldn&rsquo;t be, pages search can&rsquo;t tell apart, no safe way to change any of it. That is the engagement this case is about. We start by telling you exactly what search &mdash; and anyone else &mdash; can currently see.</p>
+        <a class="btn" href="/request-an-audit/">Request an audit</a><br>
+        <a class="mail" href="mailto:manager@icewinddaleconsulting.com">manager@icewinddaleconsulting.com</a><br>
+        <a class="mail" href="https://wa.me/447345058863">+44 7345 058863</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND is a trading brand of ICEWIND DALE CONSULTING LTD, registered in England and Wales under company number 15925349.</b><br>
+      ICO registration ZB838524 &middot; &pound;1m Public &amp; Products Liability Insurance &middot; London, England<br>
+      178-188 Kensington High Street, 28 Stafford Court, London, W8 7DL, England<br>
+      <a href="mailto:manager@icewinddaleconsulting.com" style="color:var(--ice)">manager@icewinddaleconsulting.com</a><br>
+      <a href="https://wa.me/447345058863" style="color:var(--ice)">+44 7345 058863</a>
+      <nav class="foot-links" aria-label="Legal and compliance links">
+        <a href="/trust/">Trust &amp; Compliance</a>
+        <a href="/privacy/">Privacy Notice</a>
+        <a href="/cookies/">Cookie Policy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </div>
+    <nav class="foot-spec" aria-label="Service specialisations">
+      <b>Specialisations</b>
+      <a href="/web-development/">Web Development</a>
+      <a href="/game-development/">Game Development</a>
+      <a href="/web-app-development/">Web App Development</a>
+      <a href="/ai-automation/">AI Automation</a>
+      <a href="/web-design/">Web Design</a>
+      <a href="/website-redesign/">Website Redesign</a>
+      <a href="/seo/">SEO</a>
+      <a href="/ai-search-optimisation/">AI Search Optimisation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Websites for your business">
+      <b>For your business</b>
+      <a href="/websites-for-barbershops/">Barbershops</a>
+      <a href="/websites-for-beauty-salons/">Beauty Salons</a>
+      <a href="/small-business-web-design/">Small Business Web Design</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Selected work">
+      <b>Work</b>
+      <a href="/work/">All case studies</a>
+      <a href="/work/barsion/">Barsion</a>
+      <a href="/work/lamar-academy/">Lamar Academy</a>
+      <a href="/work/gamefoundry/">GameFoundry</a>
+      <a href="/work/canacore/">CanaCore</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Guides">
+      <b>Guides</b>
+      <a href="/blog/">All guides</a>
+    </nav>
+    <div>&copy; 2026 ICEWIND DALE CONSULTING LTD. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js"></script>
+<script src="/assets/analytics.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+</body>
+</html>

@@ -831,22 +831,27 @@ footer{background:#edf4fb}
   const c=document.getElementById('wind');
   if(!c||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   const ctx=c.getContext('2d');
+  const dpr=Math.min(window.devicePixelRatio||1,2);
   let W,H,parts=[];
-  function size(){W=c.width=c.offsetWidth*devicePixelRatio;H=c.height=c.offsetHeight*devicePixelRatio}
+  function size(){
+    W=c.offsetWidth;H=c.offsetHeight;
+    c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
   size();addEventListener('resize',size);
-  const N=Math.min(160,Math.floor(innerWidth/9));
+  const N=Math.min(96,Math.floor(innerWidth/8));
   for(let i=0;i<N;i++)parts.push(spawn(true));
   function spawn(anywhere){
     const depth=Math.random(); // 0 = far, 1 = near
     return{
       x:Math.random()*W,
-      y:anywhere?Math.random()*H:-10*devicePixelRatio,
-      r:(depth*1.8+0.6)*devicePixelRatio,
-      vy:(depth*0.9+0.35)*devicePixelRatio,   // fall speed by depth
+      y:anywhere?Math.random()*H:-14,
+      r:depth*1.35+1.05,
+      vy:depth*.16+.045,                       // soft, snow-like descent
       sway:Math.random()*Math.PI*2,
-      ss:Math.random()*0.015+0.004,           // sway speed
-      amp:(Math.random()*0.5+0.2)*devicePixelRatio, // sway amplitude
-      o:depth*0.55+0.15
+      ss:Math.random()*.012+.003,
+      amp:Math.random()*.55+.25,
+      o:depth*.42+.16
     };
   }
   (function tick(){
@@ -854,13 +859,20 @@ footer{background:#edf4fb}
     for(const p of parts){
       p.sway+=p.ss;
       p.y+=p.vy;
-      p.x+=Math.sin(p.sway)*p.amp;   // gentle side-to-side drift
+      p.x+=Math.sin(p.sway)*p.amp;
       if(p.y>H+10)Object.assign(p,spawn(false));
       if(p.x>W+10)p.x=-10; if(p.x<-10)p.x=W+10;
+      ctx.strokeStyle='rgba(8,125,192,'+p.o+')';
+      ctx.lineWidth=.8;
+      ctx.lineCap='round';
       ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(8,125,192,'+(p.o*.78)+')';
-      ctx.fill();
+      // Three short crossing strokes make each particle read as a snowflake, not rain.
+      for(let arm=0;arm<3;arm++){
+        const a=arm*Math.PI/3;
+        ctx.moveTo(p.x-Math.cos(a)*p.r,p.y-Math.sin(a)*p.r);
+        ctx.lineTo(p.x+Math.cos(a)*p.r,p.y+Math.sin(a)*p.r);
+      }
+      ctx.stroke();
     }
     requestAnimationFrame(tick);
   })();

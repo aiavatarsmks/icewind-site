@@ -172,7 +172,18 @@ nav.links a:hover{color:var(--frost)}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
   background:radial-gradient(1200px 600px at 75% -10%,rgba(56,189,248,.16),transparent 60%),
              radial-gradient(900px 500px at 10% 110%,rgba(14,165,233,.12),transparent 60%),var(--bg)}
-#wind{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#snow{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.snowflake{
+  position:absolute;top:-5%;left:var(--left);display:block;
+  color:rgba(8,125,192,var(--opacity));font:400 var(--size)/1 Arial,sans-serif;
+  text-rendering:geometricPrecision;will-change:top,transform;
+  animation:snow-fall var(--duration) linear var(--delay) infinite;
+}
+@keyframes snow-fall{
+  0%{top:-5%;transform:translate3d(0,0,0) rotate(0deg)}
+  50%{transform:translate3d(var(--drift),0,0) rotate(90deg)}
+  100%{top:105%;transform:translate3d(0,0,0) rotate(180deg)}
+}
 .hero-inner{position:relative;z-index:2;padding:140px 24px 90px}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ice);
   border:1px solid var(--line);border-radius:999px;padding:8px 18px;background:rgba(56,189,248,.06)}
@@ -319,7 +330,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
 .foot-spec b{color:var(--text);font-weight:600;font-family:'Space Grotesk',sans-serif;margin-bottom:2px}
 .foot-spec a{color:var(--frost);text-decoration:none}
 .foot-spec a:hover{color:var(--ice)}
-@media(prefers-reduced-motion:reduce){#wind{display:none}a.frame{transition:none}a.frame:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){#snow{display:none}a.frame{transition:none}a.frame:hover{transform:none}}
 
 /* ---------- mobile polish ---------- */
 @media(max-width:600px){
@@ -421,7 +432,7 @@ footer{background:#edf4fb}
 <main id="top">
   <!-- HERO -->
   <div class="hero">
-    <canvas id="wind" aria-hidden="true"></canvas>
+    <div id="snow" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <span class="kicker">Web development studio &amp; consulting</span>
       <span class="preview-note">Light concept · Preview only</span>
@@ -828,49 +839,24 @@ footer{background:#edf4fb}
 
 <script>
 (function(){
-  const c=document.getElementById('wind');
-  if(!c||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-  const ctx=c.getContext('2d');
-  const dpr=Math.min(window.devicePixelRatio||1,2);
-  let W,H,parts=[];
-  function size(){
-    W=c.offsetWidth;H=c.offsetHeight;
-    c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
+  const layer=document.getElementById('snow');
+  if(!layer||layer.childElementCount||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+
+  // A fixed seed makes the exact same small snowflakes appear on every opening.
+  let seed=271828;
+  const random=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)/4294967296);
+  for(let i=0;i<34;i++){
+    const flake=document.createElement('span');
+    flake.className='snowflake';
+    flake.textContent='❄\uFE0E';
+    flake.style.setProperty('--left',(2+random()*96).toFixed(2)+'%');
+    flake.style.setProperty('--size',(7+random()*5).toFixed(1)+'px');
+    flake.style.setProperty('--opacity',(0.12+random()*0.16).toFixed(2));
+    flake.style.setProperty('--duration',(18+random()*14).toFixed(1)+'s');
+    flake.style.setProperty('--delay',(-random()*30).toFixed(1)+'s');
+    flake.style.setProperty('--drift',(-18+random()*36).toFixed(1)+'px');
+    layer.appendChild(flake);
   }
-  size();addEventListener('resize',size);
-  const N=Math.min(64,Math.max(24,Math.floor(innerWidth/11)));
-  for(let i=0;i<N;i++)parts.push(spawn(true));
-  function spawn(anywhere){
-    const depth=Math.random(); // 0 = far, 1 = near
-    return{
-      x:Math.random()*W,
-      y:anywhere?Math.random()*H:-14,
-      size:8+depth*7,
-      vy:depth*.11+.035,                        // soft, snow-like descent
-      sway:Math.random()*Math.PI*2,
-      ss:Math.random()*.012+.003,
-      amp:Math.random()*.55+.25,
-      o:depth*.22+.14
-    };
-  }
-  (function tick(){
-    ctx.clearRect(0,0,W,H);
-    for(const p of parts){
-      p.sway+=p.ss;
-      p.y+=p.vy;
-      p.x+=Math.sin(p.sway)*p.amp;
-      if(p.y>H+10)Object.assign(p,spawn(false));
-      if(p.x>W+10)p.x=-10; if(p.x<-10)p.x=W+10;
-      ctx.fillStyle='rgba(8,125,192,'+p.o+')';
-      ctx.font=p.size+'px Arial, sans-serif';
-      ctx.textAlign='center';
-      ctx.textBaseline='middle';
-      // U+FE0E forces the ordinary text snowflake instead of an emoji glyph.
-      ctx.fillText('❄︎',p.x,p.y);
-    }
-    requestAnimationFrame(tick);
-  })();
 })();
 </script>
 <script src="https://cdn.jsdelivr.net/gh/aiavatarsmks/icewind-site@light-preview/assets/clutch-fallback.js"></script>

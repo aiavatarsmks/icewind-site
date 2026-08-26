@@ -187,12 +187,41 @@ html[data-theme="light"] table th{border-color:rgba(9,55,88,.18)}
 html[data-theme="light"] code{background:rgba(9,55,88,.08);color:#075f96}
 html[data-theme="light"] blockquote{background:rgba(248,252,254,.72);border-color:var(--ice)}
 
-/* A local light-theme presentation keeps the Clutch mark reliable even when
-   the third-party iframe is blocked, slow or styled for a different backdrop. */
+/* Stable local Clutch badges. The third-party iframe has occasionally rendered
+   a white canvas while keeping its dark-background text white. Hiding that
+   presentation prevents the badge from breaking when Clutch changes or stalls. */
+html[data-theme="dark"] .clutch-widget{display:none!important}
+html[data-theme="dark"] .clutch-ready .clutch-fallback{display:inline-grid}
+html[data-theme="dark"] .clutch-fallback{
+  display:inline-grid;grid-template-columns:auto auto;grid-template-rows:auto auto;
+  align-items:center;column-gap:14px;min-height:45px;padding:0;
+  border:0;border-radius:0;background:transparent;box-shadow:none;
+  color:var(--frost,#e0f2fe);line-height:1;text-align:left;text-decoration:none;
+}
+html[data-theme="dark"] .clutch-fallback strong{
+  grid-column:1;grid-row:1/3;align-self:end;
+  font:700 1.9rem/.9 Inter,system-ui,sans-serif;letter-spacing:-.075em;
+}
+html[data-theme="dark"] .clutch-fallback strong::before{
+  content:"REVIEWED ON";display:block;margin-bottom:4px;
+  color:var(--frost,#e0f2fe);font:600 .61rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;
+}
+html[data-theme="dark"] .clutch-fallback strong i{color:#ff3d2e;font-style:normal}
+html[data-theme="dark"] .clutch-fallback span{
+  grid-column:2;grid-row:1/3;display:flex;flex-direction:column;align-items:flex-start;
+  color:var(--muted,#8fa3bb);font-size:0;
+}
+html[data-theme="dark"] .clutch-fallback span::before{
+  content:"★★★★★";color:#ff3d2e;font-size:1.03rem;line-height:1;letter-spacing:.045em;
+}
+html[data-theme="dark"] .clutch-fallback span::after{
+  content:"1 REVIEW";margin-top:6px;color:var(--frost,#e0f2fe);font-size:.76rem;line-height:1;letter-spacing:.06em;
+}
+
 html[data-theme="light"] .clutch-badge{
   background:transparent;border:0;box-shadow:none;
 }
-html[data-theme="light"] .clutch-widget{display:none}
+html[data-theme="light"] .clutch-widget{display:none!important}
 html[data-theme="light"] .clutch-ready .clutch-fallback{display:inline-flex}
 html[data-theme="light"] .clutch-fallback{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:45px;

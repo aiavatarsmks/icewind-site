@@ -1,4 +1,7 @@
 :{$PORT:8080} {
+	@legacy host icewinddaleconsulting.com www.icewinddaleconsulting.com
+	redir @legacy https://icewind.uk{uri} permanent
+
 	@www host www.icewind.uk
 	redir @www https://icewind.uk{uri} permanent
 

@@ -1,14 +1,11 @@
 :{$PORT:8080} {
-	@legacy host icewinddaleconsulting.com www.icewinddaleconsulting.com
-	redir @legacy https://icewind.uk{uri} permanent
-
 	@www host www.icewind.uk
 	redir @www https://icewind.uk{uri} permanent
 
 	root * /srv
 	encode zstd gzip
 	file_server {
-		hide Caddyfile Dockerfile railway.json .dockerignore
+		hide AGENTS.md README.md CNAME Caddyfile Dockerfile railway.json .dockerignore
 	}
 
 	header {

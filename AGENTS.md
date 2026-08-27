@@ -1,7 +1,13 @@
 # Instructions for AI agents working on this repository
 
-This is a **static HTML site deployed straight to production** by GitHub Pages from `main`.
-There is no build step, no framework and no staging environment. A commit is a deploy.
+This is a **static HTML site hosted in production on Railway**. Railway serves the files
+through Caddy using `Dockerfile`, `Caddyfile` and `railway.json`. There is no application build
+step or framework. A Git commit or push is not a deploy; production changes require an explicit,
+approved Railway deployment followed by a health check.
+
+The custom production domain is `icewind.uk`. The legacy domains are not served by this app:
+their path-preserving permanent redirects are maintained in `../legacy-domain-redirect/` and
+hosted separately on Netlify.
 
 ## Before you change anything
 

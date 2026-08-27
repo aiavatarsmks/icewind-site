@@ -44,7 +44,7 @@ const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
 const sitemapSet = new Set(sitemapUrls);
 
-if (sitemapUrls.length !== 30) fail(`sitemap.xml must contain 30 URLs; found ${sitemapUrls.length}`);
+if (sitemapUrls.length !== 31) fail(`sitemap.xml must contain 31 URLs; found ${sitemapUrls.length}`);
 if (sitemapSet.size !== sitemapUrls.length) fail('sitemap.xml contains duplicate URLs');
 for (const url of sitemapUrls) {
   if (!url.startsWith(`${newOrigin}/`)) fail(`sitemap.xml contains a non-canonical URL: ${url}`);
@@ -94,8 +94,7 @@ for (const file of files) {
   }
 }
 
-const cname = (await readFile(join(root, 'CNAME'), 'utf8')).trim();
-if (cname !== 'icewind.uk') fail(`CNAME should be icewind.uk; found ${cname}`);
+if (repositoryFiles.has('CNAME')) fail('CNAME must be absent because production is hosted on Railway, not GitHub Pages');
 
 const robots = await readFile(join(root, 'robots.txt'), 'utf8');
 if (!robots.includes(`Sitemap: ${newOrigin}/sitemap.xml`)) fail('robots.txt does not reference the new sitemap URL');

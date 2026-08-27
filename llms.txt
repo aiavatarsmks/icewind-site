@@ -10,41 +10,41 @@ Contact: manager@icewinddaleconsulting.com
 
 ## Services
 
-- [Web design](https://www.icewinddaleconsulting.com/web-design/): interface and visual design, wireframes and prototypes, redesigns, design delivered on its own or built by us.
-- [Web development](https://www.icewinddaleconsulting.com/web-development/): marketing and content sites, e-commerce, rebuilds and modernisation, post-launch support.
-- [Web app development](https://www.icewinddaleconsulting.com/web-app-development/): products people sign in to and use — MVPs, internal tools, replacing spreadsheet processes, API integrations.
-- [Mobile app development](https://www.icewinddaleconsulting.com/mobile-app-development/): iOS and Android applications, native or cross-platform depending on the project.
-- [Game development](https://www.icewinddaleconsulting.com/game-development/): casual 2D, browser and HTML5 games, Telegram Mini App games, prototypes, leaderboards and game backends.
-- [AI automation](https://www.icewinddaleconsulting.com/ai-automation/): workflow automation, AI assistants, document processing, CRM and system integrations, with human review where judgement matters.
-- [AI consultancy](https://www.icewinddaleconsulting.com/ai-consulting/): opportunity audits, use-case selection, model and vendor choice, data readiness, roadmaps. Deciding what to build, as distinct from building it.
-- [SEO](https://www.icewinddaleconsulting.com/seo/): technical SEO, keyword research, on-page optimisation, Core Web Vitals, structured data, reporting.
-- [Local SEO](https://www.icewinddaleconsulting.com/local-seo/): Google Business Profile, map-pack visibility, local relevance and citations.
-- [AI search optimisation](https://www.icewinddaleconsulting.com/ai-search-optimisation/): generative engine optimisation — being understood, cited and recommended in ChatGPT, Perplexity and Google AI Overviews.
-- [Website redesign](https://www.icewinddaleconsulting.com/website-redesign/): rebuilding an existing site without losing search visibility.
-- [Small business web design](https://www.icewinddaleconsulting.com/small-business-web-design/): focused websites for smaller budgets and shorter page lists.
+- [Web design](https://icewind.uk/web-design/): interface and visual design, wireframes and prototypes, redesigns, design delivered on its own or built by us.
+- [Web development](https://icewind.uk/web-development/): marketing and content sites, e-commerce, rebuilds and modernisation, post-launch support.
+- [Web app development](https://icewind.uk/web-app-development/): products people sign in to and use — MVPs, internal tools, replacing spreadsheet processes, API integrations.
+- [Mobile app development](https://icewind.uk/mobile-app-development/): iOS and Android applications, native or cross-platform depending on the project.
+- [Game development](https://icewind.uk/game-development/): casual 2D, browser and HTML5 games, Telegram Mini App games, prototypes, leaderboards and game backends.
+- [AI automation](https://icewind.uk/ai-automation/): workflow automation, AI assistants, document processing, CRM and system integrations, with human review where judgement matters.
+- [AI consultancy](https://icewind.uk/ai-consulting/): opportunity audits, use-case selection, model and vendor choice, data readiness, roadmaps. Deciding what to build, as distinct from building it.
+- [SEO](https://icewind.uk/seo/): technical SEO, keyword research, on-page optimisation, Core Web Vitals, structured data, reporting.
+- [Local SEO](https://icewind.uk/local-seo/): Google Business Profile, map-pack visibility, local relevance and citations.
+- [AI search optimisation](https://icewind.uk/ai-search-optimisation/): generative engine optimisation — being understood, cited and recommended in ChatGPT, Perplexity and Google AI Overviews.
+- [Website redesign](https://icewind.uk/website-redesign/): rebuilding an existing site without losing search visibility.
+- [Small business web design](https://icewind.uk/small-business-web-design/): focused websites for smaller budgets and shorter page lists.
 
 ## Work
 
-- [Case studies](https://www.icewinddaleconsulting.com/work/)
-- [Barsion](https://www.icewinddaleconsulting.com/work/barsion/): bilingual site rebuild; first contentful paint went from 7.7s to under 0.5s, network requests from 90 to 12, third-party requests to zero.
-- [Lamar Academy](https://www.icewinddaleconsulting.com/work/lamar-academy/): Mayfair medical aesthetics clinic and training academy, two audiences on one site.
-- [GameFoundry](https://www.icewinddaleconsulting.com/work/gamefoundry/): in-house games marketplace with user-uploaded playable builds, sandboxed execution, ratings and leaderboards.
+- [Case studies](https://icewind.uk/work/)
+- [Barsion](https://icewind.uk/work/barsion/): bilingual site rebuild; first contentful paint went from 7.7s to under 0.5s, network requests from 90 to 12, third-party requests to zero.
+- [Lamar Academy](https://icewind.uk/work/lamar-academy/): Mayfair medical aesthetics clinic and training academy, two audiences on one site.
+- [GameFoundry](https://icewind.uk/work/gamefoundry/): in-house games marketplace with user-uploaded playable builds, sandboxed execution, ratings and leaderboards.
 
 ## Guides
 
-- [How much does a website cost in the UK](https://www.icewinddaleconsulting.com/blog/how-much-does-a-website-cost-uk/)
-- [AI automation cost for a small business](https://www.icewinddaleconsulting.com/blog/how-much-does-ai-automation-cost/)
-- [Telegram Mini App cost](https://www.icewinddaleconsulting.com/blog/telegram-mini-app-cost/)
-- [Getting recommended by ChatGPT and AI search](https://www.icewinddaleconsulting.com/blog/how-to-get-recommended-by-ai-search/)
-- [All guides](https://www.icewinddaleconsulting.com/blog/)
+- [How much does a website cost in the UK](https://icewind.uk/blog/how-much-does-a-website-cost-uk/)
+- [AI automation cost for a small business](https://icewind.uk/blog/how-much-does-ai-automation-cost/)
+- [Telegram Mini App cost](https://icewind.uk/blog/telegram-mini-app-cost/)
+- [Getting recommended by ChatGPT and AI search](https://icewind.uk/blog/how-to-get-recommended-by-ai-search/)
+- [All guides](https://icewind.uk/blog/)
 
 ## Company
 
-- [Trust and compliance](https://www.icewinddaleconsulting.com/trust/): company registration, ICO registration and insurance details.
-- [Privacy notice](https://www.icewinddaleconsulting.com/privacy/)
-- [Terms](https://www.icewinddaleconsulting.com/terms/)
+- [Trust and compliance](https://icewind.uk/trust/): company registration, ICO registration and insurance details.
+- [Privacy notice](https://icewind.uk/privacy/)
+- [Terms](https://icewind.uk/terms/)
 
 ## Enquiries
 
-- [Start a project](https://www.icewinddaleconsulting.com/start-a-project/)
-- [Request an audit](https://www.icewinddaleconsulting.com/request-an-audit/): website, SEO, AI search visibility or redesign assessment.
+- [Start a project](https://icewind.uk/start-a-project/)
+- [Request an audit](https://icewind.uk/request-an-audit/): website, SEO, AI search visibility or redesign assessment.

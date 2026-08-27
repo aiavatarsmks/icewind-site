@@ -3,7 +3,7 @@ import { join, relative } from 'node:path';
 
 const root = process.cwd();
 const expectedOrganization = JSON.parse(await readFile(join(root, 'schema', 'organization.json'), 'utf8'));
-const organizationId = 'https://www.icewinddaleconsulting.com/#organization';
+const organizationId = 'https://icewind.uk/#organization';
 const expectedSameAs = [
   'https://clutch.co/profile/icewind-dale-consulting',
   'https://www.instagram.com/icewind.consult/',

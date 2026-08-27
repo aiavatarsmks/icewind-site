@@ -10,7 +10,7 @@
   var GA_ID = 'G-W2PWZGRFQH';
   var CLARITY_ID = 'xt2y7vssz3';
   var STORAGE_KEY = 'iw-consent';            // 'granted' | 'denied'
-  var PROD_HOSTS = ['www.icewinddaleconsulting.com', 'icewinddaleconsulting.com'];
+  var PROD_HOSTS = ['icewind.uk', 'www.icewind.uk'];
 
   function isProd() { return PROD_HOSTS.indexOf(location.hostname) !== -1; }
   function getConsent() { try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; } }

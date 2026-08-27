@@ -12,7 +12,7 @@ window.IW_QUIZ_CONFIG = {
 
   /* Where the finished enquiry is posted. Same destination as the plain form. */
   formAction: 'https://formsubmit.co/manager@icewinddaleconsulting.com',
-  formNext: 'https://www.icewinddaleconsulting.com/demo/order-quiz/?sent=true',
+  formNext: 'https://icewind.uk/demo/order-quiz/?sent=true',
 
   requestTimeoutMs: 20000
 };

@@ -1,4 +1,7 @@
 :{$PORT:8080} {
+	@www host www.icewind.uk
+	redir @www https://icewind.uk{uri} permanent
+
 	root * /srv
 	encode zstd gzip
 	file_server {

@@ -27,7 +27,7 @@ Do not "fix" any of them into a normal page.
 
 ## Layout
 
-31 URLs in `sitemap.xml`. Every page loads `assets/theme.css` and `assets/theme-init.js` (the
+32 URLs in `sitemap.xml`. Every page loads `assets/theme.css` and `assets/theme-init.js` (the
 persistent light/dark theme) plus `assets/nav.css` and `assets/nav.js`.
 
 ```

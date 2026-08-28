@@ -77,7 +77,7 @@
   }
   function fireLeadIfThankYou() {
     try {
-      if (/\/start-a-project\//.test(location.pathname) &&
+      if (/\/(?:start-a-project|request-an-audit)\/?$/.test(location.pathname) &&
           new URLSearchParams(location.search).has('sent')) {
         ev('generate_lead', {});
       }

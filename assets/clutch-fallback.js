@@ -1,5 +1,11 @@
 (() => {
+  const footerTarget = document.querySelector('footer .foot > :first-child');
+
   document.querySelectorAll('.clutch-badge').forEach((badge) => {
+    if (footerTarget && !badge.closest('footer')) {
+      footerTarget.appendChild(badge);
+    }
+
     const widget = badge.querySelector('.clutch-widget');
     if (!widget) return;
 

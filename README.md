@@ -16,8 +16,10 @@ legacy domains are a separate Netlify project maintained in `../legacy-domain-re
 Once a change is committed and approved, `scripts/deploy.sh` performs the whole sequence:
 it refuses to run on a dirty tree, runs both validators, pushes the branch, calls `railway up`,
 waits for `SUCCESS`, checks that `/`, `/sitemap.xml` and `/robots.txt` return 200, and notifies
-IndexNow about the pages that changed since the previous deploy. Pass `--all` to resubmit every
-canonical URL, `--no-push` to deploy without pushing.
+IndexNow about the pages that changed since the previous deploy. If `HEAD` is already the deployed
+commit it runs the health checks and stops rather than rebuilding the same thing. Pass `--all` to
+resubmit every canonical URL, `--no-push` to deploy without pushing, `--force` to rebuild an
+unchanged commit.
 
 Retired in-site URLs remain instant `meta refresh` stubs
 carrying `noindex,follow` and a canonical to their replacement. There are three, and none of them

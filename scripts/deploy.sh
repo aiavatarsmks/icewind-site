@@ -4,6 +4,7 @@
 #   scripts/deploy.sh              validate, push, deploy, health-check, notify IndexNow
 #   scripts/deploy.sh --all        same, but submit every canonical URL to IndexNow
 #   scripts/deploy.sh --no-push    deploy without pushing to origin
+#   scripts/deploy.sh --force      rebuild even if this commit is already the deployed one
 #
 # Railway serves this site from the CLI, not from a GitHub connection: a push alone
 # changes nothing in production. That is why deploying and pushing live in one script.
@@ -15,16 +16,26 @@ ORIGIN="https://icewind.uk"
 STATE_FILE=".git/icewind-last-deploy"   # inside .git, so it is never committed
 SUBMIT_ALL=""
 PUSH=1
+FORCE=0
 
 for argument in "$@"; do
   case "$argument" in
     --all) SUBMIT_ALL="--all" ;;
     --no-push) PUSH=0 ;;
+    --force) FORCE=1 ;;
     *) echo "Unknown option: $argument" >&2; exit 2 ;;
   esac
 done
 
 step() { printf '\n\033[1m==> %s\033[0m\n' "$1"; }
+
+health_checks() {
+  for path in "/" "/sitemap.xml" "/robots.txt"; do
+    code=$(curl -s -o /dev/null -w '%{http_code}' "${ORIGIN}${path}")
+    printf '  %-14s %s\n' "$path" "$code"
+    [ "$code" = "200" ] || { echo "Expected 200 for ${ORIGIN}${path}" >&2; exit 1; }
+  done
+}
 
 step "Checking the working tree"
 if [ -n "$(git status --porcelain)" ]; then
@@ -36,6 +47,16 @@ fi
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 HEAD_SHA=$(git rev-parse HEAD)
 echo "$BRANCH at ${HEAD_SHA:0:7} — $(git log -1 --pretty=%s)"
+
+# Rebuilding an unchanged commit costs minutes and tells IndexNow nothing, because the diff
+# against the last deploy is empty. Confirm production is healthy and stop instead.
+if [ "$FORCE" -eq 0 ] && [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "$HEAD_SHA" ]; then
+  step "Already deployed"
+  echo "${HEAD_SHA:0:7} is the commit this machine last shipped. Nothing to build."
+  health_checks
+  echo "Pass --force to rebuild the same commit anyway."
+  exit 0
+fi
 
 step "Validating"
 node scripts/validate-structured-data.mjs
@@ -77,11 +98,7 @@ if [ "$STATUS" != "SUCCESS" ]; then
 fi
 
 step "Health checks"
-for path in "/" "/sitemap.xml" "/robots.txt"; do
-  code=$(curl -s -o /dev/null -w '%{http_code}' "${ORIGIN}${path}")
-  printf '  %-14s %s\n' "$path" "$code"
-  [ "$code" = "200" ] || { echo "Expected 200 for ${ORIGIN}${path}" >&2; exit 1; }
-done
+health_checks
 
 step "Notifying IndexNow"
 if [ -n "$SUBMIT_ALL" ]; then

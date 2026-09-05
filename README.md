@@ -8,10 +8,16 @@ Static HTML site, no build step. Every page is a hand-written `index.html`.
 ## How it is deployed
 
 Railway serves the static files through Caddy using `Dockerfile`, `Caddyfile` and
-`railway.json`. A commit or push does not deploy production. Production changes require an
-explicit, approved Railway deployment and a post-deploy health check. The live domain is
-`icewind.uk`; path-preserving redirects from the legacy domains are a separate Netlify project
-maintained in `../legacy-domain-redirect/`.
+`railway.json`. Railway builds from the CLI, not from a GitHub connection, so a commit or push
+does not deploy production. Production changes require an explicit, approved deployment and a
+post-deploy health check. The live domain is `icewind.uk`; path-preserving redirects from the
+legacy domains are a separate Netlify project maintained in `../legacy-domain-redirect/`.
+
+Once a change is committed and approved, `scripts/deploy.sh` performs the whole sequence:
+it refuses to run on a dirty tree, runs both validators, pushes the branch, calls `railway up`,
+waits for `SUCCESS`, checks that `/`, `/sitemap.xml` and `/robots.txt` return 200, and notifies
+IndexNow about the pages that changed since the previous deploy. Pass `--all` to resubmit every
+canonical URL, `--no-push` to deploy without pushing.
 
 Retired in-site URLs remain instant `meta refresh` stubs
 carrying `noindex,follow` and a canonical to their replacement. There are three, and none of them
@@ -63,8 +69,10 @@ persistent light/dark theme) plus `assets/nav.css` and `assets/nav.js`.
                               quiz-config.js, analytics.js, clutch-fallback.js,
                               og-cover.jpg (1200x630 social card), ice-wind-logo.png (256x256)
 /schema/organization.json     canonical copy of the Organization entity
-/scripts/                     inject-organization-schema.mjs, validate-structured-data.mjs
+/scripts/                     inject-organization-schema.mjs, validate-structured-data.mjs,
+                              validate-domain-migration.mjs, submit-indexnow.mjs, deploy.sh
 robots.txt  sitemap.xml  llms.txt  favicon.svg  logo.svg  404.html
+<indexnow key>.txt            IndexNow key, served from the root; public by protocol design
 ```
 
 ## Conventions that must not drift
@@ -92,7 +100,8 @@ reviews that do not exist, or hidden text written for crawlers.
 2. Update `sitemap.xml` `lastmod` in the same commit as the page.
 3. Validate JSON-LD (Rich Results Test / validator.schema.org).
 4. Check mobile layout, keyboard focus and the cookie banner.
-5. Submit the URL in Google Search Console and Bing Webmaster Tools.
+5. Deploy with `scripts/deploy.sh`, which notifies IndexNow for you. Request indexing in
+   Google Search Console by hand — Google has no IndexNow equivalent.
 
 ## Where the documentation lives
 

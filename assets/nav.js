@@ -22,8 +22,17 @@
     ['/#why', 'Why us'],
     ['/#process', 'Process'],
     ['/blog/', 'Blog'],
+    ['/contact/', 'Contact'],
     ['/trust/', 'Trust & Compliance']
   ];
+
+  /* Single source of truth for the contact strip under the primary nav.
+     Change the number here and it updates on every page that loads this file. */
+  var CONTACT = {
+    email: 'hello@icewind.uk',
+    phoneDisplay: '+44 7345 058863',
+    phoneLink: 'https://wa.me/447345058863'
+  };
 
   var bar = document.querySelector('header .nav');
   if (!bar || document.querySelector('.nav-toggle')) return;
@@ -59,6 +68,53 @@
     drop.className = 'drop';
     SERVICES.forEach(function (s) { drop.appendChild(link(s[0], s[1])); });
     wrap.appendChild(drop);
+  }
+
+  /* ---------- desktop: add "Contact" to the primary links ---------- */
+  var linkList = bar.querySelector('nav.links');
+  if (linkList && !linkList.querySelector('a[href="/contact/"]')) {
+    linkList.appendChild(link('/contact/', 'Contact'));
+  }
+
+  /* ---------- contact strip under the nav ---------- */
+  var header = bar.closest('header');
+  if (header && !header.querySelector('.nav-contact')) {
+    var strip = document.createElement('div');
+    strip.className = 'nav-contact';
+    var inner = document.createElement('div');
+    inner.className = 'wrap nav-contact-inner';
+
+    var mail = document.createElement('a');
+    mail.href = 'mailto:' + CONTACT.email;
+    mail.textContent = CONTACT.email;
+    mail.setAttribute('aria-label', 'Email ' + CONTACT.email);
+
+    var sep = document.createElement('span');
+    sep.className = 'nav-contact-sep';
+    sep.setAttribute('aria-hidden', 'true');
+    sep.textContent = '|';
+
+    var wa = document.createElement('a');
+    wa.href = CONTACT.phoneLink;
+    wa.target = '_blank';
+    wa.rel = 'noopener noreferrer';
+    wa.textContent = 'WhatsApp ' + CONTACT.phoneDisplay;
+    wa.setAttribute('aria-label', 'Message ICE WIND on WhatsApp, ' + CONTACT.phoneDisplay);
+
+    inner.appendChild(mail);
+    inner.appendChild(sep);
+    inner.appendChild(wa);
+    strip.appendChild(inner);
+    header.appendChild(strip);
+
+    /* the mobile menu is positioned from the bottom of the header, so keep
+       --nav-h equal to the real header height now that it is two rows tall */
+    var syncHeight = function () {
+      document.documentElement.style.setProperty('--nav-h', header.offsetHeight + 'px');
+    };
+    syncHeight();
+    window.addEventListener('resize', syncHeight);
+    window.addEventListener('load', syncHeight);
   }
 
   /* ---------- burger button ---------- */
@@ -99,7 +155,7 @@
   var meta = document.createElement('p');
   meta.className = 'mm-meta';
   meta.innerHTML = 'London, England &middot; ' +
-    '<a href="mailto:manager@icewinddaleconsulting.com">manager@icewinddaleconsulting.com</a>';
+    '<a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a>';
   menu.appendChild(meta);
 
   /* the header uses backdrop-filter, which would trap position:fixed children,

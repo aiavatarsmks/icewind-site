@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#050b16">
+  <title>Contact ICE WIND | London Web Development Studio</title>
+  <meta name="description" content="Contact ICE WIND in London. Project enquiries go to hello@icewind.uk, corporate and media enquiries to manager@icewinddaleconsulting.com. WhatsApp, Telegram and an enquiry form.">
+  <link rel="canonical" href="https://icewind.uk/contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ICE WIND">
+  <meta property="og:title" content="Contact ICE WIND | London Web Development Studio">
+  <meta property="og:description" content="Contact ICE WIND in London. Project enquiries go to hello@icewind.uk, corporate and media enquiries to manager@icewinddaleconsulting.com. WhatsApp, Telegram and an enquiry form.">
+  <meta property="og:url" content="https://icewind.uk/contact/">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://icewind.uk/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ICE WIND — web development studio, London">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact ICE WIND | London Web Development Studio">
+  <meta name="twitter:description" content="Contact ICE WIND in London. Project enquiries go to hello@icewind.uk, corporate and media enquiries to manager@icewinddaleconsulting.com. WhatsApp, Telegram and an enquiry form.">
+  <meta name="twitter:image" content="https://icewind.uk/assets/og-cover.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/service.css">
+  <style>
+    /* Contact-page specifics. Everything else comes from /assets/service.css. */
+    .routes{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .route{border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;background:linear-gradient(160deg,var(--panel),rgba(148,199,255,.015));transition:border-color .25s,transform .25s,box-shadow .25s}
+    .route:hover{border-color:rgba(125,211,252,.4);transform:translateY(-4px);box-shadow:0 18px 50px rgba(3,10,22,.6),0 0 30px rgba(56,189,248,.08)}
+    .route h3{font-family:'Space Grotesk',sans-serif;font-size:1.24rem;color:var(--frost);margin:14px 0 10px}
+    .route p{color:var(--muted);font-size:.95rem}
+    .route .addr{display:inline-block;margin-top:18px;font-family:'Space Grotesk',sans-serif;font-size:1.02rem;color:var(--ice);overflow-wrap:anywhere;word-break:break-word;max-width:100%;text-decoration:underline;text-decoration-color:rgba(125,211,252,.35);text-underline-offset:4px}
+    .route .addr:hover{text-decoration-color:var(--ice)}
+    .channels{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .channel{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;background:linear-gradient(160deg,var(--panel),rgba(148,199,255,.015));transition:border-color .25s,transform .25s}
+    .channel:hover{border-color:rgba(125,211,252,.4);transform:translateY(-3px)}
+    .channel .ico{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:14px;color:var(--ice);border:1px solid var(--line);background:rgba(56,189,248,.08)}
+    .channel .ico svg{width:22px;height:22px}
+    .channel b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.02rem;color:var(--frost);font-weight:600}
+    .channel span{display:block;color:var(--muted);font-size:.88rem;margin-top:3px;overflow-wrap:anywhere}
+    .details{border:1px solid var(--line);border-radius:var(--radius);padding:32px 30px;background:linear-gradient(160deg,var(--panel),rgba(148,199,255,.015));color:var(--muted);font-size:.95rem;line-height:1.7}
+    .details b{color:var(--frost)}
+    .details a{color:var(--ice)}
+    .form-card{border:1px solid rgba(125,211,252,.25);border-radius:24px;padding:40px 36px;background:radial-gradient(600px 280px at 50% -20%,rgba(56,189,248,.16),transparent 70%),linear-gradient(180deg,#0a1830,#060e1e)}
+    .form-card h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--frost);margin-bottom:10px}
+    .form-card>p{color:var(--muted);max-width:640px}
+    .form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 16px;margin-top:26px}
+    .field{display:grid;gap:7px;margin-bottom:16px;min-width:0}
+    .field.full{grid-column:1/-1}
+    .field label{font-size:.9rem;color:var(--frost);font-weight:500}
+    .field input,.field textarea{width:100%;font:inherit;color:var(--text);background:#06101f;border:1px solid var(--line);border-radius:11px;padding:12px 13px;transition:border-color .2s,box-shadow .2s}
+    .field input:focus,.field textarea:focus{border-color:var(--ice);box-shadow:0 0 0 3px rgba(125,211,252,.1);outline:none}
+    .field textarea{min-height:120px;resize:vertical}
+    .field .error{display:none;color:#fca5a5;font-size:.8rem}
+    .field.invalid input,.field.invalid textarea{border-color:#fca5a5}
+    .field.invalid .error{display:block}
+    .form-status{display:none;margin-bottom:18px;padding:12px 14px;border:1px solid rgba(125,211,252,.42);border-radius:12px;background:rgba(56,189,248,.11);color:var(--frost);font-size:.9rem}
+    .form-status.show{display:block}
+    .form-status.error-state{border-color:rgba(252,165,165,.48);background:rgba(127,29,29,.16)}
+    .honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+    .fine{font-size:.8rem;color:var(--muted);margin-top:12px}
+    .fine a{color:var(--ice)}
+    button.btn{border:0;cursor:pointer;font-family:inherit}
+    button.btn[disabled]{cursor:wait;opacity:.72}
+    @media(max-width:900px){.routes,.channels,.form-grid{grid-template-columns:1fr}.form-card{padding:30px 20px}}
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://icewind.uk/contact/#contactpage",
+  "url": "https://icewind.uk/contact/",
+  "name": "Contact ICE WIND",
+  "description": "Contact details for ICE WIND, a London web development studio: project enquiries, corporate and media enquiries, WhatsApp, Telegram and an enquiry form.",
+  "inLanguage": "en-GB",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://icewind.uk/#website",
+    "url": "https://icewind.uk/",
+    "name": "ICE WIND"
+  },
+  "about": {
+    "@id": "https://icewind.uk/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://icewind.uk/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://icewind.uk/contact/"
+    }
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "manager@icewinddaleconsulting.com",
+  "telephone": "+44 7345 058863",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "manager@icewinddaleconsulting.com",
+      "telephone": "+44 7345 058863",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260826b">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/" aria-label="ICE WIND home">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/work/">Work</a>
+      <a href="/#consulting">Consulting</a>
+      <a href="/#process">Process</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <a class="btn" href="/start-a-project/">Start a project</a>
+  </div>
+</header>
+
+<main>
+  <section class="svc-hero">
+    <div class="svc-hero-inner">
+      <span class="kicker">Contact &middot; London</span>
+      <h1>Talk to a person, not a ticket queue</h1>
+      <p class="lead">Two email addresses, two messengers and one form. Whichever you pick, a person reads it and replies within one business day.</p>
+      <div class="svc-hero-cta">
+        <a class="btn" href="#enquiry">Send an enquiry</a>
+        <a class="btn ghost" href="https://wa.me/447345058863" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Where to write</span>
+        <h2>Two addresses, so your message reaches the right desk</h2>
+        <p class="sub">Both are read every working day. Using the right one just means you skip a forwarding step.</p>
+      </div>
+      <div class="routes">
+        <article class="route">
+          <span class="tag">Project enquiries</span>
+          <h3>You want something built</h3>
+          <p>A website, a web or mobile app, a Telegram Mini App, a game, an AI automation — or a second opinion on a project you already have. Tell us what you need and roughly what it is for; we will come back with questions, a timeline and a price.</p>
+          <a class="addr" href="mailto:hello@icewind.uk">hello@icewind.uk</a>
+        </article>
+        <article class="route">
+          <span class="tag">Corporate &amp; media enquiries</span>
+          <h3>Everything that is not a project</h3>
+          <p>Press and interview requests, partnerships, invoicing and contracts, supplier onboarding, compliance and legal correspondence. This is the registered address for company matters.</p>
+          <a class="addr" href="mailto:manager@icewinddaleconsulting.com">manager@icewinddaleconsulting.com</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Other ways</span>
+        <h2>If you would rather message than email</h2>
+        <p class="sub">WhatsApp and Telegram are the fastest during UK working hours. Instagram and Clutch are where you can look at us before getting in touch at all.</p>
+      </div>
+      <div class="channels">
+        <a class="channel" href="https://wa.me/447345058863" target="_blank" rel="noopener noreferrer">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.4a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.7-4.4A8.4 8.4 0 1 1 20.5 11.4Z"></path><path d="M8.7 8.1c.2-.5.4-.5.7-.5h.4c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4 0 .6l-.5.7c.5 1 1.3 1.7 2.3 2.2l.7-.5c.2-.1.4-.1.6 0l1.8.8c.3.1.4.3.4.5v.4c0 .3 0 .5-.5.7-.4.2-1.1.3-2-.1-1-.4-2.1-1.2-3.1-2.1-1-1-1.7-2.1-2.1-3.1-.4-.9-.3-1.6-.1-2Z"></path></svg></span>
+          <span><b>WhatsApp</b><span>+44 7345 058863</span></span>
+        </a>
+        <a class="channel" href="https://t.me/icewindstudio" target="_blank" rel="noopener noreferrer">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-3.1 17.2c-.2.9-1 1.1-1.7.7l-5.5-4.1-2.7 2.6c-.3.3-.5.5-1 .5l.4-5.6 10.2-9.2c.4-.4-.1-.6-.7-.3L4.3 12.6l-5.4-1.7c-1.2-.4-1.2-1.2.2-1.7L20.2 1c1-.4 1.9.2 1.6 2Z"></path></svg></span>
+          <span><b>Telegram</b><span>@icewindstudio</span></span>
+        </a>
+        <a class="channel" href="https://www.instagram.com/icewind.consult/" target="_blank" rel="me noopener noreferrer">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg></span>
+          <span><b>Instagram</b><span>@icewind.consult</span></span>
+        </a>
+        <a class="channel" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.6 20 7v5.2c0 4.2-3.2 7-8 8.2-4.8-1.2-8-4-8-8.2V7Z"></path><path d="m8.8 11.8 2.1 2.1 4.3-4.3"></path></svg></span>
+          <span><b>Clutch</b><span>Reviews and our verified profile</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="enquiry">
+    <div class="wrap">
+      <div class="form-card">
+        <span class="kicker">Enquiry form</span>
+        <h2>Or just write it here</h2>
+        <p>Three fields. No account, no call booking, no chatbot. It reaches the same inbox as an email would.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        <form id="contact-form" action="https://formsubmit.co/manager@icewinddaleconsulting.com" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New ICE WIND contact enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input id="form-next" type="hidden" name="_next" value="https://icewind.uk/contact/?sent=true">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Leave this field empty</label>
+            <input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-grid">
+            <div class="field" id="name-field">
+              <label for="name">Your name</label>
+              <input id="name" name="Name" autocomplete="name" aria-describedby="name-error" required>
+              <p class="error" id="name-error" aria-live="polite"></p>
+            </div>
+            <div class="field" id="contact-field">
+              <label for="contact">How should we reply?</label>
+              <input id="contact" name="Contact" placeholder="Email, phone, WhatsApp or Telegram" autocomplete="email" aria-describedby="contact-error" required>
+              <p class="error" id="contact-error" aria-live="polite"></p>
+            </div>
+            <div class="field full" id="message-field">
+              <label for="message">What is it about?</label>
+              <textarea id="message" name="Message" aria-describedby="message-error" placeholder="A few lines are enough. What you need, what it is for, and when you would like it live." required></textarea>
+              <p class="error" id="message-error" aria-live="polite"></p>
+            </div>
+          </div>
+          <button class="btn" id="submit-button" type="submit">Send enquiry</button>
+          <p class="fine">We use your details only to answer this enquiry. <a href="/privacy/">Read our Privacy Notice.</a></p>
+          <p class="fine">Please do not send passwords, payment-card details or other sensitive information.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Company details</span>
+        <h2>Who you are actually writing to</h2>
+      </div>
+      <div class="details">
+        <b>ICEWIND DALE CONSULTING LTD</b>, trading as ICE WIND.<br>
+        Registered in England and Wales, company number 15925349.<br>
+        Registered office: 347 Barking Road, London, England, E13 8EE.<br>
+        ICO registration ZB838524 &middot; &pound;1m Public &amp; Products Liability Insurance.<br>
+        Working hours: Monday to Friday, UK time. We reply within one business day.<br>
+        Full registration, insurance and compliance details are on the <a href="/trust/">Trust &amp; Compliance</a> page.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND is a trading brand of ICEWIND DALE CONSULTING LTD, registered in England and Wales under company number 15925349.</b><br>
+      ICO registration ZB838524 &middot; &pound;1m Public &amp; Products Liability Insurance &middot; London, England<br>
+      347 Barking Road, London, England, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="https://wa.me/447345058863" style="color:var(--ice)">+44 7345 058863</a>
+      <nav class="foot-links" aria-label="Legal and compliance links">
+        <a href="/contact/">Contact</a>
+        <a href="/trust/">Trust &amp; Compliance</a>
+        <a href="/privacy/">Privacy Notice</a>
+        <a href="/cookies/">Cookie Policy</a>
+        <a href="/terms/">Terms</a>
+      </nav>
+    </div>
+    <nav class="foot-spec" aria-label="Service specialisations">
+      <b>Specialisations</b>
+      <a href="/web-development/">Web Development</a>
+      <a href="/web-app-development/">Web App Development</a>
+      <a href="/mobile-app-development/">Mobile App Development</a>
+      <a href="/game-development/">Game Development</a>
+      <a href="/ai-automation/">AI Automation</a>
+      <a href="/ai-consulting/">AI Consultancy</a>
+      <a href="/web-design/">Web Design</a>
+      <a href="/website-redesign/">Website Redesign</a>
+      <a href="/seo/">SEO</a>
+      <a href="/local-seo/">Local SEO</a>
+      <a href="/ai-search-optimisation/">AI Search Optimisation</a>
+      <a href="/request-an-audit/">Request an audit</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var status = document.getElementById('form-status');
+    var submit = document.getElementById('submit-button');
+    var next = document.getElementById('form-next');
+    next.value = window.location.origin + window.location.pathname + '?sent=true';
+
+    function show(message, isError) {
+      status.textContent = message;
+      status.classList.add('show');
+      status.classList.toggle('error-state', !!isError);
+    }
+    if (new URLSearchParams(location.search).has('sent')) {
+      show('Thank you — your enquiry has been sent. We will reply within one business day.');
+      form.reset();
+    }
+    function setError(id, message) {
+      document.getElementById(id + '-field').classList.add('invalid');
+      document.getElementById(id + '-error').textContent = message;
+    }
+    form.addEventListener('input', function (event) {
+      var field = event.target.closest('.field');
+      if (field && field.classList.contains('invalid')) {
+        field.classList.remove('invalid');
+        var error = field.querySelector('.error');
+        if (error) error.textContent = '';
+      }
+    });
+    form.addEventListener('submit', function (event) {
+      document.querySelectorAll('.field.invalid').forEach(function (field) {
+        field.classList.remove('invalid');
+        var error = field.querySelector('.error');
+        if (error) error.textContent = '';
+      });
+      status.classList.remove('show');
+      var name = document.getElementById('name');
+      var contact = document.getElementById('contact');
+      var message = document.getElementById('message');
+      var first = null;
+      if (!name.value.trim()) { setError('name', 'Please enter your name.'); first = name; }
+      if (!contact.value.trim()) { setError('contact', 'Please tell us how to reply.'); first = first || contact; }
+      if (!message.value.trim()) { setError('message', 'Please tell us what your enquiry is about.'); first = first || message; }
+      if (first) {
+        event.preventDefault();
+        show('Please review the highlighted fields and try again.', true);
+        first.focus();
+        return;
+      }
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+      form.setAttribute('aria-busy', 'true');
+    });
+  })();
+</script>
+<script src="/assets/service.js"></script>
+<script src="/assets/analytics.js" defer></script>
+<script src="/assets/nav.js" defer></script>
+</body>
+</html>

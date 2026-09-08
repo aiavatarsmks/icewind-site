@@ -3,7 +3,7 @@
    carrying the full primary nav (.nav with a .btn link to /start-a-project/) — the
    desktop "Services" dropdown, the "Contact" link and the mobile full-screen menu.
    To use on a new page, add one line before </body>:
-     <script src="/assets/nav.js?v=20260908b" defer></script>
+     <script src="/assets/nav.js?v=20260908c" defer></script>
    Styles live in /assets/nav.css and are loaded by this file. */
 (function () {
   var SERVICES = [
@@ -38,10 +38,10 @@
   var bar = document.querySelector('header .nav');
   if (!bar) return;
 
-  if (!document.querySelector('link[href="/assets/nav.css?v=20260908b"]')) {
+  if (!document.querySelector('link[href="/assets/nav.css?v=20260908c"]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/assets/nav.css?v=20260908b';
+    css.href = '/assets/nav.css?v=20260908c';
     document.head.appendChild(css);
   }
 
@@ -84,7 +84,13 @@
     wa.href = CONTACT.phoneLink;
     wa.target = '_blank';
     wa.rel = 'noopener noreferrer';
-    wa.textContent = 'WhatsApp ' + CONTACT.phoneDisplay;
+    /* the word is dropped on narrow screens so the strip stays one line;
+       the accessible name below keeps it for screen readers */
+    var waWord = document.createElement('span');
+    waWord.className = 'nav-contact-app';
+    waWord.textContent = 'WhatsApp ';
+    wa.appendChild(waWord);
+    wa.appendChild(document.createTextNode(CONTACT.phoneDisplay));
     wa.setAttribute('aria-label', 'Message ICE WIND on WhatsApp, ' + CONTACT.phoneDisplay);
 
     inner.appendChild(label);
@@ -94,10 +100,20 @@
     strip.appendChild(inner);
     header.appendChild(strip);
 
-    /* the mobile menu is positioned from the bottom of the header, so keep
-       --nav-h equal to the real header height now that it is two rows tall */
+    /* The mobile menu is positioned from the bottom of the header, so --nav-h has to
+       match the real header height now that it is two rows tall.
+
+       Pages whose header is position:fixed take it out of the flow, and their top
+       offsets were written for a single-row header, so the strip's own height has to
+       be given back to the page. Pages with a sticky header need no compensation —
+       there the strip already occupies flow space. */
+    var fixedHeader = getComputedStyle(header).position === 'fixed';
+    var basePadding = parseFloat(getComputedStyle(document.body).paddingTop) || 0;
     var syncHeight = function () {
       document.documentElement.style.setProperty('--nav-h', header.offsetHeight + 'px');
+      if (fixedHeader) {
+        document.body.style.paddingTop = (basePadding + strip.offsetHeight) + 'px';
+      }
     };
     syncHeight();
     window.addEventListener('resize', syncHeight);

@@ -1,8 +1,9 @@
 /* ICE WIND — primary navigation component.
-   Adds the desktop "Services" dropdown and the mobile full-screen menu to any page
-   that has the standard header (.nav with a .btn link to /start-a-project/).
+   Adds the "Get in touch" contact strip to any page with a header, and — on pages
+   carrying the full primary nav (.nav with a .btn link to /start-a-project/) — the
+   desktop "Services" dropdown, the "Contact" link and the mobile full-screen menu.
    To use on a new page, add one line before </body>:
-     <script src="/assets/nav.js" defer></script>
+     <script src="/assets/nav.js?v=20260908b" defer></script>
    Styles live in /assets/nav.css and are loaded by this file. */
 (function () {
   var SERVICES = [
@@ -35,14 +36,12 @@
   };
 
   var bar = document.querySelector('header .nav');
-  if (!bar || document.querySelector('.nav-toggle')) return;
-  var cta = bar.querySelector('a.btn[href="/start-a-project/"]');
-  if (!cta) return;
+  if (!bar) return;
 
-  if (!document.querySelector('link[href="/assets/nav.css?v=20260908"]')) {
+  if (!document.querySelector('link[href="/assets/nav.css?v=20260908b"]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/assets/nav.css?v=20260908';
+    css.href = '/assets/nav.css?v=20260908b';
     document.head.appendChild(css);
   }
 
@@ -57,32 +56,19 @@
     return a;
   }
 
-  /* ---------- desktop: turn "Services" into a dropdown ---------- */
-  var svcLink = bar.querySelector('nav.links a[href$="#services"]');
-  if (svcLink) {
-    var wrap = document.createElement('div');
-    wrap.className = 'has-drop';
-    svcLink.parentNode.insertBefore(wrap, svcLink);
-    wrap.appendChild(svcLink);
-    var drop = document.createElement('div');
-    drop.className = 'drop';
-    SERVICES.forEach(function (s) { drop.appendChild(link(s[0], s[1])); });
-    wrap.appendChild(drop);
-  }
-
-  /* ---------- desktop: add "Contact" to the primary links ---------- */
-  var linkList = bar.querySelector('nav.links');
-  if (linkList && !linkList.querySelector('a[href="/contact/"]')) {
-    linkList.appendChild(link('/contact/', 'Contact'));
-  }
-
-  /* ---------- contact strip under the nav ---------- */
+  /* ---------- contact strip under the nav ----------
+     Runs on every page that has a header, including the pages with the
+     stripped-down header (start a project, audit, trust, legal, demo). */
   var header = bar.closest('header');
   if (header && !header.querySelector('.nav-contact')) {
     var strip = document.createElement('div');
     strip.className = 'nav-contact';
     var inner = document.createElement('div');
     inner.className = 'wrap nav-contact-inner';
+
+    var label = document.createElement('span');
+    label.className = 'nav-contact-label';
+    label.textContent = 'Get in touch:';
 
     var mail = document.createElement('a');
     mail.href = 'mailto:' + CONTACT.email;
@@ -101,6 +87,7 @@
     wa.textContent = 'WhatsApp ' + CONTACT.phoneDisplay;
     wa.setAttribute('aria-label', 'Message ICE WIND on WhatsApp, ' + CONTACT.phoneDisplay);
 
+    inner.appendChild(label);
     inner.appendChild(mail);
     inner.appendChild(sep);
     inner.appendChild(wa);
@@ -115,6 +102,29 @@
     syncHeight();
     window.addEventListener('resize', syncHeight);
     window.addEventListener('load', syncHeight);
+  }
+
+  /* ---------- everything below needs the full primary nav ---------- */
+  var cta = bar.querySelector('a.btn[href="/start-a-project/"]');
+  if (!cta || document.querySelector('.nav-toggle')) return;
+
+  /* ---------- desktop: turn "Services" into a dropdown ---------- */
+  var svcLink = bar.querySelector('nav.links a[href$="#services"]');
+  if (svcLink) {
+    var wrap = document.createElement('div');
+    wrap.className = 'has-drop';
+    svcLink.parentNode.insertBefore(wrap, svcLink);
+    wrap.appendChild(svcLink);
+    var drop = document.createElement('div');
+    drop.className = 'drop';
+    SERVICES.forEach(function (s) { drop.appendChild(link(s[0], s[1])); });
+    wrap.appendChild(drop);
+  }
+
+  /* ---------- desktop: add "Contact" to the primary links ---------- */
+  var linkList = bar.querySelector('nav.links');
+  if (linkList && !linkList.querySelector('a[href="/contact/"]')) {
+    linkList.appendChild(link('/contact/', 'Contact'));
   }
 
   /* ---------- burger button ---------- */

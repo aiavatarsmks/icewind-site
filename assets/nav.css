@@ -7,3 +7,5 @@
 .nav-contact-sep{color:var(--line-strong,rgba(125,211,252,.36))}
 @media(max-width:600px){.nav-contact-inner{font-size:.78rem;gap:4px 10px;min-height:30px}}
 @media(max-width:380px){.nav-contact-sep{display:none}.nav-contact-inner{flex-direction:column;gap:2px}}
+.nav-contact-label{color:var(--muted,#8fa3bb);white-space:nowrap}
+@media(max-width:380px){.nav-contact-label{display:none}}

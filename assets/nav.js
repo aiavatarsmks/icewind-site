@@ -39,10 +39,10 @@
   var cta = bar.querySelector('a.btn[href="/start-a-project/"]');
   if (!cta) return;
 
-  if (!document.querySelector('link[href="/assets/nav.css"]')) {
+  if (!document.querySelector('link[href="/assets/nav.css?v=20260908"]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/assets/nav.css';
+    css.href = '/assets/nav.css?v=20260908';
     document.head.appendChild(css);
   }
 

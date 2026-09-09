@@ -3,7 +3,7 @@
    carrying the full primary nav (.nav with a .btn link to /start-a-project/) — the
    desktop "Services" dropdown, the "Contact" link and the mobile full-screen menu.
    To use on a new page, add one line before </body>:
-     <script src="/assets/nav.js?v=20260908c" defer></script>
+     <script src="/assets/nav.js?v=20260909" defer></script>
    Styles live in /assets/nav.css and are loaded by this file. */
 (function () {
   var SERVICES = [
@@ -31,17 +31,17 @@
      Change the number here and it updates on every page that loads this file. */
   var CONTACT = {
     email: 'hello@icewind.uk',
-    phoneDisplay: '+44 7345 058863',
-    phoneLink: 'https://wa.me/447345058863'
+    phoneDisplay: '+44 7782 222054',
+    phoneLink: 'https://wa.me/447782222054'
   };
 
   var bar = document.querySelector('header .nav');
   if (!bar) return;
 
-  if (!document.querySelector('link[href="/assets/nav.css?v=20260908c"]')) {
+  if (!document.querySelector('link[href="/assets/nav.css?v=20260909"]')) {
     var css = document.createElement('link');
     css.rel = 'stylesheet';
-    css.href = '/assets/nav.css?v=20260908c';
+    css.href = '/assets/nav.css?v=20260909';
     document.head.appendChild(css);
   }
 

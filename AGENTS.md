@@ -43,4 +43,4 @@ descriptions or anything trust-related.
 
 British English. Direct, concrete, no marketing inflation. Answer the client's question first,
 then explain. Prices and timelines only where they are real. Articles carry a named author
-(`Maksim Ilin, Technical Lead`) and `Article` + `FAQPage` JSON-LD.
+(`Maksim Ilin, AI Consultant`) and `Article` + `FAQPage` JSON-LD.

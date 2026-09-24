@@ -241,6 +241,42 @@ html[data-theme="light"] .clutch-fallback span::before{
 }
 html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#c3d8e7;font-size:.82rem}
 
+/* Google review badge — a quiet two-line trust signal in the footer.
+
+   No third-party widget, iframe or script: it is one link and a few rules, so
+   it cannot break when Google changes its embed, and it costs no extra request.
+   Colours come from the theme variables, so it follows dark and light without
+   a second block.
+
+   The rating is deliberately absent. The Google Business Profile does not yet
+   show a public star rating, and the project rule is that nothing goes on the
+   site that cannot be checked on a live profile. When the review is visible to
+   the public, add the rating inside .gb-top, after the text:
+     <b class="gb-rating">&#9733; 5.0</b>
+   and nothing else needs to change. Keep "review" singular until there is more
+   than one. */
+.google-badge{
+  display:inline-grid;gap:4px;margin-top:16px;
+  line-height:1.3;text-decoration:none;
+}
+.google-badge .gb-top{
+  display:flex;align-items:center;gap:7px;
+  color:inherit;font-weight:600;font-size:.9rem;letter-spacing:-.01em;
+}
+.google-badge .gb-rating{
+  display:inline-flex;align-items:center;gap:4px;
+  color:#fbbc04;font-weight:600;font-variant-numeric:tabular-nums;
+}
+.google-badge .gb-link{
+  color:var(--muted,#8fa3bb);font-size:.82rem;
+  transition:color .18s ease;
+}
+.google-badge:hover .gb-link,
+.google-badge:focus-visible .gb-link{color:var(--ice,#7dd3fc)}
+.google-badge:focus-visible{
+  outline:2px solid var(--ice,#7dd3fc);outline-offset:3px;border-radius:4px;
+}
+
 html[data-theme="light"] .iw-consent{
   color:var(--text);background:linear-gradient(160deg,#f9fcfe,#e4eff6);
   border-color:rgba(5,108,170,.26);box-shadow:0 18px 50px rgba(13,58,87,.20);

@@ -261,7 +261,10 @@ html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#
 }
 .google-badge .gb-top{
   display:flex;align-items:center;gap:7px;
-  color:inherit;font-weight:600;font-size:.9rem;letter-spacing:-.01em;
+  /* --frost is the strong foreground in both themes: near-white on dark,
+     near-navy on light. Inheriting the footer colour instead would leave this
+     line the same muted grey as the one below it and kill the hierarchy. */
+  color:var(--frost,#e0f2fe);font-weight:600;font-size:.9rem;letter-spacing:-.01em;
 }
 .google-badge .gb-rating{
   display:inline-flex;align-items:center;gap:4px;

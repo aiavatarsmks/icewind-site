@@ -241,43 +241,57 @@ html[data-theme="light"] .clutch-fallback span::before{
 }
 html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#c3d8e7;font-size:.82rem}
 
-/* Google review badge — a quiet two-line trust signal in the footer.
+/* Google review badge — sized to sit beside the Clutch badge, not under it.
 
-   No third-party widget, iframe or script: it is one link and a few rules, so
-   it cannot break when Google changes its embed, and it costs no extra request.
-   Colours come from the theme variables, so it follows dark and light without
-   a second block.
+   Same two-column rhythm as .clutch-fallback above: the wordmark fills the left
+   column across both rows, the score and the link stack in the right one. That
+   is what gives it the same visual weight; at text size it read as a caption
+   and disappeared next to Clutch.
 
-   The rating is deliberately absent. The Google Business Profile does not yet
-   show a public star rating, and the project rule is that nothing goes on the
-   site that cannot be checked on a live profile. When the review is visible to
-   the public, add the rating inside .gb-top, after the text:
-     <b class="gb-rating">&#9733; 5.0</b>
-   and nothing else needs to change. Keep "review" singular until there is more
-   than one. */
+   No third-party widget, iframe or script — one link and these rules, so it
+   cannot break when Google changes its embed and it costs no extra request.
+   --frost and --muted flip with the theme (near-white and grey on dark,
+   near-navy and slate on light), so one block covers both.
+
+   Keep "review" singular until the profile has more than one. */
 .google-badge{
-  display:inline-grid;gap:4px;margin-top:16px;
-  line-height:1.3;text-decoration:none;
+  display:inline-grid;grid-template-columns:auto auto;grid-template-rows:auto auto;
+  align-items:center;column-gap:15px;margin-top:18px;min-height:45px;
+  line-height:1;text-decoration:none;
 }
-.google-badge .gb-top{
-  display:flex;align-items:center;gap:7px;
-  /* --frost is the strong foreground in both themes: near-white on dark,
-     near-navy on light. Inheriting the footer colour instead would leave this
-     line the same muted grey as the one below it and kill the hierarchy. */
-  color:var(--frost,#e0f2fe);font-weight:600;font-size:.9rem;letter-spacing:-.01em;
+.google-badge .gb-mark{
+  grid-column:1;grid-row:1/3;align-self:end;
+  color:var(--frost,#e0f2fe);
+  font:700 1.9rem/.9 Inter,system-ui,sans-serif;letter-spacing:-.055em;
 }
-.google-badge .gb-rating{
-  display:inline-flex;align-items:center;gap:4px;
-  color:#fbbc04;font-weight:600;font-variant-numeric:tabular-nums;
+.google-badge .gb-mark::before{
+  content:"REVIEWED ON";display:block;margin-bottom:4px;
+  color:var(--frost,#e0f2fe);
+  font:600 .61rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;
 }
+.google-badge .gb-score{
+  grid-column:2;grid-row:1;align-self:end;
+  display:flex;align-items:center;gap:5px;
+  color:#fbbc04;font-weight:700;font-size:1.22rem;
+  font-variant-numeric:tabular-nums;letter-spacing:-.01em;
+}
+.google-badge .gb-star{font-size:1.16rem;line-height:1}
 .google-badge .gb-link{
-  color:var(--muted,#8fa3bb);font-size:.82rem;
+  grid-column:2;grid-row:2;align-self:start;margin-top:7px;
+  color:var(--muted,#8fa3bb);font-size:.78rem;letter-spacing:.01em;
   transition:color .18s ease;
 }
 .google-badge:hover .gb-link,
 .google-badge:focus-visible .gb-link{color:var(--ice,#7dd3fc)}
 .google-badge:focus-visible{
-  outline:2px solid var(--ice,#7dd3fc);outline-offset:3px;border-radius:4px;
+  outline:2px solid var(--ice,#7dd3fc);outline-offset:4px;border-radius:4px;
+}
+/* Below ~380px the two columns stop fitting side by side. */
+@media(max-width:380px){
+  .google-badge{grid-template-columns:auto;grid-template-rows:auto auto auto;row-gap:6px}
+  .google-badge .gb-mark{grid-column:1;grid-row:1;align-self:start}
+  .google-badge .gb-score{grid-column:1;grid-row:2}
+  .google-badge .gb-link{grid-column:1;grid-row:3;margin-top:0}
 }
 
 html[data-theme="light"] .iw-consent{

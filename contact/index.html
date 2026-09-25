@@ -68,6 +68,15 @@
     button.btn{border:0;cursor:pointer;font-family:inherit}
     button.btn[disabled]{cursor:wait;opacity:.72}
     @media(max-width:900px){.routes,.channels,.form-grid{grid-template-columns:1fr}.form-card{padding:30px 20px}}
+
+    /* service.css gives every section 96px top and bottom, so two neighbours
+       leave 192px of empty page between them. That reads as generous on the
+       long service pages; here the sections are short and it reads as holes.
+       Halved, and the hero's own bottom padding comes down to match. */
+    section{padding:54px 0}
+    .svc-hero-inner{padding-bottom:54px}
+    .sec-head{margin-bottom:38px}
+    @media(max-width:900px){section{padding:40px 0}.svc-hero-inner{padding-bottom:40px}.sec-head{margin-bottom:28px}}
   </style>
 <script type="application/ld+json">
 {
@@ -344,7 +353,7 @@
       <b>ICE WIND is a trading brand of ICEWIND DALE CONSULTING LTD, registered in England and Wales under company number 15925349.</b><br>
       ICO registration ZB838524 &middot; &pound;1m Public &amp; Products Liability Insurance &middot; London, England<br>
       347 Barking Road, London, England, E13 8EE<br>
-      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><span style="color:var(--muted)"> &middot; projects</span><br><a href="mailto:manager@icewinddaleconsulting.com" style="color:var(--ice)">manager@icewinddaleconsulting.com</a><span style="color:var(--muted)"> &middot; corporate &amp; media</span><br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
       <a href="https://wa.me/447782222054" style="color:var(--ice)">+44 7782 222054</a>
       <nav class="foot-links" aria-label="Legal and compliance links">
         <a href="/contact/">Contact</a>

@@ -11,7 +11,7 @@ window.IW_QUIZ_CONFIG = {
   proxyUrl: 'https://icewind-quiz-proxy.icewinddale.workers.dev',
 
   /* Where the finished enquiry is posted. Same destination as the plain form. */
-  formAction: 'https://formsubmit.co/manager@icewinddaleconsulting.com',
+  formAction: 'https://formsubmit.co/hello@icewind.uk',
   formNext: 'https://icewind.uk/demo/order-quiz/?sent=true',
 
   requestTimeoutMs: 20000

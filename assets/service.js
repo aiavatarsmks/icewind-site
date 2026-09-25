@@ -1,14 +1,9 @@
 /* ICE WIND — shared behaviour for service specialisation pages.
-   1) Preview-host link rewrite (matches the existing start-a-project page).
-   2) Snow canvas for the hero, disabled under prefers-reduced-motion. */
-(function () {
-  if (location.hostname === 'aiavatarsmks.github.io') {
-    document.querySelectorAll('a[href^="/"]').forEach(function (link) {
-      link.href = '/icewind-site-preview' + link.getAttribute('href');
-    });
-  }
-})();
+   Snow canvas for the hero, disabled under prefers-reduced-motion.
 
+   A link rewrite for the aiavatarsmks.github.io preview host used to sit here.
+   The site is served from Railway behind Cloudflare and nothing points at
+   GitHub Pages any more, so the condition could never be true. */
 (function () {
   var c = document.getElementById('wind');
   if (!c || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

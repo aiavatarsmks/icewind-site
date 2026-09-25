@@ -241,6 +241,14 @@ html[data-theme="light"] .clutch-fallback span::before{
 }
 html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#c3d8e7;font-size:.82rem}
 
+/* The two trust badges, side by side and in one place on every page.
+   They are authored inside the footer now; nothing relocates them at runtime. */
+.trust-badges{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 34px;margin-top:18px;
+}
+.trust-badges .clutch-badge,
+.trust-badges .google-badge{margin-top:0}
+
 /* Google review badge — sized to sit beside the Clutch badge, not under it.
 
    Same two-column rhythm as .clutch-fallback above: the wordmark fills the left

@@ -17,7 +17,7 @@
     "height": 256
   },
   "image": "https://icewind.uk/assets/og-cover.jpg",
-  "email": "manager@icewinddaleconsulting.com",
+  "email": "hello@icewind.uk",
   "telephone": "+44 7782 222054",
   "foundingDate": "2024-08-29",
   "address": {
@@ -43,7 +43,7 @@
     {
       "@type": "ContactPoint",
       "contactType": "sales",
-      "email": "manager@icewinddaleconsulting.com",
+      "email": "hello@icewind.uk",
       "telephone": "+44 7782 222054",
       "areaServed": "GB",
       "availableLanguage": [ "English" ]

@@ -302,6 +302,27 @@ html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#
   .google-badge .gb-link{grid-column:1;grid-row:3;margin-top:0}
 }
 
+/* Light theme turns the Clutch badge into a compact dark pill, so the Google
+   badge takes the same chrome here instead of staying a tall two-row block —
+   otherwise the pair stops reading as a pair and wraps onto two lines. */
+html[data-theme="light"] .google-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:45px;padding:12px 18px;
+  color:#e8f4fc;background:linear-gradient(145deg,#0b2d49,#071d31);
+  border:1px solid rgba(7,141,197,.42);border-radius:12px;
+  line-height:1;box-shadow:0 16px 36px rgba(13,58,87,.22);
+}
+html[data-theme="light"] .google-badge .gb-mark{
+  font:700 1rem/1 Inter,system-ui,sans-serif;letter-spacing:-.04em;color:#e8f4fc;
+}
+html[data-theme="light"] .google-badge .gb-mark::before{content:none}
+html[data-theme="light"] .google-badge .gb-score{font-size:.96rem;align-self:center}
+html[data-theme="light"] .google-badge .gb-star{font-size:.92rem}
+html[data-theme="light"] .google-badge .gb-link{
+  margin-top:0;align-self:center;color:#c3d8e7;font-size:.82rem;
+}
+html[data-theme="light"] .google-badge:hover .gb-link{color:#fff}
+
 html[data-theme="light"] .iw-consent{
   color:var(--text);background:linear-gradient(160deg,#f9fcfe,#e4eff6);
   border-color:rgba(5,108,170,.26);box-shadow:0 18px 50px rgba(13,58,87,.20);

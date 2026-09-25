@@ -244,7 +244,7 @@ html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#
 /* The two trust badges, side by side and in one place on every page.
    They are authored inside the footer now; nothing relocates them at runtime. */
 .trust-badges{
-  display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 34px;margin-top:18px;
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 34px;margin-top:18px;
 }
 .trust-badges .clutch-badge,
 .trust-badges .google-badge{margin-top:0}
@@ -322,6 +322,12 @@ html[data-theme="light"] .google-badge .gb-link{
   margin-top:0;align-self:center;color:#c3d8e7;font-size:.82rem;
 }
 html[data-theme="light"] .google-badge:hover .gb-link{color:#fff}
+
+/* Side by side the two light-theme pills need 591px and the footer column is
+   520, so they wrap. Left alone that reads as an accident; stacked with a
+   deliberate gap and matched heights it reads as a pair. Dark theme is the
+   taller two-column form and does fit in one row. */
+html[data-theme="light"] .trust-badges{align-items:flex-start;gap:12px}
 
 html[data-theme="light"] .iw-consent{
   color:var(--text);background:linear-gradient(160deg,#f9fcfe,#e4eff6);

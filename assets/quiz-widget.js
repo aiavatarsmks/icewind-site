@@ -620,12 +620,12 @@
         + (state.name ? ' \u2014 ' + String(state.name).trim().replace(/\s+/g, ' ').slice(0, 60) : ''),
       '_template': 'table',
       '_captcha': 'false',
+      '_honey': honey.value,
       '_next': CFG.formNext,
       'Name': state.name || 'Not given',
       'Contact': state.contact || 'Not given',
       'Project type': state.service || 'Not specified',
       'Project description': lines,
-      'Conversation transcript': chat,
       'Source': 'Guided quiz widget (demo)'
     };
 
@@ -640,7 +640,49 @@
     document.body.appendChild(f);
     status.className = 'iw-status show';
     status.textContent = 'Sending your enquiry…';
-    f.submit();
+
+    /* Keep the existing email submission; queue a separate CRM copy first. */
+    if (!CFG.crmAction || !window.fetch) { f.submit(); return; }
+    var contact = String(fields.Contact).trim();
+    var summary = [
+      'Source: Website',
+      'Form: Guided Quiz',
+      'Contact details: ' + contact,
+      'Project type: ' + fields['Project type'],
+      'Project description: ' + lines,
+      'Conversation transcript: ' + chat
+    ].join('\n').slice(0, 16000);
+    var pageLine = '\nPage: ' + location.origin + location.pathname;
+    var lead = new URLSearchParams({
+      '_honey': honey.value,
+      'Last Name': String(fields.Name).slice(0, 80),
+      'Description': summary + pageLine
+    });
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact)) lead.set('Email', contact.slice(0, 100));
+    else if (/^[+\d][\d\s().-]{6,}$/.test(contact) && contact.replace(/\D/g, '').length >= 7) {
+      lead.set('Phone', contact.slice(0, 30));
+    }
+    while (lead.toString().length > 38000 && summary.length > 500) {
+      summary = summary.slice(0, Math.floor(summary.length / 2));
+      lead.set('Description', summary + pageLine);
+    }
+    var completed = false;
+    var go = function () {
+      if (completed) return;
+      completed = true;
+      f.submit();
+    };
+    try {
+      fetch(CFG.crmAction, {
+        method: 'POST', mode: 'cors', credentials: 'omit', keepalive: true,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: lead.toString()
+      }).then(function (response) {
+        if (!response.ok) console.error('[iw-crm] Quiz lead delivery was not accepted:', response.status);
+        go();
+      }, go);
+    } catch (e) { go(); }
+    setTimeout(go, 2500);
   }
 
   /* ------------------------------------------------------------------ *

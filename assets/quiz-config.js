@@ -13,6 +13,7 @@ window.IW_QUIZ_CONFIG = {
   /* Where the finished enquiry is posted. Same destination as the plain form. */
   formAction: 'https://formsubmit.co/hello@icewind.uk',
   formNext: 'https://icewind.uk/demo/order-quiz/?sent=true',
+  crmAction: 'https://icewind-quiz-proxy.icewinddale.workers.dev/crm-lead',
 
   requestTimeoutMs: 20000
 };

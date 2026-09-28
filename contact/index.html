@@ -431,6 +431,12 @@
         first.focus();
         return;
       }
+      var subjectField = form.querySelector('[name="_subject"]');
+      if (subjectField) {
+        subjectField.dataset.base = subjectField.dataset.base || subjectField.value;
+        var who = name.value.trim().replace(/\s+/g, ' ').slice(0, 60);
+        subjectField.value = subjectField.dataset.base + (who ? ' \u2014 ' + who : '');
+      }
       submit.disabled = true;
       submit.textContent = 'Sending…';
       form.setAttribute('aria-busy', 'true');

@@ -160,7 +160,7 @@
         if(!description.value.trim()){setError('description','Please describe your project.');firstInvalid??=description}
         if(reference.value&& !reference.validity.valid){setError('reference','Please enter a valid URL, including https://.');firstInvalid??=reference}
         if(firstInvalid){event.preventDefault();showStatus('Please review the highlighted fields and try again.',true);firstInvalid.focus();return}
-        submit.disabled=true;submit.textContent='Sending request…';form.setAttribute('aria-busy','true');
+        var subjectField=form.querySelector('[name="_subject"]');if(subjectField){subjectField.dataset.base=subjectField.dataset.base||subjectField.value;var who=name.value.trim().replace(/\s+/g,' ').slice(0,60);subjectField.value=subjectField.dataset.base+(who?' \u2014 '+who:'');}submit.disabled=true;submit.textContent='Sending request…';form.setAttribute('aria-busy','true');
       });
       if('IntersectionObserver'in window){let passedHero=false,formVisible=false;const updateSticky=()=>{if(!sticky.hidden)sticky.classList.toggle('show',passedHero&&!formVisible)};new IntersectionObserver(entries=>{passedHero=!entries[0].isIntersecting;updateSticky()},{threshold:0}).observe(hero);new IntersectionObserver(entries=>{formVisible=entries[0].isIntersecting;updateSticky()},{threshold:.22}).observe(formCard)}
     })();

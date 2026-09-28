@@ -614,7 +614,10 @@
     f.style.display = 'none';
 
     var fields = {
-      '_subject': 'New ICE WIND enquiry (guided quiz)',
+      /* the name keeps the subject unique, so Gmail lists each enquiry
+         separately instead of stacking them into one conversation */
+      '_subject': 'New ICE WIND enquiry (guided quiz)'
+        + (state.name ? ' \u2014 ' + String(state.name).trim().replace(/\s+/g, ' ').slice(0, 60) : ''),
       '_template': 'table',
       '_captcha': 'false',
       '_next': CFG.formNext,

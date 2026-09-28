@@ -250,6 +250,13 @@ a:focus-visible,.btn:focus-visible{outline:3px solid rgba(125,211,252,.55);outli
 .work-card .link-ghost{color:var(--frost);font-size:.92rem;display:inline-flex;align-items:center;gap:8px;
   border-bottom:1px solid rgba(125,211,252,.3);padding-bottom:2px;transition:color .2s,border-color .2s}
 .work-card .link-ghost:hover{color:var(--ice);border-bottom-color:var(--ice)}
+.review-card{max-width:900px;margin:0;padding:32px 36px;border:1px solid rgba(125,211,252,.3);border-radius:20px;background:linear-gradient(145deg,rgba(56,189,248,.1),rgba(10,24,48,.8))}
+.review-card .review-rating{color:var(--ice);font-size:.88rem;font-weight:700;letter-spacing:.06em}
+.review-card blockquote{margin:16px 0;color:var(--frost);font:600 clamp(1.3rem,2.4vw,1.85rem)/1.4 'Space Grotesk',sans-serif}
+.review-card figcaption{color:var(--muted);font-size:.92rem}
+.review-card figcaption strong{color:var(--text)}
+.review-card a{color:var(--ice);text-underline-offset:3px}
+@media(max-width:600px){.review-card{padding:25px 22px}}
 .frame{display:block;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#07101f;
   box-shadow:0 30px 80px rgba(2,8,18,.6);transition:border-color .25s,transform .25s}
 a.frame:hover{border-color:rgba(125,211,252,.42);transform:translateY(-3px)}
@@ -344,7 +351,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
   .foot{gap:16px}
 }
 </style>
-  <link rel="stylesheet" href="/assets/theme.css?v=20260925c">
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
   <script src="/assets/theme-init.js?v=20260826"></script>
   <script src="/assets/theme.js?v=20260826" defer></script>
 </head>
@@ -717,6 +724,21 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
       <div style="margin-top:32px">
         <a class="btn ghost" href="/work/">View all case studies</a>
       </div>
+    </div>
+  </section>
+
+  <!-- CLIENT REVIEW -->
+  <section id="client-review" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Client feedback</span>
+        <h2>From a recent client.</h2>
+      </div>
+      <figure class="review-card">
+        <div class="review-rating">★★★★★ &nbsp; 5.0 on Clutch</div>
+        <blockquote>“They moved quickly from ideas to implementation and incorporated our feedback just as efficiently.”</blockquote>
+        <figcaption><strong>Eugene Khashin</strong>, CEO, Geek Technologies Fz-LLC · <a href="https://clutch.co/go-to-review/dc8386d8-335c-4f48-851c-7d0622683ff3/485830" target="_blank" rel="noopener noreferrer">Read the full review on Clutch</a></figcaption>
+      </figure>
     </div>
   </section>
 

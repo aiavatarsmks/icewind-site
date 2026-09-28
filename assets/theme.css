@@ -218,7 +218,7 @@ html[data-theme="dark"] .clutch-fallback span::before{
   content:"★★★★★";color:#ff3d2e;font-size:1.03rem;line-height:1;letter-spacing:.045em;
 }
 html[data-theme="dark"] .clutch-fallback span::after{
-  content:"1 REVIEW";margin-top:6px;color:var(--frost,#e0f2fe);font-size:.76rem;line-height:1;letter-spacing:.06em;
+  content:"2 REVIEWS";margin-top:6px;color:var(--frost,#e0f2fe);font-size:.76rem;line-height:1;letter-spacing:.06em;
 }
 
 html[data-theme="light"] .clutch-badge{
@@ -239,7 +239,7 @@ html[data-theme="light"] .clutch-fallback span{font-size:0}
 html[data-theme="light"] .clutch-fallback span::before{
   content:"★★★★★";color:#ff3d2e;font-size:.96rem;letter-spacing:.04em;margin-right:9px;
 }
-html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#c3d8e7;font-size:.82rem}
+html[data-theme="light"] .clutch-fallback span::after{content:"2 reviews";color:#c3d8e7;font-size:.82rem}
 
 /* The two trust badges, side by side and in one place on every page.
    They are authored inside the footer now; nothing relocates them at runtime. */

@@ -593,6 +593,8 @@
     });
   }
 
+  var quizCrmAttempted = false;
+
   function submit() {
     var btn = document.getElementById('iw-submit');
     var status = document.getElementById('iw-status');
@@ -641,8 +643,34 @@
     status.className = 'iw-status show';
     status.textContent = 'Sending your enquiry…';
 
-    /* Keep the existing email submission; queue a separate CRM copy first. */
-    if (!CFG.crmAction || !window.fetch) { f.submit(); return; }
+    if (!window.fetch) { f.submit(); return; }
+
+    function sendEmail() {
+      fetch(CFG.formAction, {
+        method: 'POST', mode: 'cors', credentials: 'omit',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(fields)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('Email service returned ' + response.status);
+        return response.json();
+      }).then(function (result) {
+        if (!result || (result.success !== true && result.success !== 'true')) {
+          throw new Error('Email service did not accept the enquiry');
+        }
+        location.assign(CFG.formNext);
+      }).catch(function (error) {
+        console.error('[iw-email] Quiz enquiry could not be confirmed:', error);
+        f.remove();
+        btn.disabled = false;
+        btn.textContent = 'Send enquiry';
+        status.className = 'iw-status show bad';
+        status.textContent = 'We could not confirm email delivery. Please try again or write to hello@icewind.uk.';
+      });
+    }
+
+    /* Queue the CRM copy once, then submit email even if CRM is unavailable. */
+    if (!CFG.crmAction || quizCrmAttempted) { sendEmail(); return; }
+    quizCrmAttempted = true;
     var contact = String(fields.Contact).trim();
     var summary = [
       'Source: Website',
@@ -670,7 +698,7 @@
     var go = function () {
       if (completed) return;
       completed = true;
-      f.submit();
+      sendEmail();
     };
     try {
       fetch(CFG.crmAction, {

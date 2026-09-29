@@ -1,27 +1,24 @@
-/* ICE WIND — mirror enquiry forms into Zoho CRM via the site Worker.
-
-   The site's own submission is unchanged: the browser still posts the form to
-   formsubmit.co and still lands on ?sent=true. This file only adds a second,
-   silent POST to the Worker, which stores and sends the lead through the CRM
-   API. This avoids Zoho's Web-to-Lead spam approval queue.
+/* ICE WIND — submit enquiries to email and mirror them into Zoho CRM.
 
    How it hangs together:
      - the page's inline script validates and, on failure, calls preventDefault;
        this file runs after it and skips whenever defaultPrevented is set;
      - the Worker POST is accepted after durable storage; a failed CRM request
        must never cost the visitor their email enquiry, so we wait at most
-       ZOHO_TIMEOUT and then submit the real form regardless.
+       ZOHO_TIMEOUT before sending the email through FormSubmit's AJAX API;
+     - only a successful email response sends the visitor to ?sent=true.
 
    Everything the visitor typed is folded into Description, because contact
    details on this site are free text and may be a Telegram handle rather
    than an email.
 
    To use on a page, add one line before </body>:
-     <script src="/assets/zoho-lead.js?v=20260928" defer></script> */
+     <script src="/assets/zoho-lead.js?v=20260929b" defer></script> */
 (function () {
   'use strict';
 
   var ENDPOINT = 'https://icewind-quiz-proxy.icewinddale.workers.dev/crm-lead';
+  var EMAIL_ENDPOINT = 'https://formsubmit.co/ajax/hello@icewind.uk';
   var ZOHO_TIMEOUT = 2500;      /* ms we are willing to make the visitor wait */
   var FALLBACK_NAME = 'Website enquiry';
   var COMPANY = 'Website visitor';
@@ -74,6 +71,8 @@
 
   var form = document.getElementById(config.form);
   if (!form) return;
+  var submitButton = form.querySelector('[type="submit"]');
+  var originalButtonLabel = submitButton ? submitButton.textContent : 'Send enquiry';
 
   function value(name) {
     var data = new FormData(form);
@@ -128,20 +127,51 @@
   }
 
   var sending = false;
+  var crmAttempted = false;
+
+  function sendEmail() {
+    var fields = {};
+    new FormData(form).forEach(function (v, k) { fields[k] = v; });
+    fetch(EMAIL_ENDPOINT, {
+      method: 'POST', mode: 'cors', credentials: 'omit',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(fields)
+    }).then(function (response) {
+      if (!response.ok) throw new Error('Email service returned ' + response.status);
+      return response.json();
+    }).then(function (result) {
+      if (!result || (result.success !== true && result.success !== 'true')) {
+        throw new Error('Email service did not accept the enquiry');
+      }
+      location.assign(value('_next') || location.pathname + '?sent=true');
+    }).catch(function (error) {
+      console.error('[iw-email] Enquiry could not be confirmed:', error);
+      sending = false;
+      if (submitButton) { submitButton.disabled = false; submitButton.textContent = originalButtonLabel; }
+      form.removeAttribute('aria-busy');
+      var status = document.getElementById('form-status');
+      if (status) {
+        status.textContent = 'We could not confirm email delivery. Please try again or write to hello@icewind.uk.';
+        status.classList.add('show', 'error-state');
+      }
+    });
+  }
 
   form.addEventListener('submit', function (event) {
     if (event.defaultPrevented) return;   /* the page's own validation failed */
-    if (sending) return;                  /* our own re-submit, let it through */
+    if (sending) { event.preventDefault(); return; }
     if (!window.fetch || !window.FormData) return;
 
     event.preventDefault();
     sending = true;
+    if (crmAttempted) { sendEmail(); return; }
+    crmAttempted = true;
 
     var done = false;
     var go = function () {
       if (done) return;
       done = true;
-      form.submit();
+      sendEmail();
     };
 
     try {

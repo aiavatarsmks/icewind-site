@@ -132,11 +132,20 @@
   function sendEmail() {
     var fields = {};
     new FormData(form).forEach(function (v, k) { fields[k] = v; });
-    fetch(EMAIL_ENDPOINT, {
+    var controller = window.AbortController ? new AbortController() : null;
+    var timer;
+    var request = fetch(EMAIL_ENDPOINT, {
       method: 'POST', mode: 'cors', credentials: 'omit',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(fields)
-    }).then(function (response) {
+      body: JSON.stringify(fields),
+      ...(controller ? { signal: controller.signal } : {})
+    });
+    Promise.race([request, new Promise(function (_resolve, reject) {
+      timer = setTimeout(function () {
+        if (controller) controller.abort();
+        reject(new Error('Email service timed out'));
+      }, 15000);
+    })]).then(function (response) {
       if (!response.ok) throw new Error('Email service returned ' + response.status);
       return response.json();
     }).then(function (result) {
@@ -154,7 +163,7 @@
         status.textContent = 'We could not confirm email delivery. Please try again or write to hello@icewind.uk.';
         status.classList.add('show', 'error-state');
       }
-    });
+    }).finally(function () { clearTimeout(timer); });
   }
 
   form.addEventListener('submit', function (event) {

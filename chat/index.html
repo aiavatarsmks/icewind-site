@@ -140,12 +140,12 @@
     h1{margin:0 0 20px;color:var(--frost);font:700 clamp(1.75rem,4vw,2.5rem)/1.2 'Space Grotesk',sans-serif}
     .chat-mount{flex:1;min-height:calc(100svh - 190px);display:grid;place-items:center;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(148,199,255,.065),rgba(148,199,255,.015));overflow:auto}
     #twilio-webchat-widget-root{width:100%;height:100%}
-    #twilio-webchat-widget-root .twilio-webchat-panel{position:relative!important;inset:auto!important;width:100%!important;height:100%!important;min-height:calc(100svh - 190px)!important;max-height:none!important}
-    #twilio-webchat-widget-root .twilio-webchat-entry-point{display:none!important}
-    #twilio-webchat-widget-root .twilio-webchat-header-panel-close-icon{display:none!important}
+    #twilio-webchat-widget-root div:has(> [data-testid="root-container"]){position:relative!important;inset:auto!important;width:100%!important;height:100%!important;min-height:calc(100svh - 190px)!important;max-height:none!important}
+    #twilio-webchat-widget-root [data-testid="root-container"],#twilio-webchat-widget-root [data-testid="root-container"]>div{width:100%!important;height:100%!important;max-height:none!important}
+    #twilio-webchat-widget-root [data-testid="entry-point-button"],#twilio-webchat-widget-root [aria-label="Minimize chat"]{display:none!important}
     .site-footer{padding:15px 0 20px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
     .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    @media(max-width:600px){.wrap{width:calc(100% - 28px)}.header-inner{min-height:62px;gap:12px}.brand{font-size:.94rem;letter-spacing:.13em}.privacy-link{font-size:.82rem}main{padding-block:20px 16px}h1{margin-bottom:16px}.chat-mount{min-height:calc(100svh - 168px);border-radius:14px}#twilio-webchat-widget-root .twilio-webchat-panel{min-height:calc(100svh - 168px)!important}.site-footer{padding-bottom:max(16px,env(safe-area-inset-bottom))}}
+    @media(max-width:600px){.wrap{width:calc(100% - 28px)}.header-inner{min-height:62px;gap:12px}.brand{font-size:.94rem;letter-spacing:.13em}.privacy-link{font-size:.82rem}main{padding-block:20px 16px}h1{margin-bottom:16px}.chat-mount{min-height:calc(100svh - 168px);border-radius:14px}#twilio-webchat-widget-root div:has(> [data-testid="root-container"]){min-height:calc(100svh - 168px)!important}.site-footer{padding-bottom:max(16px,env(safe-area-inset-bottom))}}
   </style>
 
   <!-- TWILIO FLEX WEBCHAT 3.x: HEAD EMBED START -->

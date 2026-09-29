@@ -1,0 +1,24 @@
+:{$PORT:8080} {
+	@www host www.icewind.uk
+	redir @www https://icewind.uk{uri} permanent
+
+	root * /srv
+	encode zstd gzip
+	file_server {
+		hide AGENTS.md README.md CNAME Caddyfile Dockerfile railway.json .dockerignore
+	}
+
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	@staticAssets path *.css *.js *.svg *.png *.jpg *.jpeg *.webp *.avif *.gif *.ico *.woff *.woff2
+	header @staticAssets Cache-Control "public, max-age=604800"
+
+	@notStatic {
+		not path *.css *.js *.svg *.png *.jpg *.jpeg *.webp *.avif *.gif *.ico *.woff *.woff2
+	}
+	header @notStatic Cache-Control "public, max-age=0, must-revalidate"
+}

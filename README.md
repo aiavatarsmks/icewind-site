@@ -1,43 +1,81 @@
 # ICE WIND — website
 
 Public brand **ICE WIND**. Legal entity **ICEWIND DALE CONSULTING LTD**, England & Wales, company no. 15925349.
-Live site: <https://www.icewinddaleconsulting.com/>
+Live site: <https://icewind.uk/>
 
 Static HTML site, no build step. Every page is a hand-written `index.html`.
 
 ## How it is deployed
 
-GitHub Pages serves `main` from the repository root. A push to `main` triggers the
-"pages build and deployment" action and is live in roughly one minute. `CNAME` holds the
-custom domain; HTTPS is enforced in repository settings. There is **no** staging environment —
-commits to `main` are production.
+Railway serves the static files through Caddy using `Dockerfile`, `Caddyfile` and
+`railway.json`. Railway builds from the CLI, not from a GitHub connection, so a commit or push
+does not deploy production. Production changes require an explicit, approved deployment and a
+post-deploy health check. The live domain is `icewind.uk`; path-preserving redirects from the
+legacy domains are a separate Netlify project maintained in `../legacy-domain-redirect/`.
 
-Because Pages cannot issue server-side redirects, the retired `/project/` URL is an instant
-`meta refresh` stub with `noindex,follow` and a canonical to `/start-a-project/`. Do not
-"fix" it into a normal page.
+Once a change is committed and approved, `scripts/deploy.sh` performs the whole sequence:
+it refuses to run on a dirty tree, runs both validators, pushes the branch, calls `railway up`,
+waits for `SUCCESS`, checks that `/`, `/sitemap.xml` and `/robots.txt` return 200, and notifies
+IndexNow about the pages that changed since the previous deploy. If `HEAD` is already the deployed
+commit it runs the health checks and stops rather than rebuilding the same thing. Pass `--all` to
+resubmit every canonical URL, `--no-push` to deploy without pushing, `--force` to rebuild an
+unchanged commit.
+
+Retired in-site URLs remain instant `meta refresh` stubs
+carrying `noindex,follow` and a canonical to their replacement. There are three, and none of them
+belongs in `sitemap.xml` or in an internal link:
+
+| Stub | Redirects to |
+|---|---|
+| `/project/` | `/start-a-project/` |
+| `/book-online/` | `/start-a-project/` |
+| `/websites-for-small-shops/` | `/small-business-web-design/` |
+
+Do not "fix" any of them into a normal page.
 
 ## Layout
 
-```
-/                         homepage (index.html) — full inline CSS + falling-snow canvas
-/start-a-project/         main commercial page: enquiry form (formsubmit.co), trust strip
-/web-design/              ┐
-/web-development/         │ five service landing pages, one intent each,
-/web-app-development/     │ ~900-1200 words, FAQ block, Service + BreadcrumbList
-/game-development/        │ + FAQPage JSON-LD
-/ai-automation/           ┘
-/blog/<slug>/             SEO/GEO guides (Article + FAQPage JSON-LD, Person author)
-/trust/                   company registration, ICO, insurance, Clutch
-/privacy/ /cookies/ /terms/   legal pages
-/project/                 retired URL, redirect stub only
-/assets/                  service.css, service.js, analytics.js, clutch-fallback.js,
-                          og-cover.jpg (1200x630 social card), ice-wind-logo.png (256x256)
-/schema/organization.json canonical copy of the Organization entity
-robots.txt  sitemap.xml  CNAME  favicon.svg  logo.svg
-```
+32 URLs in `sitemap.xml`. Every page loads `assets/theme.css` and `assets/theme-init.js` (the
+persistent light/dark theme) plus `assets/nav.css` and `assets/nav.js`.
 
-Homepage and `/start-a-project/` carry their CSS inline. Service pages and blog posts share
-`/assets/service.css` and `/assets/service.js`.
+```
+/                             homepage — inline CSS + falling-snow hero canvas
+/start-a-project/             main commercial page: enquiry form (formsubmit.co), trust strip
+                              inline CSS
+
+  fourteen service landing pages — one intent each, ~900-1200 words, FAQ block,
+  Service + BreadcrumbList + FAQPage JSON-LD, shared /assets/service.css + service.js
+
+/web-design/                  /web-development/         /web-app-development/
+/mobile-app-development/      /game-development/        /ai-automation/
+/ai-consulting/               /ai-search-optimisation/  /website-redesign/
+/seo/                         /local-seo/               /small-business-web-design/
+/websites-for-barbershops/    /websites-for-beauty-salons/
+
+/work/                        case index — CollectionPage + ItemList
+/work/barsion/                ┐ case studies — CreativeWork + BreadcrumbList JSON-LD,
+/work/gamefoundry/            │ shared /assets/case.css on top of service.css,
+/work/lamar-academy/          │ "Next case" ring component at the foot of each
+/work/canacore/               ┘
+/blog/                        index
+/blog/<slug>/                 four SEO/GEO guides — Article + FAQPage, Person author
+/request-an-audit/            audit funnel entry, inline CSS
+/trust/                       company registration, ICO, insurance, Clutch — inline CSS
+/privacy/ /cookies/ /terms/   legal pages
+/demo/order-quiz/             AI enquiry-quiz demo, noindex,nofollow — calls the Cloudflare
+                              Worker in ../proxy/ (quiz-widget.css/js, quiz-config.js)
+/project/ /book-online/ /websites-for-small-shops/    redirect stubs, see above
+
+/assets/                      service.css, service.js, nav.css, nav.js, theme.css, theme.js,
+                              theme-init.js, case.css, quiz-widget.css, quiz-widget.js,
+                              quiz-config.js, analytics.js, clutch-fallback.js,
+                              og-cover.jpg (1200x630 social card), ice-wind-logo.png (256x256)
+/schema/organization.json     canonical copy of the Organization entity
+/scripts/                     inject-organization-schema.mjs, validate-structured-data.mjs,
+                              validate-domain-migration.mjs, submit-indexnow.mjs, deploy.sh
+robots.txt  sitemap.xml  llms.txt  favicon.svg  logo.svg  404.html
+<indexnow key>.txt            IndexNow key, served from the root; public by protocol design
+```
 
 ## Conventions that must not drift
 
@@ -64,7 +102,8 @@ reviews that do not exist, or hidden text written for crawlers.
 2. Update `sitemap.xml` `lastmod` in the same commit as the page.
 3. Validate JSON-LD (Rich Results Test / validator.schema.org).
 4. Check mobile layout, keyboard focus and the cookie banner.
-5. Submit the URL in Google Search Console and Bing Webmaster Tools.
+5. Deploy with `scripts/deploy.sh`, which notifies IndexNow for you. Request indexing in
+   Google Search Console by hand — Google has no IndexNow equivalent.
 
 ## Where the documentation lives
 

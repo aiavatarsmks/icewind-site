@@ -103,6 +103,7 @@ figcaption{margin-top:14px;font-size:.88rem;color:var(--muted);max-width:62ch}
 @media(max-width:860px){.fig-3{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
 
 /* screenshot aspect-ratio variants — the default frame is 16:9 */
+.frame.shot-2-1 img{aspect-ratio:2/1}
 .frame.shot-16-10 img{aspect-ratio:8/5}
 .frame.shot-36-25 img{aspect-ratio:36/25}
 .frame.shot-wide img{aspect-ratio:12/5}

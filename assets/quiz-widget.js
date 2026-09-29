@@ -175,14 +175,14 @@
     {
       key: 'contact',
       label: 'Contact',
-      ask: 'Last one. How should the team reach you — email, phone, WhatsApp or Telegram?',
+      ask: 'Last one. How should the team reach you — email, phone or Telegram?',
       options: [],
       placeholder: 'name@company.com, +44…, @handle',
       validate: function (v) {
         if (/[^\s@]+@[^\s@]+\.[^\s@]{2,}/.test(v)) return null;
         if (/\+?[\d][\d\s().-]{7,}/.test(v)) return null;
         if (/@[a-z0-9_]{3,}/i.test(v)) return null;
-        if (/(t\.me|wa\.me|instagram|telegram|whatsapp)/i.test(v)) return null;
+        if (/(t\.me|instagram|telegram)/i.test(v)) return null;
         return 'I need something the team can actually reply to — an email address, a phone number or a messenger handle.';
       }
     }
@@ -614,15 +614,18 @@
     f.style.display = 'none';
 
     var fields = {
-      '_subject': 'New ICE WIND enquiry (guided quiz)',
+      /* the name keeps the subject unique, so Gmail lists each enquiry
+         separately instead of stacking them into one conversation */
+      '_subject': 'New ICE WIND enquiry (guided quiz)'
+        + (state.name ? ' \u2014 ' + String(state.name).trim().replace(/\s+/g, ' ').slice(0, 60) : ''),
       '_template': 'table',
       '_captcha': 'false',
+      '_honey': honey.value,
       '_next': CFG.formNext,
       'Name': state.name || 'Not given',
       'Contact': state.contact || 'Not given',
       'Project type': state.service || 'Not specified',
       'Project description': lines,
-      'Conversation transcript': chat,
       'Source': 'Guided quiz widget (demo)'
     };
 
@@ -637,7 +640,49 @@
     document.body.appendChild(f);
     status.className = 'iw-status show';
     status.textContent = 'Sending your enquiry…';
-    f.submit();
+
+    /* Keep the existing email submission; queue a separate CRM copy first. */
+    if (!CFG.crmAction || !window.fetch) { f.submit(); return; }
+    var contact = String(fields.Contact).trim();
+    var summary = [
+      'Source: Website',
+      'Form: Guided Quiz',
+      'Contact details: ' + contact,
+      'Project type: ' + fields['Project type'],
+      'Project description: ' + lines,
+      'Conversation transcript: ' + chat
+    ].join('\n').slice(0, 16000);
+    var pageLine = '\nPage: ' + location.origin + location.pathname;
+    var lead = new URLSearchParams({
+      '_honey': honey.value,
+      'Last Name': String(fields.Name).slice(0, 80),
+      'Description': summary + pageLine
+    });
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(contact)) lead.set('Email', contact.slice(0, 100));
+    else if (/^[+\d][\d\s().-]{6,}$/.test(contact) && contact.replace(/\D/g, '').length >= 7) {
+      lead.set('Phone', contact.slice(0, 30));
+    }
+    while (lead.toString().length > 38000 && summary.length > 500) {
+      summary = summary.slice(0, Math.floor(summary.length / 2));
+      lead.set('Description', summary + pageLine);
+    }
+    var completed = false;
+    var go = function () {
+      if (completed) return;
+      completed = true;
+      f.submit();
+    };
+    try {
+      fetch(CFG.crmAction, {
+        method: 'POST', mode: 'cors', credentials: 'omit', keepalive: true,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: lead.toString()
+      }).then(function (response) {
+        if (!response.ok) console.error('[iw-crm] Quiz lead delivery was not accepted:', response.status);
+        go();
+      }, go);
+    } catch (e) { go(); }
+    setTimeout(go, 2500);
   }
 
   /* ------------------------------------------------------------------ *

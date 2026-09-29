@@ -190,6 +190,9 @@ html[data-theme="light"] blockquote{background:rgba(248,252,254,.72);border-colo
 /* Stable local Clutch badges. The third-party iframe has occasionally rendered
    a white canvas while keeping its dark-background text white. Hiding that
    presentation prevents the badge from breaking when Clutch changes or stalls. */
+footer .clutch-badge{
+  display:block;margin:18px 0 0;min-height:45px;text-align:left;
+}
 html[data-theme="dark"] .clutch-widget{display:none!important}
 html[data-theme="dark"] .clutch-ready .clutch-fallback{display:inline-grid}
 html[data-theme="dark"] .clutch-fallback{
@@ -215,7 +218,7 @@ html[data-theme="dark"] .clutch-fallback span::before{
   content:"★★★★★";color:#ff3d2e;font-size:1.03rem;line-height:1;letter-spacing:.045em;
 }
 html[data-theme="dark"] .clutch-fallback span::after{
-  content:"1 REVIEW";margin-top:6px;color:var(--frost,#e0f2fe);font-size:.76rem;line-height:1;letter-spacing:.06em;
+  content:"2 REVIEWS";margin-top:6px;color:var(--frost,#e0f2fe);font-size:.76rem;line-height:1;letter-spacing:.06em;
 }
 
 html[data-theme="light"] .clutch-badge{
@@ -236,7 +239,95 @@ html[data-theme="light"] .clutch-fallback span{font-size:0}
 html[data-theme="light"] .clutch-fallback span::before{
   content:"★★★★★";color:#ff3d2e;font-size:.96rem;letter-spacing:.04em;margin-right:9px;
 }
-html[data-theme="light"] .clutch-fallback span::after{content:"1 review";color:#c3d8e7;font-size:.82rem}
+html[data-theme="light"] .clutch-fallback span::after{content:"2 reviews";color:#c3d8e7;font-size:.82rem}
+
+/* The two trust badges, side by side and in one place on every page.
+   They are authored inside the footer now; nothing relocates them at runtime. */
+.trust-badges{
+  display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 34px;margin-top:18px;
+}
+.trust-badges .clutch-badge,
+.trust-badges .google-badge{margin-top:0}
+
+/* Google review badge — sized to sit beside the Clutch badge, not under it.
+
+   Same two-column rhythm as .clutch-fallback above: the wordmark fills the left
+   column across both rows, the score and the link stack in the right one. That
+   is what gives it the same visual weight; at text size it read as a caption
+   and disappeared next to Clutch.
+
+   No third-party widget, iframe or script — one link and these rules, so it
+   cannot break when Google changes its embed and it costs no extra request.
+   --frost and --muted flip with the theme (near-white and grey on dark,
+   near-navy and slate on light), so one block covers both.
+
+   Keep "review" singular until the profile has more than one. */
+.google-badge{
+  display:inline-grid;grid-template-columns:auto auto;grid-template-rows:auto auto;
+  align-items:center;column-gap:15px;margin-top:18px;min-height:45px;
+  line-height:1;text-decoration:none;
+}
+.google-badge .gb-mark{
+  grid-column:1;grid-row:1/3;align-self:end;
+  color:var(--frost,#e0f2fe);
+  font:700 1.9rem/.9 Inter,system-ui,sans-serif;letter-spacing:-.055em;
+}
+.google-badge .gb-mark::before{
+  content:"REVIEWED ON";display:block;margin-bottom:4px;
+  color:var(--frost,#e0f2fe);
+  font:600 .61rem/1 Inter,system-ui,sans-serif;letter-spacing:.08em;
+}
+.google-badge .gb-score{
+  grid-column:2;grid-row:1;align-self:end;
+  display:flex;align-items:center;gap:5px;
+  color:#fbbc04;font-weight:700;font-size:1.22rem;
+  font-variant-numeric:tabular-nums;letter-spacing:-.01em;
+}
+.google-badge .gb-star{font-size:1.16rem;line-height:1}
+.google-badge .gb-link{
+  grid-column:2;grid-row:2;align-self:start;margin-top:7px;
+  color:var(--muted,#8fa3bb);font-size:.78rem;letter-spacing:.01em;
+  transition:color .18s ease;
+}
+.google-badge:hover .gb-link,
+.google-badge:focus-visible .gb-link{color:var(--ice,#7dd3fc)}
+.google-badge:focus-visible{
+  outline:2px solid var(--ice,#7dd3fc);outline-offset:4px;border-radius:4px;
+}
+/* Below ~380px the two columns stop fitting side by side. */
+@media(max-width:380px){
+  .google-badge{grid-template-columns:auto;grid-template-rows:auto auto auto;row-gap:6px}
+  .google-badge .gb-mark{grid-column:1;grid-row:1;align-self:start}
+  .google-badge .gb-score{grid-column:1;grid-row:2}
+  .google-badge .gb-link{grid-column:1;grid-row:3;margin-top:0}
+}
+
+/* Light theme turns the Clutch badge into a compact dark pill, so the Google
+   badge takes the same chrome here instead of staying a tall two-row block —
+   otherwise the pair stops reading as a pair and wraps onto two lines. */
+html[data-theme="light"] .google-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:45px;padding:12px 18px;
+  color:#e8f4fc;background:linear-gradient(145deg,#0b2d49,#071d31);
+  border:1px solid rgba(7,141,197,.42);border-radius:12px;
+  line-height:1;box-shadow:0 16px 36px rgba(13,58,87,.22);
+}
+html[data-theme="light"] .google-badge .gb-mark{
+  font:700 1rem/1 Inter,system-ui,sans-serif;letter-spacing:-.04em;color:#e8f4fc;
+}
+html[data-theme="light"] .google-badge .gb-mark::before{content:none}
+html[data-theme="light"] .google-badge .gb-score{font-size:.96rem;align-self:center}
+html[data-theme="light"] .google-badge .gb-star{font-size:.92rem}
+html[data-theme="light"] .google-badge .gb-link{
+  margin-top:0;align-self:center;color:#c3d8e7;font-size:.82rem;
+}
+html[data-theme="light"] .google-badge:hover .gb-link{color:#fff}
+
+/* Side by side the two light-theme pills need 591px and the footer column is
+   520, so they wrap. Left alone that reads as an accident; stacked with a
+   deliberate gap and matched heights it reads as a pair. Dark theme is the
+   taller two-column form and does fit in one row. */
+html[data-theme="light"] .trust-badges{align-items:flex-start;gap:12px}
 
 html[data-theme="light"] .iw-consent{
   color:var(--text);background:linear-gradient(160deg,#f9fcfe,#e4eff6);

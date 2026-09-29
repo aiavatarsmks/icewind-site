@@ -32,7 +32,7 @@
   var CONTACT = {
     email: 'hello@icewind.uk',
     phoneDisplay: '+44 7782 222054',
-    phoneLink: 'https://wa.me/447782222054'
+    phoneLink: 'tel:+447782222054'
   };
 
   var bar = document.querySelector('header .nav');
@@ -80,23 +80,15 @@
     sep.setAttribute('aria-hidden', 'true');
     sep.textContent = '|';
 
-    var wa = document.createElement('a');
-    wa.href = CONTACT.phoneLink;
-    wa.target = '_blank';
-    wa.rel = 'noopener noreferrer';
-    /* the word is dropped on narrow screens so the strip stays one line;
-       the accessible name below keeps it for screen readers */
-    var waWord = document.createElement('span');
-    waWord.className = 'nav-contact-app';
-    waWord.textContent = 'WhatsApp ';
-    wa.appendChild(waWord);
-    wa.appendChild(document.createTextNode(CONTACT.phoneDisplay));
-    wa.setAttribute('aria-label', 'Message ICE WIND on WhatsApp, ' + CONTACT.phoneDisplay);
+    var phone = document.createElement('a');
+    phone.href = CONTACT.phoneLink;
+    phone.textContent = CONTACT.phoneDisplay;
+    phone.setAttribute('aria-label', 'Call ICE WIND at ' + CONTACT.phoneDisplay);
 
     inner.appendChild(label);
     inner.appendChild(mail);
     inner.appendChild(sep);
-    inner.appendChild(wa);
+    inner.appendChild(phone);
     strip.appendChild(inner);
     header.appendChild(strip);
 

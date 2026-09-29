@@ -68,7 +68,7 @@
       var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
       if (!a) return;
       var href = a.getAttribute('href') || '';
-      if (/wa\.me|whatsapp/i.test(href)) ev('contact_click', { method: 'whatsapp' });
+      if (/^tel:/i.test(href)) ev('contact_click', { method: 'phone' });
       else if (/t\.me|telegram/i.test(href)) ev('contact_click', { method: 'telegram' });
       else if (/instagram\.com/i.test(href)) ev('contact_click', { method: 'instagram' });
       else if (/^mailto:/i.test(href)) ev('contact_click', { method: 'email' });

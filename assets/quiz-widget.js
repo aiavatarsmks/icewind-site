@@ -175,14 +175,14 @@
     {
       key: 'contact',
       label: 'Contact',
-      ask: 'Last one. How should the team reach you — email, phone, WhatsApp or Telegram?',
+      ask: 'Last one. How should the team reach you — email, phone or Telegram?',
       options: [],
       placeholder: 'name@company.com, +44…, @handle',
       validate: function (v) {
         if (/[^\s@]+@[^\s@]+\.[^\s@]{2,}/.test(v)) return null;
         if (/\+?[\d][\d\s().-]{7,}/.test(v)) return null;
         if (/@[a-z0-9_]{3,}/i.test(v)) return null;
-        if (/(t\.me|wa\.me|instagram|telegram|whatsapp)/i.test(v)) return null;
+        if (/(t\.me|instagram|telegram)/i.test(v)) return null;
         return 'I need something the team can actually reply to — an email address, a phone number or a messenger handle.';
       }
     }

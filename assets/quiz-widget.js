@@ -593,8 +593,6 @@
     });
   }
 
-  var quizCrmAttempted = false;
-
   function submit() {
     var btn = document.getElementById('iw-submit');
     var status = document.getElementById('iw-status');
@@ -643,43 +641,8 @@
     status.className = 'iw-status show';
     status.textContent = 'Sending your enquiry…';
 
-    if (!window.fetch) { f.submit(); return; }
-
-    function sendEmail() {
-      var controller = window.AbortController ? new AbortController() : null;
-      var timer;
-      var request = fetch(CFG.formAction, {
-        method: 'POST', mode: 'cors', credentials: 'omit',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(fields),
-        ...(controller ? { signal: controller.signal } : {})
-      });
-      Promise.race([request, new Promise(function (_resolve, reject) {
-        timer = setTimeout(function () {
-          if (controller) controller.abort();
-          reject(new Error('Email service timed out'));
-        }, 15000);
-      })]).then(function (response) {
-        if (!response.ok) throw new Error('Email service returned ' + response.status);
-        return response.json();
-      }).then(function (result) {
-        if (!result || (result.success !== true && result.success !== 'true')) {
-          throw new Error('Email service did not accept the enquiry');
-        }
-        location.assign(CFG.formNext);
-      }).catch(function (error) {
-        console.error('[iw-email] Quiz enquiry could not be confirmed:', error);
-        f.remove();
-        btn.disabled = false;
-        btn.textContent = 'Send enquiry';
-        status.className = 'iw-status show bad';
-        status.textContent = 'We could not confirm email delivery. Please try again or write to hello@icewind.uk.';
-      }).finally(function () { clearTimeout(timer); });
-    }
-
-    /* Queue the CRM copy once, then submit email even if CRM is unavailable. */
-    if (!CFG.crmAction || quizCrmAttempted) { sendEmail(); return; }
-    quizCrmAttempted = true;
+    /* Queue the CRM copy before submitting to the Worker's email outbox. */
+    if (!CFG.crmAction || !window.fetch) { f.submit(); return; }
     var contact = String(fields.Contact).trim();
     var summary = [
       'Source: Website',
@@ -707,7 +670,7 @@
     var go = function () {
       if (completed) return;
       completed = true;
-      sendEmail();
+      f.submit();
     };
     try {
       fetch(CFG.crmAction, {

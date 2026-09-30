@@ -167,9 +167,51 @@
       <div id="twilio-webchat-widget-root"></div>
       <script>
         window.addEventListener("load", () => {
+          const isRussian = navigator.language.toLowerCase().startsWith("ru");
           const appConfig = {
             deploymentKey: "CVf1caf08111989b7ef6469a75af1ae695",
-            appStatus: "open"
+            appStatus: "open",
+            preEngagementConfig: {
+              title: isRussian ? "Начните чат с ICE WIND" : "Start a chat with ICE WIND",
+              description: isRussian
+                ? "🌐 Пишите на любом языке — мы ответим на том же языке."
+                : "🌐 Write in any language — we’ll reply in the same language.",
+              submitLabel: isRussian ? "Начать чат" : "Start chat",
+              fields: [
+                {
+                  label: isRussian ? "Имя" : "Name",
+                  type: "InputItem",
+                  attributes: {
+                    name: "friendlyName",
+                    type: "text",
+                    placeholder: isRussian ? "Ваше имя" : "Your name",
+                    required: true
+                  }
+                },
+                {
+                  label: isRussian ? "Email" : "Email address",
+                  type: "InputItem",
+                  attributes: {
+                    name: "email",
+                    type: "email",
+                    placeholder: "you@example.com",
+                    required: true
+                  }
+                },
+                {
+                  label: isRussian ? "Ваш вопрос" : "Your question",
+                  type: "TextareaItem",
+                  attributes: {
+                    name: "query",
+                    type: "text",
+                    placeholder: isRussian
+                      ? "Расскажите, что вам нужно — по-русски, по-английски или на любом другом языке."
+                      : "Tell us what you need — English, Russian, or any language.",
+                    required: true
+                  }
+                }
+              ]
+            }
           };
           Twilio.initWebchat(appConfig);
         });

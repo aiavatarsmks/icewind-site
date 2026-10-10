@@ -77,6 +77,10 @@ robots.txt  sitemap.xml  llms.txt  favicon.svg  logo.svg  404.html
 <indexnow key>.txt            IndexNow key, served from the root; public by protocol design
 ```
 
+The selected commercial pages and published case studies have client-side
+Russian, Spanish and Ukrainian translations. See [translations/README.md](translations/README.md)
+for the source strings, build command and language-selection behaviour.
+
 ## Conventions that must not drift
 
 **One Organization entity.** Every page carries the identical block between

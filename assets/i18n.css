@@ -15,5 +15,5 @@ footer .foot > div:last-child:not(.legal){flex-basis:100%;text-align:left}
 .mobile-menu a::after{margin-left:auto}
 .mobile-menu a .iw-english-only{margin-left:auto}
 .mobile-menu a:has(.iw-english-only)::after{margin-left:14px}
-/* Form pages: next to the language switcher the back link wraps onto several lines on phones; the logo already links home. */
-@media(max-width:520px){header .nav:has(>.brand svg)>.back{display:none}}
+/* Translated pages with a back link (forms, /trust/): next to the language switcher it wraps onto several lines on phones; the logo already links home. */
+@media(max-width:520px){header .nav>.back{display:none}}

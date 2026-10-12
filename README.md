@@ -35,13 +35,15 @@ Do not "fix" any of them into a normal page.
 
 ## Layout
 
-32 URLs in `sitemap.xml`. Every page loads `assets/theme.css` and `assets/theme-init.js` (the
+40 URLs in `sitemap.xml`. The standard pages load `assets/theme.css` and `assets/theme-init.js` (the
 persistent light/dark theme) plus `assets/nav.css` and `assets/nav.js`.
 
 ```
 /                             homepage — inline CSS + falling-snow hero canvas
-/start-a-project/             main commercial page: enquiry form (formsubmit.co), trust strip
+/start-a-project/             main commercial page: enquiry form (Worker), trust strip
                               inline CSS
+/limitedoffer/                focused £500 website landing page for Google Ads; enquiry form
+                              shares the Worker email and Zoho CRM delivery path
 
   fourteen service landing pages — one intent each, ~900-1200 words, FAQ block,
   Service + BreadcrumbList + FAQPage JSON-LD, shared /assets/service.css + service.js

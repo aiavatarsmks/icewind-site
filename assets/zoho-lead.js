@@ -55,6 +55,15 @@
         ['Enquiry', 'Message']
       ]
     },
+    '/limitedoffer/': {
+      form: 'offer-form',
+      label: '£500 Website Offer',
+      fields: [
+        ['Email', 'Contact'],
+        ['Business and website brief', 'Message'],
+        ['Existing website or social profile', 'Reference']
+      ]
+    },
     '/demo/order-quiz/': {
       form: 'project-form',
       label: 'Demo Plain Project Form',

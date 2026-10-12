@@ -127,5 +127,13 @@
   });
   switcher();
   setLanguage(current, false);
+  var desktop = window.matchMedia('(min-width:1480px)');
+  var closeWideMenu = function (event) {
+    if (!event.matches) return;
+    var button = document.querySelector('.nav-toggle[aria-expanded="true"]');
+    if (button) button.click();
+  };
+  if (desktop.addEventListener) desktop.addEventListener('change', closeWideMenu);
+  else desktop.addListener(closeWideMenu);
   window.IW_I18N = { get language() { return current; }, setLanguage: setLanguage, t: translated };
 })();

@@ -111,7 +111,7 @@
     var name = value('Name') || FALLBACK_NAME;
     var contact = value('Contact');
     var summary = describe(data).slice(0, 16000);
-    var pageLine = '\nPage: ' + location.origin + location.pathname;
+    var pageLine = '\nPage: ' + location.origin + here;  /* the Worker accepts English form paths only */
     var body = {
       _honey: value('_honey'),
       'Company': COMPANY,

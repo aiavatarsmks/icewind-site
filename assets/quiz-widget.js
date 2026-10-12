@@ -652,7 +652,7 @@
       'Project description: ' + lines,
       'Conversation transcript: ' + chat
     ].join('\n').slice(0, 16000);
-    var pageLine = '\nPage: ' + location.origin + location.pathname;
+    var pageLine = '\nPage: ' + location.origin + location.pathname.replace(/^\/(?:ru|es|uk)(?=\/)/, '');
     var lead = new URLSearchParams({
       '_honey': honey.value,
       'Last Name': String(fields.Name).slice(0, 80),

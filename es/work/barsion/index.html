@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/i18n.css?v=20261012b">
+  <script src="/assets/i18n-init.js?v=20261012b"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>Estudio de caso del sitio web de Barsion: de 7,7 s a menos de 0,5 s | ICE WIND</title>
+<meta name="description" content="ICE WIND reconstruyó la web de Barsion: de 90 peticiones y 7,7 s de primer pintado a 12 peticiones y 0,49 s de DOMContentLoaded, en inglés y estonio, totalmente portable.">
+<link rel="canonical" href="https://icewind.uk/es/work/barsion/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:title" content="Estudio de caso del sitio web de Barsion: de 7,7 s a menos de 0,5 s | ICE WIND">
+<meta property="og:description" content="ICE WIND reconstruyó la web de Barsion: de 90 peticiones y 7,7 s de primer pintado a 12 peticiones y 0,49 s de DOMContentLoaded, en inglés y estonio, totalmente portable.">
+<meta property="og:url" content="https://icewind.uk/es/work/barsion/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://icewind.uk/assets/work/barsion/og-barsion.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Imagen principal del sitio web de Barsion sobre un fondo azul marino casi negro con un toque de color cian pálido.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Estudio de caso del sitio web de Barsion: de 7,7 s a menos de 0,5 s | ICE WIND">
+<meta name="twitter:description" content="ICE WIND reconstruyó la web de Barsion: de 90 peticiones y 7,7 s de primer pintado a 12 peticiones y 0,49 s de DOMContentLoaded, en inglés y estonio, totalmente portable.">
+<meta name="twitter:image" content="https://icewind.uk/assets/work/barsion/og-barsion.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://icewind.uk/es/work/barsion/#case",
+  "name": "Barsion: diseño y desarrollo web",
+  "headline": "Sustituimos la web de una empresa de TI por una que carga antes de que puedas parpadear",
+  "url": "https://icewind.uk/es/work/barsion/",
+  "inLanguage": "es",
+  "image": "https://icewind.uk/assets/work/barsion/og-barsion.jpg",
+  "about": "Bilingual website design and front-end development for Barsion, a managed IT services and technology consulting company in Tallinn, Estonia.",
+  "creator": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "publisher": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "keywords": "Web design, Front-end development, Bilingual content architecture, Motion and mascot integration, Performance engineering, Accessibility, GDPR privacy notice, SEO and deployment"
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://icewind.uk/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Proyectos",
+      "item": "https://icewind.uk/es/work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Barsion",
+      "item": "https://icewind.uk/es/work/barsion/"
+    }
+  ]
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<link rel="stylesheet" href="/assets/case.css?v=20260826">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "hello@icewind.uk",
+  "telephone": "+44 7782 222054",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@icewind.uk",
+      "telephone": "+44 7782 222054",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+  <!-- ICEWIND:HREFLANG:START -->
+  <link rel="alternate" hreflang="en" href="https://icewind.uk/work/barsion/">
+  <link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/barsion/">
+  <link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/barsion/">
+  <link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/barsion/">
+  <link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/barsion/">
+  <!-- ICEWIND:HREFLANG:END -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/es/" aria-label="Inicio de ICE WIND">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="/es/#services">Servicios</a>
+      <a href="/es/work/">Proyectos</a>
+      <a href="/es/#consulting">Consultoría</a>
+      <a href="/es/#why">Por qué elegirnos</a>
+      <a href="/es/#process">Cómo trabajamos</a>
+      <a href="/es/blog/">Blog</a>
+    </nav>
+    <a class="btn" href="/es/start-a-project/">Iniciar un proyecto</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="case-hero-inner">
+      <nav class="crumbs" aria-label="Migas de pan">
+        <a href="/es/work/">Proyectos</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Barsion</span>
+      </nav>
+      <div style="margin-top:22px"><span class="kicker">Barsion · Tallin, Estonia</span></div>
+      <h1>Sustituimos el sitio web de una empresa de servicios informáticos por uno que <span class="grad">carga antes de que puedas parpadear</span></h1>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="standfirst">Barsion gestiona servicios informáticos para empresas de toda Europa, pero su propio sitio web tardaba casi ocho segundos en mostrar una sola palabra. ICE WIND diseñó y desarrolló un sitio bilingüe de reemplazo que se carga en menos de medio segundo, funciona sin JavaScript y se entrega como una carpeta propiedad exclusiva del cliente.</p>
+      <div class="case-hero-cta">
+        <a class="btn ext" href="https://barsionlimited.com" target="_blank" rel="noopener noreferrer">Visitar el sitio web
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (se abre en una nueva pestaña)</span>
+        </a>
+        <a class="btn ghost" href="/es/start-a-project/">Iniciar un proyecto</a>
+      </div>
+
+      <dl class="snapshot cols-5">
+        <div><dt>Cliente</dt><dd>Barsion</dd></div>
+        <div><dt>Sector</dt><dd>Servicios informáticos gestionados y consultoría tecnológica</dd></div>
+        <div><dt>Ubicación</dt><dd>Tallin, Estonia</dd></div>
+        <div><dt>Sitio web activo</dt><dd><a href="https://barsionlimited.com" target="_blank" rel="noopener noreferrer">barsionlimited.com</a></dd></div>
+        <div><dt>Idiomas</dt><dd>Inglés / Estonio</dd></div>
+      </dl>
+
+      <p style="margin-top:26px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85">Servicios</p>
+      <div class="pills">
+        <span class="pill">Diseño web</span>
+        <span class="pill">Desarrollo front-end</span>
+        <span class="pill">Arquitectura de contenido bilingüe</span>
+        <span class="pill">Integración de animaciones y mascota</span>
+        <span class="pill">Optimización del rendimiento</span>
+        <span class="pill">Accesibilidad</span>
+        <span class="pill">Aviso de privacidad (RGPD)</span>
+        <span class="pill">SEO y despliegue</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SCREENSHOT -->
+  <section style="padding:56px 0 0">
+    <div class="wrap">
+      <figure>
+        <div class="frame shot-16-10">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/01-hero-640.webp 640w, /assets/work/barsion/01-hero.webp 1280w">
+            <img src="/assets/work/barsion/01-hero.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/01-hero-640.jpg 640w, /assets/work/barsion/01-hero.jpg 1280w" width="1280" height="800" decoding="async" alt="Imagen principal (hero) del sitio web de Barsion: fondo azul marino casi negro con un titular en cian claro que describe la actividad de la empresa.">
+          </picture>
+        </div>
+        <figcaption>Una fuente de luz, un color de acento y un titular que explica a qué se dedica la empresa.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El desafío</span>
+        <h2 style="margin-top:20px">Un sitio lento en un negocio que vende velocidad</h2>
+        <p>El sitio anterior estaba construido en WordPress con un maquetador visual y una gran cantidad de plugins: 90 peticiones de red, 45 hojas de estilo y 29 scripts para una sola página. El primer despliegue de contenido (First Contentful Paint) tardaba 7,7 segundos y la página seguía cargándose durante casi un minuto. Una empresa cuyo argumento de venta es «mantenemos sus sistemas rápidos» recibía a los visitantes con ocho segundos de pantalla en blanco.</p>
+        <p>El diseño sufría el mismo problema que el rendimiento: una cuadrícula de tarjetas idénticas (icono y párrafo), fotografías de archivo genéricas de oficina y una paleta corporativa azul y blanca; un resultado correcto, pero indistinguible del de otras mil empresas de externalización de servicios informáticos.</p>
+        <p>Tres condiciones acompañaban al proyecto de <a href="/es/website-redesign/" style="color:var(--ice)">rediseño web</a>: disponibilidad en dos idiomas desde el primer día, cumplimiento del RGPD para una empresa de la UE que recopila consultas y una entrega final que el cliente pudiera alojar en cualquier lugar sin necesidad de modificar el código.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El enfoque</span>
+        <h2 style="margin-top:20px">Una única fuente de luz y nada que brille por mera decoración</h2>
+        <p>Construimos el sistema visual en torno a una regla única: el cian es una <em>fuente de luz</em>, no un color de relleno. Cualquier elemento luminoso debe justificarse por la procedencia de la luz: una línea fina iluminada, el resplandor de una pantalla o un borde que capta la luz. Nada de sombras paralelas de colores, halos de neón ni degradados aplicados a todo. Esa regla marca la diferencia entre una página que parece diseñada y una que parece generada automáticamente. Siempre arrancamos un proyecto de <a href="/es/web-design/" style="color:var(--ice)">diseño web</a> fijando desde el principio una regla así.</p>
+        <p>La paleta se basa en un azul marino casi negro (<code>#090F23</code>) con cian pálido como único acento; tipografía Geologica en grosor 200 para los encabezados: fina, ancha y de estilo técnico. Líneas ultrafinas realizan la función estructural que suelen cumplir las tarjetas y cajas, manteniendo la página visualmente despejada hasta que el usuario interactúa con ella. Las fotografías se presentan en duotono utilizando los mismos dos colores, evitando así que las imágenes de archivo rompan la paleta cromática.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-16-10">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com: mascota</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/02-mascot-640.webp 640w, /assets/work/barsion/02-mascot.webp 1280w">
+            <img src="/assets/work/barsion/02-mascot.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/02-mascot-640.jpg 640w, /assets/work/barsion/02-mascot.jpg 1280w" width="1280" height="800" loading="lazy" decoding="async" alt="Mascota animada de Barsion integrada en la página sin bordes de vídeo visibles.">
+          </picture>
+        </div>
+        <figcaption>La mascota animada está integrada en la página mediante una máscara: sin rectángulos de vídeo ni bordes visibles.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DELIVERED -->
+  <section id="delivered">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Lo que entregamos</span>
+        <h2>Todo lo incluido en el proyecto publicado</h2>
+      </div>
+      <ul class="tick">
+        <li>Un sitio completo de una sola página: sección principal (hero), declaración de posicionamiento, ocho servicios, paneles con textos editoriales, valores, preguntas frecuentes y contacto; cada sección tiene su propio ritmo, evitando la repetición de una cuadrícula de tarjetas estándar.</li>
+        <li>Localización completa en inglés y estonio, con cambio instantáneo sin recargar la página y todos los textos gestionados desde un único diccionario.</li>
+        <li>Mascota animada personalizada integrada en la página mediante máscara: sin rectángulos de vídeo ni bordes visibles.</li>
+        <li>Formulario de contacto con validación real, estados claros y honestos, y protección contra spam mediante honeypot y análisis de tiempos de envío.</li>
+        <li>Aviso de privacidad conforme al RGPD en ambos idiomas: responsable del tratamiento, bases legales según el Artículo 6, plazos de conservación, derechos de los interesados y enlace a la Inspección de Protección de Datos de Estonia.</li>
+        <li>Fuentes web y fotografías alojadas localmente (sin dependencias externas); la página final no realiza ninguna petición a servicios de terceros.</li>
+        <li>SEO y compartición: etiquetas canónicas, Open Graph y Twitter Cards, datos estructurados JSON-LD para organizaciones, <code>robots.txt</code>, <code>sitemap.xml</code></li>
+        <li>Un paquete de entrega portátil: sin fase de compilación, sin dependencias, un script de configuración de dominio y una guía de entrega por escrito</li>
+      </ul>
+
+      <div class="fig-2" style="margin-top:52px">
+        <figure>
+          <div class="frame shot-16-10">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com: soluciones</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/barsion/03-solutions-640.webp 640w, /assets/work/barsion/03-solutions.webp 1280w">
+              <img src="/assets/work/barsion/03-solutions.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/barsion/03-solutions-640.jpg 640w, /assets/work/barsion/03-solutions.jpg 1280w" width="1280" height="800" loading="lazy" decoding="async" alt="Sección de servicios de Barsion: ocho servicios de TI gestionados organizados en una cuadrícula de líneas finas.">
+            </picture>
+          </div>
+          <figcaption>Ocho servicios dispuestos en una cuadrícula de líneas ultrafinas que se iluminan al pasar el cursor.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame shot-16-10">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com: quiénes somos</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/barsion/04-who-640.webp 640w, /assets/work/barsion/04-who.webp 1280w">
+              <img src="/assets/work/barsion/04-who.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/barsion/04-who-640.jpg 640w, /assets/work/barsion/04-who.jpg 1280w" width="1280" height="800" loading="lazy" decoding="async" alt="Sección &quot;Quiénes somos&quot; de Barsion con fotografías en duotono (paleta de azul marino y cian).">
+            </picture>
+          </div>
+          <figcaption>La fotografía en duotono integra las imágenes de archivo en la paleta de colores de la marca.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section id="decisions" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Decisiones clave sobre la experiencia</span>
+        <h2>Las cuatro decisiones que definieron el sitio</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">El cian como fuente de luz, no como relleno</h3>
+          <span>Cada elemento de acento debía poder explicarse como luz incidiendo sobre una superficie. Eliminamos todos los desenfoques coloreados y las sombras sin desplazamiento de la implementación, sustituyéndolos por degradados radiales, formas sólidas y líneas ultrafinas iluminadas.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Una mascota que habita en la página</h3>
+          <span>La mascota animada se compone mediante tres máscaras CSS superpuestas que se cruzan con una atenuación lineal; el punto negro del clip se ajusta al fondo de la página, haciendo que los bordes del vídeo simplemente dejen de verse.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Mejora progresiva en todos los niveles</h3>
+          <span>La página es totalmente legible con JavaScript desactivado. La mascota nunca se carga si está activa la opción <code>prefers-reduced-motion</code>, con el modo de ahorro de datos (Save-Data) o en una conexión lenta, y se pausa en cuanto sale del área de visualización.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Un formulario que nunca miente</h3>
+          <span>El formulario valida e informa con honestidad en lugar de mostrar un mensaje de «gracias» que no puede respaldar. Un sitio que simula realizar el envío es peor que un sitio sin formulario alguno.</span>
+        </div>
+      </div>
+
+      <figure style="margin-top:52px">
+        <div class="frame shot-16-10">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com: Preguntas frecuentes</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/05-faq-640.webp 640w, /assets/work/barsion/05-faq.webp 1280w">
+            <img src="/assets/work/barsion/05-faq.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/05-faq-640.jpg 640w, /assets/work/barsion/05-faq.jpg 1280w" width="1280" height="800" loading="lazy" decoding="async" alt="Sección de preguntas frecuentes de Barsion con respuestas redactadas de forma clara sobre un fondo azul marino oscuro.">
+          </picture>
+        </div>
+        <figcaption>Respuestas directas, sin relleno publicitario: la sección de preguntas frecuentes actúa también como elemento generador de confianza.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DELIVERY -->
+  <section id="technical">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Implementación técnica</span>
+        <h2 style="margin-top:20px">Cómo está construido el sitio</h2>
+        <p>HTML, CSS y JavaScript escritos a mano. Sin frameworks, sin pasos de compilación, sin <code>node_modules</code> ni nada parecido: todo el sitio es una carpeta que se sube al servidor. Geologica se distribuye con subconjuntos <code>woff2</code> divididos mediante <code>unicode-range</code>, de modo que un visitante que solo usa el alfabeto latino descarga únicamente la versión latina. Este tipo de entrega estática es nuestra opción predeterminada en los proyectos de <a href="/es/web-development/" style="color:var(--ice)">desarrollo web</a> que no requieren un CMS.</p>
+        <p>La mascota se entrega en formato H.264 con una alternativa en VP9, codificada como un bucle de ida y vuelta (ping-pong) para que nunca se perciba el reinicio; se carga de forma diferida (lazy-loading) mediante IntersectionObserver y se pausa cuando está fuera de pantalla. La composición de la máscara utiliza la propiedad estándar <code>mask-composite</code> con una alternativa con prefijo condicionada por <code>@supports</code>, de modo que en versiones antiguas de Safari la visualización se degrada a una mascota más sencilla (pero que sigue sin bordes) en lugar de mostrarse como un rectángulo.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-16-10">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com: contacto</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/06-contact-640.webp 640w, /assets/work/barsion/06-contact.webp 1280w">
+            <img src="/assets/work/barsion/06-contact.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/06-contact-640.jpg 640w, /assets/work/barsion/06-contact.jpg 1280w" width="1280" height="800" loading="lazy" decoding="async" alt="Formulario de contacto de Barsion con estados de validación transparentes.">
+          </picture>
+        </div>
+        <figcaption>Un formulario que realiza una validación honesta y nunca simula un envío exitoso.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- RESPONSIVE -->
+  <section id="responsive" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">En un teléfono</span>
+        <h2>El mismo sistema a 390 px</h2>
+      </div>
+      <div class="fig-3">
+        <figure>
+          <div class="frame shot-phone">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 350px" srcset="/assets/work/barsion/08-mobile-hero-390.webp 390w, /assets/work/barsion/08-mobile-hero.webp 780w">
+              <img src="/assets/work/barsion/08-mobile-hero.jpg" sizes="(max-width:860px) 100vw, 350px" srcset="/assets/work/barsion/08-mobile-hero-390.jpg 390w, /assets/work/barsion/08-mobile-hero.jpg 780w" width="780" height="1688" loading="lazy" decoding="async" alt="Sección principal (hero) de Barsion visualizada en una pantalla de teléfono de 390 px de ancho.">
+            </picture>
+          </div>
+        </figure>
+        <figure>
+          <div class="frame shot-phone">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 350px" srcset="/assets/work/barsion/09-mobile-mascot-390.webp 390w, /assets/work/barsion/09-mobile-mascot.webp 780w">
+              <img src="/assets/work/barsion/09-mobile-mascot.jpg" sizes="(max-width:860px) 100vw, 350px" srcset="/assets/work/barsion/09-mobile-mascot-390.jpg 390w, /assets/work/barsion/09-mobile-mascot.jpg 780w" width="780" height="1688" loading="lazy" decoding="async" alt="Sección de la mascota de Barsion en una pantalla de teléfono de 390 px de ancho.">
+            </picture>
+          </div>
+        </figure>
+        <figure>
+          <div class="frame shot-phone">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 350px" srcset="/assets/work/barsion/10-mobile-contact-390.webp 390w, /assets/work/barsion/10-mobile-contact.webp 780w">
+              <img src="/assets/work/barsion/10-mobile-contact.jpg" sizes="(max-width:860px) 100vw, 350px" srcset="/assets/work/barsion/10-mobile-contact-390.jpg 390w, /assets/work/barsion/10-mobile-contact.jpg 780w" width="780" height="1688" loading="lazy" decoding="async" alt="Formulario de contacto de Barsion en una pantalla de teléfono de 390 px de ancho.">
+            </picture>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section id="outcome">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El resultado</span>
+        <h2 style="margin-top:20px">Mismo dominio, misma empresa, nueva medición</h2>
+      </div>
+
+      <div style="margin-top:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:8px 10px">
+        <table class="metrics">
+          <caption class="visually-hidden">Rendimiento del sitio web de Barsion antes y después de la reconstrucción ICE WIND</caption>
+          <thead>
+            <tr><th scope="col">Métrica</th><th scope="col">Antes</th><th scope="col">Después</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Primer renderizado con contenido</th><td>7,7 s</td><td class="after">menos de 0,5 s</td></tr>
+            <tr><th scope="row">DOMContentLoaded</th><td>10,9 s</td><td class="after">0,49 s</td></tr>
+            <tr><th scope="row">Solicitudes de red</th><td>90</td><td class="after">12</td></tr>
+            <tr><th scope="row">Hojas de estilo / scripts</th><td>45 / 29</td><td class="after">1 / 1</td></tr>
+            <tr><th scope="row">Nodos DOM</th><td>1,599</td><td class="after">362</td></tr>
+            <tr><th scope="row">Solicitudes de terceros</th><td>muchas</td><td class="after">0</td></tr>
+            <tr><th scope="row">Idiomas</th><td>1</td><td class="after">2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose" style="margin-top:30px">
+        <p>El umbral de Google para considerar "deficiente" el primer renderizado visual (first paint) es de 3 segundos. El sitio anterior superaba ese tiempo con creces (más del doble); el nuevo lo mejora ampliamente, logrando un rendimiento seis veces superior. El sitio se entrega como un paquete autónomo que incluye una guía de traspaso en el idioma del cliente, lo que permite desplegarlo en cualquier dominio y servidor sin necesidad de modificar el código.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-16-10">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">barsionlimited.com: pie de página</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/07-footer-credit-640.webp 640w, /assets/work/barsion/07-footer-credit.webp 1280w">
+            <img src="/assets/work/barsion/07-footer-credit.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/barsion/07-footer-credit-640.jpg 640w, /assets/work/barsion/07-footer-credit.jpg 1280w" width="1280" height="800" loading="lazy" decoding="async" alt="Pie de página del sitio web de Barsion con el selector de idioma y el crédito del proyecto ICE WIND.">
+          </picture>
+        </div>
+        <figcaption>Entregado en dos idiomas, con el crédito de ICE WIND en el pie de página.</figcaption>
+      </figure>
+
+      <p style="margin-top:34px">
+        <a class="btn ext" href="https://barsionlimited.com" target="_blank" rel="noopener noreferrer">Visitar el sitio web
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+        </a>
+        <a class="btn ghost" href="/es/work/lamar-academy/">Siguiente caso: Lamar Academy</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Iniciar un proyecto</span>
+        <h2 style="margin-top:18px">¿Necesitas un sitio web que parezca diseñado con rigor y no montado por piezas?</h2>
+        <p>Diseñamos y desarrollamos experiencias digitales rápidas, accesibles y auténticamente personalizadas, abarcando desde la estructura inicial hasta el lanzamiento y la entrega final.</p>
+        <a class="btn" href="/es/start-a-project/">Iniciar un proyecto</a><br>
+        <a class="mail" href="mailto:hello@icewind.uk">hello@icewind.uk</a><br>
+        <a class="mail" href="tel:+447782222054">+44 7782 222054</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND es una marca comercial de ICEWIND DALE CONSULTING LTD, registrada en Inglaterra y Gales con el número de empresa 15925349.</b><br>
+      Registro en la ICO ZB838524 · Seguro de responsabilidad civil y por productos de £1m · Londres, Inglaterra<br>
+      347 Barking Road, Londres, Inglaterra, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="tel:+447782222054" style="color:var(--ice)">+44 7782 222054</a>
+      <nav class="foot-links" aria-label="Enlaces legales y de cumplimiento">
+        <a href="/es/contact/">Contacto</a><a href="/es/trust/">Confianza y cumplimiento</a>
+        <a href="/es/privacy/">Aviso de privacidad</a>
+        <a href="/es/cookies/">Política de cookies</a>
+        <a href="/es/terms/">Términos</a>
+      </nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="Ver ICE WIND en Clutch"><strong>Clutch<i>.</i></strong><span>Ver nuestro perfil</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND en Google: valoración de 5,0 sobre 5. Lee nuestras reseñas en Google (se abre en una nueva pestaña)."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Lee nuestra reseña en Google <span aria-hidden="true">&rarr;</span></span></a></div>
+    </div>
+    <nav class="foot-spec" aria-label="Especialidades de servicio">
+      <b>Especializaciones</b>
+      <a href="/es/web-development/">Desarrollo web</a>
+      <a href="/es/web-app-development/">Desarrollo de aplicaciones web</a>
+      <a href="/es/mobile-app-development/">Desarrollo de aplicaciones móviles</a>
+      <a href="/es/game-development/">Desarrollo de videojuegos</a>
+      <a href="/es/ai-automation/">Automatización con IA</a>
+      <a href="/es/ai-consulting/">Consultoría de IA</a>
+      <a href="/es/web-design/">Diseño web</a>
+      <a href="/es/website-redesign/">Rediseño de sitios web</a>
+      <a href="/es/seo/">SEO</a>
+      <a href="/es/local-seo/">SEO local</a>
+      <a href="/es/ai-search-optimisation/">Optimización de búsqueda con IA</a>
+      <a href="/es/request-an-audit/">Solicitar una auditoría</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Sitios web para tu negocio">
+      <b>Para tu negocio</b>
+      <a href="/es/websites-for-barbershops/">Barberías</a>
+      <a href="/es/websites-for-beauty-salons/">Salones de belleza</a>
+      <a href="/es/small-business-web-design/">Diseño web para pequeñas empresas</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Trabajos destacados">
+      <b>Proyectos</b>
+      <a href="/es/work/">Todos los casos de éxito</a>
+      <a href="/es/work/barsion/">Barsion</a>
+      <a href="/es/work/lamar-academy/">Lamar Academy</a>
+      <a href="/es/work/gamefoundry/">GameFoundry</a>
+    <a href="/es/work/canacore/">CanaCore</a>
+    <a href="/es/work/geek-foundation/">Geek Foundation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Guías">
+      <b>Guías</b>
+      <a href="/es/blog/">Todas las guías</a>
+      <a href="/es/blog/how-much-does-a-website-cost-uk/">Coste de un sitio web en el Reino Unido</a>
+      <a href="/es/blog/website-redesign-cost-uk/">Coste del rediseño de un sitio web</a>
+      <a href="/es/blog/aeo-vs-geo-vs-seo/">AEO frente a GEO y SEO</a>
+      <a href="/es/blog/how-much-does-ai-automation-cost/">Coste de la automatización con IA</a>
+      <a href="/es/blog/telegram-mini-app-cost/">Coste de una Mini App de Telegram</a>
+      <a href="/es/blog/how-to-get-recommended-by-ai-search/">Obtener recomendaciones en búsquedas por IA</a>
+    </nav>
+    <div>© 2026 ICEWIND DALE CONSULTING LTD. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js?v=20260926"></script>
+<script src="/assets/analytics.js?v=20261001a" defer></script>
+<script src="/assets/nav.js?v=20260929a" defer></script>
+<script src="/assets/i18n.js?v=20261012b" defer></script>
+</body>
+</html>

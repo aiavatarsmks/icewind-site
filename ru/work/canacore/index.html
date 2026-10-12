@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/i18n.css?v=20261012b">
+  <script src="/assets/i18n-init.js?v=20261012b"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>Кейс CanaCore: техническое SEO и переработка контента для действующей строительной платформы | ICE WIND</title>
+<meta name="description" content="Как ICE WIND взяла работающую платформу строительных услуг CanaCore, которую мы не создавали, и сделала её защищённой, понятной для поиска и безопасной для изменений: закрыла пробелы в контроле доступа к API, исправила canonical и структурированные данные, добавила CI и 126 тестов, перестроила заголовки, FAQ и лендинги. Без редизайна.">
+<link rel="canonical" href="https://icewind.uk/ru/work/canacore/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:title" content="Кейс CanaCore: техническое SEO и переработка контента для действующей строительной платформы | ICE WIND">
+<meta property="og:description" content="Защита, исправление и перестройка работающей платформы строительных услуг под поиск: техническое SEO, структурированные данные, уникальные FAQ на каждой странице и новые лендинги, без редизайна.">
+<meta property="og:url" content="https://icewind.uk/ru/work/canacore/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://icewind.uk/assets/work/canacore/og-canacore.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Главная страница платформы строительных услуг CanaCore после переработки технического SEO и контента.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Кейс CanaCore: техническое SEO и переработка контента для действующей строительной платформы | ICE WIND">
+<meta name="twitter:description" content="Защита, исправление и перестройка работающей платформы строительных услуг под поиск: техническое SEO, структурированные данные, уникальные FAQ на каждой странице и новые лендинги, без редизайна.">
+<meta name="twitter:image" content="https://icewind.uk/assets/work/canacore/og-canacore.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://icewind.uk/ru/work/canacore/#case",
+  "name": "CanaCore: техническое SEO, безопасность и перестройка архитектуры контента",
+  "headline": "Мы не создавали эту строительную платформу. Мы сделали её защищённой и понятной для поиска",
+  "creator": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "publisher": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "about": "Technical-SEO, application-security and content-architecture engagement on CanaCore, an existing construction-services platform: closing API access-control and rate-limit gaps, making the canonical domain a single guarded source of truth, adding canonical tags and structured data, keyword-mapped titles and meta descriptions, unique per-page FAQs, cannibalisation fixes, new commercial and home-addition landing pages, internal-linking, and a CI pipeline and test suite where there had been none — applied to the live CMS without changing the site's design or build.",
+  "url": "https://cana-core.com/",
+  "inLanguage": "ru",
+  "image": "https://icewind.uk/assets/work/canacore/og-canacore.jpg",
+  "keywords": "Technical SEO, Application-security hardening, Keyword architecture, On-page optimisation, Structured data, Content design, Internal linking, CI and automated testing, CMS content operations"
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://icewind.uk/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Проекты",
+      "item": "https://icewind.uk/ru/work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "CanaCore",
+      "item": "https://icewind.uk/ru/work/canacore/"
+    }
+  ]
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<link rel="stylesheet" href="/assets/case.css?v=20260826">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "hello@icewind.uk",
+  "telephone": "+44 7782 222054",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@icewind.uk",
+      "telephone": "+44 7782 222054",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+  <!-- ICEWIND:HREFLANG:START -->
+  <link rel="alternate" hreflang="en" href="https://icewind.uk/work/canacore/">
+  <link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/canacore/">
+  <link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/canacore/">
+  <link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/canacore/">
+  <link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/canacore/">
+  <!-- ICEWIND:HREFLANG:END -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/ru/" aria-label="Главная страница ICE WIND">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Основной">
+      <a href="/ru/#services">Услуги</a>
+      <a href="/ru/work/">Проекты</a>
+      <a href="/ru/#consulting">Консалтинг</a>
+      <a href="/ru/#why">Почему мы</a>
+      <a href="/ru/#process">Как мы работаем</a>
+      <a href="/ru/blog/">Блог</a>
+    </nav>
+    <a class="btn" href="/ru/start-a-project/">Обсудить проект</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="case-hero-inner">
+      <nav class="crumbs" aria-label="«Хлебные крошки»">
+        <a href="/ru/work/">Проекты</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">CanaCore</span>
+      </nav>
+      <div style="margin-top:22px"><span class="kicker">CanaCore · SEO, техническое SEO и архитектура контента · Канада</span></div>
+      <h1>Мы не создавали эту строительную платформу с нуля, мы обеспечили ее безопасность и <span class="grad">сделали понятной для поисковых систем</span></h1>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="standfirst">CanaCore Construction Alliance представляет собой действующую платформу, связывающую канадских домовладельцев и девелоперов с проверенными подрядчиками. Сайт уже был готов и функционировал, однако через его API происходила утечка данных из заполненных форм, поисковые системы воспринимали каждую страницу как главную, а отсутствие тестов и проверок сборки делало невозможным безопасное внесение изменений. Нас пригласили, чтобы исправить фундамент системы и сделать платформу понятной для поиска, не затрагивая при этом дизайн, брендинг или сам продукт.</p>
+      <div class="case-hero-cta">
+        <a class="btn ext" href="https://cana-core.com/" target="_blank" rel="noopener noreferrer">Перейти на сайт
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (откроется в новой вкладке)</span>
+        </a>
+        <a class="btn ghost" href="/ru/request-an-audit/">Запросить аудит</a>
+      </div>
+
+      <dl class="snapshot cols-5">
+        <div><dt>Клиент</dt><dd>CanaCore Construction Alliance</dd></div>
+        <div><dt>Сфера деятельности</dt><dd>Маркетплейс в сфере строительства и подбора подрядчиков</dd></div>
+        <div><dt>Рынок</dt><dd>Канада</dd></div>
+        <div><dt>Взаимодействие</dt><dd>Техническое SEO, повышение безопасности приложения и архитектура контента на существующем сайте</dd></div>
+        <div><dt>Действующий сайт</dt><dd><a href="https://cana-core.com/" target="_blank" rel="noopener noreferrer">cana-core.com</a></dd></div>
+      </dl>
+
+      <p style="margin-top:26px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85">Услуги</p>
+      <div class="pills">
+        <span class="pill">Техническое SEO</span>
+        <span class="pill">Повышение безопасности приложения</span>
+        <span class="pill">Архитектура ключевых слов</span>
+        <span class="pill">Внутренняя оптимизация (on-page)</span>
+        <span class="pill">Структурированные данные</span>
+        <span class="pill">Проектирование контента</span>
+        <span class="pill">Внутренняя перелинковка</span>
+        <span class="pill">CI и автоматизированное тестирование</span>
+        <span class="pill">Работа с контентом в CMS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SCREENSHOT -->
+  <section style="padding:56px 0 0">
+    <div class="wrap">
+      <figure>
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/01-canacore-hero-640.webp 640w, /assets/work/canacore/01-canacore-hero.webp 1440w">
+            <img src="/assets/work/canacore/01-canacore-hero.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/01-canacore-hero-640.jpg 640w, /assets/work/canacore/01-canacore-hero.jpg 1440w" width="1440" height="1000" decoding="async" alt="Главная страница сайта строительной компании CanaCore с заголовком, оптимизированным под ключевые слова.">
+          </picture>
+        </div>
+        <figcaption>Заголовок H1 на главной странице содержит ключевую фразу, сформулированную так, как пользователи реально ищут подрядчика.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Задача</span>
+        <h2 style="margin-top:20px">Сайт, который работал, но которому нельзя было доверять; его было невозможно безопасно изменить или найти в поиске.</h2>
+        <p>Внешне сайт CanaCore казался исправным: он был доступен, выглядел корректно, и пользователи могли с ним взаимодействовать. Однако скрытые проблемы делали его ненадежным, затрудняли внесение безопасных изменений и препятствовали обнаружению сайта.</p>
+        <p>Ему нельзя было доверять. Данные из форм клиентов были доступны через API платформы без какой-либо авторизации, а публичный эндпоинт, каждый вызов которого приводил к реальным финансовым затратам, не имел ни ограничений по частоте запросов, ни защиты от ботов. Механизм защиты, призванный ограничивать доступ к предварительному просмотру контента, фактически не выполнял никаких проверок.</p>
+        <p>Вносить изменения безопасно было невозможно. Отсутствовали автоматизированные тесты и проверки в рамках CI (непрерывной интеграции), а проверка типов выдавала ошибки, поэтому любое, даже самое незначительное изменение превращалось в рискованную авантюру. Более того, рабочая сборка была настроена на неверный домен, из-за чего система обработки изображений без уведомлений отклоняла загружаемые файлы.</p>
+        <p>Сайт невозможно было найти. На нем вообще не использовались канонические теги (canonical tags), а из-за ошибки в метаданных все страницы передавали поисковым системам адрес главной страницы. Четыре наиболее ценные страницы (так называемые «хабы услуг») имели одинаковые, автоматически сгенерированные заголовки (title), а примерно у пятнадцати страниц были автоматически созданные описания (description), которые уже индексировались в Google. Контент был скудным и дублирующимся, внутренняя перелинковка между разделом-руководством и страницами услуг отсутствовала, вместо реального номера телефона на двадцати пяти страницах стояла «заглушка», а один из хабов попал в цикл переадресации, из-за чего стал недоступен.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Подход</span>
+        <h2 style="margin-top:20px">Сначала исправление фундамента и настройка системы измерений, затем переработка архитектуры контента.</h2>
+        <p>Мы действовали в строгом порядке, работая исключительно с уже существующим сайтом.</p>
+        <p>Фундамент важнее внешней отделки. Сначала мы устранили уязвимости в системе контроля доступа и ограничения частоты запросов (rate limiting), а также внедрили защиту от ботов для публичных эндпоинтов, обеспечив безопасность платформы. Затем мы определили один канонический домен как единственный надежный источник данных, назначили каждой странице правильный канонический URL и уникальные метаданные, а также настроили правила сканирования и механизм обработки изображений, то есть ту самую «инженерную инфраструктуру», от которой зависит, смогут ли поисковые системы вообще считывать сайт.</p>
+        <p>Затем мы создали систему подстраховки. Мы развернули конвейер непрерывной интеграции (CI) и набор тестов (чего раньше не было), чтобы в дальнейшем любые изменения можно было внедрять уверенно, а не просто надеясь на удачу.</p>
+        <p>И только после этого началась работа с контентом. Для страниц услуг были созданы четкие заголовки и описания, оптимизированные под ключевые слова; для каждой страницы подготовлен уникальный раздел часто задаваемых вопросов (FAQ), чтобы избежать дублирования структурированных данных; заголовки и позиционирование переработаны с учетом реальных поисковых намерений пользователей; также созданы три новые целевые страницы (лендинга) для удовлетворения спроса на услуги коммерческого строительства и пристройки к домам, на который сайт ранее не давал ответа.</p>
+        <p>Все проверки проводились на «живом» сайте: каждый недочет воспроизводился и подтверждался как до, так и после исправления, и мы никогда не судили о проблеме исключительно по коду. Внесение изменений в существующую CMS выполнялось с предварительным созданием полной резервной копии и сохранением истории версий. Дизайн, бренд и сам продукт остались без изменений.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com: услуги</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/02-homepage-services-640.webp 640w, /assets/work/canacore/02-homepage-services.webp 1440w">
+            <img src="/assets/work/canacore/02-homepage-services.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/02-homepage-services-640.jpg 640w, /assets/work/canacore/02-homepage-services.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="Сетка услуг на главной странице CanaCore, включающая разделы, посвященные новому коммерческому строительству и управлению проектами.">
+          </picture>
+        </div>
+        <figcaption>Новые точки входа на главной странице, ведущие к разделам коммерческого строительства и управления проектами, то есть к страницам, которые ранее были недоступны из верхней части сайта.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DELIVERED -->
+  <section id="delivered">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Что мы реализовали</span>
+        <h2>Комплексный подход: от технической базы до контента</h2>
+      </div>
+
+      <h3 class="deliv-head">Безопасность и целостность платформы</h3>
+      <ul class="tick">
+        <li>Устранена уязвимость в системе контроля доступа, позволявшая собственному API платформы возвращать данные форм, отправленных клиентами, без аутентификации; аналогичная проблема была также устранена в API для работы с медиафайлами.</li>
+        <li>Для публичных эндпоинтов (точек взаимодействия), принимающих данные от пользователей и запросы к помощнику, внедрены: защита от ботов, ограничение частоты запросов (rate limiting) по IP-адресу, лимиты на длину вводимых данных и тайм-ауты запросов (ранее эти меры отсутствовали).</li>
+        <li>Исправлена проверка аутентификации для режима предварительного просмотра, которая фактически не выполняла проверку пользователя.</li>
+      </ul>
+
+      <h3 class="deliv-head">Техническая база SEO</h3>
+      <ul class="tick">
+        <li>Установили канонический домен в качестве единственного источника истины (отказавшись от домена хостинг-провайдера) и внедрили механизм защиты от регрессии, чтобы исключить повторный скрытый сбой</li>
+        <li>Добавили канонические теги (canonical tags) на весь сайт (ранее они отсутствовали) и исправили метаданные Open Graph и Twitter, из-за которых все страницы ошибочно ссылались на главную</li>
+        <li>Переписали файл robots.txt, задав четкие правила для поисковых и ИИ-краулеров, и убрали блокировку пути к медиафайлам, через который загружаются все изображения и превью для соцсетей</li>
+        <li>Очистили карту сайта (sitemap): удалили страницы-заглушки и страницы внутреннего поиска, добавили недостающие пути, а также настроили постоянные редиректы для устаревших URL, ранее выдававших ошибку 404</li>
+        <li>Исправили конвейер обработки изображений, который отклонял файлы из-за неверного разрешения хоста</li>
+      </ul>
+
+      <h3 class="deliv-head">Оптимизация для поиска и метаданные</h3>
+      <ul class="tick">
+        <li>Заменили одинаковые, автоматически сгенерированные заголовки на четырех страницах-хабах услуг на уникальные заголовки, H1 и описания, подобранные с учетом ключевых слов</li>
+        <li>Заменили автоматически сгенерированные мета-описания примерно на пятнадцати страницах, уже проиндексированных поисковыми системами (только там, где текст был явно сгенерирован машиной, и никогда там, где его написал редактор)</li>
+        <li>Добавили полноценные, уникальные метаданные для пяти статей, у которых ранее отсутствовали заголовки и описания</li>
+        <li>Внедрили структурированные данные типов BreadcrumbList, Service и BlogPosting, а также исправили цепочку «Home &gt; Home» (Главная &gt; Главная) на главной странице</li>
+      </ul>
+
+      <figure style="margin-top:44px">
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com: описание услуг</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/03-hub-faq-640.webp 640w, /assets/work/canacore/03-hub-faq.webp 1440w">
+            <img src="/assets/work/canacore/03-hub-faq.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/03-hub-faq-640.jpg 640w, /assets/work/canacore/03-hub-faq.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="Раздел услуг CanaCore по разработке чертежей с уникальным блоком часто задаваемых вопросов (FAQ).">
+          </picture>
+        </div>
+        <figcaption>Каждый из четырех разделов услуг (хабов) теперь имеет собственный заголовок, оптимизированный под ключевые слова, и уникальный блок FAQ; ранее для всех них использовался один и тот же автоматически сгенерированный заголовок.</figcaption>
+      </figure>
+
+      <h3 class="deliv-head" style="margin-top:44px">Контент и архитектура</h3>
+      <ul class="tick">
+        <li>Заголовки и описания, оптимизированные под ключевые слова, для примерно тридцати страниц услуг.</li>
+        <li>Уникальный блок FAQ из трех вопросов на всех двадцати пяти страницах с подробным описанием услуг, а также специальные блоки FAQ для разделов-хабов, благодаря чему ни на одной странице не дублируется разметка FAQPage.</li>
+        <li>Три новые целевые страницы (лендинга): «Коммерческое строительство», «Коммерческая реконструкция» и «Пристройки к жилым домам». На них размещен контент, помогающий принять решение: описание процесса от сметы до сдачи объекта, информация о разрешениях и проверках, соблюдении строительных норм, контроле качества, внесении изменений в проект и составе коммерческого предложения.</li>
+        <li>Настроена двусторонняя перекрестная ссылка между тридцатью информационными статьями и двадцатью пятью страницами услуг (ранее ссылки отсутствовали); добавлены точки входа с главной страницы и страниц-хабов на ранее недоступные страницы, посвященные коммерческим объектам и управлению проектами.</li>
+        <li>Исправлены заголовки, в которых слова были слиты воедино, в семи шаблонах страниц; заменен номер-заглушка на двадцати пяти страницах; скорректирована терминология (адаптация с рынка США для рынка Канады); устранена циклическая переадресация, делавшая один из разделов услуг недоступным.</li>
+      </ul>
+
+      <h3 class="deliv-head">Система подстраховки</h3>
+      <ul class="tick">
+        <li>Создан конвейер непрерывной интеграции (CI), которого ранее не существовало: с проверкой типов, линтингом, тестированием и сборкой для продакшена при каждом изменении кода.</li>
+        <li>Набор автоматических тестов был расширен с нуля до 126 проверок (включая контроль канонического домена), а также впервые успешно пройден этап проверки типов (type-check).</li>
+      </ul>
+
+      <figure style="margin-top:44px">
+        <div class="frame shot-36-25">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com: фрейминг</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/04-page-faq-640.webp 640w, /assets/work/canacore/04-page-faq.webp 1440w">
+            <img src="/assets/work/canacore/04-page-faq.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/04-page-faq-640.jpg 640w, /assets/work/canacore/04-page-faq.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="Страница CanaCore, посвященная возведению каркасов, с собственным разделом FAQ.">
+          </picture>
+        </div>
+        <figcaption>На каждой странице услуги размещен свой уникальный блок FAQ из трех вопросов, поэтому ни на одной странице не дублируются структурированные данные.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section id="decisions" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Ключевые решения</span>
+        <h2>Четыре решения, определившие ход работы</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Сначала фундамент, потом «полировка»</h3>
+          <span>Нельзя ответственно подходить к оптимизации сайта, если он раскрывает конфиденциальные данные или если в него невозможно безопасно вносить изменения. Поэтому порядок действий был жестко определен: сначала устранить уязвимости, наладить работу с каноническими ссылками и механизмом сканирования, а также внедрить тесты и систему непрерывной интеграции (CI), и только после этого переходить к работе с контентом. Эта рутинная, не самая эффектная работа выполнялась в первую очередь, так как от нее зависело всё остальное.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Замеры на «живом» сайте и повторная проверка каждого результата</h3>
+          <span>Каждый дефект воспроизводился на рабочем сайте перед исправлением и проверялся там же после него; выводы никогда не делались исключительно на основе анализа кода. Этот принцип соблюдался и при проведении независимого аудита, шедшего параллельно с основной работой: мы перепроверяли каждое замечание аудиторов, а не принимали их на веру. Половина описанных проблем к тому моменту уже отсутствовала, поэтому их исключили из списка; четыре проблемы оказались реальными, и мы их устранили. Мы доверяем результатам измерений, а не заявлениям, в том числе и собственным.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Настраивать систему, уважать человека</h3>
+          <span>Исправления метаданных затрагивают только те значения, которые явно были сгенерированы автоматически: например, заголовок, дублирующий URL-слаг страницы, или описание, составленное по стандартному шаблону системы. Как только редактор пишет осмысленные метаданные, наш механизм уступает место, и приоритет остается за человеком. Система позволила привести в порядок сотни автоматически созданных полей, не вступая в конфликт с командой, поддерживающей сайт.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Уровень детализации, соответствующий моменту принятия решения</h3>
+          <span>Страницы, посвященные коммерческим объектам и пристройкам к жилым домам, отвечают самым важным запросам пользователей, поэтому они получили наиболее насыщенное содержание: описание этапов проекта (от сметы до сдачи объекта), информацию о разрешениях и инспекциях, а также о порядке внесения изменений в проект и согласования стоимости работ. Поисковые системы отдают предпочтение страницам, которые помогают принять решение, и пользователи поступают так же. Страницы с поверхностным контентом не получают ни того, ни другого; именно поэтому для каждой услуги был создан отдельный раздел часто задаваемых вопросов (FAQ) вместо одного общего.</span>
+        </div>
+      </div>
+
+      <div class="fig-2" style="margin-top:52px">
+        <figure>
+          <div class="frame shot-36-25">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com: коммерческие объекты</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/05-commercial-page-640.webp 640w, /assets/work/canacore/05-commercial-page.webp 1440w">
+              <img src="/assets/work/canacore/05-commercial-page.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/05-commercial-page-640.jpg 640w, /assets/work/canacore/05-commercial-page.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="Страница CanaCore о коммерческом строительстве с разделами, описывающими рабочий процесс, получение разрешений и внесение изменений в проект.">
+            </picture>
+          </div>
+          <figcaption>Новая страница, посвященная строительству коммерческих объектов, с контентом, помогающим принять решение: описание процессов, разрешительная документация, инспекции, внесение изменений и сдача объекта.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame shot-36-25">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com: разрешения на строительство</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/06-separated-intent-640.webp 640w, /assets/work/canacore/06-separated-intent.webp 1440w">
+              <img src="/assets/work/canacore/06-separated-intent.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/canacore/06-separated-intent-640.jpg 640w, /assets/work/canacore/06-separated-intent.jpg 1440w" width="1440" height="1000" loading="lazy" decoding="async" alt="Страница CanaCore, посвященная чертежам для получения разрешений на строительство (отдельно от страницы с чертежами для реконструкции).">
+            </picture>
+          </div>
+          <figcaption>Две страницы, ранее конкурировавшие по одним и тем же поисковым запросам, были разделены в соответствии с разными намерениями пользователей: здесь представлены чертежи для получения разрешения на строительство, а на соседней странице размещены планы реконструкции и возведения пристроек.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DELIVERY -->
+  <section id="technical">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Техническая реализация</span>
+        <h2 style="margin-top:20px">Как велась работа и сдавался проект</h2>
+        <p>Сайт CanaCore работает на базе headless CMS и современного фреймворка React; страницы формируются из контента CMS и отображаются посредством динамической маршрутизации. Мы участвовали в разработке каждого из этих уровней.</p>
+        <p>В части безопасности мы устранили уязвимости в системе контроля доступа встроенных API для работы с контентом, а также внедрили защиту от ботов, ограничение частоты запросов (rate limiting) по IP-адресам и лимиты на объем входных данных и время выполнения для публичных эндпоинтов отправки форм и взаимодействия с ассистентом. В основе поисковой инфраструктуры канонический домен стал единственным источником истины (отвергающим доменное имя хостинг-провайдера); надежность этого решения подкреплена регрессионным тестом, исключающим скрытые сбои. Также были внедрены канонические теги, метаданные для социальных сетей (индивидуальные для каждой страницы) и скорректированные правила индексации.</p>
+        <p>Для уровня контента мы добавили механизм разрешения конфликтов, который для каждого поля определяет, какое значение использовать: сохраненное в базе или заданное вручную (приоритет всегда отдается значению, написанному человеком). Единая функция классификации обрабатывает каждую страницу, формируя схему данных для сервиса (Service schema), набор часто задаваемых вопросов (FAQ) и ссылки между статьями и сервисами; таким образом, категория страницы определяется один раз и используется повсеместно, а разметка FAQPage генерируется исключительно на основе вопросов, отображаемых на самой странице.</p>
+        <p>Все изменения внедрялись через созданный нами конвейер непрерывной интеграции (CI): проверка типов, линтинг, набор тестов (выросший с нуля до 126 проверок) и сборка рабочего билда при каждом изменении кода. Контент попадал в рабочую среду с помощью идемпотентных скриптов, выполняемых непосредственно в «боевой» базе данных; каждый скрипт был безопасен для повторного запуска и использовал уже существующие медиафайлы. Процесс был защищен полным резервным копированием базы данных и встроенной в CMS системой версионирования документов, что позволяло откатить любые изменения.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section id="outcome" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Результат</span>
+        <h2 style="margin-top:20px">Безопасность, читаемость кода и надежность внесения изменений.</h2>
+        <p>Платформа больше не передает данные форм через API, а для всех публичных эндпоинтов настроены ограничения частоты запросов и защита от ботов. Теперь на каждой странице корректно указаны канонические URL и собственные метаданные; четыре ключевых раздела («хаба») имеют уникальные заголовки, оптимизированные под конкретные запросы; для каждой страницы услуги подготовлены уникальный блок FAQ и собственные структурированные данные; страницы, создававшие внутреннюю конкуренцию, разделены, а «сиротские» страницы (не имевшие входящих ссылок) интегрированы в структуру сайта; кроме того, созданы три новые страницы, отвечающие на коммерческие запросы и запросы по расширению жилья, которые ранее игнорировались. Если раньше не было ни тестов, ни проверок сборки, то теперь внедрено 126 тестов и конвейер непрерывной интеграции (CI), так что вносить изменения в сайт стало безопасно. Всё это уже работает на сайте cana-core.com и доступно для проверки.</p>
+        <p>Важное уточнение: у CanaCore пока не подключены системы аналитики и Search Console, поэтому оценить влияние проделанной работы на позиции в поиске и трафик пока невозможно, и мы не станем приводить здесь вымышленные цифры, чтобы создать ложное впечатление. Настройкой инструментов измерения мы займемся в первую очередь. Все описанные здесь результаты были проверены на действующем сайте (до и после внесения изменений); доказательством служит сама проделанная работа, а не график.</p>
+        <p>Для компании ICE WIND этот проект стал эталонным примером определенного формата сотрудничества: мы берем уже существующий бизнес, работающий на платформе, которую создавали не мы, и делаем систему безопасной, понятной и удобной в поддержке, причем без полного редизайна. Эта работа относится к категориям <a href="/ru/seo/" style="color:var(--ice)">SEO</a> и <a href="/ru/ai-search-optimisation/" style="color:var(--ice)">SEO для поиска с использованием ИИ</a>; а если сайту действительно нужна полная переделка, это уже работа над <a href="/ru/website-redesign/" style="color:var(--ice)">редизайном сайта</a> (это отдельная услуга).</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame shot-wide">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">cana-core.com: футер</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/07-footer-credit-640.webp 640w, /assets/work/canacore/07-footer-credit.webp 1440w">
+            <img src="/assets/work/canacore/07-footer-credit.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/canacore/07-footer-credit-640.jpg 640w, /assets/work/canacore/07-footer-credit.jpg 1440w" width="1440" height="600" loading="lazy" decoding="async" alt="Футер сайта CanaCore с указанием разработчика: «Developed by ICE WIND».">
+          </picture>
+        </div>
+        <figcaption>Упоминание ICE WIND в футере действующего сайта.</figcaption>
+      </figure>
+
+      <p style="margin-top:34px">
+        <a class="btn ext" href="https://cana-core.com/" target="_blank" rel="noopener noreferrer">Перейти на сайт
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (откроется в новой вкладке)</span>
+        </a>
+        <a class="btn ghost" href="/ru/work/barsion/">Следующий кейс: Barsion</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Запросить аудит</span>
+        <h2 style="margin-top:18px">У вас есть работающий сайт, но ему не доверяют или его невозможно найти?</h2>
+        <p>Действующий бизнес, сайт, который вам нравится, но с проблемами, невидимыми для обычного пользователя: доступ к данным, которые должны быть скрыты; страницы, которые поисковые системы не могут различить; отсутствие безопасного способа внести изменения. Именно такой проект мы описываем в этом кейсе. Мы начинаем с того, что показываем, что именно видят поисковые системы (и любые другие пользователи) в данный момент.</p>
+        <a class="btn" href="/ru/request-an-audit/">Запросить аудит</a><br>
+        <a class="mail" href="mailto:hello@icewind.uk">hello@icewind.uk</a><br>
+        <a class="mail" href="tel:+447782222054">+44 7782 222054</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND является торговой маркой компании ICEWIND DALE CONSULTING LTD, зарегистрированной в Англии и Уэльсе под номером 15925349.</b><br>
+      Регистрация в ICO: ZB838524 · Страхование гражданской ответственности и ответственности за качество продукции (лимит £1 млн) · Лондон, Англия<br>
+      347 Barking Road, London, England, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="tel:+447782222054" style="color:var(--ice)">+44 7782 222054</a>
+      <nav class="foot-links" aria-label="Юридическая информация и документы">
+        <a href="/ru/contact/">Контакты</a><a href="/ru/trust/">О компании и документах</a>
+        <a href="/ru/privacy/">Уведомление о конфиденциальности</a>
+        <a href="/ru/cookies/">Политика использования cookie</a>
+        <a href="/ru/terms/">Условия использования</a>
+      </nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="Профиль ICE WIND на Clutch"><strong>Clutch<i>.</i></strong><span>Посмотреть наш профиль</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND в Google: рейтинг 5,0 из 5. Читать отзывы в Google (откроется в новой вкладке)."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Читать отзывы в Google <span aria-hidden="true">&rarr;</span></span></a></div>
+    </div>
+    <nav class="foot-spec" aria-label="Специализация">
+      <b>Специализации</b>
+      <a href="/ru/web-development/">Веб-разработка</a>
+      <a href="/ru/web-app-development/">Разработка веб-приложений</a>
+      <a href="/ru/mobile-app-development/">Разработка мобильных приложений</a>
+      <a href="/ru/game-development/">Разработка игр</a>
+      <a href="/ru/ai-automation/">Автоматизация на базе ИИ</a>
+      <a href="/ru/ai-consulting/">Консалтинг в сфере ИИ</a>
+      <a href="/ru/web-design/">Веб-дизайн</a>
+      <a href="/ru/website-redesign/">Редизайн сайтов</a>
+      <a href="/ru/seo/">SEO</a>
+      <a href="/ru/local-seo/">Локальное SEO</a>
+      <a href="/ru/ai-search-optimisation/">Оптимизация поиска с использованием ИИ</a>
+      <a href="/ru/request-an-audit/">Запросить аудит</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Сайты для вашего бизнеса">
+      <b>Для вашего бизнеса</b>
+      <a href="/ru/websites-for-barbershops/">Барбершопы</a>
+      <a href="/ru/websites-for-beauty-salons/">Салоны красоты</a>
+      <a href="/ru/small-business-web-design/">Веб-дизайн для малого бизнеса</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Избранные проекты">
+      <b>Проекты</b>
+      <a href="/ru/work/">Все кейсы</a>
+      <a href="/ru/work/barsion/">Barsion</a>
+      <a href="/ru/work/lamar-academy/">Lamar Academy</a>
+      <a href="/ru/work/gamefoundry/">GameFoundry</a>
+      <a href="/ru/work/canacore/">CanaCore</a>
+      <a href="/ru/work/geek-foundation/">Geek Foundation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Руководства">
+      <b>Руководства</b>
+      <a href="/ru/blog/">Все руководства</a>
+      <a href="/ru/blog/how-much-does-a-website-cost-uk/">Стоимость сайта в Великобритании</a>
+      <a href="/ru/blog/website-redesign-cost-uk/">Стоимость редизайна сайта</a>
+      <a href="/ru/blog/aeo-vs-geo-vs-seo/">AEO, GEO и SEO: в чем разница</a>
+      <a href="/ru/blog/how-much-does-ai-automation-cost/">Стоимость автоматизации на базе ИИ</a>
+      <a href="/ru/blog/telegram-mini-app-cost/">Стоимость разработки Telegram Mini App</a>
+      <a href="/ru/blog/how-to-get-recommended-by-ai-search/">Рекомендации в результатах поиска с ИИ</a>
+    </nav>
+    <div>© 2026 ICEWIND DALE CONSULTING LTD. Все права защищены.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js?v=20260926"></script>
+<script src="/assets/analytics.js?v=20261001a" defer></script>
+<script src="/assets/nav.js?v=20260929a" defer></script>
+<script src="/assets/i18n.js?v=20261012b" defer></script>
+</body>
+</html>

@@ -44,7 +44,10 @@ const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
 const sitemapSet = new Set(sitemapUrls);
 
-if (sitemapUrls.length !== 40) fail(`sitemap.xml must contain 40 URLs; found ${sitemapUrls.length}`);
+const pageUrls = new Set(pages.map((file) => `${newOrigin}${pagePath(file)}`));
+for (const url of sitemapUrls) {
+  if (!pageUrls.has(url)) fail(`sitemap.xml lists ${url} but no page file exists for it`);
+}
 if (sitemapSet.size !== sitemapUrls.length) fail('sitemap.xml contains duplicate URLs');
 for (const url of sitemapUrls) {
   if (!url.startsWith(`${newOrigin}/`)) fail(`sitemap.xml contains a non-canonical URL: ${url}`);

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/i18n.css?v=20261012b">
+  <script src="/assets/i18n-init.js?v=20261012b"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>Разработка мобильных приложений в Лондоне | iOS и Android | ICE WIND</title>
+<meta name="description" content="ICE WIND делает приложения для iOS и Android в Лондоне: MVP, клиентские и внутренние, с аккаунтами, платежами, API и выпуском в App Store и Google Play.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://icewind.uk/ru/mobile-app-development/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://icewind.uk/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ICE WIND: студия веб-разработки в Лондоне">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Разработка мобильных приложений в Лондоне | iOS и Android | ICE WIND">
+<meta name="twitter:description" content="ICE WIND делает приложения для iOS и Android в Лондоне: MVP, клиентские и внутренние, с аккаунтами, платежами, API и выпуском в App Store и Google Play.">
+<meta name="twitter:image" content="https://icewind.uk/assets/og-cover.jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:title" content="Разработка мобильных приложений в Лондоне | iOS и Android | ICE WIND">
+<meta property="og:description" content="ICE WIND делает приложения для iOS и Android в Лондоне: MVP, клиентские и внутренние, с аккаунтами, платежами, API и выпуском в App Store и Google Play.">
+<meta property="og:url" content="https://icewind.uk/ru/mobile-app-development/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Разработка мобильных приложений",
+  "name": "Разработка мобильных приложений от ICE WIND",
+  "url": "https://icewind.uk/ru/mobile-app-development/",
+  "areaServed": {
+    "@type": "City",
+    "name": "Лондон"
+  },
+  "provider": {
+    "@id": "https://icewind.uk/#organization"
+  }
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://icewind.uk/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Разработка мобильных приложений",
+      "item": "https://icewind.uk/ru/mobile-app-development/"
+    }
+  ]
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Вы делаете нативные или кроссплатформенные приложения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "И те, и другие. Мы выбираем технологию под проект, а не навязываем один стек. Нативная разработка подходит приложениям, которые активно используют возможности устройства или особенности платформы. Кроссплатформенная подходит продуктам, где iOS и Android должны работать на общей кодовой базе. Мы объясняем плюсы и минусы до того, как принимается решение."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно сначала сделать MVP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Мы определяем сфокусированную первую версию, которая проверяет основную идею, публикуем её в магазинах приложений, а затем развиваем, опираясь на реальное использование."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Вы занимаетесь публикацией в App Store и Google Play?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Мы готовим сборки, страницы в магазинах, скриншоты, декларации о конфиденциальности и настройки релиза и проходим модерацию вместе с вами. Сроки одобрения устанавливают Apple и Google, а не мы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Вы делаете бэкенд вместе с приложением?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Большинству приложений нужна серверная часть: аккаунты, данные, админ-доступ и API. Мы делаем её параллельно с приложением или подключаемся к вашему существующему бэкенду."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно подключить приложение к системам, которыми мы уже пользуемся?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, если у этих систем есть API. Мы интегрируемся с существующими инструментами, CRM, системами бронирования и платёжными сервисами в пределах того, что позволяют их API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нам нужно приложение или хватит веб-приложения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Не каждому продукту нужно присутствие в магазинах приложений. Если ваши пользователи в основном работают за компьютером, веб-приложение часто быстрее сделать и проще обновлять. Push-уведомления, работа офлайн, камера и другие возможности устройства обычно и становятся причиной выбрать мобильное приложение. Если веб-версия окажется лучшим решением, мы так и скажем."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что будет после запуска?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Мы остаёмся на связи: мониторинг, исправление сбоев, новые функции и технические релизы, которых требуют новые версии iOS и Android, чтобы приложение оставалось в магазинах."
+      }
+    }
+  ]
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "hello@icewind.uk",
+  "telephone": "+44 7782 222054",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@icewind.uk",
+      "telephone": "+44 7782 222054",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+  <!-- ICEWIND:HREFLANG:START -->
+  <link rel="alternate" hreflang="en" href="https://icewind.uk/mobile-app-development/">
+  <link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/mobile-app-development/">
+  <link rel="alternate" hreflang="es" href="https://icewind.uk/es/mobile-app-development/">
+  <link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/mobile-app-development/">
+  <link rel="alternate" hreflang="x-default" href="https://icewind.uk/mobile-app-development/">
+  <!-- ICEWIND:HREFLANG:END -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/ru/" aria-label="Главная страница ICE WIND">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Основной">
+      <a href="/ru/#services">Услуги</a>
+      <a href="/ru/#consulting">Консалтинг</a>
+      <a href="/ru/#why">Почему мы</a>
+      <a href="/ru/#process">Как мы работаем</a>
+      <a href="/ru/blog/">Блог</a>
+    </nav>
+    <a class="btn" href="/ru/start-a-project/">Обсудить проект</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="svc-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="svc-hero-inner">
+      <span class="kicker">Разработка мобильных приложений · Лондон</span>
+      <h1>Разработка мобильных приложений <span class="grad">в Лондоне</span></h1>
+      <p class="lead">ICE WIND создаёт приложения для iOS и Android: клиентские продукты, внутренние инструменты для сотрудников и сфокусированные первые версии, которые дают людям попробовать новую идею.</p>
+      <p class="sub">Мы выбираем технологию под проект, нативную или кроссплатформенную, исходя из того, что действительно нужно продукту. Если та же идея нужна и в браузере, за это отвечает <a href="/ru/web-app-development/" style="color:var(--ice)">разработка веб-приложений</a> как отдельное направление.</p>
+      <div class="svc-hero-cta">
+        <a class="btn" href="/ru/start-a-project/">Обсудить проект</a>
+        <a class="btn ghost" href="#what">Подробнее об услуге</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE BUILD -->
+  <section id="what">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Что мы создаем</span>
+        <h2>Что мы создаём и предоставляем</h2>
+        <p>Конкретные продукты, системы и результаты, которые входят в эту специализацию.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="tag">Разработка мобильных приложений</span>
+          <h3>Приложения для клиентов</h3>
+          <ul><li>Приложения для iOS и Android</li><li>MVP и первые версии</li><li>Сценарии бронирования и записи</li><li>Аккаунты, вход и профили клиентов</li></ul>
+        </article>
+        <article class="card">
+          <span class="tag">Разработка мобильных приложений</span>
+          <h3>Бизнес-приложения и внутренние инструменты</h3>
+          <ul><li>Приложения для сотрудников и выездных команд</li><li>Заказы, склад и учёт работ</li><li>Доступ и права по ролям</li><li>Админ-панели для приложения</li></ul>
+        </article>
+        <article class="card">
+          <span class="tag">Разработка мобильных приложений</span>
+          <h3>Основа</h3>
+          <ul><li>API и серверные системы</li><li>Платежи и подписки, если нужны</li><li>Push-уведомления и сообщения</li><li>Аналитика, отчёты о сбоях и релизы в магазинах</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMS -->
+  <section id="problems" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Какие задачи мы решаем</span>
+        <h2>Какие задачи решает эта услуга</h2>
+        <p>Практические ситуации, с которыми клиенты обычно приходят в ICE WIND.</p>
+      </div>
+      <div class="grid-2">
+        <div class="prob"><b>Идея без первой версии</b><span>У вас есть концепция продукта, и нужно работающее приложение, которым люди действительно смогут пользоваться.</span></div>
+        <div class="prob"><b>Клиенты висят на телефоне</b><span>Записи, заказы и заявки на обслуживание по-прежнему идут через звонки и сообщения.</span></div>
+        <div class="prob"><b>Сотрудники работают на бумаге</b><span>Выездные команды или сотрудники в зале записывают работы на бумаге, а потом вносят их заново.</span></div>
+        <div class="prob"><b>Мобильного сайта недостаточно</b><span>Вам нужны push-уведомления, работа офлайн или возможности устройства, которых сайт дать не может.</span></div>
+        <div class="prob"><b>Приложение, которое некому поддерживать</b><span>Существующее приложение делал кто-то другой, и любые изменения в нём стали дорогими.</span></div>
+        <div class="prob"><b>Отклонённые или застрявшие релизы</b><span>Модерация App Store или Google Play раз за разом возвращает сборки.</span></div>
+        <div class="prob"><b>Нет данных о том, как используют приложение</b><span>Вы не видите, где люди уходят и какие функции игнорируют.</span></div>
+        <div class="prob"><b>Две платформы, один бюджет</b><span>Вам нужны iOS и Android, но без оплаты разработки одного и того же дважды.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Почему ICE WIND</span>
+        <h2>Почему стоит работать с нами</h2>
+        <p>Компаний по разработке мобильных приложений в Лондоне хватает. Вот как на самом деле выглядит работа с нами.</p>
+      </div>
+      <div class="grid-3">
+        <div class="why"><b>Одна команда, полный стек</b><span>Приложение, бэкенд и дизайн в одних руках, без передачи проекта между разными агентствами.</span></div>
+        <div class="why"><b>Стек под каждый проект</b><span>Нативная или кроссплатформенная разработка: это решение мы принимаем вместе с вами, а не фирменный стиль, который применяем ко всему.</span></div>
+        <div class="why"><b>Полная ясность с самого начала</b><span>Объём работ, сроки и стоимость согласуются до начала работы.</span></div>
+        <div class="why"><b>Оптимальные решения</b><span>Мы подбираем подход под реальную задачу: без лишних усложнений и без ненадежных обходных решений.</span></div>
+        <div class="why"><b>Поддержка после запуска</b><span>Мониторинг, обновления и технические релизы, которых требуют новые версии ОС.</span></div>
+        <div class="why"><b>Базируется в Лондоне, зарегистрировано в Великобритании</b><span>Торговая марка компании ICEWIND DALE CONSULTING LTD, зарегистрированной в Англии и Уэльсе (номер компании 15925349).</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="selected-work" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Избранные проекты</span>
+        <h2>Доказательства, а не обещания</h2>
+        <p>Наши опубликованные кейсы касаются веб-проектов, а не мобильных приложений. Они показывают, как та же команда работает с аккаунтами, платежами, производительностью и релизами.</p>
+      </div>
+      <nav class="grid-2" aria-label="Избранные проекты">
+        <a class="other" href="/ru/work/gamefoundry/">
+          <span>Кейс</span>
+          <b>GameFoundry</b>
+          <span class="go">Маркетплейс игр, где каждая загрузка считается потенциально опасной <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="other" href="/ru/work/barsion/">
+          <span>Кейс</span>
+          <b>Barsion</b>
+          <span class="go">Двуязычный сайт в тёмной премиальной стилистике, переделанный ради скорости <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES / CAPABILITIES -->
+  <section id="tech" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Возможности</span>
+        <h2>Технологии и возможности</h2>
+        <p>Для каждой задачи мы подбираем подходящие инструменты. Нативная разработка даёт максимально точное соответствие платформе; общая кодовая база даёт два приложения почти по цене одного. Если продукту нужен ещё и публичный сайт, мы делаем его в рамках <a href="/ru/web-development/" style="color:var(--ice)">нашего направления веб-разработки</a>, а если приложение по сути игра, им занимается направление <a href="/ru/game-development/" style="color:var(--ice)">разработка игр</a>.</p>
+      </div>
+      <div class="caps"><div class="cap">Нативная разработка под iOS</div><div class="cap">Нативная разработка под Android</div><div class="cap">Кроссплатформенная разработка</div><div class="cap">Серверные системы и API</div><div class="cap">Аккаунты и аутентификация</div><div class="cap">Платежи и подписки</div><div class="cap">Push-уведомления</div><div class="cap">Работа офлайн и синхронизация данных</div><div class="cap">Аналитика и отчёты о сбоях</div><div class="cap">Публикация в App Store и Google Play</div></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Как мы работаем</span>
+        <h2>От первого звонка до стабильной работы</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><b>Погружение</b><span>Мы выясняем, для кого приложение, что оно должно уметь в первую очередь и нужно ли вообще мобильное решение.</span></div>
+        <div class="step"><b>Проектирование</b><span>Экраны, сценарии, выбор платформы и архитектура бэкенда утверждаются ещё до того, как написана первая строка кода.</span></div>
+        <div class="step"><b>Разработка</b><span>Итеративная разработка с тестовыми сборками, которые можно установить и попробовать на своём устройстве.</span></div>
+        <div class="step"><b>Релиз и поддержка</b><span>Публикация в магазинах приложений, мониторинг и регулярные обновления после запуска.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2>Часто задаваемые вопросы</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Вы делаете нативные или кроссплатформенные приложения?</summary>
+          <div class="ans">И те, и другие. Мы выбираем технологию под проект, а не навязываем один стек. Нативная разработка подходит приложениям, которые активно используют возможности устройства или особенности платформы. Кроссплатформенная подходит продуктам, где iOS и Android должны работать на общей кодовой базе. Мы объясняем плюсы и минусы до того, как принимается решение.</div>
+        </details>
+        <details>
+          <summary>Можно сначала сделать MVP?</summary>
+          <div class="ans">Да. Мы определяем сфокусированную первую версию, которая проверяет основную идею, публикуем её в магазинах приложений, а затем развиваем, опираясь на реальное использование.</div>
+        </details>
+        <details>
+          <summary>Вы занимаетесь публикацией в App Store и Google Play?</summary>
+          <div class="ans">Да. Мы готовим сборки, страницы в магазинах, скриншоты, декларации о конфиденциальности и настройки релиза и проходим модерацию вместе с вами. Сроки одобрения устанавливают Apple и Google, а не мы.</div>
+        </details>
+        <details>
+          <summary>Вы делаете бэкенд вместе с приложением?</summary>
+          <div class="ans">Да. Большинству приложений нужна серверная часть: аккаунты, данные, админ-доступ и API. Мы делаем её параллельно с приложением или подключаемся к вашему существующему бэкенду.</div>
+        </details>
+        <details>
+          <summary>Можно подключить приложение к системам, которыми мы уже пользуемся?</summary>
+          <div class="ans">Да, если у этих систем есть API. Мы интегрируемся с существующими инструментами, CRM, системами бронирования и платёжными сервисами в пределах того, что позволяют их API.</div>
+        </details>
+        <details>
+          <summary>Нам нужно приложение или хватит веб-приложения?</summary>
+          <div class="ans">Не каждому продукту нужно присутствие в магазинах приложений. Если ваши пользователи в основном работают за компьютером, веб-приложение часто быстрее сделать и проще обновлять. Push-уведомления, работа офлайн, камера и другие возможности устройства обычно и становятся причиной выбрать мобильное приложение. Если веб-версия окажется лучшим решением, мы так и скажем.</div>
+        </details>
+        <details>
+          <summary>Что будет после запуска?</summary>
+          <div class="ans">Мы остаёмся на связи: мониторинг, исправление сбоев, новые функции и технические релизы, которых требуют новые версии iOS и Android, чтобы приложение оставалось в магазинах.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER SPECIALISATIONS -->
+  <section id="other" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Узнать больше</span>
+        <h2>Посмотреть другие специализации</h2>
+      </div>
+      <nav class="other-grid" aria-label="Другие специализации">
+        <a class="other" href="/ru/web-app-development/">
+          <span>Специализация</span>
+          <b>Разработка веб-приложений</b>
+          <span class="go">Посмотреть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="other" href="/ru/web-development/">
+          <span>Специализация</span>
+          <b>Веб-разработка</b>
+          <span class="go">Посмотреть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="other" href="/ru/game-development/">
+          <span>Специализация</span>
+          <b>Разработка игр</b>
+          <span class="go">Посмотреть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="other" href="/ru/ai-automation/">
+          <span>Специализация</span>
+          <b>Автоматизация на базе ИИ</b>
+          <span class="go">Посмотреть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Обсудить проект</span>
+        <h2 style="margin-top:18px">Давайте создадим правильную версию вашего приложения</h2>
+        <p>Расскажите, что вы хотите создать, на каком вы этапе и какой результат вам нужен. Формальное техническое задание не требуется.</p>
+        <a class="btn" href="/ru/start-a-project/">Обсудить проект</a><br>
+        <a class="mail" href="mailto:hello@icewind.uk">hello@icewind.uk</a><br>
+        <a class="mail" href="tel:+447782222054">+44 7782 222054</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND является торговой маркой компании ICEWIND DALE CONSULTING LTD, зарегистрированной в Англии и Уэльсе под номером 15925349.</b><br>
+      Регистрация в ICO: ZB838524 · Страхование гражданской ответственности и ответственности за качество продукции (лимит £1 млн) · Лондон, Англия<br>
+      347 Barking Road, London, England, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="tel:+447782222054" style="color:var(--ice)">+44 7782 222054</a>
+      <nav class="foot-links" aria-label="Юридическая информация и документы">
+        <a href="/ru/contact/">Контакты</a><a href="/ru/trust/">О компании и документах</a>
+        <a href="/ru/privacy/">Уведомление о конфиденциальности</a>
+        <a href="/ru/cookies/">Политика использования cookie</a>
+        <a href="/ru/terms/">Условия использования</a>
+      </nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="Профиль ICE WIND на Clutch"><strong>Clutch<i>.</i></strong><span>Посмотреть наш профиль</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND в Google: рейтинг 5,0 из 5. Читать отзывы в Google (откроется в новой вкладке)."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Читать отзывы в Google <span aria-hidden="true">&rarr;</span></span></a></div>
+    </div>
+    <nav class="foot-spec" aria-label="Специализация">
+      <b>Специализации</b>
+      <a href="/ru/web-development/">Веб-разработка</a>
+      <a href="/ru/web-app-development/">Разработка веб-приложений</a>
+      <a href="/ru/mobile-app-development/">Разработка мобильных приложений</a>
+      <a href="/ru/game-development/">Разработка игр</a>
+      <a href="/ru/ai-automation/">Автоматизация на базе ИИ</a>
+      <a href="/ru/ai-consulting/">Консалтинг в сфере ИИ</a>
+      <a href="/ru/web-design/">Веб-дизайн</a>
+      <a href="/ru/website-redesign/">Редизайн сайтов</a>
+      <a href="/ru/seo/">SEO</a>
+      <a href="/ru/local-seo/">Локальное SEO</a>
+      <a href="/ru/ai-search-optimisation/">Оптимизация поиска с использованием ИИ</a>
+      <a href="/ru/request-an-audit/">Запросить аудит</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Сайты для вашего бизнеса">
+      <b>Для вашего бизнеса</b>
+      <a href="/ru/websites-for-barbershops/">Барбершопы</a>
+      <a href="/ru/websites-for-beauty-salons/">Салоны красоты</a>
+      <a href="/ru/small-business-web-design/">Веб-дизайн для малого бизнеса</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Избранные проекты">
+      <b>Проекты</b>
+      <a href="/ru/work/">Все кейсы</a>
+      <a href="/ru/work/barsion/">Barsion</a>
+      <a href="/ru/work/lamar-academy/">Lamar Academy</a>
+      <a href="/ru/work/gamefoundry/">GameFoundry</a>
+    <a href="/ru/work/canacore/">CanaCore</a>
+    <a href="/ru/work/geek-foundation/">Geek Foundation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Руководства">
+      <b>Руководства</b>
+      <a href="/ru/blog/">Все руководства</a>
+      <a href="/ru/blog/how-much-does-a-website-cost-uk/">Стоимость сайта в Великобритании</a>
+      <a href="/ru/blog/website-redesign-cost-uk/">Стоимость редизайна сайта</a>
+      <a href="/ru/blog/aeo-vs-geo-vs-seo/">AEO, GEO и SEO: в чем разница</a>
+      <a href="/ru/blog/how-much-does-ai-automation-cost/">Стоимость автоматизации на базе ИИ</a>
+      <a href="/ru/blog/telegram-mini-app-cost/">Стоимость разработки Telegram Mini App</a>
+      <a href="/ru/blog/how-to-get-recommended-by-ai-search/">Рекомендации в результатах поиска с ИИ</a>
+    </nav>
+    <div>© 2026 ICEWIND DALE CONSULTING LTD. Все права защищены.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js?v=20260926"></script>
+<script src="/assets/analytics.js?v=20261001a" defer></script>
+<script src="/assets/nav.js?v=20260929a" defer></script>
+<script src="/assets/i18n.js?v=20261012b" defer></script>
+</body>
+</html>

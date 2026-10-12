@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/i18n.css?v=20261012b">
+  <script src="/assets/i18n-init.js?v=20261012b"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>Кейс GameFoundry: платформа-маркетплейс для игр | ICE WIND</title>
+<meta name="description" content="Как ICE WIND спроектировала и создала GameFoundry, маркетплейс игр, куда независимые разработчики загружают играбельные сборки: с запуском в песочнице, антивирусной проверкой и еженедельным призовым раундом в USDT.">
+<link rel="canonical" href="https://icewind.uk/ru/work/gamefoundry/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://icewind.uk/ru/work/gamefoundry/">
+<meta property="og:title" content="Кейс GameFoundry: платформа-маркетплейс для игр | ICE WIND">
+<meta property="og:description" content="Как ICE WIND спроектировала и создала GameFoundry, маркетплейс игр, куда независимые разработчики загружают играбельные сборки: с запуском в песочнице, антивирусной проверкой и еженедельным призовым раундом в USDT.">
+<meta property="og:image" content="https://icewind.uk/assets/work/gamefoundry/og-gamefoundry.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Главная страница маркетплейса игр GameFoundry с призовым фондом и каталогом.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Кейс GameFoundry: платформа-маркетплейс для игр | ICE WIND">
+<meta name="twitter:description" content="Как ICE WIND спроектировала и создала GameFoundry, маркетплейс игр, куда независимые разработчики загружают играбельные сборки: с запуском в песочнице, антивирусной проверкой и еженедельным призовым раундом в USDT.">
+<meta name="twitter:image" content="https://icewind.uk/assets/work/gamefoundry/og-gamefoundry.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://icewind.uk/ru/work/gamefoundry/#case",
+  "name": "GameFoundry: платформа-маркетплейс игр",
+  "headline": "Маркетплейс игр, где посторонние люди безопасно запускают свой код на наших серверах",
+  "url": "https://icewind.uk/ru/work/gamefoundry/",
+  "sameAs": "https://www.gamefoundry.co.uk/",
+  "inLanguage": "ru",
+  "image": "https://icewind.uk/assets/work/gamefoundry/og-gamefoundry.jpg",
+  "about": "Games marketplace with user-uploaded playable builds, sandboxed execution, antivirus scanning and a weekly USDT prize round.",
+  "creator": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "publisher": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "keywords": "Product design, Full-stack development, Platform security, Payments and prize operations, Telegram Mini App, Multilingual SEO, Deployment and support"
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://icewind.uk/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Проекты",
+      "item": "https://icewind.uk/ru/work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GameFoundry",
+      "item": "https://icewind.uk/ru/work/gamefoundry/"
+    }
+  ]
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<link rel="stylesheet" href="/assets/case.css?v=20260826">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "hello@icewind.uk",
+  "telephone": "+44 7782 222054",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@icewind.uk",
+      "telephone": "+44 7782 222054",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+  <!-- ICEWIND:HREFLANG:START -->
+  <link rel="alternate" hreflang="en" href="https://icewind.uk/work/gamefoundry/">
+  <link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/gamefoundry/">
+  <link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/gamefoundry/">
+  <link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/gamefoundry/">
+  <link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/gamefoundry/">
+  <!-- ICEWIND:HREFLANG:END -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/ru/" aria-label="Главная страница ICE WIND">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Основной">
+      <a href="/ru/#services">Услуги</a>
+      <a href="/ru/work/">Проекты</a>
+      <a href="/ru/#consulting">Консалтинг</a>
+      <a href="/ru/#why">Почему мы</a>
+      <a href="/ru/#process">Как мы работаем</a>
+      <a href="/ru/blog/">Блог</a>
+    </nav>
+    <a class="btn" href="/ru/start-a-project/">Обсудить проект</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="case-hero-inner">
+      <nav class="crumbs" aria-label="«Хлебные крошки»">
+        <a href="/ru/work/">Проекты</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">GameFoundry</span>
+      </nav>
+      <div style="margin-top:22px"><span class="kicker">GameFoundry · Собственный продукт · Лондон</span></div>
+      <h1>Маркетплейс игр, позволяющий посторонним <span class="grad">безопасно запускать свой код на наших серверах</span></h1>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="standfirst">GameFoundry является собственным продуктом компании ICE WIND: это маркетплейс, где независимые разработчики размещают готовые игры, а игроки оценивают их, соревнуясь за денежные призы. Публиковать игры может любой желающий. Именно это решение превратило проект в задачу по обеспечению безопасности еще до того, как он стал задачей по дизайну.</p>
+      <div class="case-hero-cta">
+        <a class="btn ext" href="https://www.gamefoundry.co.uk/" target="_blank" rel="noopener noreferrer">Перейти на сайт
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (откроется в новой вкладке)</span>
+        </a>
+        <a class="btn ghost" href="/ru/start-a-project/">Обсудить проект</a>
+      </div>
+
+      <dl class="snapshot">
+        <div><dt>Клиент</dt><dd>ICE WIND (собственный продукт)</dd></div>
+        <div><dt>Сфера деятельности</dt><dd>Игры, маркетплейсы и пользовательский контент</dd></div>
+        <div><dt>Местоположение</dt><dd>Лондон, Англия</dd></div>
+        <div><dt>Действующий сайт</dt><dd><a href="https://www.gamefoundry.co.uk/" target="_blank" rel="noopener noreferrer">www.gamefoundry.co.uk</a></dd></div>
+      </dl>
+
+      <p style="margin-top:26px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85">Услуги</p>
+      <div class="pills">
+        <span class="pill">Продуктовый дизайн</span>
+        <span class="pill">Full-stack разработка</span>
+        <span class="pill">Безопасность платформы</span>
+        <span class="pill">Платежи и выплата призов</span>
+        <span class="pill">Мини-приложение в Telegram</span>
+        <span class="pill">Многоязычное SEO</span>
+        <span class="pill">Развертывание и поддержка</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SCREENSHOT -->
+  <section style="padding:56px 0 0">
+    <div class="wrap">
+      <figure>
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.gamefoundry.co.uk</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/01-gamefoundry-hero-640.webp 640w, /assets/work/gamefoundry/01-gamefoundry-hero.webp 1440w">
+            <img src="/assets/work/gamefoundry/01-gamefoundry-hero.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/01-gamefoundry-hero-640.jpg 640w, /assets/work/gamefoundry/01-gamefoundry-hero.jpg 1440w" width="1440" height="810" decoding="async" alt="Главная страница маркетплейса игр GameFoundry с отображением призового фонда в USDT.">
+          </picture>
+        </div>
+        <figcaption>Знакомство с маркетплейсом начинается с призового фонда, а не с экрана регистрации.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Задача</span>
+        <h2 style="margin-top:20px">Загрузить может каждый. Всё остальное следует из этого.</h2>
+        <p>Большинство маркетплейсов продают товары. GameFoundry же получает от посетителя файл, созданный посторонним человеком, и запускает его прямо в браузере, на той же инфраструктуре, где хранятся данные всех учетных записей платформы. Одно-единственное неосторожное допущение в этой цепочке может превратить продукт в канал распространения вредоносного ПО.</p>
+        <p>Это заставило нас пересмотреть подход к разработке всей системы. Прежде чем думать о дизайне каталога или механике розыгрыша призов, нам нужно было честно ответить на три вопроса. Как принимать произвольный бинарный файл от непроверенного пользователя, не доверяя ни единому его байту? Как позволить ненадежной веб-сборке выполняться в браузере так, чтобы она никак не затрагивала активную сессию пользователя? И как проводить розыгрыш реальных денежных призов (когда деньги еженедельно списываются со счета) по правилам, которые может проверить любой желающий, исключив при этом необходимость в ручном вмешательстве или догадках?</p>
+        <p>Кроме того, существовали и типичные для маркетплейсов задачи: создать каталог, который остается полезным по мере роста; разработать систему рейтингов, которой не смогут манипулировать те, кого она поощряет; и найти причину, по которой пользователи захотят вернуться на следующей неделе. Эта часть была обычной: стандартная <a href="/ru/web-app-development/" style="color:var(--ice)">разработка веб-приложений</a>; а вот с процессом загрузки файлов всё было иначе.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Подход</span>
+        <h2 style="margin-top:20px">Исходите из того, что любой загружаемый файл потенциально опасен, и стройте архитектуру с учетом этого.</h2>
+        <p>Мы создали платформу, руководствуясь простым правилом: мы не доверяем ничему, что загружает пользователь, и не скрываем от игроков этот принцип недоверия.</p>
+        <p>Формат файла определяется путем анализа самих байтов, а не по расширению. Перед распаковкой архивы проверяются на наличие путей, ведущих за пределы целевой директории (traversal paths), и «бомб декомпрессии». Каждая сборка сканируется антивирусом ClamAV; если сканирование недоступно, на странице игры отображается соответствующее уведомление, а не создается ложное впечатление, что файл безопасен. Загруженные веб-игры запускаются с отдельного домена, поэтому файлы cookie сессии основного сайта на них не передаются: игра физически не может получить доступ к защищенным (требующим авторизации) конечным точкам API, как бы ни пытался это сделать ее код.</p>
+        <p>Благодаря такой архитектуре реализация функционала продукта стала простой задачей. Для просмотра, скачивания и запуска игр учетная запись не требуется. Регистрация необходима только для загрузки игры или выставления оценки, ведь именно в этих случаях важна идентификация пользователя. Розыгрыш призов проводится по опубликованным правилам с отображением таймера обратного отсчета в реальном времени, а информация о каждой выплате и хеш соответствующей транзакции фиксируются на сайте.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.gamefoundry.co.uk: призы</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/03-prizes-rules-640.webp 640w, /assets/work/gamefoundry/03-prizes-rules.webp 1440w">
+            <img src="/assets/work/gamefoundry/03-prizes-rules.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/03-prizes-rules-640.jpg 640w, /assets/work/gamefoundry/03-prizes-rules.jpg 1440w" width="1440" height="810" loading="lazy" decoding="async" alt="Страница с правилами распределения призового фонда GameFoundry (еженедельный розыгрыш 100 USDT).">
+          </picture>
+        </div>
+        <figcaption>Опубликованные правила: 100 USDT в неделю с распределением долей 50 / 30 / 20 на основе рейтингов игроков.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DELIVERED -->
+  <section id="delivered">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Что мы реализовали</span>
+        <h2>Функционал действующей платформы</h2>
+      </div>
+      <ul class="tick">
+        <li>Публичный каталог с возможностью поиска и фильтрации по форматам, а также сортировкой по рейтингу, дате добавления и количеству скачиваний</li>
+        <li>Игры, доступные в браузере (запускаются в изолированном фрейме), и сборки для скачивания (Windows .exe, Android .apk и ZIP-архивы)</li>
+        <li>Регистрация с подтверждением адреса электронной почты, хешированием паролей алгоритмом bcrypt и использованием файлов cookie сессии с флагами httpOnly и префиксом __Host-, содержащих только хешированный токен</li>
+        <li>Процесс загрузки, охватывающий сборки игр, скриншоты, трейлеры и метаданные для страницы в магазине</li>
+        <li>Многоуровневая проверка загружаемых файлов: определение формата по сигнатуре (magic bytes), ограничения по размеру, а также сканирование на уязвимости типа Zip Slip и «zip-бомбы» для каждого архива, распаковываемого сервером</li>
+        <li>Сканирование антивирусом ClamAV в рамках конвейера с политикой блокировки при сбое (fail-closed) и отображением достоверного статуса проверки на странице каждой игры</li>
+        <li>Система оценок и текстовых отзывов (один отзыв от игрока на игру) с запретом на оценку собственной игры</li>
+        <li>Динамическая таблица лидеров с рейтингами за неделю, месяц и за всё время</li>
+        <li>Еженедельный розыгрыш приза в 100 USDT с опубликованными правилами (включая ротацию победителей), таймером обратного отсчета и публичным реестром выплат, содержащим хеши транзакций</li>
+        <li>Профили разработчиков, ссылки для отправки донатов и программа поддержки для разработчиков-основателей</li>
+        <li>Панель администратора для модерации (одобрение, блокировка, повторное сканирование, обработка жалоб) с ведением серверного журнала аудита критически важных действий</li>
+        <li>Telegram-мини-приложение и бот, использующие общую базу данных каталога и рейтингов</li>
+        <li>Локализация интерфейса на 10 языков</li>
+        <li>SEO-блог на 10 языках с поддержкой тегов canonical, hreflang и x-default</li>
+        <li>Развертывание в продакшн-среде на платформе Railway с использованием постоянного хранилища (persistent volume) и автоматизированным процессом релиза через git-push</li>
+      </ul>
+
+      <figure style="margin-top:52px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.gamefoundry.co.uk: таблица лидеров</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/02-leaderboard-640.webp 640w, /assets/work/gamefoundry/02-leaderboard.webp 1440w">
+            <img src="/assets/work/gamefoundry/02-leaderboard.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/02-leaderboard-640.jpg 640w, /assets/work/gamefoundry/02-leaderboard.jpg 1440w" width="1440" height="810" loading="lazy" decoding="async" alt="Таблица лидеров GameFoundry с результатами за неделю, месяц и за все время.">
+          </picture>
+        </div>
+        <figcaption>Рейтинги за неделю, месяц и всё время с таймером обратного отсчета до розыгрыша.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section id="decisions" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Ключевые инженерные решения</span>
+        <h2>Четыре решения, определившие облик платформы</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Ненадежный код получает отдельный домен</h3>
+          <span>Загруженные веб-игры обслуживаются с отдельного домена (второго уровня), а не из подкаталога основного сайта. Поскольку сессионный cookie-файл имеет префикс __Host- и привязан исключительно к основному домену, игра не получает к нему доступа и не может выполнить аутентифицированный вызов API, независимо от действий JavaScript-кода внутри игры. Домен для пользовательского контента обслуживает только игры и небольшое число эндпоинтов для записи результатов и счетчика запусков (работающих анонимно и без использования cookie). Там нет формы входа, которую можно было бы атаковать.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Решают байты, а не имя файла</h3>
+          <span>При проверке загружаемого файла считывается его реальный заголовок и сверяется с известными сигнатурами. Файл JPEG, переименованный в .zip, отклоняется. Веб-сборка, которая на самом деле не является ZIP-архивом, отбраковывается еще до начала распаковки. Веб-сборки (единственный тип архивов, распаковываемых сервером) проходят пофайловую проверку еще до записи данных на диск; при этом действуют ограничения: не более 20 000 элементов и не более 2 ГБ в распакованном виде, что предотвращает переполнение диска при распаковке небольшого файла. Сборки, предназначенные только для скачивания, на стороне сервера вообще не распаковываются.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Блокировать при сбое, затем сообщать истинную причину</h3>
+          <span>Каждая сборка сканируется антивирусом ClamAV, и файл попадает в каталог только после получения «чистого» результата проверки. Если сканер недоступен, загруженный файл отправляется на ручную проверку вместо автоматической публикации; при этом, если такая сборка получает одобрение, на странице игры вместо значка, подтверждающего безопасность, отображается уведомление о том, что файл не проходил проверку. Тот же принцип применяется и к призовому раунду: правила, таймер обратного отсчета и турнирная таблица находятся в открытом доступе, а информация о каждой выплате (включая хеш транзакции) публикуется по завершении раунда.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Учетная запись нужна лишь там, где она действительно необходима</h3>
+          <span>Для просмотра, скачивания и запуска игр регистрация не требуется: лишние барьеры лишь создают неудобства игрокам, не повышая при этом уровень безопасности. Учетная запись необходима только в тех случаях, когда важна идентификация пользователя: например, для загрузки игры или выставления оценки. Возможность загрузки файлов открывается только после подтверждения адреса электронной почты, ограничение «одна оценка от игрока для одной игры» обеспечивается на уровне базы данных, а разработчики не могут оценивать собственные проекты.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DELIVERY -->
+  <section id="technical">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Техническая реализация</span>
+        <h2 style="margin-top:20px">Устройство платформы</h2>
+        <p>Бэкенд реализован на Node.js и Express с использованием SQLite (через библиотеку better-sqlite3) и включает четырнадцать таблиц для хранения данных об учетных записях, сеансах, играх, медиафайлах, рецензиях, результатах, призах, отчетах и журнале аудита. Аутентификация выполняется с помощью хеширования bcrypt и серверных сеансов: файлы cookie имеют префикс __Host- и флаг httpOnly, а в базе данных хранится только SHA-256-хеш токена сеанса. Загрузка файлов обрабатывается библиотекой multer, а проверка архивов осуществляется с помощью adm-zip. ClamAV является необязательной зависимостью, поэтому сервер запускается и без него, однако процесс обработки загрузок настроен по принципу «безопасность по умолчанию» (fail-closed): непроверенная или недоступная для сканирования сборка отправляется на ручную модерацию и никогда не публикуется автоматически.</p>
+        <p>Фронтенд намеренно создан без использования фреймворков: применяются семантический HTML, написанный вручную CSS и чистый JavaScript (vanilla JS), а также собственная система интернационализации, поддерживающая десять языков и около 3000 переведенных строк. Каждый HTTP-ответ содержит заголовок Content-Security-Policy, полностью исключающий использование встроенных (inline) скриптов: политика действует в строгом режиме для основного сайта и в режиме «песочницы» (sandbox) для HTML-файлов загруженных игр. Дополнительно используются заголовки nosniff, защита от встраивания во фреймы (frame protection), а также политики referrer, permissions и HSTS. Ограничение частоты запросов (rate limiting) применяется для групп маршрутов: общий лимит составляет 300 запросов в минуту, но для операций аутентификации он ужесточается до 40 запросов за 15 минут, а для загрузки файлов до 30 запросов в час.</p>
+        <p>Telegram Mini App работает в рамках того же приложения на Express, но авторизует операции записи с помощью данных initData (подписанных HMAC), а не через cookie сессии, поскольку cookie с атрибутом SameSite не передаются внутри кросс-сайтового фрейма Telegram. Бот реализован как вебхук в том же приложении и взаимодействует с Bot API через нативный fetch, без дополнительных зависимостей.</p>
+        <p>Платформа развернута на хостинге Railway за TLS-прокси, использует постоянное хранилище (persistent volume) для базы данных и игровых файлов, а процесс выпуска обновлений автоматизирован с помощью скрипта для команды git push.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section id="outcome" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Результат</span>
+        <h2 style="margin-top:20px">Проект запущен, поддерживает несколько языков и открыт для приема заявок.</h2>
+        <p>GameFoundry доступна по адресу www.gamefoundry.co.uk на десяти языках; сейчас проходит еженедельный раунд с розыгрышем призов, ведется публичный реестр выплат, обновляемый по завершении раундов, а параллельно с веб-платформой работает Telegram Mini App.</p>
+        <p>Для компании ICE WIND это эталонный проект в той категории задач, которой большинство агентств предпочитают избегать: создание продуктов, где код пишут сами пользователи. Модель безопасности, инструменты модерации и механизмы распределения призов могут быть использованы повторно, а весь опыт, полученный нами при создании собственной платформы, доступен клиентам, разрабатывающим свои решения. Если же клиентам нужны сами игры, а не платформа для их запуска, то такие задачи относятся к категории <a href="/ru/game-development/" style="color:var(--ice)">разработка игр</a>.</p>
+      </div>
+
+      <p style="margin-top:34px">
+        <a class="btn ext" href="https://www.gamefoundry.co.uk/" target="_blank" rel="noopener noreferrer">Перейти на сайт
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (откроется в новой вкладке)</span>
+        </a>
+        <a class="btn ghost" href="/ru/work/geek-foundation/">Следующий кейс: Geek Foundation</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Обсудить проект</span>
+        <h2 style="margin-top:18px">Создаете платформу, контент для которой создают пользователи?</h2>
+        <p>Маркетплейсы, процессы загрузки контента, пользовательский контент и лежащая в их основе модель безопасности. Мы создали это для себя и создаем для клиентов.</p>
+        <a class="btn" href="/ru/start-a-project/">Обсудить проект</a><br>
+        <a class="mail" href="mailto:hello@icewind.uk">hello@icewind.uk</a><br>
+        <a class="mail" href="tel:+447782222054">+44 7782 222054</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND является торговой маркой компании ICEWIND DALE CONSULTING LTD, зарегистрированной в Англии и Уэльсе под номером 15925349.</b><br>
+      Регистрация в ICO: ZB838524 · Страхование гражданской ответственности и ответственности за качество продукции (лимит £1 млн) · Лондон, Англия<br>
+      347 Barking Road, London, England, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="tel:+447782222054" style="color:var(--ice)">+44 7782 222054</a>
+      <nav class="foot-links" aria-label="Юридическая информация и документы">
+        <a href="/ru/contact/">Контакты</a><a href="/ru/trust/">О компании и документах</a>
+        <a href="/ru/privacy/">Уведомление о конфиденциальности</a>
+        <a href="/ru/cookies/">Политика использования cookie</a>
+        <a href="/ru/terms/">Условия использования</a>
+      </nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="Профиль ICE WIND на Clutch"><strong>Clutch<i>.</i></strong><span>Посмотреть наш профиль</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND в Google: рейтинг 5,0 из 5. Читать отзывы в Google (откроется в новой вкладке)."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Читать отзывы в Google <span aria-hidden="true">&rarr;</span></span></a></div>
+    </div>
+    <nav class="foot-spec" aria-label="Специализация">
+      <b>Специализации</b>
+      <a href="/ru/web-development/">Веб-разработка</a>
+      <a href="/ru/web-app-development/">Разработка веб-приложений</a>
+      <a href="/ru/mobile-app-development/">Разработка мобильных приложений</a>
+      <a href="/ru/game-development/">Разработка игр</a>
+      <a href="/ru/ai-automation/">Автоматизация на базе ИИ</a>
+      <a href="/ru/ai-consulting/">Консалтинг в сфере ИИ</a>
+      <a href="/ru/web-design/">Веб-дизайн</a>
+      <a href="/ru/website-redesign/">Редизайн сайтов</a>
+      <a href="/ru/seo/">SEO</a>
+      <a href="/ru/local-seo/">Локальное SEO</a>
+      <a href="/ru/ai-search-optimisation/">Оптимизация поиска с использованием ИИ</a>
+      <a href="/ru/request-an-audit/">Запросить аудит</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Сайты для вашего бизнеса">
+      <b>Для вашего бизнеса</b>
+      <a href="/ru/websites-for-barbershops/">Барбершопы</a>
+      <a href="/ru/websites-for-beauty-salons/">Салоны красоты</a>
+      <a href="/ru/small-business-web-design/">Веб-дизайн для малого бизнеса</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Избранные проекты">
+      <b>Проекты</b>
+      <a href="/ru/work/">Все кейсы</a>
+      <a href="/ru/work/barsion/">Barsion</a>
+      <a href="/ru/work/lamar-academy/">Lamar Academy</a>
+      <a href="/ru/work/gamefoundry/">GameFoundry</a>
+    <a href="/ru/work/canacore/">CanaCore</a>
+    <a href="/ru/work/geek-foundation/">Geek Foundation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Руководства">
+      <b>Руководства</b>
+      <a href="/ru/blog/">Все руководства</a>
+      <a href="/ru/blog/how-much-does-a-website-cost-uk/">Стоимость сайта в Великобритании</a>
+      <a href="/ru/blog/website-redesign-cost-uk/">Стоимость редизайна сайта</a>
+      <a href="/ru/blog/aeo-vs-geo-vs-seo/">AEO, GEO и SEO: в чем разница</a>
+      <a href="/ru/blog/how-much-does-ai-automation-cost/">Стоимость автоматизации на базе ИИ</a>
+      <a href="/ru/blog/telegram-mini-app-cost/">Стоимость разработки Telegram Mini App</a>
+      <a href="/ru/blog/how-to-get-recommended-by-ai-search/">Рекомендации в результатах поиска с ИИ</a>
+    </nav>
+    <div>© 2026 ICEWIND DALE CONSULTING LTD. Все права защищены.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js?v=20260926"></script>
+<script src="/assets/analytics.js?v=20261001a" defer></script>
+<script src="/assets/nav.js?v=20260929a" defer></script>
+<script src="/assets/i18n.js?v=20261012b" defer></script>
+</body>
+</html>

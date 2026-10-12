@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/i18n.css?v=20261012b">
+  <script src="/assets/i18n-init.js?v=20261012b"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>Estudio de caso de Geek Foundation: Rediseño del sitio web | ICE WIND</title>
+<meta name="description" content="Cómo ICE WIND auditó, rediseñó y desarrolló la web responsive de Geek Foundation, aclarando cuatro áreas de negocio y GFUSD con un sistema editorial luminoso.">
+<link rel="canonical" href="https://icewind.uk/es/work/geek-foundation/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:title" content="Estudio de caso de Geek Foundation: Rediseño del sitio web | ICE WIND">
+<meta property="og:description" content="Cómo ICE WIND auditó, rediseñó y desarrolló la web responsive de Geek Foundation, aclarando cuatro áreas de negocio y GFUSD con un sistema editorial luminoso.">
+<meta property="og:url" content="https://icewind.uk/es/work/geek-foundation/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://icewind.uk/assets/work/geek-foundation/og-geek-foundation.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sección principal (hero) del sitio web de Geek Foundation con un diseño editorial ligero y un diagrama de infraestructura de cuatro capas.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Estudio de caso de Geek Foundation: Rediseño del sitio web | ICE WIND">
+<meta name="twitter:description" content="Cómo ICE WIND auditó, rediseñó y desarrolló la web responsive de Geek Foundation, aclarando cuatro áreas de negocio y GFUSD con un sistema editorial luminoso.">
+<meta name="twitter:image" content="https://icewind.uk/assets/work/geek-foundation/og-geek-foundation.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://icewind.uk/es/work/geek-foundation/#case",
+  "name": "Geek Foundation: auditoría, rediseño y desarrollo web",
+  "headline": "Convertir la complejidad de los activos digitales en una web clara y creíble",
+  "url": "https://icewind.uk/es/work/geek-foundation/",
+  "inLanguage": "es",
+  "image": "https://icewind.uk/assets/work/geek-foundation/og-geek-foundation.jpg",
+  "about": "Website audit, UX/UI redesign and front-end development for Geek Foundation, a global digital asset infrastructure organisation.",
+  "creator": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "publisher": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "keywords": "Website audit, UX/UI design, Website redesign, Front-end development, Responsive UX, Motion design, Accessibility"
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://icewind.uk/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Proyectos",
+      "item": "https://icewind.uk/es/work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Geek Foundation",
+      "item": "https://icewind.uk/es/work/geek-foundation/"
+    }
+  ]
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<link rel="stylesheet" href="/assets/case.css?v=20260826">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "hello@icewind.uk",
+  "telephone": "+44 7782 222054",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@icewind.uk",
+      "telephone": "+44 7782 222054",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+  <!-- ICEWIND:HREFLANG:START -->
+  <link rel="alternate" hreflang="en" href="https://icewind.uk/work/geek-foundation/">
+  <link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/geek-foundation/">
+  <link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/geek-foundation/">
+  <link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/geek-foundation/">
+  <link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/geek-foundation/">
+  <!-- ICEWIND:HREFLANG:END -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/es/" aria-label="Inicio de ICE WIND">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="/es/#services">Servicios</a>
+      <a href="/es/work/">Proyectos</a>
+      <a href="/es/#consulting">Consultoría</a>
+      <a href="/es/#why">Por qué elegirnos</a>
+      <a href="/es/#process">Cómo trabajamos</a>
+      <a href="/es/blog/">Blog</a>
+    </nav>
+    <a class="btn" href="/es/start-a-project/">Iniciar un proyecto</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="case-hero-inner">
+      <nav class="crumbs" aria-label="Migas de pan">
+        <a href="/es/work/">Proyectos</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">Geek Foundation</span>
+      </nav>
+      <div style="margin-top:22px"><span class="kicker">Geek Foundation · Infraestructura de activos digitales · Global</span></div>
+      <h1>Transformar la complejidad de los activos digitales en <span class="grad">un sitio web claro y creíble</span></h1>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="standfirst">ICE WIND auditó, rediseñó y desarrolló el sitio web público de Geek Foundation, integrando cuatro áreas de negocio y el GFUSD en un sistema editorial ligero y adaptable (responsive), preservando al mismo tiempo el contenido de la misión y el whitepaper aprobados por el cliente.</p>
+      <div class="case-hero-cta">
+        <a class="btn ext" href="https://geek.foundation/" target="_blank" rel="noopener noreferrer">Visitar el sitio web
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (se abre en una nueva pestaña)</span>
+        </a>
+        <a class="btn ghost" href="/es/start-a-project/">Iniciar un proyecto</a>
+      </div>
+
+      <dl class="snapshot">
+        <div><dt>Cliente</dt><dd>Geek Foundation</dd></div>
+        <div><dt>Sector</dt><dd>Infraestructura de activos digitales</dd></div>
+        <div><dt>Ubicación</dt><dd>Global</dd></div>
+        <div><dt>Sitio web activo</dt><dd><a href="https://geek.foundation/" target="_blank" rel="noopener noreferrer">geek.foundation</a></dd></div>
+      </dl>
+
+      <p style="margin-top:26px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85">Servicios</p>
+      <div class="pills">
+        <span class="pill">Auditoría del sitio web</span>
+        <span class="pill">Diseño UX/UI</span>
+        <span class="pill">Diseño visual</span>
+        <span class="pill">Desarrollo front-end</span>
+        <span class="pill">UX adaptable (responsive)</span>
+        <span class="pill">Diseño de movimiento (motion design)</span>
+        <span class="pill">Accesibilidad</span>
+        <span class="pill">Implementación técnica</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SCREENSHOT -->
+  <section style="padding:56px 0 0">
+    <div class="wrap">
+      <figure>
+        <div class="frame shot-2-1">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/01-geek-foundation-hero-640.webp 640w, /assets/work/geek-foundation/01-geek-foundation-hero.webp 1440w">
+            <img src="/assets/work/geek-foundation/01-geek-foundation-hero.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/01-geek-foundation-hero-640.jpg 640w, /assets/work/geek-foundation/01-geek-foundation-hero.jpg 1440w" width="1440" height="720" decoding="async" alt="Sección principal (hero) del sitio web de Geek Foundation con un diseño editorial ligero y un diagrama de infraestructura de cuatro capas.">
+          </picture>
+        </div>
+        <figcaption>Una nueva identidad editorial ligera y un diagrama que hace visibles las cuatro áreas de negocio desde la primera pantalla.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El desafío</span>
+        <h2 style="margin-top:20px">La información estaba ahí. La experiencia se interponía en el camino.</h2>
+        <p>Geek Foundation ya contaba con el contenido esencial de su narrativa pública: su historia, cuatro áreas de especialización, su misión, su oferta de servicios, información sobre GFUSD, su libro blanco (whitepaper) y vías de contacto directo. El problema residía en cómo se presentaba ese material al visitante.</p>
+        <p>Largas secciones competían por captar la atención, la jerarquía visual carecía de coherencia y ciertos elementos clave quedaban demasiado cerca de los márgenes del contenedor en algunas resoluciones de escritorio. La paleta de colores verde oscuro, típica del sector cripto, resultaba demasiado pesada y no transmitía la imagen segura y contemporánea que el cliente buscaba. En dispositivos móviles, el uso de flechas genéricas y estados de interacción (como el efecto de pulsación) similares a los del navegador restaba calidad a las interacciones importantes en comparación con el resto de la marca.</p>
+        <p>Por tanto, el rediseño estaba sujeto a una restricción estricta: no se podía eliminar ninguna información necesaria y el contenido aprobado de la misión y el libro blanco debía mantenerse intacto. El trabajo consistía en mejorar la comprensión, la confianza y la usabilidad actuando únicamente sobre la estructura, el diseño visual y el comportamiento del front-end.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El enfoque</span>
+        <h2 style="margin-top:20px">Conservar el contenido esencial y reconstruir la experiencia en torno a él.</h2>
+        <p>Mantuvimos la arquitectura de información de página única y reconstruimos la página siguiendo una secuencia clara: fundamentos, áreas, misión, oferta, GFUSD, cronograma y contacto. Ahora, un marco interior coherente y una cuadrícula adaptable (responsive) rigen todas las secciones; de este modo, los encabezados, los textos complementarios y las llamadas a la acción comparten un mismo ritmo visual, en lugar de posicionarse de forma aislada en cada sección.</p>
+        <p>El sistema visual adoptó un fondo de papel cálido, tipografía casi negra y un tono violeta intenso como acento. Evita el lenguaje genérico de negro y neón propio de muchos sitios de activos digitales, sin restar seriedad a la temática. Una tipografía de estilo editorial de gran tamaño transmite autoridad; las etiquetas monoespaciadas, las líneas finas y la retícula técnica preservan el carácter de infraestructura.</p>
+        <p>La sección principal (hero) transforma las cuatro áreas de negocio de la Fundación en un sistema de capas, alejándose de las típicas imágenes de archivo decorativas. Esa misma lógica se extiende por toda la página mediante áreas numeradas, visualizaciones de red y datos de apoyo claros. El movimiento es contenido y responde a las preferencias del usuario, aportando profundidad y orientación sin obstaculizar la lectura.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: acerca de</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/02-about-640.webp 640w, /assets/work/geek-foundation/02-about.webp 1280w">
+            <img src="/assets/work/geek-foundation/02-about.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/02-about-640.jpg 640w, /assets/work/geek-foundation/02-about.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Sección «Sobre nosotros» de Geek Foundation con un mensaje destacado, texto complementario y datos de la empresa.">
+          </picture>
+        </div>
+        <figcaption>La historia, el posicionamiento y los datos de la empresa comparten una retícula responsive coherente.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DELIVERED -->
+  <section id="delivered">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Lo que entregamos</span>
+        <h2>Todo lo incluido en el proyecto publicado</h2>
+      </div>
+      <ul class="tick">
+        <li>Rediseño visual y de UX integral, manteniendo todas las funcionalidades aprobadas por el cliente.</li>
+        <li>Experiencia de página única (single-page) adaptativa para escritorio, tableta y móvil.</li>
+        <li>Sistema de diseño editorial ligero con márgenes de contenido coherentes y retícula modular.</li>
+        <li>Diagrama principal (hero) personalizado que conecta Pagos, Liquidez, Cómputo y Seguridad.</li>
+        <li>Navegación fija en escritorio, estados activos según la sección y menú específico para móviles.</li>
+        <li>Secciones estructuradas para datos de la empresa, cuatro áreas de especialización, misión, oferta y cronograma.</li>
+        <li>Una presentación más clara de GFUSD: verificación en Solana, copia de la dirección del token, visualización alternativa del suministro publicado y Ethereum con el estado <code>COMING SOON</code> indicado con honestidad</li>
+        <li>Ruta del Whitepaper conservada y contenido de la Misión sin cambios</li>
+        <li>Animaciones de aparición al desplazarse, contadores ascendentes, profundidad de diagramas y movimiento de estado, con alternativas para usuarios con reducción de movimiento</li>
+        <li>Puntos de referencia accesibles, enlace de salto, gestión del foco y retroalimentación en tiempo real al copiar direcciones</li>
+        <li>Fuentes locales y recursos visuales alojados internamente, sin dependencia de fuentes o iconos de terceros</li>
+        <li>Paquete de código fuente tipado con compilaciones de producción para alojamiento compatible con Worker y Node</li>
+      </ul>
+
+      <div class="fig-2" style="margin-top:52px">
+        <figure>
+          <div class="frame">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: áreas</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/03-areas-640.webp 640w, /assets/work/geek-foundation/03-areas.webp 1280w">
+              <img src="/assets/work/geek-foundation/03-areas.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/03-areas-640.jpg 640w, /assets/work/geek-foundation/03-areas.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Sección de áreas de negocio de Geek Foundation que describe los servicios de pagos, liquidez, computación y seguridad.">
+            </picture>
+          </div>
+          <figcaption>Cuatro áreas de especialización numeradas y explicadas en una secuencia de lectura ágil.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: misión</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/04-mission-640.webp 640w, /assets/work/geek-foundation/04-mission.webp 1280w">
+              <img src="/assets/work/geek-foundation/04-mission.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/04-mission-640.jpg 640w, /assets/work/geek-foundation/04-mission.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Sección de misión de Geek Foundation con un diseño editorial espacioso y luminoso.">
+            </picture>
+          </div>
+          <figcaption>La Misión aprobada permanece intacta dentro de una composición más serena y legible.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section id="decisions" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Decisiones clave sobre la experiencia</span>
+        <h2>Las cuatro decisiones que definieron el sitio</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Ligero no significa superficial</h3>
+          <span>Las marcas de activos digitales suelen recurrir por defecto a fondos negros y colores neón. Geek Foundation necesitaba transmitir autoridad sin caer en clichés visuales. La cálida textura de papel y la tipografía editorial oscura facilitan la lectura de contenidos densos, mientras que las etiquetas violetas monoespaciadas y las líneas técnicas preservan la sensación de infraestructura.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Una base, presentada como un sistema</h3>
+          <span>Pagos, Liquidez, Cómputo y Seguridad no se presentan como cuatro tarjetas de servicio inconexas. La sección principal los apila alrededor de un núcleo base compartido, y luego la sección de Áreas desglosa cada capa en el mismo orden. El concepto visual refuerza la arquitectura de la información en lugar de competir con ella.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">El movimiento debe justificar su presencia</h3>
+          <span>Las secuencias de entrada, la aparición gradual de secciones, los contadores de datos y la profundidad del diagrama sirven para establecer jerarquía y orientación. Son deliberadamente breves, no obstaculizan la interacción y se omiten cuando el visitante prefiere un movimiento reducido. En dispositivos táctiles, los estados de pulsación se diseñan específicamente en lugar de heredarse del navegador.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Muestra el estado actual con honestidad</h3>
+          <span>El módulo GFUSD distingue entre lo existente y lo planificado. Solana cuenta con una dirección de token verificable y un dato de suministro publicado como alternativa. Ethereum aparece etiquetado como «PRÓXIMAMENTE» en lugar de mostrarse como una red inactiva de valor cero. Los visitantes pueden verificar la dirección en Solscan o copiarla recibiendo una confirmación clara.</span>
+        </div>
+      </div>
+
+      <figure style="margin-top:52px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: oferta</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/05-offer-640.webp 640w, /assets/work/geek-foundation/05-offer.webp 1280w">
+            <img src="/assets/work/geek-foundation/05-offer.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/05-offer-640.jpg 640w, /assets/work/geek-foundation/05-offer.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Portafolio de Geek Foundation que presenta las ofertas Geek Future, GFT y Proven Solutions.">
+          </picture>
+        </div>
+        <figcaption>La oferta del portafolio se presenta como una lista concisa en lugar de otro muro de tarjetas.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DELIVERY -->
+  <section id="technical">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Implementación técnica</span>
+        <h2 style="margin-top:20px">Cómo está construido el sitio</h2>
+        <p>El código fuente está escrito en TypeScript y React 19, utilizando un App Router compatible con Next (vía vinext) y una canalización de compilación con Vite. La interfaz se renderiza en el servidor y luego se mejora progresivamente con navegación sensible al contexto de la sección, revelado de elementos mediante IntersectionObserver, contadores ascendentes, confirmación de copiado al portapapeles y efecto de profundidad del puntero en el diagrama principal. Los diseños adaptativos (responsive) y las fuentes WOFF2 locales garantizan que la experiencia fundamental sea independiente de servicios de interfaz de terceros.</p>
+        <p>La implementación admite tanto un entorno de ejecución Cloudflare Worker como un contenedor compatible con Node. En el entorno de ejecución del servidor, un endpoint de mismo origen solicita la oferta de GFUSD a Solana, almacena en caché las respuestas exitosas y ofrece una alternativa publicada si el endpoint no está disponible. El destino Worker también incluye la configuración base de encabezados de seguridad para las respuestas del proyecto. Unos procesos automatizados generan el sitio, inspeccionan el HTML renderizado y verifican que el contenido y la configuración de los encabezados sean los previstos.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: GFUSD</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/06-gfusd-640.webp 640w, /assets/work/geek-foundation/06-gfusd.webp 1280w">
+            <img src="/assets/work/geek-foundation/06-gfusd.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/geek-foundation/06-gfusd-640.jpg 640w, /assets/work/geek-foundation/06-gfusd.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Sección GFUSD de Geek Foundation que muestra el encabezado de la stablecoin y un panel de referencia en USD.">
+          </picture>
+        </div>
+        <figcaption>GFUSD cuenta con una jerarquía propia, una referencia clara 1:1 y una representación fiel del estado de la red.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section id="outcome" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El resultado</span>
+        <h2 style="margin-top:20px">Publicado, coherente y con la identidad inconfundible de Geek Foundation.</h2>
+        <p>Geek Foundation ya dispone de un sitio web público que explica la organización, sus cuatro áreas, su misión, su oferta y GFUSD, todo ello integrado en una experiencia coherente. La composición para escritorio mantiene una estructura constante, los visitantes móviles disfrutan de una navegación e interacciones cuidadosamente diseñadas, y el sistema visual resulta actual sin recurrir a los clichés habituales de los sitios de criptomonedas.</p>
+        <p>La misión y el contenido del whitepaper aprobados permanecen intactos. Lo que ha cambiado es la claridad con la que el sitio web guía a los usuarios a través de ellos hacia una conversación directa.</p>
+      </div>
+
+      <div class="fig-2" style="margin-top:48px">
+        <figure>
+          <div class="frame">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: contacto</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/08-contact-640.webp 640w, /assets/work/geek-foundation/08-contact.webp 1280w">
+              <img src="/assets/work/geek-foundation/08-contact.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/08-contact-640.jpg 640w, /assets/work/geek-foundation/08-contact.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Sección de contacto de Geek Foundation (en color violeta) que invita a los visitantes a dar forma al futuro de las finanzas.">
+            </picture>
+          </div>
+          <figcaption>Una acción final de alto contraste cierra la narrativa sin introducir un sistema visual diferente.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame">
+            <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: pie de página</span></div>
+            <picture>
+              <source type="image/webp" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/09-footer-credit-640.webp 640w, /assets/work/geek-foundation/09-footer-credit.webp 1280w">
+              <img src="/assets/work/geek-foundation/09-footer-credit.jpg" sizes="(max-width:860px) 100vw, 543px" srcset="/assets/work/geek-foundation/09-footer-credit-640.jpg 640w, /assets/work/geek-foundation/09-footer-credit.jpg 1280w" width="1280" height="720" loading="lazy" decoding="async" alt="Pie de página de Geek Foundation con datos de contacto y el crédito «Powered by ICE WIND».">
+            </picture>
+          </div>
+          <figcaption>Los datos de contacto, el contexto legal y el crédito del proyecto ICE WIND aparecen en un pie de página cuidadosamente diseñado.</figcaption>
+        </figure>
+      </div>
+
+      <figure style="margin-top:48px;max-width:390px">
+        <div class="frame shot-phone">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">geek.foundation: versión móvil</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:420px) 100vw, 390px" srcset="/assets/work/geek-foundation/10-mobile-hero.webp 390w">
+            <img src="/assets/work/geek-foundation/10-mobile-hero.jpg" sizes="(max-width:420px) 100vw, 390px" width="390" height="844" loading="lazy" decoding="async" alt="Sección principal (hero) móvil de Geek Foundation con encabezado adaptable, llamada a la acción y diagrama técnico.">
+          </picture>
+        </div>
+        <figcaption>En la versión móvil, la sección principal (hero) se transforma en una experiencia de una sola columna.</figcaption>
+      </figure>
+
+      <p style="margin-top:34px">
+        <a class="btn ext" href="https://geek.foundation/" target="_blank" rel="noopener noreferrer">Visitar el sitio web
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (se abre en una nueva pestaña)</span>
+        </a>
+        <a class="btn ghost" href="/es/work/canacore/">Siguiente caso: CanaCore</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Iniciar un proyecto</span>
+        <h2 style="margin-top:18px">¿Necesitas una presencia digital más clara para una organización compleja?</h2>
+        <p>Transformamos ofertas densas, material técnico y múltiples áreas de negocio en sitios web que la gente puede entender, utilizar y en los que puede confiar.</p>
+        <a class="btn" href="/es/start-a-project/">Iniciar un proyecto</a><br>
+        <a class="mail" href="mailto:hello@icewind.uk">hello@icewind.uk</a><br>
+        <a class="mail" href="tel:+447782222054">+44 7782 222054</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND es una marca comercial de ICEWIND DALE CONSULTING LTD, registrada en Inglaterra y Gales con el número de empresa 15925349.</b><br>
+      Registro en la ICO ZB838524 · Seguro de responsabilidad civil y por productos de £1m · Londres, Inglaterra<br>
+      347 Barking Road, Londres, Inglaterra, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="tel:+447782222054" style="color:var(--ice)">+44 7782 222054</a>
+      <nav class="foot-links" aria-label="Enlaces legales y de cumplimiento">
+        <a href="/es/contact/">Contacto</a><a href="/es/trust/">Confianza y cumplimiento</a>
+        <a href="/es/privacy/">Aviso de privacidad</a>
+        <a href="/es/cookies/">Política de cookies</a>
+        <a href="/es/terms/">Términos</a>
+      </nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="Ver ICE WIND en Clutch"><strong>Clutch<i>.</i></strong><span>Ver nuestro perfil</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND en Google: valoración de 5,0 sobre 5. Lee nuestras reseñas en Google (se abre en una nueva pestaña)."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Lee nuestra reseña en Google <span aria-hidden="true">&rarr;</span></span></a></div>
+    </div>
+    <nav class="foot-spec" aria-label="Especialidades de servicio">
+      <b>Especializaciones</b>
+      <a href="/es/web-development/">Desarrollo web</a>
+      <a href="/es/web-app-development/">Desarrollo de aplicaciones web</a>
+      <a href="/es/mobile-app-development/">Desarrollo de aplicaciones móviles</a>
+      <a href="/es/game-development/">Desarrollo de videojuegos</a>
+      <a href="/es/ai-automation/">Automatización con IA</a>
+      <a href="/es/ai-consulting/">Consultoría de IA</a>
+      <a href="/es/web-design/">Diseño web</a>
+      <a href="/es/website-redesign/">Rediseño de sitios web</a>
+      <a href="/es/seo/">SEO</a>
+      <a href="/es/local-seo/">SEO local</a>
+      <a href="/es/ai-search-optimisation/">Optimización de búsqueda con IA</a>
+      <a href="/es/request-an-audit/">Solicitar una auditoría</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Sitios web para tu negocio">
+      <b>Para tu negocio</b>
+      <a href="/es/websites-for-barbershops/">Barberías</a>
+      <a href="/es/websites-for-beauty-salons/">Salones de belleza</a>
+      <a href="/es/small-business-web-design/">Diseño web para pequeñas empresas</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Trabajos destacados">
+      <b>Proyectos</b>
+      <a href="/es/work/">Todos los casos de éxito</a>
+      <a href="/es/work/barsion/">Barsion</a>
+      <a href="/es/work/lamar-academy/">Lamar Academy</a>
+      <a href="/es/work/gamefoundry/">GameFoundry</a>
+      <a href="/es/work/canacore/">CanaCore</a>
+      <a href="/es/work/geek-foundation/">Geek Foundation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Guías">
+      <b>Guías</b>
+      <a href="/es/blog/">Todas las guías</a>
+      <a href="/es/blog/how-much-does-a-website-cost-uk/">Coste de un sitio web en el Reino Unido</a>
+      <a href="/es/blog/website-redesign-cost-uk/">Coste del rediseño de un sitio web</a>
+      <a href="/es/blog/aeo-vs-geo-vs-seo/">AEO frente a GEO y SEO</a>
+      <a href="/es/blog/how-much-does-ai-automation-cost/">Coste de la automatización con IA</a>
+      <a href="/es/blog/telegram-mini-app-cost/">Coste de una Mini App de Telegram</a>
+      <a href="/es/blog/how-to-get-recommended-by-ai-search/">Obtener recomendaciones en búsquedas por IA</a>
+    </nav>
+    <div>© 2026 ICEWIND DALE CONSULTING LTD. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js?v=20260926"></script>
+<script src="/assets/analytics.js?v=20261001a" defer></script>
+<script src="/assets/nav.js?v=20260929a" defer></script>
+<script src="/assets/i18n.js?v=20261012b" defer></script>
+</body>
+</html>

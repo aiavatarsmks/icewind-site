@@ -76,7 +76,7 @@
     }
   };
 
-  var here = location.pathname.replace(/\/+$/, '') + '/';
+  var here = location.pathname.replace(/^\/(?:ru|es|uk)(?=\/)/, '').replace(/\/+$/, '') + '/';
   var config = FORMS[here];
   if (!config) return;
 
@@ -98,7 +98,7 @@
   }
 
   function describe(data) {
-    var lines = ['Source: Website', 'Form: ' + config.label];
+    var lines = ['Source: Website', 'Form: ' + config.label, 'Language: ' + (window.IW_LANGUAGE || 'en')];
     config.fields.forEach(function (pair) {
       var v = data.get(pair[1]);
       lines.push(pair[0] + ': ' + (typeof v === 'string' && v.trim() ? v.trim() : 'empty'));
@@ -111,7 +111,7 @@
     var name = value('Name') || FALLBACK_NAME;
     var contact = value('Contact');
     var summary = describe(data).slice(0, 16000);
-    var pageLine = '\nPage: ' + location.origin + location.pathname;
+    var pageLine = '\nPage: ' + location.origin + here;
     var body = {
       _honey: value('_honey'),
       'Company': COMPANY,

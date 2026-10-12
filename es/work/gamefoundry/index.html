@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/i18n.css?v=20261012b">
+  <script src="/assets/i18n-init.js?v=20261012b"></script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#050b16">
+<title>Estudio de caso de GameFoundry: plataforma de mercado de juegos | ICE WIND</title>
+<meta name="description" content="Cómo ICE WIND diseñó y desarrolló GameFoundry, un marketplace de juegos donde desarrolladores independientes suben builds jugables, con ejecución en sandbox, análisis antivirus y una ronda semanal de premios en USDT.">
+<link rel="canonical" href="https://icewind.uk/es/work/gamefoundry/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ICE WIND">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://icewind.uk/es/work/gamefoundry/">
+<meta property="og:title" content="Estudio de caso de GameFoundry: plataforma de mercado de juegos | ICE WIND">
+<meta property="og:description" content="Cómo ICE WIND diseñó y desarrolló GameFoundry, un marketplace de juegos donde desarrolladores independientes suben builds jugables, con ejecución en sandbox, análisis antivirus y una ronda semanal de premios en USDT.">
+<meta property="og:image" content="https://icewind.uk/assets/work/gamefoundry/og-gamefoundry.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Página de inicio del marketplace de juegos GameFoundry con el bote de premios y el catálogo.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Estudio de caso de GameFoundry: plataforma de mercado de juegos | ICE WIND">
+<meta name="twitter:description" content="Cómo ICE WIND diseñó y desarrolló GameFoundry, un marketplace de juegos donde desarrolladores independientes suben builds jugables, con ejecución en sandbox, análisis antivirus y una ronda semanal de premios en USDT.">
+<meta name="twitter:image" content="https://icewind.uk/assets/work/gamefoundry/og-gamefoundry.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://icewind.uk/es/work/gamefoundry/#case",
+  "name": "GameFoundry: plataforma marketplace de juegos",
+  "headline": "Un marketplace de juegos que permite a desconocidos ejecutar su código en nuestros servidores, de forma segura",
+  "url": "https://icewind.uk/es/work/gamefoundry/",
+  "sameAs": "https://www.gamefoundry.co.uk/",
+  "inLanguage": "es",
+  "image": "https://icewind.uk/assets/work/gamefoundry/og-gamefoundry.jpg",
+  "about": "Games marketplace with user-uploaded playable builds, sandboxed execution, antivirus scanning and a weekly USDT prize round.",
+  "creator": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "publisher": {
+    "@id": "https://icewind.uk/#organization"
+  },
+  "keywords": "Product design, Full-stack development, Platform security, Payments and prize operations, Telegram Mini App, Multilingual SEO, Deployment and support"
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://icewind.uk/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Proyectos",
+      "item": "https://icewind.uk/es/work/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "GameFoundry",
+      "item": "https://icewind.uk/es/work/gamefoundry/"
+    }
+  ]
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/service.css">
+<link rel="stylesheet" href="/assets/case.css?v=20260826">
+<!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://icewind.uk/#organization",
+  "name": "ICE WIND",
+  "legalName": "ICEWIND DALE CONSULTING LTD",
+  "alternateName": [
+    "Icewind Dale Consulting",
+    "Icewind Dale Consulting Limited"
+  ],
+  "description": "ICE WIND is a London-based web development studio building websites, web applications, Telegram Mini Apps, games and AI automation, with consulting on every service.",
+  "url": "https://icewind.uk/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://icewind.uk/assets/ice-wind-logo.png",
+    "width": 256,
+    "height": 256
+  },
+  "image": "https://icewind.uk/assets/og-cover.jpg",
+  "email": "hello@icewind.uk",
+  "telephone": "+44 7782 222054",
+  "foundingDate": "2024-08-29",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "347 Barking Road",
+    "addressLocality": "London",
+    "postalCode": "E13 8EE",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "London"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    }
+  ],
+  "knowsAbout": [
+    "Web development",
+    "Web design",
+    "Web application development",
+    "Telegram Mini Apps",
+    "Game development",
+    "AI automation and LLM integration"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@icewind.uk",
+      "telephone": "+44 7782 222054",
+      "areaServed": "GB",
+      "availableLanguage": [
+        "English"
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "Companies House",
+      "value": "15925349"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "ICO",
+      "value": "ZB838524"
+    }
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/icewind-dale-consulting",
+    "https://www.instagram.com/icewind.consult/",
+    "https://techbehemoths.com/company/icewind-dale-consulting-ltd",
+    "https://www.goodfirms.co/company/icewind-dale-consulting-ltd",
+    "https://themanifest.com/company/icewind-dale-consulting"
+  ]
+}
+</script>
+<!-- ICEWIND:ORGANIZATION-SCHEMA:END -->
+  <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
+  <script src="/assets/theme-init.js?v=20260826"></script>
+  <script src="/assets/theme.js?v=20260826" defer></script>
+  <!-- ICEWIND:HREFLANG:START -->
+  <link rel="alternate" hreflang="en" href="https://icewind.uk/work/gamefoundry/">
+  <link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/gamefoundry/">
+  <link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/gamefoundry/">
+  <link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/gamefoundry/">
+  <link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/gamefoundry/">
+  <!-- ICEWIND:HREFLANG:END -->
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/es/" aria-label="Inicio de ICE WIND">
+      <svg width="52" height="40" viewBox="0 0 96 88" fill="none" aria-hidden="true"><defs><linearGradient id="hA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8" stop-opacity="0"/><stop offset=".35" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient><linearGradient id="hB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0ea5e9" stop-opacity="0"/><stop offset=".4" stop-color="#0ea5e9"/><stop offset="1" stop-color="#bae6fd"/></linearGradient></defs><g fill="none" stroke-linecap="round" stroke-width="6"><path d="M6 30 H46 c10 0 16 -7 12 -14 c-3 -6 -12 -6 -14 0" stroke="url(#hA)"/><path d="M2 44 H64 c11 0 17 8 12 15 c-4 6 -13 5 -15 -1" stroke="url(#hB)"/><path d="M10 58 H40" stroke="url(#hA)"/></g><g fill="#e0f2fe"><path d="M70 24 l4 4 -4 4 -4 -4 z"/><path d="M84 40 l3 3 -3 3 -3 -3 z" fill="#7dd3fc"/><path d="M52 62 l3 3 -3 3 -3 -3 z" fill="#bae6fd"/></g></svg>
+      <span class="logo-word">ICE WIND</span>
+    </a>
+    <nav class="links" aria-label="Principal">
+      <a href="/es/#services">Servicios</a>
+      <a href="/es/work/">Proyectos</a>
+      <a href="/es/#consulting">Consultoría</a>
+      <a href="/es/#why">Por qué elegirnos</a>
+      <a href="/es/#process">Cómo trabajamos</a>
+      <a href="/es/blog/">Blog</a>
+    </nav>
+    <a class="btn" href="/es/start-a-project/">Iniciar un proyecto</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="case-hero">
+    <canvas id="wind" aria-hidden="true"></canvas>
+    <div class="case-hero-inner">
+      <nav class="crumbs" aria-label="Migas de pan">
+        <a href="/es/work/">Proyectos</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">GameFoundry</span>
+      </nav>
+      <div style="margin-top:22px"><span class="kicker">GameFoundry · Producto interno · Londres</span></div>
+      <h1>Un mercado de juegos que permite a desconocidos <span class="grad">ejecutar su código en nuestros servidores, de forma segura</span></h1>
+      <div class="gold-rule" aria-hidden="true"></div>
+      <p class="standfirst">GameFoundry es un producto propio de ICE WIND: un mercado donde desarrolladores independientes suben juegos jugables y los usuarios los valoran para optar a premios en dinero real. Cualquiera puede publicar. Esa única decisión convirtió el proyecto en un desafío de ingeniería de seguridad antes incluso de que fuera un problema de diseño.</p>
+      <div class="case-hero-cta">
+        <a class="btn ext" href="https://www.gamefoundry.co.uk/" target="_blank" rel="noopener noreferrer">Visitar el sitio web
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (se abre en una nueva pestaña)</span>
+        </a>
+        <a class="btn ghost" href="/es/start-a-project/">Iniciar un proyecto</a>
+      </div>
+
+      <dl class="snapshot">
+        <div><dt>Cliente</dt><dd>ICE WIND (producto interno)</dd></div>
+        <div><dt>Sector</dt><dd>Juegos, mercados y contenido generado por el usuario</dd></div>
+        <div><dt>Ubicación</dt><dd>Londres, Inglaterra</dd></div>
+        <div><dt>Sitio web activo</dt><dd><a href="https://www.gamefoundry.co.uk/" target="_blank" rel="noopener noreferrer">www.gamefoundry.co.uk</a></dd></div>
+      </dl>
+
+      <p style="margin-top:26px;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ice);opacity:.85">Servicios</p>
+      <div class="pills">
+        <span class="pill">Diseño de producto</span>
+        <span class="pill">Desarrollo full-stack</span>
+        <span class="pill">Seguridad de la plataforma</span>
+        <span class="pill">Pagos y gestión de premios</span>
+        <span class="pill">Miniaplicación de Telegram</span>
+        <span class="pill">SEO multilingüe</span>
+        <span class="pill">Despliegue y soporte</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIMARY SCREENSHOT -->
+  <section style="padding:56px 0 0">
+    <div class="wrap">
+      <figure>
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.gamefoundry.co.uk</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/01-gamefoundry-hero-640.webp 640w, /assets/work/gamefoundry/01-gamefoundry-hero.webp 1440w">
+            <img src="/assets/work/gamefoundry/01-gamefoundry-hero.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/01-gamefoundry-hero-640.jpg 640w, /assets/work/gamefoundry/01-gamefoundry-hero.jpg 1440w" width="1440" height="810" decoding="async" alt="Página de inicio del mercado de juegos GameFoundry mostrando el fondo de premios en USDT.">
+          </picture>
+        </div>
+        <figcaption>El mercado se presenta mostrando la bolsa de premios, no una barrera de registro.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section id="challenge">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El desafío</span>
+        <h2 style="margin-top:20px">Cualquiera puede subir contenido. Todo lo demás surge de ahí.</h2>
+        <p>La mayoría de los mercados venden productos. GameFoundry entrega a los visitantes un archivo escrito por un desconocido y lo ejecuta en el navegador, sobre la misma infraestructura que aloja todas las cuentas de la plataforma. Una sola suposición imprudente en cualquier punto de esa cadena convierte el producto en un canal de distribución de malware.</p>
+        <p>Eso replanteó todo el desarrollo. Antes de pensar en el diseño del catálogo o en la mecánica de los premios, tuvimos que responder honestamente a tres preguntas. ¿Cómo aceptamos un binario arbitrario de una cuenta no verificada sin confiar ni en un solo byte del mismo? ¿Cómo permitimos que una compilación web no confiable se ejecute en el navegador sin que llegue a interactuar con una sesión iniciada? ¿Y cómo organizamos una ronda de premios en efectivo real (dinero que sale de una billetera cada semana) con reglas que un desconocido pueda auditar y sin intervenciones manuales de por medio?</p>
+        <p>A esto se sumaba el problema habitual de cualquier mercado: mantener un catálogo útil a medida que crece, contar con un sistema de valoraciones que no pueda ser manipulado por quienes reciben las recompensas y ofrecer una razón para que los usuarios regresen la semana siguiente. Esa parte es puro <a href="/es/web-app-development/" style="color:var(--ice)">desarrollo de aplicaciones web</a>; el proceso de carga, en cambio, no lo era.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El enfoque</span>
+        <h2 style="margin-top:20px">Tratar cada carga como una amenaza potencial y diseñar el sistema en consecuencia.</h2>
+        <p>Construimos la plataforma basándonos en una regla sencilla: nunca se confía en nada de lo que sube un usuario, y esa falta de confianza no se oculta a los jugadores.</p>
+        <p>El formato del archivo se determina leyendo los bytes reales, nunca la extensión. Antes de la extracción, los archivos se inspeccionan en busca de rutas de acceso fuera del directorio (traversal paths) y «bombas de descompresión». Cada versión ejecutable se analiza con ClamAV; cuando el análisis no está disponible, la página del juego lo indica explícitamente en lugar de sugerir implícitamente que el archivo está limpio. Los juegos web subidos se ejecutan desde un dominio independiente y registrable, por lo que la cookie de sesión del sitio principal nunca se envía a ellos; un juego es literalmente incapaz de acceder a un punto final (endpoint) que requiera autenticación, independientemente de lo que intente su código.</p>
+        <p>Con esta base establecida, el desarrollo del producto resultó sencillo. No se necesita ninguna cuenta para explorar, descargar o jugar. El registro solo es obligatorio para subir un juego o dejar una valoración, que es cuando la identidad realmente importa. La ronda de premios se rige por normas publicadas y cuenta con una cuenta atrás en tiempo real; además, cada pago queda registrado en el sitio junto con su hash de transacción.</p>
+      </div>
+
+      <figure style="margin-top:48px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.gamefoundry.co.uk: premios</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/03-prizes-rules-640.webp 640w, /assets/work/gamefoundry/03-prizes-rules.webp 1440w">
+            <img src="/assets/work/gamefoundry/03-prizes-rules.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/03-prizes-rules-640.jpg 640w, /assets/work/gamefoundry/03-prizes-rules.jpg 1440w" width="1440" height="810" loading="lazy" decoding="async" alt="Página de reglas de premios de GameFoundry que muestra el reparto semanal de 100 USDT.">
+          </picture>
+        </div>
+        <figcaption>Normas publicadas: 100 USDT semanales, repartidos en proporciones de 50/30/20 según las valoraciones de los jugadores.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DELIVERED -->
+  <section id="delivered">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Lo que entregamos</span>
+        <h2>Todo ello integrado en la plataforma en vivo</h2>
+      </div>
+      <ul class="tick">
+        <li>Un catálogo público con filtros de formato y función de búsqueda, así como opciones para ordenar por valoración, fecha de publicación y número de descargas</li>
+        <li>Juegos ejecutables en el navegador dentro de un marco aislado (sandbox), además de versiones descargables (archivos .exe para Windows, .apk para Android y archivos .zip)</li>
+        <li>Registro con verificación de correo electrónico, hashing de contraseñas mediante bcrypt y cookies de sesión con el prefijo __Host- y la marca httpOnly, que almacenan únicamente un token cifrado mediante hash</li>
+        <li>Flujo de carga que abarca compilaciones de juegos, capturas de pantalla, tráileres y metadatos para la tienda</li>
+        <li>Validación de carga por capas: detección de formato mediante magic bytes, límites de tamaño e inspección de vulnerabilidades zip-slip y zip-bomb en cada archivo comprimido que extrae el servidor</li>
+        <li>Análisis antivirus con ClamAV en una canalización de seguridad estricta (fail-closed), con un estado de análisis transparente y visible para los jugadores en la página de cada juego</li>
+        <li>Sistema de valoraciones y reseñas escritas (una por jugador y juego), con bloqueo de autovaloración</li>
+        <li>Tabla de clasificación dinámica con períodos semanales, mensuales e históricos</li>
+        <li>Ronda de premios semanal de 100 USDT con reglas publicadas que incluyen rotación de campeones, cuenta atrás en tiempo real y registro público de pagos con hashes de transacción</li>
+        <li>Perfiles de desarrollador, enlaces para propinas y programa para desarrolladores fundadores</li>
+        <li>Consola de administración para aprobación, bloqueo, reanálisis y gestión de informes de abuso, respaldada por un registro de auditoría en el servidor de las acciones críticas</li>
+        <li>Miniaplicación y bot de Telegram que comparten el mismo catálogo y datos de valoración</li>
+        <li>Localización de la interfaz a 10 idiomas</li>
+        <li>Blog optimizado para SEO en 10 idiomas, con gestión de etiquetas canonical, hreflang y x-default</li>
+        <li>Despliegue en producción en Railway con volumen persistente y proceso de lanzamiento automatizado mediante git-push</li>
+      </ul>
+
+      <figure style="margin-top:52px">
+        <div class="frame">
+          <div class="bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">www.gamefoundry.co.uk: tabla de clasificación</span></div>
+          <picture>
+            <source type="image/webp" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/02-leaderboard-640.webp 640w, /assets/work/gamefoundry/02-leaderboard.webp 1440w">
+            <img src="/assets/work/gamefoundry/02-leaderboard.jpg" sizes="(max-width:900px) 100vw, 1112px" srcset="/assets/work/gamefoundry/02-leaderboard-640.jpg 640w, /assets/work/gamefoundry/02-leaderboard.jpg 1440w" width="1440" height="810" loading="lazy" decoding="async" alt="Tabla de clasificación de GameFoundry con posiciones semanales, mensuales e históricas.">
+          </picture>
+        </div>
+        <figcaption>Clasificaciones semanales, mensuales e históricas con cuenta atrás en tiempo real hasta el sorteo.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KEY DECISIONS -->
+  <section id="decisions" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Decisiones clave de ingeniería</span>
+        <h2>Las cuatro decisiones que definieron la plataforma</h2>
+      </div>
+      <div class="grid-2">
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">El código no confiable recibe su propio dominio</h3>
+          <span>Los juegos web subidos se sirven desde un dominio registrable independiente, en lugar de hacerlo desde una ruta en el sitio principal. Dado que la cookie de sesión lleva el prefijo __Host- y está restringida únicamente al dominio principal, el juego nunca la recibe y no puede realizar llamadas autenticadas a la API, independientemente de lo que intente hacer su código JavaScript. El origen del contenido generado por el usuario sirve únicamente juegos y un conjunto reducido de puntos finales anónimos (sin uso de cookies) para gestionar puntuaciones y recuentos de partidas. Allí no existe ningún sistema de inicio de sesión que pueda ser atacado.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">El contenido (los bytes) es lo que decide, no el nombre del archivo</h3>
+          <span>La validación de la subida lee la cabecera real del archivo y la compara con firmas conocidas. Se rechaza un archivo JPEG renombrado a .zip. Una compilación web que no sea realmente un archivo ZIP se rechaza antes de extraer nada. Las compilaciones web (los únicos archivos que el servidor descomprime) se analizan entrada por entrada antes de escribir un solo byte en el disco; se aplica un límite máximo de 20.000 entradas y un límite de 2 GB una vez descomprimido, para evitar que un archivo pequeño pueda expandirse hasta llenar el disco por completo. Las compilaciones destinadas únicamente a descarga nunca se descomprimen en el servidor.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Bloqueo ante fallos y transparencia informativa</h3>
+          <span>Cada compilación es analizada por ClamAV, y nada llega al catálogo hasta que el análisis arroja un resultado limpio. Si el analizador no está disponible, la subida queda retenida para una revisión manual en lugar de publicarse automáticamente; además, cuando se aprueba una compilación retenida, la página del juego informa a los jugadores de que el archivo no ha sido verificado, en vez de mostrar una insignia tranquilizadora. El mismo principio rige la ronda de premios: las reglas, la cuenta atrás y la clasificación son públicas, y cada pago se publica junto con su hash de transacción a medida que concluyen las rondas.</span>
+        </div>
+        <div class="prob">
+          <h3 style="font-size:1.02rem;color:var(--frost);margin:0 0 6px">Una cuenta solo donde es necesaria</h3>
+          <span>Explorar, descargar y jugar no requiere registro; imponer trabas en estas acciones perjudica a los jugadores sin aportar ninguna ventaja de seguridad. La cuenta es obligatoria precisamente donde la identidad importa: al subir un juego o al valorarlo. La verificación por correo electrónico controla las subidas, se aplica una restricción de una valoración por jugador y por juego a nivel de base de datos, y los desarrolladores no pueden valorar su propio trabajo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL DELIVERY -->
+  <section id="technical">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">Implementación técnica</span>
+        <h2 style="margin-top:20px">Cómo está construida la plataforma</h2>
+        <p>El backend utiliza Node.js y Express sobre SQLite mediante la biblioteca better-sqlite3, con catorce tablas que abarcan cuentas, sesiones, juegos, archivos multimedia, reseñas, puntuaciones, premios, informes y un registro de auditoría. La autenticación emplea hashing con bcrypt y sesiones gestionadas en el servidor: la cookie utiliza el prefijo __Host- y la marca httpOnly, mientras que la base de datos almacena únicamente el hash SHA-256 del token de sesión. La gestión de subidas corre a cargo de multer y los archivos comprimidos se inspeccionan con adm-zip. ClamAV es una dependencia opcional, por lo que el servidor arranca incluso sin ella; no obstante, el proceso de subida opera bajo una política de seguridad restrictiva: cualquier compilación no analizada o imposible de analizar queda retenida para su revisión manual y nunca se publica automáticamente.</p>
+        <p>El frontend prescinde deliberadamente de frameworks: utiliza HTML semántico, CSS escrito a mano y JavaScript nativo (vanilla), junto con una capa de internacionalización personalizada que abarca diez idiomas y cerca de 3000 cadenas de texto traducidas. Todas las respuestas incluyen una cabecera Content-Security-Policy que prohíbe estrictamente el uso de scripts en línea; esta política es rigurosa en el sitio principal y aplica un entorno aislado (sandboxing) para el HTML de los juegos subidos. Además, se implementan las directivas nosniff, protección contra framing, política de referrer, política de permisos y HSTS. Se aplica una limitación de tasa (rate limiting) según la familia de rutas: un límite global de 300 peticiones por minuto, que se restringe a 40 peticiones cada quince minutos para la autenticación y a 30 por hora para las subidas de archivos.</p>
+        <p>La Mini App de Telegram se ejecuta dentro de la misma aplicación Express, pero autoriza las operaciones de escritura mediante el initData firmado con HMAC de Telegram en lugar de la cookie de sesión, ya que una cookie SameSite nunca se transmite dentro de un marco (iframe) de Telegram de origen cruzado (cross-site). El bot funciona como un webhook integrado en la misma aplicación e interactúa con la API de bots mediante fetch nativo, sin dependencias adicionales.</p>
+        <p>La plataforma se aloja en Railway, detrás de un proxy TLS, cuenta con un volumen persistente para la base de datos y los archivos del juego, y se despliega mediante un proceso de publicación automatizado con git-push.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section id="outcome" class="band">
+    <div class="wrap">
+      <div class="prose">
+        <span class="kicker">El resultado</span>
+        <h2 style="margin-top:20px">En funcionamiento, multilingüe y abierta a nuevas propuestas.</h2>
+        <p>GameFoundry ya está operativa en www.gamefoundry.co.uk en diez idiomas; cuenta con una ronda de premios semanal abierta, un registro público de pagos que se actualiza al finalizar cada ronda y una Mini App de Telegram que funciona en paralelo a la plataforma web.</p>
+        <p>Para ICE WIND, este es el proyecto de referencia en una categoría de trabajo que la mayoría de las agencias suelen evitar discretamente: productos en los que son los propios usuarios quienes aportan el código. El modelo de seguridad, las herramientas de moderación y la gestión de premios subyacentes son reutilizables, y todo lo que aprendimos al crear nuestra propia plataforma está a disposición de los clientes que deseen desarrollar la suya. Para aquellos clientes que necesiten los juegos en sí, y no la plataforma que los sustenta, esa labor se enmarca en <a href="/es/game-development/" style="color:var(--ice)">desarrollo de videojuegos</a>.</p>
+      </div>
+
+      <p style="margin-top:34px">
+        <a class="btn ext" href="https://www.gamefoundry.co.uk/" target="_blank" rel="noopener noreferrer">Visitar el sitio web
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+          <span class="visually-hidden"> (se abre en una nueva pestaña)</span>
+        </a>
+        <a class="btn ghost" href="/es/work/geek-foundation/">Siguiente caso: Geek Foundation</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker">Iniciar un proyecto</span>
+        <h2 style="margin-top:18px">¿Está creando una plataforma donde los usuarios aportan el contenido?</h2>
+        <p>Marketplaces, flujos de carga, contenido generado por el usuario y el modelo de seguridad subyacente. Lo hemos desarrollado para nosotros mismos, y lo desarrollamos para nuestros clientes.</p>
+        <a class="btn" href="/es/start-a-project/">Iniciar un proyecto</a><br>
+        <a class="mail" href="mailto:hello@icewind.uk">hello@icewind.uk</a><br>
+        <a class="mail" href="tel:+447782222054">+44 7782 222054</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="legal">
+      <b>ICE WIND es una marca comercial de ICEWIND DALE CONSULTING LTD, registrada en Inglaterra y Gales con el número de empresa 15925349.</b><br>
+      Registro en la ICO ZB838524 · Seguro de responsabilidad civil y por productos de £1m · Londres, Inglaterra<br>
+      347 Barking Road, Londres, Inglaterra, E13 8EE<br>
+      <a href="mailto:hello@icewind.uk" style="color:var(--ice)">hello@icewind.uk</a><br>
+      <a href="tel:+447782222054" style="color:var(--ice)">+44 7782 222054</a>
+      <nav class="foot-links" aria-label="Enlaces legales y de cumplimiento">
+        <a href="/es/contact/">Contacto</a><a href="/es/trust/">Confianza y cumplimiento</a>
+        <a href="/es/privacy/">Aviso de privacidad</a>
+        <a href="/es/cookies/">Política de cookies</a>
+        <a href="/es/terms/">Términos</a>
+      </nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="Ver ICE WIND en Clutch"><strong>Clutch<i>.</i></strong><span>Ver nuestro perfil</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND en Google: valoración de 5,0 sobre 5. Lee nuestras reseñas en Google (se abre en una nueva pestaña)."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Lee nuestra reseña en Google <span aria-hidden="true">&rarr;</span></span></a></div>
+    </div>
+    <nav class="foot-spec" aria-label="Especialidades de servicio">
+      <b>Especializaciones</b>
+      <a href="/es/web-development/">Desarrollo web</a>
+      <a href="/es/web-app-development/">Desarrollo de aplicaciones web</a>
+      <a href="/es/mobile-app-development/">Desarrollo de aplicaciones móviles</a>
+      <a href="/es/game-development/">Desarrollo de videojuegos</a>
+      <a href="/es/ai-automation/">Automatización con IA</a>
+      <a href="/es/ai-consulting/">Consultoría de IA</a>
+      <a href="/es/web-design/">Diseño web</a>
+      <a href="/es/website-redesign/">Rediseño de sitios web</a>
+      <a href="/es/seo/">SEO</a>
+      <a href="/es/local-seo/">SEO local</a>
+      <a href="/es/ai-search-optimisation/">Optimización de búsqueda con IA</a>
+      <a href="/es/request-an-audit/">Solicitar una auditoría</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Sitios web para tu negocio">
+      <b>Para tu negocio</b>
+      <a href="/es/websites-for-barbershops/">Barberías</a>
+      <a href="/es/websites-for-beauty-salons/">Salones de belleza</a>
+      <a href="/es/small-business-web-design/">Diseño web para pequeñas empresas</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Trabajos destacados">
+      <b>Proyectos</b>
+      <a href="/es/work/">Todos los casos de éxito</a>
+      <a href="/es/work/barsion/">Barsion</a>
+      <a href="/es/work/lamar-academy/">Lamar Academy</a>
+      <a href="/es/work/gamefoundry/">GameFoundry</a>
+    <a href="/es/work/canacore/">CanaCore</a>
+    <a href="/es/work/geek-foundation/">Geek Foundation</a>
+    </nav>
+    <nav class="foot-spec" aria-label="Guías">
+      <b>Guías</b>
+      <a href="/es/blog/">Todas las guías</a>
+      <a href="/es/blog/how-much-does-a-website-cost-uk/">Coste de un sitio web en el Reino Unido</a>
+      <a href="/es/blog/website-redesign-cost-uk/">Coste del rediseño de un sitio web</a>
+      <a href="/es/blog/aeo-vs-geo-vs-seo/">AEO frente a GEO y SEO</a>
+      <a href="/es/blog/how-much-does-ai-automation-cost/">Coste de la automatización con IA</a>
+      <a href="/es/blog/telegram-mini-app-cost/">Coste de una Mini App de Telegram</a>
+      <a href="/es/blog/how-to-get-recommended-by-ai-search/">Obtener recomendaciones en búsquedas por IA</a>
+    </nav>
+    <div>© 2026 ICEWIND DALE CONSULTING LTD. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="/assets/service.js?v=20260926"></script>
+<script src="/assets/analytics.js?v=20261001a" defer></script>
+<script src="/assets/nav.js?v=20260929a" defer></script>
+<script src="/assets/i18n.js?v=20261012b" defer></script>
+</body>
+</html>

@@ -1,163 +1,1443 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://icewind.uk/</loc>
-  
-    <lastmod>2026-10-12</lastmod></url>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/limitedoffer/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/limitedoffer/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/limitedoffer/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/limitedoffer/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/limitedoffer/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/limitedoffer/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/limitedoffer/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/limitedoffer/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/limitedoffer/"/>
   </url>
   <url>
     <loc>https://icewind.uk/start-a-project/</loc>
-  
-    <lastmod>2026-10-12</lastmod></url>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/start-a-project/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/start-a-project/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/start-a-project/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/start-a-project/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/start-a-project/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/start-a-project/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/start-a-project/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/start-a-project/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/mobile-app-development/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/mobile-app-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/mobile-app-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/mobile-app-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/mobile-app-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/mobile-app-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/mobile-app-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/mobile-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/mobile-app-development/"/>
   </url>
   <url>
     <loc>https://icewind.uk/ai-consulting/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-consulting/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/ai-consulting/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-consulting/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/ai-consulting/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-consulting/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/ai-consulting/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-consulting/"/>
   </url>
   <url>
     <loc>https://icewind.uk/local-seo/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/local-seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/local-seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/local-seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/local-seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/local-seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/local-seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/local-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/local-seo/"/>
   </url>
   <url>
     <loc>https://icewind.uk/small-business-web-design/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/small-business-web-design/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/small-business-web-design/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/small-business-web-design/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/small-business-web-design/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/small-business-web-design/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/small-business-web-design/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/small-business-web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/small-business-web-design/"/>
   </url>
   <url>
     <loc>https://icewind.uk/request-an-audit/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/request-an-audit/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/request-an-audit/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/request-an-audit/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/request-an-audit/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/request-an-audit/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/request-an-audit/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/request-an-audit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/request-an-audit/"/>
   </url>
   <url>
     <loc>https://icewind.uk/work/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/work/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/work/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/work/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/"/>
   </url>
   <url>
     <loc>https://icewind.uk/web-development/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/web-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/web-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/web-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-development/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/game-development/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/game-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/game-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/game-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/game-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/game-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/game-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/game-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/game-development/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/web-app-development/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-app-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/web-app-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-app-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/web-app-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-app-development/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/web-app-development/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-app-development/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-app-development/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/ai-automation/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-automation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/ai-automation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-automation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/ai-automation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-automation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/ai-automation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-automation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-automation/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/web-design/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-design/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/web-design/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-design/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/web-design/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-design/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/web-design/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/web-design/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/website-redesign/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/website-redesign/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/website-redesign/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/website-redesign/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/website-redesign/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/website-redesign/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/website-redesign/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/website-redesign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/website-redesign/"/>
   </url>
   <url>
     <loc>https://icewind.uk/seo/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/seo/"/>
   </url>
   <url>
     <loc>https://icewind.uk/ai-search-optimisation/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-search-optimisation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/ai-search-optimisation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-search-optimisation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/ai-search-optimisation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-search-optimisation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/ai-search-optimisation/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/ai-search-optimisation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/ai-search-optimisation/"/>
   </url>
   <url>
     <loc>https://icewind.uk/websites-for-barbershops/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-barbershops/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/websites-for-barbershops/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-barbershops/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/websites-for-barbershops/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-barbershops/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/websites-for-barbershops/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-barbershops/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-barbershops/"/>
   </url>
   <url>
     <loc>https://icewind.uk/websites-for-beauty-salons/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-beauty-salons/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/websites-for-beauty-salons/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-beauty-salons/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/websites-for-beauty-salons/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-beauty-salons/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/websites-for-beauty-salons/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/websites-for-beauty-salons/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/websites-for-beauty-salons/"/>
   </url>
   <url>
     <loc>https://icewind.uk/work/barsion/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/barsion/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/work/barsion/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/barsion/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/work/barsion/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/barsion/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/work/barsion/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/barsion/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/barsion/"/>
   </url>
   <url>
     <loc>https://icewind.uk/work/lamar-academy/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/lamar-academy/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/work/lamar-academy/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/lamar-academy/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/work/lamar-academy/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/lamar-academy/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/work/lamar-academy/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/lamar-academy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/lamar-academy/"/>
   </url>
   <url>
     <loc>https://icewind.uk/work/gamefoundry/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/gamefoundry/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/work/gamefoundry/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/gamefoundry/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/work/gamefoundry/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/gamefoundry/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/work/gamefoundry/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/gamefoundry/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/gamefoundry/"/>
   </url>
   <url>
     <loc>https://icewind.uk/work/geek-foundation/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/geek-foundation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/work/geek-foundation/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/geek-foundation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/work/geek-foundation/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/geek-foundation/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/work/geek-foundation/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/geek-foundation/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/geek-foundation/"/>
   </url>
   <url>
     <loc>https://icewind.uk/work/canacore/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/canacore/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/work/canacore/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/canacore/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/work/canacore/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/canacore/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/work/canacore/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/work/canacore/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/work/canacore/"/>
   </url>
   <url>
     <loc>https://icewind.uk/privacy/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/privacy/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/privacy/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/privacy/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/privacy/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/privacy/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/privacy/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/privacy/"/>
   </url>
   <url>
     <loc>https://icewind.uk/trust/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/trust/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/trust/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/trust/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/trust/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/trust/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/trust/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/trust/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/trust/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/trust/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/trust/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/trust/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/trust/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/trust/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/trust/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/trust/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/trust/"/>
   </url>
   <url>
     <loc>https://icewind.uk/cookies/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/cookies/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/cookies/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/cookies/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/cookies/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/cookies/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/cookies/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/cookies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/cookies/"/>
   </url>
   <url>
     <loc>https://icewind.uk/terms/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/terms/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/terms/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/terms/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/terms/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/terms/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/terms/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/terms/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/terms/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/how-much-does-a-website-cost-uk/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/how-much-does-a-website-cost-uk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/how-much-does-a-website-cost-uk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/how-much-does-a-website-cost-uk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-a-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-a-website-cost-uk/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/blog/how-much-does-ai-automation-cost/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/how-much-does-ai-automation-cost/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/how-much-does-ai-automation-cost/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/how-much-does-ai-automation-cost/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-much-does-ai-automation-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-much-does-ai-automation-cost/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/blog/telegram-mini-app-cost/</loc>
-  
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/telegram-mini-app-cost/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/telegram-mini-app-cost/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/telegram-mini-app-cost/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/telegram-mini-app-cost/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/telegram-mini-app-cost/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/blog/how-to-get-recommended-by-ai-search/</loc>
-
-    <lastmod>2026-09-29</lastmod></url>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/how-to-get-recommended-by-ai-search/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/how-to-get-recommended-by-ai-search/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/how-to-get-recommended-by-ai-search/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-get-recommended-by-ai-search/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-get-recommended-by-ai-search/"/>
+  </url>
   <url>
     <loc>https://icewind.uk/contact/</loc>
     <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/contact/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/contact/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/contact/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/contact/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/contact/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/website-redesign-cost-uk/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/website-redesign-cost-uk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/website-redesign-cost-uk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/website-redesign-cost-uk/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/website-redesign-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/website-redesign-cost-uk/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/aeo-vs-geo-vs-seo/</loc>
     <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/aeo-vs-geo-vs-seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/aeo-vs-geo-vs-seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/aeo-vs-geo-vs-seo/</loc>
+    <lastmod>2026-09-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/aeo-vs-geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/aeo-vs-geo-vs-seo/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/when-to-rebuild-a-website/</loc>
     <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/when-to-rebuild-a-website/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/when-to-rebuild-a-website/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/when-to-rebuild-a-website/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/when-to-rebuild-a-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/when-to-rebuild-a-website/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/barbershop-website-cost-uk/</loc>
     <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/barbershop-website-cost-uk/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/barbershop-website-cost-uk/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/barbershop-website-cost-uk/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/barbershop-website-cost-uk/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/barbershop-website-cost-uk/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/wix-squarespace-vs-custom-website/</loc>
     <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/wix-squarespace-vs-custom-website/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/wix-squarespace-vs-custom-website/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/wix-squarespace-vs-custom-website/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/wix-squarespace-vs-custom-website/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/wix-squarespace-vs-custom-website/"/>
   </url>
   <url>
     <loc>https://icewind.uk/blog/how-to-choose-web-development-agency-london/</loc>
     <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/ru/blog/how-to-choose-web-development-agency-london/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/es/blog/how-to-choose-web-development-agency-london/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+  </url>
+  <url>
+    <loc>https://icewind.uk/uk/blog/how-to-choose-web-development-agency-london/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://icewind.uk/ru/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://icewind.uk/es/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://icewind.uk/uk/blog/how-to-choose-web-development-agency-london/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://icewind.uk/blog/how-to-choose-web-development-agency-london/"/>
   </url>
 </urlset>

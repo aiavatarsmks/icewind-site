@@ -1,45 +1,33 @@
 #!/usr/bin/env python3
-"""Validate translations, write /ru/ /es/ /uk/ pages, runtime dictionaries and sitemap.xml.
-
-Run from anywhere:  python3 scripts/build_i18n.py
-"""
+"""Validate the translation source and write static dictionaries for the site."""
 import json
+from pathlib import Path
 
-from i18n_site import LANGUAGES, ROOT, SCRIPT_STRINGS, build, inventory, sitemap
+from i18n_inventory import inventory
 
+ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / 'translations' / 'messages.json'
 OUTPUT = ROOT / 'assets' / 'i18n'
-RUNTIME_MAX_WORDS = 12  # runtime only translates text inserted by scripts
+LANGUAGES = ('ru', 'es', 'uk')
 
 
 def main():
-    messages = json.loads(SOURCE.read_text(encoding='utf-8'))
+    messages = json.loads(SOURCE.read_text())
     needed = inventory()
     missing = sorted(set(needed) - set(messages))
     if missing:
-        raise SystemExit(f'Missing translations ({len(missing)}): ' + repr(missing[:20]))
-    invalid = [key for key in needed
-               if any(not isinstance(messages[key].get(lang), str) or not messages[key][lang].strip()
-                      for lang in LANGUAGES)]
+        raise SystemExit('Missing translations: ' + repr(missing))
+    invalid = [key for key, value in messages.items()
+               if not isinstance(value, dict) or
+               any(not isinstance(value.get(lang), str) or not value[lang].strip()
+                   for lang in LANGUAGES)]
     if invalid:
-        raise SystemExit('Incomplete translation entries: ' + repr(invalid[:20]))
-    dashes = [key for key in needed if any('—' in messages[key][lang] for lang in LANGUAGES)]
-    if dashes:
-        raise SystemExit('Translations must not contain em dashes: ' + repr(dashes[:20]))
-
+        raise SystemExit('Incomplete translation entries: ' + repr(invalid))
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    runtime = [key for key in needed if key in SCRIPT_STRINGS or len(key.split()) <= RUNTIME_MAX_WORDS]
     for lang in LANGUAGES:
-        values = {key: messages[key][lang] for key in runtime}
-        (OUTPUT / f'{lang}.json').write_text(
-            json.dumps(values, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
-        print(f'{lang}: {len(values)} runtime strings')
-
-    written, report = build(messages)
-    if report:
-        raise SystemExit('Untranslated strings while building: ' + repr(sorted(report)[:20]))
-    print(f'{written} translated pages written')
-    print(f'sitemap.xml: {sitemap()} URLs')
+        values = {key: value[lang] for key, value in messages.items()}
+        (OUTPUT / f'{lang}.json').write_text(json.dumps(values, ensure_ascii=False, separators=(',', ':')) + '\n')
+        print(f'{lang}: {len(values)} strings')
 
 
 if __name__ == '__main__':

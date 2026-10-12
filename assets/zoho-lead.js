@@ -16,7 +16,7 @@
    than an email.
 
    To use on a page, add one line before </body>:
-     <script src="/assets/zoho-lead.js?v=20260929d" defer></script> */
+     <script src="/assets/zoho-lead.js?v=20261012g" defer></script> */
 (function () {
   'use strict';
 

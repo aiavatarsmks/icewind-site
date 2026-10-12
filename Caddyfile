@@ -2,6 +2,12 @@
 	@www host www.icewind.uk
 	redir @www https://icewind.uk{uri} permanent
 
+	# Retired language-prefixed URLs (live 12 Oct 2026): send to the same page without the prefix.
+	@langRoot path /ru /es /uk
+	redir @langRoot /{?query} permanent
+	@langPath path_regexp lang ^/(?:ru|es|uk)(/.*)$
+	redir @langPath {re.lang.1}{?query} permanent
+
 	root * /srv
 	encode zstd gzip
 	file_server {

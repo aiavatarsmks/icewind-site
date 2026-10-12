@@ -15,14 +15,3 @@ footer .foot > div:last-child:not(.legal){flex-basis:100%;text-align:left}
 .mobile-menu a::after{margin-left:auto}
 .mobile-menu a .iw-english-only{margin-left:auto}
 .mobile-menu a:has(.iw-english-only)::after{margin-left:14px}
-
-/* Space Grotesk has no Cyrillic glyphs. Russian and Ukrainian headings borrow
-   Manrope's Cyrillic under the same family name, so Latin text is unchanged. */
-@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggOxSvfedN62Zw.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggqxSvfedN62Zw.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
-/* Longer translated labels in compact headers. */
-header .header-inner{min-width:0}
-header .header-inner .privacy-link{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-@media(max-width:520px){html:not([lang="en"]) header .nav .back{display:none}}
-/* Long Russian and Ukrainian words must not push headings past a phone screen. */
-html:not([lang="en"]) :is(h1,h2,h3){overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}

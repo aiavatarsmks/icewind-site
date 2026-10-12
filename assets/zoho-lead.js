@@ -57,7 +57,7 @@
     },
     '/limitedoffer/': {
       form: 'offer-form',
-      label: '£500 Website Offer',
+      label: '£499 Website Offer',
       fields: [
         ['Email', 'Contact'],
         ['Business and website brief', 'Message'],

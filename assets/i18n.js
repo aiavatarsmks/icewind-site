@@ -110,7 +110,7 @@
   if (current === 'en') {
     switcher();
   } else {
-    fetch('/assets/i18n/' + current + '.json?v=20261012b')
+    fetch('/assets/i18n/' + current + '.json?v=20261012c')
       .then(function (response) { if (!response.ok) throw new Error('Translations unavailable'); return response.json(); })
       .then(function (values) { dictionary = values; })
       .catch(function (error) { console.error('ICE WIND translations could not be loaded:', error); })

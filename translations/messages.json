@@ -5083,5 +5083,10 @@
     "ru": "Оставьте контакты, и мы ответим в течение одного рабочего дня.",
     "es": "Déjanos tus datos y te responderemos en un día laborable.",
     "uk": "Залиште контакти, і ми відповімо протягом одного робочого дня."
+  },
+  "Sorry, we could not send your enquiry. Please email hello@icewind.uk or call +44 7782 222054.": {
+    "ru": "Не удалось отправить сообщение. Напишите на hello@icewind.uk или позвоните: +44 7782 222054.",
+    "es": "No hemos podido enviar tu mensaje. Escríbenos a hello@icewind.uk o llama al +44 7782 222054.",
+    "uk": "Не вдалося надіслати повідомлення. Напишіть на hello@icewind.uk або зателефонуйте: +44 7782 222054."
   }
 }

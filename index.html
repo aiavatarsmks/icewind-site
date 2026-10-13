@@ -350,6 +350,31 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
   footer{padding:36px 0 44px}
   .foot{gap:16px}
 }
+
+/* ---------- quick contact (homepage form, same fields as /contact/) ---------- */
+.quick-contact{padding:8px 0 0}
+.qc-card{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px 40px;align-items:start;border:1px solid rgba(125,211,252,.25);border-radius:24px;padding:32px 34px;background:radial-gradient(600px 280px at 50% -20%,rgba(56,189,248,.14),transparent 70%),linear-gradient(180deg,#0a1830,#060e1e)}
+.qc-intro h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:700;color:var(--frost);line-height:1.15}
+.qc-intro p{color:var(--muted);margin-top:10px}
+.quick-contact .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+.quick-contact .field{display:grid;gap:6px;margin-bottom:14px;min-width:0}
+.quick-contact .field.full{grid-column:1/-1}
+.quick-contact .field label{font-size:.88rem;color:var(--frost);font-weight:500}
+.qc-card input,.qc-card textarea{width:100%;font:inherit;color:var(--text);background:#06101f;border:1px solid var(--line);border-radius:11px;padding:11px 13px;transition:border-color .2s,box-shadow .2s}
+.qc-card input:focus,.qc-card textarea:focus{border-color:var(--ice);box-shadow:0 0 0 3px rgba(125,211,252,.1);outline:none}
+.qc-card textarea{min-height:88px;resize:vertical}
+.quick-contact .field .error{display:none;color:#fca5a5;font-size:.8rem}
+.quick-contact .field.invalid input,.quick-contact .field.invalid textarea{border-color:#fca5a5}
+.quick-contact .field.invalid .error{display:block}
+.quick-contact .form-status{display:none;margin-bottom:14px;padding:12px 14px;border:1px solid rgba(252,165,165,.48);border-radius:12px;background:rgba(127,29,29,.16);color:var(--frost);font-size:.9rem}
+.quick-contact .form-status.show{display:block}
+.quick-contact .btn{border:0;cursor:pointer;font-family:inherit}
+.quick-contact .btn:disabled{opacity:.7;cursor:wait;transform:none}
+.quick-contact .honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.quick-contact .fine{font-size:.8rem;color:var(--muted);margin-top:12px}
+.quick-contact .fine a{color:var(--ice)}
+@media(max-width:860px){.qc-card{grid-template-columns:1fr;padding:26px 20px}}
+@media(max-width:560px){.quick-contact .form-grid{grid-template-columns:1fr}.quick-contact .btn{width:100%}}
 </style>
   <link rel="stylesheet" href="/assets/theme.css?v=20260929a">
   <script src="/assets/theme-init.js?v=20260826"></script>
@@ -424,6 +449,48 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
       </div>
     </div>
   </div>
+
+    <!-- QUICK CONTACT -->
+    <section id="quick-contact" class="quick-contact" aria-labelledby="quick-contact-title">
+      <div class="wrap">
+        <div class="form-card qc-card">
+          <div class="qc-intro">
+            <h2 id="quick-contact-title">Want us to get in touch?</h2>
+            <p>Leave your details and we will reply within one business day.</p>
+          </div>
+          <div class="qc-body">
+            <p class="form-status" id="qc-status" role="status" aria-live="polite"></p>
+            <form id="home-contact-form" action="https://icewind-quiz-proxy.icewinddale.workers.dev/enquiry" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="New ICE WIND contact enquiry">
+              <input type="hidden" name="_next" value="https://icewind.uk/contact/?sent=true">
+              <div class="honeypot" aria-hidden="true">
+                <label for="qc-website">Leave this field empty</label>
+                <input id="qc-website" name="_honey" type="text" tabindex="-1" autocomplete="off">
+              </div>
+              <div class="form-grid">
+                <div class="field" id="qc-name-field">
+                  <label for="qc-name">Your name</label>
+                  <input id="qc-name" name="Name" autocomplete="name" aria-describedby="qc-name-error" required>
+                  <p class="error" id="qc-name-error" aria-live="polite"></p>
+                </div>
+                <div class="field" id="qc-contact-field">
+                  <label for="qc-contact">How should we reply?</label>
+                  <input id="qc-contact" name="Contact" placeholder="Email, phone or Telegram" autocomplete="email" aria-describedby="qc-contact-error" required>
+                  <p class="error" id="qc-contact-error" aria-live="polite"></p>
+                </div>
+                <div class="field full" id="qc-message-field">
+                  <label for="qc-message">What is it about?</label>
+                  <textarea id="qc-message" name="Message" rows="3" aria-describedby="qc-message-error" required></textarea>
+                  <p class="error" id="qc-message-error" aria-live="polite"></p>
+                </div>
+              </div>
+              <button class="btn" id="qc-submit" type="submit">Send enquiry</button>
+              <p class="fine">We use your details only to answer this enquiry. <a href="/privacy/">Read our Privacy Notice.</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
   <!-- SERVICES -->
   <section id="services">
@@ -926,10 +993,52 @@ footer{border-top:1px solid var(--line);padding:44px 0 52px;font-size:.85rem;col
   })();
 })();
 </script>
+<script>
+(function () {
+  var form = document.getElementById('home-contact-form');
+  if (!form) return;
+  var status = document.getElementById('qc-status');
+  var submit = document.getElementById('qc-submit');
+  function setError(id, message) {
+    document.getElementById(id + '-field').classList.add('invalid');
+    document.getElementById(id + '-error').textContent = message;
+  }
+  form.addEventListener('input', function (event) {
+    var field = event.target.closest('.field');
+    if (field && field.classList.contains('invalid')) {
+      field.classList.remove('invalid');
+      var error = field.querySelector('.error'); if (error) error.textContent = '';
+    }
+  });
+  form.addEventListener('submit', function (event) {
+    form.querySelectorAll('.field.invalid').forEach(function (field) {
+      field.classList.remove('invalid');
+      var error = field.querySelector('.error'); if (error) error.textContent = '';
+    });
+    status.classList.remove('show');
+    var name = document.getElementById('qc-name');
+    var contact = document.getElementById('qc-contact');
+    var message = document.getElementById('qc-message');
+    var first = null;
+    if (!name.value.trim()) { setError('qc-name', 'Please enter your name.'); first = name; }
+    if (!contact.value.trim()) { setError('qc-contact', 'Please tell us how to reply.'); first = first || contact; }
+    if (!message.value.trim()) { setError('qc-message', 'Please tell us what your enquiry is about.'); first = first || message; }
+    if (first) {
+      event.preventDefault();
+      status.textContent = 'Please review the highlighted fields and try again.';
+      status.classList.add('show');
+      first.focus();
+      return;
+    }
+    submit.disabled = true; submit.textContent = 'Sending…'; form.setAttribute('aria-busy', 'true');
+  });
+})();
+</script>
 <script src="/assets/analytics.js?v=20261012g" defer></script>
 <script src="/assets/clutch-fallback.js?v=20260925"></script>
 <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
 <script src="/assets/nav.js?v=20260929a" defer></script>
-<script src="/assets/i18n.js?v=20261012j" defer></script>
+<script src="/assets/zoho-lead.js?v=20261013a" defer></script>
+<script src="/assets/i18n.js?v=20261013a" defer></script>
 </body>
 </html>

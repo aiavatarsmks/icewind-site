@@ -27,6 +27,17 @@
 
   /* One entry per plain form. The guided quiz submits its CRM copy separately. */
   var FORMS = {
+    /* The homepage form is delivered as a /contact/ enquiry: the Worker accepts
+       known form pages only, so its Page: line reports /contact/. */
+    '/': {
+      form: 'home-contact-form',
+      label: 'Homepage Contact Form',
+      page: '/contact/',
+      fields: [
+        ['Preferred reply channel', 'Contact'],
+        ['Enquiry', 'Message']
+      ]
+    },
     '/start-a-project/': {
       form: 'project-form',
       label: 'Start a Project',
@@ -111,7 +122,7 @@
     var name = value('Name') || FALLBACK_NAME;
     var contact = value('Contact');
     var summary = describe(data).slice(0, 16000);
-    var pageLine = '\nPage: ' + location.origin + here;  /* the Worker accepts English form paths only */
+    var pageLine = '\nPage: ' + location.origin + (config.page || here);  /* the Worker accepts English form paths only */
     var body = {
       _honey: value('_honey'),
       'Company': COMPANY,

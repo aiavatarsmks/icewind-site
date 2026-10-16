@@ -1,6 +1,13 @@
 /* ICE WIND — privacy-first analytics with UK/PECR cookie consent.
-   Loads Google Analytics 4 and Microsoft Clarity ONLY after the visitor
-   explicitly accepts. Nothing non-essential is set before consent.
+   Google Analytics 4 loads ONLY after the visitor explicitly accepts.
+   Microsoft Clarity is driven by its Consent API v2 (consentv2):
+     - before any choice, after "Reject" and after withdrawal both
+       ad_Storage and analytics_Storage are "denied" (no Clarity cookies);
+     - after "Accept analytics" only analytics_Storage becomes "granted";
+       ad_Storage stays "denied" (we never ask for advertising consent).
+   Whether Clarity loads BEFORE consent (no-consent mode, no cookies) is a
+   single switch, CLARITY_BEFORE_CONSENT, off by default. Flip it only after
+   the owner's decision; see the comment next to it.
    Real analytics scripts load on the production domain only, so preview
    and local testing never pollute the statistics.
    Owner dashboards: GA4 (G-W2PWZGRFQH) and Clarity (xt2y7vssz3). */
@@ -11,6 +18,12 @@
   var CLARITY_ID = 'xt2y7vssz3';
   var STORAGE_KEY = 'iw-consent';            // 'granted' | 'denied'
   var PROD_HOSTS = ['icewind.uk', 'www.icewind.uk'];
+  /* Load Clarity on page open in no-consent mode (no cookies, per-pageview
+     sessions, recordings not linked across pages)? Requires the Clarity
+     project setting "Cookies" to be OFF, and the owner's explicit decision,
+     because Clarity still records the visit (clicks, scrolls, page render)
+     before consent. false = Clarity loads only after "Accept analytics". */
+  var CLARITY_BEFORE_CONSENT = false;
 
   function isProd() { return PROD_HOSTS.indexOf(location.hostname) !== -1; }
   function getConsent() { try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; } }
@@ -27,7 +40,36 @@
     analytics_storage: 'denied'
   });
 
-  /* ---- load analytics after consent ---- */
+  /* ---- Microsoft Clarity: consent signal + loader ---- */
+  function clarityStub() {
+    window.clarity = window.clarity || function () {
+      (window.clarity.q = window.clarity.q || []).push(arguments);
+    };
+  }
+  /* The only two states we ever send. ad_Storage is never granted. */
+  function clarityConsent(granted) {
+    clarityStub();
+    try {
+      window.clarity('consentv2', {
+        ad_Storage: 'denied',
+        analytics_Storage: granted ? 'granted' : 'denied'
+      });
+    } catch (e) {}
+  }
+  var clarityLoaded = false;
+  function loadClarity(granted) {
+    clarityConsent(granted);          // queued before the tag, applied on start
+    if (clarityLoaded) return;
+    clarityLoaded = true;
+    if (!isProd()) return;
+    if (document.querySelector('script[src^="https://www.clarity.ms/tag/"]')) return;
+    var t = document.createElement('script');
+    t.async = true;
+    t.src = 'https://www.clarity.ms/tag/' + CLARITY_ID;
+    document.head.appendChild(t);
+  }
+
+  /* ---- Google Analytics 4: unchanged rule, loads after consent only ---- */
   var loaded = false;
   function loadAnalytics() {
     if (loaded) return;
@@ -35,33 +77,45 @@
     gtag('consent', 'update', { analytics_storage: 'granted' });
     if (!isProd()) return; // only fire real network scripts on production
 
-    // Google Analytics 4
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(s);
     gtag('js', new Date());
     gtag('config', GA_ID, { anonymize_ip: true });
-
-    // Microsoft Clarity
-    (function (c, l, a, r, i) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      var t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
-      var y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, 'clarity', 'script', CLARITY_ID);
-
-    bindEvents();
-    fireLeadIfThankYou();
   }
 
   function denyAnalytics() {
     gtag('consent', 'update', { analytics_storage: 'denied' });
   }
 
-  /* ---- key events (only meaningful once analytics is loaded) ---- */
+  /* ---- what each consent state means for both tools ---- */
+  function applyGranted() {
+    loadAnalytics();
+    loadClarity(true);                // loads if not yet loaded, else just the signal
+    startEvents();
+  }
+  function applyDenied() {
+    denyAnalytics();
+    if (clarityLoaded) {
+      clarityConsent(false);          // Clarity deletes its cookies and restarts in no-consent mode
+      try { sessionStorage.removeItem('_cltk'); } catch (e) {}   // tab-scoped key Clarity leaves behind
+    }
+    else if (CLARITY_BEFORE_CONSENT) loadClarity(false);
+    if (clarityLoaded) startEvents();
+  }
+
+  /* ---- key events: names only, never form values ---- */
   function ev(name, params) {
     try { window.gtag('event', name, params || {}); } catch (e) {}
     try { if (window.clarity) window.clarity('event', name); } catch (e) {}
+  }
+  var eventsStarted = false;
+  function startEvents() {
+    if (eventsStarted) return;
+    eventsStarted = true;
+    bindEvents();
+    fireLeadIfThankYou();
   }
   function bindEvents() {
     document.addEventListener('click', function (e) {
@@ -135,10 +189,10 @@
       '<button type="button" class="iw-reject">Reject</button>' +
       '</div>';
     b.querySelector('.iw-accept').addEventListener('click', function () {
-      setConsent('granted'); hideBanner(); loadAnalytics();
+      setConsent('granted'); hideBanner(); applyGranted();
     });
     b.querySelector('.iw-reject').addEventListener('click', function () {
-      setConsent('denied'); hideBanner(); denyAnalytics();
+      setConsent('denied'); hideBanner(); applyDenied();
     });
     document.body.appendChild(b);
     bannerEl = b;
@@ -161,7 +215,9 @@
 
   /* ---- init ---- */
   var consent = getConsent();
-  if (consent === 'granted') loadAnalytics();
-  else if (consent === 'denied') denyAnalytics();
-  else onReady(showBanner);
+  if (consent === 'granted') applyGranted();
+  else {
+    applyDenied();                     // stored "denied" or no decision yet: both signals denied
+    if (consent !== 'denied') onReady(showBanner);
+  }
 })();

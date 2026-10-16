@@ -14,8 +14,8 @@
    and this file additionally never loads the script when it is set.
 
    The only other thing this file writes to the browser is a sessionStorage marker
-   ('iw-lead-pending', a timestamp) set when the /limitedoffer/ form is actually
-   submitted, read and deleted on the thank-you page so one enquiry counts once.
+   ('iw-lead-pending', a timestamp) set when an enquiry form is actually submitted,
+   read and deleted on the thank-you page so one enquiry counts once.
 
    Production only (same rule as analytics.js), so previews never pollute the stats. */
 (function () {
@@ -64,6 +64,37 @@
     else fn();
   }
   onReady(renderOptOut);
+
+  /* ---- one genuine enquiry = one set of lead events (shared with the other
+     analytics file; whichever runs first defines it, the code is identical) ----
+     The submit of any enquiry form leaves a timestamp in this tab's sessionStorage.
+     The thank-you page (?sent=true) counts a lead only when that marker is fresh
+     and the load is a real navigation, not a reload or back/forward; the marker is
+     removed on first read, so every consumer gets the same single verdict. */
+  var LEAD_KEY = 'iw-lead-pending';
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (f && f.tagName === 'FORM' && /\/enquiry$/.test(f.getAttribute('action') || '')) {
+      try { sessionStorage.setItem(LEAD_KEY, String(Date.now())); } catch (err) {}
+    }
+  }, true);
+  window.iwLeadSuccess = window.iwLeadSuccess || (function () {
+    var verdict = null;
+    return function () {
+      if (verdict !== null) return verdict;
+      verdict = false;
+      try {
+        if (new URLSearchParams(location.search).has('sent')) {
+          var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+          var type = nav ? nav.type : 'navigate';
+          var pending = parseInt(sessionStorage.getItem(LEAD_KEY) || '0', 10);
+          sessionStorage.removeItem(LEAD_KEY);
+          verdict = type === 'navigate' && pending > 0 && Date.now() - pending < 10 * 60 * 1000;
+        }
+      } catch (e) {}
+      return verdict;
+    };
+  })();
 
   if (!isProd() || optedOut()) return;
 
@@ -153,27 +184,8 @@
       form.addEventListener('input', onFirst);
     }
 
-    /* Lead: the Worker accepts the enquiry and redirects the browser to ?sent=true.
-       Opening that URL by hand, reloading it or going back to it must not count.
-       So the event needs all three: (1) a real submit of #offer-form in this tab,
-       marked by a short-lived sessionStorage flag that holds only a timestamp,
-       (2) a fresh navigation (not reload / back-forward), (3) the ?sent flag.
-       The marker is removed as soon as it is read. */
-    var LEAD_KEY = 'iw-lead-pending';
-    var LEAD_TTL = 10 * 60 * 1000;
-    if (form) {
-      form.addEventListener('submit', function () {
-        try { sessionStorage.setItem(LEAD_KEY, String(Date.now())); } catch (e) {}
-      }, true);
-    }
-    try {
-      if (new URLSearchParams(location.search).has('sent')) {
-        var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
-        var type = nav ? nav.type : 'navigate';
-        var pending = 0;
-        try { pending = parseInt(sessionStorage.getItem(LEAD_KEY) || '0', 10); sessionStorage.removeItem(LEAD_KEY); } catch (e) {}
-        if (type === 'navigate' && pending && Date.now() - pending < LEAD_TTL) once('Lead Submitted');
-      }
-    } catch (e) {}
+    /* Lead: the Worker accepted the enquiry and redirected here. Counted once, via the
+       shared guard above, never by merely opening the ?sent=true address. */
+    if (window.iwLeadSuccess()) once('lead_form_success');
   });
 })();

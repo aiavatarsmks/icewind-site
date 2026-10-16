@@ -15,6 +15,10 @@
    details on this site are free text and may be a Telegram handle rather
    than an email.
 
+   Campaign attribution (gclid, gbraid, wbraid, utm_*) is read from the page URL
+   at submit time and sent as separate fields to both endpoints, plus the landing
+   page without its query string. Nothing is stored in the browser for this.
+
    To use on a page, add one line before </body>:
      <script src="/assets/zoho-lead.js?v=20261012g" defer></script> */
 (function () {
@@ -94,6 +98,37 @@
   var form = document.getElementById(config.form);
   if (!form) return;
 
+  /* ---- campaign attribution: technical URL parameters only, read from this page's
+     own address (no storage, so nothing is written before consent). The values go
+     to the Worker as hidden fields (email) and into the CRM copy (Zoho fields). ---- */
+  var ATTRIBUTION_KEYS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  function attribution() {
+    var out = { 'Landing page': location.origin + location.pathname };
+    try {
+      var params = new URLSearchParams(location.search);
+      ATTRIBUTION_KEYS.forEach(function (key) {
+        var v = params.get(key);
+        if (v && v.trim()) out[key] = v.trim().slice(0, 256);
+      });
+    } catch (e) {}
+    return out;
+  }
+  function syncAttributionFields() {
+    var values = attribution();
+    Object.keys(values).forEach(function (name) {
+      var input = form.querySelector('input[type="hidden"][data-attribution="' + name + '"]');
+      if (!input) {
+        input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.setAttribute('data-attribution', name);
+        form.appendChild(input);
+      }
+      input.value = values[name];
+    });
+  }
+  syncAttributionFields();
+
   function value(name) {
     var data = new FormData(form);
     var v = data.get(name);
@@ -131,6 +166,8 @@
     };
     if (looksLikeEmail(contact)) body.Email = contact.slice(0, 100);
     else if (looksLikePhone(contact)) body.Phone = contact.slice(0, 30);
+    var attr = attribution();
+    Object.keys(attr).forEach(function (k) { body[k] = attr[k]; });
     var parts = [];
     Object.keys(body).forEach(function (k) {
       parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(body[k]));
@@ -155,6 +192,7 @@
 
     event.preventDefault();
     sending = true;
+    syncAttributionFields();   /* the address cannot change on this page, but be exact */
 
     var done = false;
     var go = function () {

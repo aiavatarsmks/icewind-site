@@ -29,6 +29,37 @@
   function getConsent() { try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; } }
   function setConsent(v) { try { localStorage.setItem(STORAGE_KEY, v); } catch (e) {} }
 
+  /* ---- one genuine enquiry = one set of lead events (shared with the other
+     analytics file; whichever runs first defines it, the code is identical) ----
+     The submit of any enquiry form leaves a timestamp in this tab's sessionStorage.
+     The thank-you page (?sent=true) counts a lead only when that marker is fresh
+     and the load is a real navigation, not a reload or back/forward; the marker is
+     removed on first read, so every consumer gets the same single verdict. */
+  var LEAD_KEY = 'iw-lead-pending';
+  document.addEventListener('submit', function (e) {
+    var f = e.target;
+    if (f && f.tagName === 'FORM' && /\/enquiry$/.test(f.getAttribute('action') || '')) {
+      try { sessionStorage.setItem(LEAD_KEY, String(Date.now())); } catch (err) {}
+    }
+  }, true);
+  window.iwLeadSuccess = window.iwLeadSuccess || (function () {
+    var verdict = null;
+    return function () {
+      if (verdict !== null) return verdict;
+      verdict = false;
+      try {
+        if (new URLSearchParams(location.search).has('sent')) {
+          var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+          var type = nav ? nav.type : 'navigate';
+          var pending = parseInt(sessionStorage.getItem(LEAD_KEY) || '0', 10);
+          sessionStorage.removeItem(LEAD_KEY);
+          verdict = type === 'navigate' && pending > 0 && Date.now() - pending < 10 * 60 * 1000;
+        }
+      } catch (e) {}
+      return verdict;
+    };
+  })();
+
   /* ---- Consent Mode v2: default everything denied until the visitor opts in ---- */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -132,12 +163,22 @@
       else if (/\/start-a-project\/?($|[#?])/.test(href)) ev('start_project_click', {});
     }, true);
   }
+  /* Success callback for an enquiry: the Worker stored the enquiry (email + CRM queue)
+     and redirected the browser to ?sent=true. Only then, and only once per enquiry:
+       GA4            generate_lead
+       Google Ads     ads_conversion___1  (the GA4 key event the Ads conversion "Форма"
+                      imports; the Google tag G-W2PWZGRFQH carries AW-18389565255)
+       Clarity        lead_form_success
+     Parameters carry the form page only, never anything the visitor typed. These run
+     inside startEvents(), i.e. after analytics consent, like the rest of GA4/Clarity. */
   function fireLeadIfThankYou() {
     try {
-      if (/\/(?:start-a-project|request-an-audit|contact|limitedoffer)\/?$/.test(location.pathname) &&
-          new URLSearchParams(location.search).has('sent')) {
-        ev('generate_lead', {});
-      }
+      if (!/\/(?:start-a-project|request-an-audit|contact|limitedoffer)\/?$/.test(location.pathname)) return;
+      if (!window.iwLeadSuccess()) return;
+      var page = location.pathname;
+      window.gtag('event', 'generate_lead', { form_page: page });
+      if (/\/limitedoffer\/?$/.test(page)) window.gtag('event', 'ads_conversion___1', { form_page: page });
+      if (window.clarity) window.clarity('event', 'lead_form_success');
     } catch (e) {}
   }
 

@@ -49,7 +49,7 @@
     for (var j = 0; j < status.length; j++) {
       status[j].textContent = optedOut()
         ? 'Current state: excluded. Your visits are not counted in our statistics.'
-        : 'Current state: counted (no cookies, no personal data).';
+        : 'Current state: counted (no cookies, nothing stored on your device).';
     }
   }
   document.addEventListener('click', function (e) {

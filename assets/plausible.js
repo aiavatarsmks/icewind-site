@@ -13,6 +13,10 @@
    Policy page (data-plausible-optout). The Plausible script honours that key itself,
    and this file additionally never loads the script when it is set.
 
+   The only other thing this file writes to the browser is a sessionStorage marker
+   ('iw-lead-pending', a timestamp) set when the /limitedoffer/ form is actually
+   submitted, read and deleted on the thank-you page so one enquiry counts once.
+
    Production only (same rule as analytics.js), so previews never pollute the stats. */
 (function () {
   'use strict';
@@ -150,13 +154,25 @@
     }
 
     /* Lead: the Worker accepts the enquiry and redirects the browser to ?sent=true.
-       A reload or back/forward of that URL must not count again, so only a fresh
-       navigation fires the event. No storage is used for the guard. */
+       Opening that URL by hand, reloading it or going back to it must not count.
+       So the event needs all three: (1) a real submit of #offer-form in this tab,
+       marked by a short-lived sessionStorage flag that holds only a timestamp,
+       (2) a fresh navigation (not reload / back-forward), (3) the ?sent flag.
+       The marker is removed as soon as it is read. */
+    var LEAD_KEY = 'iw-lead-pending';
+    var LEAD_TTL = 10 * 60 * 1000;
+    if (form) {
+      form.addEventListener('submit', function () {
+        try { sessionStorage.setItem(LEAD_KEY, String(Date.now())); } catch (e) {}
+      }, true);
+    }
     try {
       if (new URLSearchParams(location.search).has('sent')) {
         var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
         var type = nav ? nav.type : 'navigate';
-        if (type === 'navigate') once('Lead Submitted');
+        var pending = 0;
+        try { pending = parseInt(sessionStorage.getItem(LEAD_KEY) || '0', 10); sessionStorage.removeItem(LEAD_KEY); } catch (e) {}
+        if (type === 'navigate' && pending && Date.now() - pending < LEAD_TTL) once('Lead Submitted');
       }
     } catch (e) {}
   });

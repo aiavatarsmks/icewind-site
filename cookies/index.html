@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
   <style>
     :root{--bg:#050b16;--panel:#0a1830;--line:rgba(125,211,252,.18);--ice:#7dd3fc;--frost:#e0f2fe;--text:#dbe7f4;--muted:#9fb0c4;--radius:20px}*{box-sizing:border-box}body{margin:0;font:16px/1.65 Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}a{color:var(--ice);text-underline-offset:3px}.wrap{width:min(900px,calc(100% - 40px));margin:auto}header{border-bottom:1px solid var(--line);background:rgba(5,11,22,.9);backdrop-filter:blur(16px)}.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font:700 1.05rem "Space Grotesk",sans-serif;letter-spacing:.22em;text-decoration:none;color:var(--frost)}.back{font-size:.9rem;color:var(--muted)}main{padding:76px 0}h1,h2{font-family:"Space Grotesk",sans-serif;line-height:1.15;color:var(--frost)}h1{font-size:clamp(2.35rem,5vw,3.8rem);margin:0 0 18px}h2{font-size:1.42rem;margin:42px 0 12px}p,li{color:var(--text)}p{margin:0}p+p{margin-top:12px}ul{padding-left:21px;margin:12px 0}.intro,.muted{color:var(--muted)}.notice{padding:22px 24px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(148,199,255,.045)}footer{border-top:1px solid var(--line);padding:38px 0 45px;background:#040910;color:var(--muted);font-size:.86rem}.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.foot b{color:var(--text)}.foot-links{display:flex;flex-wrap:wrap;gap:8px 15px;margin-top:12px}.foot-links a{color:var(--frost)}@media(max-width:560px){.wrap{width:min(100% - 32px,900px)}main{padding:52px 0}.nav{min-height:64px}.brand{letter-spacing:.16em}.back{font-size:.84rem}h2{margin-top:34px}}
-  </style>
+  .ptable{width:100%;border-collapse:collapse;margin:18px 0 26px;font-size:.95rem}.ptable th,.ptable td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}.ptable th{background:rgba(125,211,252,.08);color:var(--frost);font-weight:600}.ptable td strong{color:var(--frost)}@media(max-width:640px){.ptable{display:block;overflow-x:auto}}</style>
 <!-- ICEWIND:ORGANIZATION-SCHEMA:START -->
 <script type="application/ld+json">
 {
@@ -104,33 +104,61 @@
   <header><div class="wrap nav"><a class="brand" href="/" aria-label="ICE WIND home">ICE WIND</a><a class="back" href="/">← Back to main site</a></div></header>
   <main class="wrap">
     <h1>Cookie Policy</h1>
-    <p class="intro">This policy explains the current use of cookies and similar technologies on the ICE WIND website.</p>
-    <h2>Cookies we use</h2>
-    <p>We keep the website as light as possible. Cookies and similar technologies fall into two groups:</p>
-    <ul>
-      <li><strong>Essential.</strong> A small amount of technical information is processed by our hosting, font and security providers so the website loads and stays secure. These are necessary for the site to work and do not require consent.</li>
-      <li><strong>Analytics (optional).</strong> With your consent, we use Google Analytics 4 and Microsoft Clarity to understand how visitors use the site — for example how many people visit, where they arrive from, which pages they view and how they navigate — so we can improve it. Microsoft Clarity also produces aggregated heatmaps and session replays, with all form fields and other sensitive content masked.</li>
-    </ul>
-    <h2>Your choice and consent</h2>
-    <div class="notice"><p>Analytics cookies are not set until you accept them. On your first visit we show a banner with equal <em>Accept analytics</em> and <em>Reject</em> options. Nothing non-essential is loaded before you choose, and you can change your decision at any time.</p>
+    <p class="intro">This page describes what actually runs in your browser on icewind.uk, what each tool measures, and how you control it. It covers cookies, local storage and cookieless scripts alike, because UK rules (PECR) apply to all of them.</p>
+
+    <h2>What runs before you choose, after Reject and after Accept</h2>
+    <p>On your first visit we show a banner with two equal buttons, <em>Accept analytics</em> and <em>Reject</em>. The table shows what each tool does in each state.</p>
+    <table class="ptable">
+      <thead><tr><th>Tool</th><th>Before you choose</th><th>After Reject</th><th>After Accept analytics</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Essential services</strong><br>Railway hosting, Cloudflare network and security, Google Fonts</td><td>Run</td><td>Run</td><td>Run</td></tr>
+        <tr><td><strong>Plausible Analytics</strong><br>cookieless visit statistics</td><td>Runs</td><td>Runs</td><td>Runs</td></tr>
+        <tr><td><strong>Cloudflare Web Analytics</strong><br>cookieless page-speed beacon</td><td>Runs</td><td>Runs</td><td>Runs</td></tr>
+        <tr><td><strong>Google Analytics 4</strong></td><td>Not loaded</td><td>Not loaded</td><td>Loaded, sets cookies</td></tr>
+        <tr><td><strong>Microsoft Clarity</strong><br>heatmaps and masked session replays</td><td>Not loaded</td><td>Not loaded</td><td>Loaded, sets cookies</td></tr>
+      </tbody>
+    </table>
+    <p>Plausible and the Cloudflare beacon do not wait for the banner. They set no cookies and keep no identifier on your device, and you can switch Plausible off for your browser in the section below. Everything else that is optional waits for your choice.</p>
+    <div class="notice"><p>Your choice is saved in this browser under the name <code>iw-consent</code> and lasts until you change it or clear site data.</p>
     <p style="margin-top:14px"><a href="#cookie-settings" data-cookie-settings>Change your cookie choice</a></p></div>
-    <h2>Cookieless visit statistics</h2>
-    <p>Independently of the choice above, we keep aggregate visit statistics with Plausible Analytics. It uses no cookies and stores nothing on your device, keeps no persistent identifier, and records only the page viewed, the referring site or campaign, browser and device type, and approximate country. It never receives names, contact details or anything you type into a form. We rely on our legitimate interest in understanding how the website is used; see our <a href="/privacy/">Privacy Notice</a>.</p>
+
+    <h2>Essential technical processing</h2>
+    <p>The site is served by Railway and delivered through Cloudflare, which also protects it from abuse. Fonts come from Google Fonts. These providers receive the technical information any web request carries, such as your IP address, browser type and the page requested, and keep short-lived server logs to run and secure the service. None of this requires consent, and none of it is used to profile you.</p>
+
+    <h2>Cookieless visit statistics: Plausible</h2>
+    <p>We use Plausible Analytics to see how the website as a whole is used: how many people visit, which pages they read, where they arrive from and whether the pages do their job. This is aggregate statistics about the site, not a record of you.</p>
+    <p><strong>What Plausible receives.</strong> The page address without its query string, the referring website, campaign labels if the link carried them (for example <code>utm_source</code>), whether you arrived from a Google advert (the <code>gclid</code> parameter is recognised, used to label the visit as paid search, and then discarded), your browser and operating system, device type, approximate location derived from your IP address (country, region, city), how far you scrolled and how long the page stayed open. On the <em>Business website for £499</em> page it also counts these moments: the offer details, case studies or form coming into view; clicks on the <em>Get my website</em> buttons by position; a click on the phone number; the first time a form field is used; and a successfully sent enquiry. Each of these is a named count only.</p>
+    <p><strong>What Plausible never receives.</strong> Your name, email, phone number, message text or anything else you type; your full IP address; advertising identifiers. Form contents are not part of any event.</p>
+    <p><strong>How it works without cookies.</strong> Plausible stores nothing on your device. To tell one visit from another within a day it hashes your IP address and browser signature with a secret that changes every 24 hours, and discards the raw values; the hash cannot be reversed or linked across days. Plausible Insights OÜ (Estonia) processes this on our behalf under a data processing agreement, on servers in the EU, and does not use the data for its own purposes.</p>
+    <p><strong>Legal basis.</strong> PECR allows cookieless or cookie-based measurement without consent when its sole purpose is statistics about how a website is used in order to improve it, the data is not shared for other purposes, you are told clearly, and you can object simply and free of charge. That is the basis we rely on, and this section plus the control below are that notice and objection. To the extent any of this is personal data under UK GDPR, our lawful basis is our legitimate interest in understanding how the website performs.</p>
     <div class="notice"><p data-plausible-status>Current state: counted (no cookies, no personal data).</p>
     <p style="margin-top:14px"><a href="#plausible-optout" data-plausible-optout>Exclude this browser from our visit statistics</a></p>
-    <p class="muted" style="margin-top:10px">Excluding yourself saves a single setting in this browser so the statistics script is not loaded; nothing else is stored.</p></div>
-    <h2>Third-party services</h2>
-    <p>We use GitHub Pages to host the site and Google Fonts to deliver website typography. We use FormSubmit only when you send a project enquiry through the form; it is not loaded during normal browsing. If you accept analytics, Google Analytics is loaded from Google and Microsoft Clarity from Microsoft. Plausible Analytics (Plausible Insights OÜ, servers in the EU) is loaded on every page for cookieless statistics unless you have excluded your browser.</p>
-    <p>These providers may process limited technical information necessary to deliver their services. Please read our <a href="/privacy/">Privacy Notice</a> for more information about how personal data is processed.</p>
-    <h2>How to manage cookies</h2>
-    <p>You can change your analytics choice at any time using <a href="#cookie-settings" data-cookie-settings>Change your cookie choice</a>, or manage and delete cookies through your browser settings. Blocking cookies may affect how some third-party services work.</p>
+    <p class="muted" style="margin-top:10px">Excluding yourself saves one setting in this browser (<code>plausible_ignore</code>) so the statistics script is not loaded. When you send the enquiry form on the £499 page, a short-lived marker (<code>iw-lead-pending</code>, a timestamp only) is kept in this tab for a few minutes so that one enquiry is counted once; it holds nothing about you.</p></div>
+
+    <h2>Cookieless page-speed beacon: Cloudflare Web Analytics</h2>
+    <p>Cloudflare, which delivers the site, adds a small script that reports page load timings. It sends the page address without parameters, your browser family and version, and timing figures. It sets no cookies and keeps no identifier. Cloudflare processes this as our provider. You can block it with a content blocker; we are also able to switch it off at the network level if it adds nothing beyond Plausible.</p>
+
+    <h2>Optional analytics that need your consent: Google Analytics 4 and Microsoft Clarity</h2>
+    <p>These two tools use cookies and build a picture of individual visits, so they load only after you press <em>Accept analytics</em>. Both are loaded from the provider's own servers.</p>
+    <ul>
+      <li><strong>Google Analytics 4</strong> (Google) measures visits, traffic sources and key actions such as sending an enquiry. It sets the cookies <code>_ga</code> and <code>_ga_W2PWZGRFQH</code> for up to two years. Google acts as our processor for the analytics data; aggregated reports do not expire, while event-level data is kept for the retention period set in our Google Analytics account.</li>
+      <li><strong>Microsoft Clarity</strong> (Microsoft) records how a page is used, such as clicks, scrolling and mouse movement, and produces heatmaps and session replays. Every form field is masked, so nothing you type is recorded. Clarity sets the first-party cookies <code>_clck</code> (one year) and <code>_clsk</code> (one day) and, through its own domains, Microsoft cookies such as <code>MUID</code>. Microsoft keeps recordings for up to 30 days and may use the collected data under its own privacy statement, including to improve its products; this is one reason we ask before loading it. We only ever grant Clarity analytics consent, never advertising consent.</li>
+    </ul>
+    <p>We do not run advertising pixels, remarketing tags or conversion tags on the site. Visits from our Google Ads campaigns are measured through the statistics above, not reported back to Google.</p>
+
+    <h2>Changing or withdrawing consent</h2>
+    <p>Use <a href="#cookie-settings" data-cookie-settings>Change your cookie choice</a> at any time. Choosing <em>Reject</em> after an earlier <em>Accept</em> stops Google Analytics on the spot, tells Clarity to delete its cookies and stop recording, and prevents both from loading on later pages. Google Analytics cookies already set are left for you to remove through your browser, or they expire on their own. You can also delete or block cookies in your browser settings; doing so may affect third-party widgets.</p>
+
+    <h2>Third-party content</h2>
+    <p>Some pages (the homepage, <em>Start a project</em>, <em>Request an audit</em> and <em>Trust</em>) embed a review widget from Clutch. It loads from clutch.co when the page opens and Clutch may set its own technical cookies on its domain, for example its anti-bot cookies. The £499 offer page links to Clutch but does not embed the widget. No other third-party content loads before you choose.</p>
+
     <h2>Contact</h2>
-    <p>For questions about this policy, contact <a href="mailto:hello@icewind.uk">hello@icewind.uk</a>.</p>
+    <p>For questions about this policy, contact <a href="mailto:hello@icewind.uk">hello@icewind.uk</a>. Our <a href="/privacy/">Privacy Notice</a> covers how we handle personal data more broadly.</p>
     <p class="muted">Last updated: 16 October 2026.</p>
   </main>
   <footer><div class="wrap foot"><div><b>ICE WIND is a trading brand of ICEWIND DALE CONSULTING LTD, registered in England and Wales under company number 15925349.</b><br>ICO registration ZB838524 · £1m Public &amp; Products Liability Insurance · London, England<nav class="foot-links" aria-label="Footer links"><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/trust/">Trust &amp; Compliance</a><a href="/privacy/">Privacy Notice</a><a href="/cookies/">Cookie Policy</a><a href="/terms/">Terms</a></nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="View ICE WIND on Clutch"><strong>Clutch<i>.</i></strong><span>View our profile</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND on Google: rated 5.0 out of 5. Read our Google review, opens in a new tab."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Read our Google review <span aria-hidden="true">&rarr;</span></span></a></div></div><div>© 2026 ICEWIND DALE CONSULTING LTD.</div></div></footer>
-<script src="/assets/plausible.js?v=20261016a" defer></script>
-<script src="/assets/analytics.js?v=20261016b" defer></script>
+<script src="/assets/plausible.js?v=20261016c" defer></script>
+<script src="/assets/analytics.js?v=20261016c" defer></script>
 <script src="/assets/nav.js?v=20260929a" defer></script>
 </body>
 </html>

@@ -97,6 +97,32 @@ if [ "$STATUS" != "SUCCESS" ]; then
   exit 1
 fi
 
+# `railway status` reports the ACTIVE deployment. When the new build fails at the
+# container stage the previous deployment stays active and still reads SUCCESS
+# (seen 16.10.2026: registry 500, script said SUCCESS, production unchanged).
+# So the real test is whether production serves this commit's files byte for byte.
+step "Verifying production serves this commit"
+SAMPLE=$( { git diff-tree --no-commit-id --name-only -r HEAD -- '*.html' | head -3; echo index.html; } | sort -u)
+DEADLINE=$((SECONDS + 600))
+LIVE_OK=0
+while [ "$SECONDS" -lt "$DEADLINE" ]; do
+  LIVE_OK=1
+  for file in $SAMPLE; do
+    [ -f "$file" ] || continue
+    url_path="/${file%index.html}"
+    local_sum=$(shasum -a 256 < "$file" | cut -d' ' -f1)
+    live_sum=$(curl -s -H 'Cache-Control: no-cache' "${ORIGIN}${url_path}?deploycheck=$(date +%s)" | shasum -a 256 | cut -d' ' -f1)
+    if [ "$local_sum" != "$live_sum" ]; then LIVE_OK=0; printf '  %-40s not yet live\n' "$url_path"; break; fi
+  done
+  [ "$LIVE_OK" -eq 1 ] && { echo "  production matches HEAD"; break; }
+  sleep 10
+done
+if [ "$LIVE_OK" -ne 1 ]; then
+  echo "Production still serves old content. The Railway deployment most likely FAILED:" >&2
+  echo "  railway deployment list   (or the dashboard)  then  railway redeploy -y" >&2
+  exit 1
+fi
+
 step "Health checks"
 health_checks
 

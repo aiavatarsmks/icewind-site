@@ -100,6 +100,9 @@
     if (clarityLoaded) {
       clarityConsent(false);          // Clarity deletes its cookies and restarts in no-consent mode
       try { sessionStorage.removeItem('_cltk'); } catch (e) {}   // tab-scoped key Clarity leaves behind
+      /* Consent-only mode: a withdrawal must end the recording on this page too,
+         not just switch it to no-consent mode. */
+      if (!CLARITY_BEFORE_CONSENT) { try { window.clarity('stop'); } catch (e) {} }
     }
     else if (CLARITY_BEFORE_CONSENT) loadClarity(false);
     if (clarityLoaded) startEvents();

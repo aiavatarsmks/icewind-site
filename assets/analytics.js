@@ -127,7 +127,9 @@
       '<h2>We value your privacy</h2>' +
       '<p>We’d like to use analytics cookies (Google Analytics and Microsoft Clarity) ' +
       'to understand how visitors use the site and improve it. These are optional. ' +
-      'See our <a href="/cookies/">Cookie Policy</a>.</p>' +
+      'Separately, we keep cookieless, aggregate visit statistics (Plausible) that store ' +
+      'nothing on your device and hold no personal data; you can exclude your browser on the ' +
+      '<a href="/cookies/">Cookie Policy</a> page.</p>' +
       '<div class="iw-consent-actions">' +
       '<button type="button" class="iw-accept">Accept analytics</button>' +
       '<button type="button" class="iw-reject">Reject</button>' +

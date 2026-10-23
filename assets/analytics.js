@@ -162,6 +162,44 @@
       else if (/^mailto:/i.test(href)) ev('contact_click', { method: 'email' });
       else if (/\/start-a-project\/?($|[#?])/.test(href)) ev('start_project_click', {});
     }, true);
+    bindOfferForms();
+  }
+  /* /limitedoffer/ has two forms: the mini form strip near the top and the main form
+     at the bottom. Reaching and starting each is an event, once per page load, so the
+     path mini form -> main form is visible in Clarity and GA4. Never a value. */
+  function bindOfferForms() {
+    if (!/^\/limitedoffer\/?$/.test(location.pathname)) return;
+    var fired = {};
+    function once(name) { if (!fired[name]) { fired[name] = true; ev(name); } }
+    function viewed(selector, name) {
+      var el = document.querySelector(selector);
+      if (!el || !('IntersectionObserver' in window)) return;
+      var io = new IntersectionObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) { once(name); io.disconnect(); return; }
+        }
+      }, { threshold: 0.25 });
+      io.observe(el);
+    }
+    function started(id, name) {
+      var form = document.getElementById(id);
+      if (!form) return;
+      var onFirst = function (e) {
+        var t = e.target;
+        if (!t || !t.name || t.name === '_honey') return;
+        once(name);
+        form.removeEventListener('focusin', onFirst);
+        form.removeEventListener('input', onFirst);
+      };
+      form.addEventListener('focusin', onFirst);
+      form.addEventListener('input', onFirst);
+    }
+    onReady(function () {
+      viewed('#inline-cta', 'mini_form_viewed');
+      viewed('#offer-form', 'contact_form_viewed');
+      started('inline-form', 'mini_form_started');
+      started('offer-form', 'contact_form_started');
+    });
   }
   /* Success callback for an enquiry: the Worker stored the enquiry (email + CRM queue)
      and redirected the browser to ?sent=true. Only then, and only once per enquiry:
@@ -169,6 +207,7 @@
        Google Ads     ads_conversion___1  (the GA4 key event the Ads conversion "Форма"
                       imports; the Google tag G-W2PWZGRFQH carries AW-18389565255)
        Clarity        lead_form_success
+       GA4 + Clarity  mini_form_lead, when the /limitedoffer/ mini form was the one sent
      Parameters carry the form page only, never anything the visitor typed. These run
      inside startEvents(), i.e. after analytics consent, like the rest of GA4/Clarity. */
   function fireLeadIfThankYou() {
@@ -179,6 +218,7 @@
       window.gtag('event', 'generate_lead', { form_page: page });
       if (/\/limitedoffer\/?$/.test(page)) window.gtag('event', 'ads_conversion___1', { form_page: page });
       if (window.clarity) window.clarity('event', 'lead_form_success');
+      if (window.iwLeadForm === 'inline-form') ev('mini_form_lead', { form_page: page });
     } catch (e) {}
   }
 

@@ -16,7 +16,8 @@
    The only other thing this file writes to the browser is a sessionStorage marker
    ('iw-lead-pending', a timestamp) set when an enquiry form is actually submitted,
    read and deleted on the thank-you page so one enquiry counts once. On /limitedoffer/
-   the page also notes which form was sent ('iw-lead-form'); this file deletes it.
+   the page also notes which form was sent ('iw-lead-form'), reads and deletes it
+   itself and exposes the value as window.iwLeadForm.
 
    Production only (same rule as analytics.js), so previews never pollute the stats. */
 (function () {
@@ -191,13 +192,11 @@
 
     /* Lead: the Worker accepted the enquiry and redirected here. Counted once, via the
        shared guard above, never by merely opening the ?sent=true address. The page's
-       inline script records which form was sent ('iw-lead-form'), so a mini-form
+       inline script tells which form was sent (window.iwLeadForm), so a mini-form
        lead also gets its own goal. */
-    var leadForm = '';
-    try { leadForm = sessionStorage.getItem('iw-lead-form') || ''; sessionStorage.removeItem('iw-lead-form'); } catch (e) {}
     if (window.iwLeadSuccess()) {
       once('lead_form_success');
-      if (leadForm === 'inline-form') once('Mini Form Lead');
+      if (window.iwLeadForm === 'inline-form') once('Mini Form Lead');
     }
   });
 })();

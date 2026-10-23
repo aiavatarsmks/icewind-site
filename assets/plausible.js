@@ -15,7 +15,8 @@
 
    The only other thing this file writes to the browser is a sessionStorage marker
    ('iw-lead-pending', a timestamp) set when an enquiry form is actually submitted,
-   read and deleted on the thank-you page so one enquiry counts once.
+   read and deleted on the thank-you page so one enquiry counts once. On /limitedoffer/
+   the page also notes which form was sent ('iw-lead-form'); this file deletes it.
 
    Production only (same rule as analytics.js), so previews never pollute the stats. */
 (function () {
@@ -142,6 +143,7 @@
       }, { threshold: 0.25 });
       io.observe(el);
     }
+    watch('#inline-cta', 'Mini Form Viewed');
     watch('#included', 'Offer Details Viewed');
     watch('#work', 'Case Studies Viewed');
     watch('#offer-form', 'Contact Form Viewed');
@@ -169,23 +171,33 @@
       }
     }, true);
 
-    /* First interaction with the form, once per page load. Only the fact, never a value. */
-    var form = document.getElementById('offer-form');
-    if (form) {
+    /* First interaction with a form, once per page load. Only the fact, never a value. */
+    function started(id, name) {
+      var form = document.getElementById(id);
+      if (!form) return;
       var onFirst = function (e) {
         var t = e.target;
         if (!t || !t.name || t.name === '_honey') return;
         if (t.tagName !== 'INPUT' && t.tagName !== 'TEXTAREA' && t.tagName !== 'SELECT') return;
-        once('Contact Form Started');
+        once(name);
         form.removeEventListener('focusin', onFirst);
         form.removeEventListener('input', onFirst);
       };
       form.addEventListener('focusin', onFirst);
       form.addEventListener('input', onFirst);
     }
+    started('inline-form', 'Mini Form Started');
+    started('offer-form', 'Contact Form Started');
 
     /* Lead: the Worker accepted the enquiry and redirected here. Counted once, via the
-       shared guard above, never by merely opening the ?sent=true address. */
-    if (window.iwLeadSuccess()) once('lead_form_success');
+       shared guard above, never by merely opening the ?sent=true address. The page's
+       inline script records which form was sent ('iw-lead-form'), so a mini-form
+       lead also gets its own goal. */
+    var leadForm = '';
+    try { leadForm = sessionStorage.getItem('iw-lead-form') || ''; sessionStorage.removeItem('iw-lead-form'); } catch (e) {}
+    if (window.iwLeadSuccess()) {
+      once('lead_form_success');
+      if (leadForm === 'inline-form') once('Mini Form Lead');
+    }
   });
 })();

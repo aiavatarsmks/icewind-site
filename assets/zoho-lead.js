@@ -29,7 +29,8 @@
   var FALLBACK_NAME = 'Website enquiry';
   var COMPANY = 'Website visitor';
 
-  /* One entry per plain form. The guided quiz submits its CRM copy separately. */
+  /* One entry per plain form; a page with two forms lists both in an array.
+     The guided quiz submits its CRM copy separately. */
   var FORMS = {
     /* The homepage form is delivered as a /contact/ enquiry: the Worker accepts
        known form pages only, so its Page: line reports /contact/. */
@@ -70,7 +71,7 @@
         ['Enquiry', 'Message']
       ]
     },
-    '/limitedoffer/': {
+    '/limitedoffer/': [{
       form: 'offer-form',
       label: '£499 Website Offer',
       fields: [
@@ -78,7 +79,14 @@
         ['Business and website brief', 'Message'],
         ['Existing website or social profile', 'Reference']
       ]
-    },
+    }, {
+      /* The compact strip between the proof bar and Selected work: name and email only. */
+      form: 'inline-form',
+      label: 'Mini Form (£499 Website Offer)',
+      fields: [
+        ['Email', 'Contact']
+      ]
+    }],
     '/demo/order-quiz/': {
       form: 'project-form',
       label: 'Demo Plain Project Form',
@@ -92,131 +100,135 @@
   };
 
   var here = location.pathname.replace(/^\/(?:ru|es|uk)(?=\/)/, '').replace(/\/+$/, '') + '/';
-  var config = FORMS[here];
-  if (!config) return;
+  var configs = FORMS[here];
+  if (!configs) return;
+  [].concat(configs).forEach(function (config) {
+    var form = document.getElementById(config.form);
+    if (form) mirror(form, config);
+  });
 
-  var form = document.getElementById(config.form);
-  if (!form) return;
-
-  /* ---- campaign attribution: technical URL parameters only, read from this page's
-     own address (no storage, so nothing is written before consent). The values go
-     to the Worker as hidden fields (email) and into the CRM copy (Zoho fields). ---- */
-  var ATTRIBUTION_KEYS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-  function attribution() {
-    var out = { 'Landing page': location.origin + location.pathname };
-    try {
-      var params = new URLSearchParams(location.search);
-      ATTRIBUTION_KEYS.forEach(function (key) {
-        var v = params.get(key);
-        if (v && v.trim()) out[key] = v.trim().slice(0, 256);
+  /* Everything below runs once per form: attribution fields, CRM copy on submit. */
+  function mirror(form, config) {
+    /* ---- campaign attribution: technical URL parameters only, read from this page's
+       own address (no storage, so nothing is written before consent). The values go
+       to the Worker as hidden fields (email) and into the CRM copy (Zoho fields). ---- */
+    var ATTRIBUTION_KEYS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    function attribution() {
+      var out = { 'Landing page': location.origin + location.pathname };
+      try {
+        var params = new URLSearchParams(location.search);
+        ATTRIBUTION_KEYS.forEach(function (key) {
+          var v = params.get(key);
+          if (v && v.trim()) out[key] = v.trim().slice(0, 256);
+        });
+      } catch (e) {}
+      return out;
+    }
+    function syncAttributionFields() {
+      var values = attribution();
+      Object.keys(values).forEach(function (name) {
+        var input = form.querySelector('input[type="hidden"][data-attribution="' + name + '"]');
+        if (!input) {
+          input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = name;
+          input.setAttribute('data-attribution', name);
+          form.appendChild(input);
+        }
+        input.value = values[name];
       });
-    } catch (e) {}
-    return out;
-  }
-  function syncAttributionFields() {
-    var values = attribution();
-    Object.keys(values).forEach(function (name) {
-      var input = form.querySelector('input[type="hidden"][data-attribution="' + name + '"]');
-      if (!input) {
-        input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = name;
-        input.setAttribute('data-attribution', name);
-        form.appendChild(input);
-      }
-      input.value = values[name];
-    });
-  }
-  syncAttributionFields();
+    }
+    syncAttributionFields();
 
-  function value(name) {
-    var data = new FormData(form);
-    var v = data.get(name);
-    return typeof v === 'string' ? v.trim() : '';
-  }
+    function value(name) {
+      var data = new FormData(form);
+      var v = data.get(name);
+      return typeof v === 'string' ? v.trim() : '';
+    }
 
-  function looksLikeEmail(s) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s);
-  }
+    function looksLikeEmail(s) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s);
+    }
 
-  function looksLikePhone(s) {
-    return /^[+\d][\d\s().-]{6,}$/.test(s) && (s.replace(/\D/g, '').length >= 7);
-  }
+    function looksLikePhone(s) {
+      return /^[+\d][\d\s().-]{6,}$/.test(s) && (s.replace(/\D/g, '').length >= 7);
+    }
 
-  function describe(data) {
-    var lines = ['Source: Website', 'Form: ' + config.label, 'Language: ' + (window.IW_LANGUAGE || 'en')];
-    config.fields.forEach(function (pair) {
-      var v = data.get(pair[1]);
-      lines.push(pair[0] + ': ' + (typeof v === 'string' && v.trim() ? v.trim() : 'empty'));
-    });
-    return lines.join('\n');
-  }
+    function describe(data) {
+      var lines = ['Source: Website', 'Form: ' + config.label, 'Language: ' + (window.IW_LANGUAGE || 'en')];
+      config.fields.forEach(function (pair) {
+        var v = data.get(pair[1]);
+        lines.push(pair[0] + ': ' + (typeof v === 'string' && v.trim() ? v.trim() : 'empty'));
+      });
+      return lines.join('\n');
+    }
 
-  function payload() {
-    var data = new FormData(form);
-    var name = value('Name') || FALLBACK_NAME;
-    var contact = value('Contact');
-    var summary = describe(data).slice(0, 16000);
-    var pageLine = '\nPage: ' + location.origin + (config.page || here);  /* the Worker accepts English form paths only */
-    var body = {
-      _honey: value('_honey'),
-      'Company': COMPANY,
-      'Last Name': name.slice(0, 80),
-      'Description': summary + pageLine
-    };
-    if (looksLikeEmail(contact)) body.Email = contact.slice(0, 100);
-    else if (looksLikePhone(contact)) body.Phone = contact.slice(0, 30);
-    var attr = attribution();
-    Object.keys(attr).forEach(function (k) { body[k] = attr[k]; });
-    var parts = [];
-    Object.keys(body).forEach(function (k) {
-      parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(body[k]));
-    });
-    while (parts.join('&').length > 38000 && summary.length > 500) {
-      summary = summary.slice(0, Math.floor(summary.length / 2));
-      body.Description = summary + pageLine;
-      parts = [];
+    function payload() {
+      var data = new FormData(form);
+      var name = value('Name') || FALLBACK_NAME;
+      var contact = value('Contact');
+      var summary = describe(data).slice(0, 16000);
+      var pageLine = '\nPage: ' + location.origin + (config.page || here);  /* the Worker accepts English form paths only */
+      var body = {
+        _honey: value('_honey'),
+        'Company': COMPANY,
+        'Last Name': name.slice(0, 80),
+        'Description': summary + pageLine
+      };
+      if (looksLikeEmail(contact)) body.Email = contact.slice(0, 100);
+      else if (looksLikePhone(contact)) body.Phone = contact.slice(0, 30);
+      var attr = attribution();
+      Object.keys(attr).forEach(function (k) { body[k] = attr[k]; });
+      var parts = [];
       Object.keys(body).forEach(function (k) {
         parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(body[k]));
       });
+      while (parts.join('&').length > 38000 && summary.length > 500) {
+        summary = summary.slice(0, Math.floor(summary.length / 2));
+        body.Description = summary + pageLine;
+        parts = [];
+        Object.keys(body).forEach(function (k) {
+          parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(body[k]));
+        });
+      }
+      return parts.join('&');
     }
-    return parts.join('&');
-  }
 
-  var sending = false;
+    var sending = false;
 
-  form.addEventListener('submit', function (event) {
-    if (event.defaultPrevented) return;   /* the page's own validation failed */
-    if (sending) return;                  /* our own re-submit, let it through */
-    if (!window.fetch || !window.FormData) return;
+    form.addEventListener('submit', function (event) {
+      if (event.defaultPrevented) return;   /* the page's own validation failed */
+      if (sending) return;                  /* our own re-submit, let it through */
+      if (!window.fetch || !window.FormData) return;
 
-    event.preventDefault();
-    sending = true;
-    syncAttributionFields();   /* the address cannot change on this page, but be exact */
+      event.preventDefault();
+      sending = true;
+      syncAttributionFields();   /* the address cannot change on this page, but be exact */
 
-    var done = false;
-    var go = function () {
-      if (done) return;
-      done = true;
-      form.submit();
-    };
+      var done = false;
+      var go = function () {
+        if (done) return;
+        done = true;
+        form.submit();
+      };
 
-    try {
-      fetch(ENDPOINT, {
-        method: 'POST',
-        mode: 'cors',
-        credentials: 'omit',
-        keepalive: true,
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-        body: payload()
-      }).then(function (response) {
-        if (!response.ok) console.error('[iw-crm] Lead delivery was not accepted:', response.status);
+      try {
+        fetch(ENDPOINT, {
+          method: 'POST',
+          mode: 'cors',
+          credentials: 'omit',
+          keepalive: true,
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+          body: payload()
+        }).then(function (response) {
+          if (!response.ok) console.error('[iw-crm] Lead delivery was not accepted:', response.status);
+          go();
+        }, go);
+      } catch (e) {
         go();
-      }, go);
-    } catch (e) {
-      go();
-      return;
-    }
-    setTimeout(go, ZOHO_TIMEOUT);
-  });
+        return;
+      }
+      setTimeout(go, ZOHO_TIMEOUT);
+    });
+  }
 })();

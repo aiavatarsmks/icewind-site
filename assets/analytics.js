@@ -8,14 +8,21 @@
    Whether Clarity loads BEFORE consent (no-consent mode, no cookies) is a
    single switch, CLARITY_BEFORE_CONSENT, off by default. Flip it only after
    the owner's decision; see the comment next to it.
+   The OpenAI Ads Measurement Pixel (oaiq) follows the same rule as GA4: its SDK
+   loads only after "Accept analytics", and its only event, lead_created, fires
+   on /limitedoffer/ once per server-accepted enquiry (see fireLeadIfThankYou).
+   It never receives a name, an email or anything else the visitor typed.
    Real analytics scripts load on the production domain only, so preview
    and local testing never pollute the statistics.
-   Owner dashboards: GA4 (G-W2PWZGRFQH) and Clarity (xt2y7vssz3). */
+   Owner dashboards: GA4 (G-W2PWZGRFQH), Clarity (xt2y7vssz3) and OpenAI Ads
+   (pixel LnGtMo1cDbnadEHTJZcHki, data source "ICEWIND Limited Offer website"). */
 (function () {
   'use strict';
 
   var GA_ID = 'G-W2PWZGRFQH';
   var CLARITY_ID = 'xt2y7vssz3';
+  var OAI_PIXEL_ID = 'LnGtMo1cDbnadEHTJZcHki';
+  var OAI_SDK = 'https://bzrcdn.openai.com/sdk/oaiq.min.js';
   var STORAGE_KEY = 'iw-consent';            // 'granted' | 'denied'
   var PROD_HOSTS = ['icewind.uk', 'www.icewind.uk'];
   /* Load Clarity on page open in no-consent mode (no cookies, per-pageview
@@ -120,10 +127,36 @@
     gtag('consent', 'update', { analytics_storage: 'denied' });
   }
 
-  /* ---- what each consent state means for both tools ---- */
+  /* ---- OpenAI Ads Measurement Pixel: the vendor's base snippet, split in two.
+     The command queue (window.oaiq) is created here so a call made before the SDK
+     has arrived is kept and replayed; the SDK itself is fetched only after consent
+     and only on production, exactly like the GA4 tag. debug stays false. ---- */
+  function oaiStub() {
+    if (window.oaiq) return;
+    var q = function () { q.q.push(arguments); };
+    q.q = [];
+    window.oaiq = q;
+  }
+  var oaiLoaded = false;
+  function loadOpenAiPixel() {
+    oaiStub();
+    if (oaiLoaded) return;
+    oaiLoaded = true;
+    if (!isProd()) return; // no network script outside icewind.uk
+    if (!document.querySelector('script[src="' + OAI_SDK + '"]')) {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = OAI_SDK;
+      document.head.appendChild(s);
+    }
+    window.oaiq('init', { pixelId: OAI_PIXEL_ID, debug: false });
+  }
+
+  /* ---- what each consent state means for the three tools ---- */
   function applyGranted() {
     loadAnalytics();
     loadClarity(true);                // loads if not yet loaded, else just the signal
+    loadOpenAiPixel();                // queue + init before any lead event below
     startEvents();
   }
   function applyDenied() {
@@ -208,15 +241,22 @@
                       imports; the Google tag G-W2PWZGRFQH carries AW-18389565255)
        Clarity        lead_form_success
        GA4 + Clarity  mini_form_lead, when the /limitedoffer/ mini form was the one sent
+       OpenAI Ads     lead_created (customer_action), /limitedoffer/ only; the base event of
+                      the conversion "Limited Offer lead". No parameters at all.
      Parameters carry the form page only, never anything the visitor typed. These run
-     inside startEvents(), i.e. after analytics consent, like the rest of GA4/Clarity. */
+     inside startEvents(), i.e. after analytics consent, like the rest of GA4/Clarity.
+     One enquiry = one call of each: iwLeadSuccess() is true once per real submit and
+     false on a reload, back/forward or a hand-typed ?sent=true. */
   function fireLeadIfThankYou() {
     try {
       if (!/\/(?:start-a-project|request-an-audit|contact|limitedoffer)\/?$/.test(location.pathname)) return;
       if (!window.iwLeadSuccess()) return;
       var page = location.pathname;
       window.gtag('event', 'generate_lead', { form_page: page });
-      if (/\/limitedoffer\/?$/.test(page)) window.gtag('event', 'ads_conversion___1', { form_page: page });
+      if (/\/limitedoffer\/?$/.test(page)) {
+        window.gtag('event', 'ads_conversion___1', { form_page: page });
+        if (oaiLoaded) window.oaiq('measure', 'lead_created', { type: 'customer_action' });
+      }
       if (window.clarity) window.clarity('event', 'lead_form_success');
       if (window.iwLeadForm === 'inline-form') ev('mini_form_lead', { form_page: page });
     } catch (e) {}
@@ -263,7 +303,7 @@
     b.setAttribute('aria-label', 'Cookie consent');
     b.innerHTML =
       '<h2>We value your privacy</h2>' +
-      '<p>We’d like to use analytics cookies (Google Analytics and Microsoft Clarity) ' +
+      '<p>We’d like to use analytics cookies (Google Analytics, Microsoft Clarity and the OpenAI Ads pixel) ' +
       'to understand how visitors use the site and improve it. These are optional. ' +
       'Separately, we keep cookieless, aggregate visit statistics (Plausible) that store ' +
       'nothing on your device and never receive anything you type; you can exclude your browser on the ' +

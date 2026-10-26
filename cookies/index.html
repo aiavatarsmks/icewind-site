@@ -116,6 +116,7 @@
         <tr><td><strong>Cloudflare Web Analytics</strong><br>cookieless page-speed beacon</td><td>Runs</td><td>Runs</td><td>Runs</td></tr>
         <tr><td><strong>Google Analytics 4</strong></td><td>Not loaded</td><td>Not loaded</td><td>Loaded, sets cookies</td></tr>
         <tr><td><strong>Microsoft Clarity</strong><br>heatmaps and masked session replays</td><td>Not loaded</td><td>Not loaded</td><td>Loaded, sets cookies</td></tr>
+        <tr><td><strong>OpenAI Ads Measurement Pixel</strong><br>did a ChatGPT advert lead to a sent enquiry</td><td>Not loaded</td><td>Not loaded</td><td>Loaded, sets cookies</td></tr>
       </tbody>
     </table>
     <p>Plausible and the Cloudflare beacon do not wait for the banner. They set no cookies and keep no identifier on your device, and you can switch Plausible off for your browser in the section below. Everything else that is optional waits for your choice.</p>
@@ -138,27 +139,28 @@
     <h2>Cookieless page-speed beacon: Cloudflare Web Analytics</h2>
     <p>Cloudflare, which delivers the site, adds a small script that reports page load timings. It sends the page address without parameters, your browser family and version, and timing figures. It sets no cookies and keeps no identifier. Cloudflare processes this as our provider. You can block it with a content blocker; we are also able to switch it off at the network level if it adds nothing beyond Plausible.</p>
 
-    <h2>Optional analytics that need your consent: Google Analytics 4 and Microsoft Clarity</h2>
-    <p>These two tools use cookies and build a picture of individual visits, so they load only after you press <em>Accept analytics</em>. Both are loaded from the provider's own servers.</p>
+    <h2>Optional analytics that need your consent: Google Analytics 4, Microsoft Clarity and the OpenAI Ads pixel</h2>
+    <p>These three tools use cookies and build a picture of individual visits, so they load only after you press <em>Accept analytics</em>. All three are loaded from the provider's own servers.</p>
     <ul>
       <li><strong>Google Analytics 4</strong> (Google) measures visits, traffic sources and key actions such as sending an enquiry. It sets the cookies <code>_ga</code> and <code>_ga_W2PWZGRFQH</code> for up to two years. Google acts as our processor for the analytics data; aggregated reports do not expire, while event-level data is kept for the retention period set in our Google Analytics account.</li>
       <li><strong>Microsoft Clarity</strong> (Microsoft) records how a page is used, such as clicks, scrolling and mouse movement, and produces heatmaps and session replays. Every form field is masked, so nothing you type is recorded. Clarity sets the first-party cookies <code>_clck</code> (one year) and <code>_clsk</code> (one day) and, through its own domains, Microsoft cookies such as <code>MUID</code>. Microsoft keeps recordings for up to 30 days and may use the collected data under its own privacy statement, including to improve its products; this is one reason we ask before loading it. We only ever grant Clarity analytics consent, never advertising consent.</li>
+      <li><strong>OpenAI Ads Measurement Pixel</strong> (OpenAI) measures whether an advert shown in ChatGPT led to a successfully sent enquiry on our £499 offer page. When you send that form and it is accepted by our server, the pixel reports one event, <code>lead_created</code>, together with a click reference from the advert if you arrived through one. It does not send OpenAI the text of your enquiry, your name, email address or phone number. The pixel sets first-party cookies (such as <code>oppref</code> and <code>__obref</code>) for up to one year and sends its events to OpenAI's servers. If you use ChatGPT, OpenAI may match the event to the advert you saw under its own privacy policy.</li>
     </ul>
-    <p>We do not run advertising pixels, remarketing tags or conversion tags on the site. Visits from our Google Ads campaigns are measured through the statistics above, not reported back to Google.</p>
+    <p>The OpenAI Ads pixel is the only advertising measurement tag on the site, and it loads only after <em>Accept analytics</em>. Sent enquiries are also counted as conversions in our Google Ads account through the Google Analytics 4 event, again only with your consent. We do not use remarketing tags or behavioural advertising profiling.</p>
 
     <h2>Changing or withdrawing consent</h2>
-    <p>Use <a href="#cookie-settings" data-cookie-settings>Change your cookie choice</a> at any time. Choosing <em>Reject</em> after an earlier <em>Accept</em> stops Google Analytics on the spot, tells Clarity to delete its cookies and stop recording, and prevents both from loading on later pages. Google Analytics cookies already set are left for you to remove through your browser, or they expire on their own. You can also delete or block cookies in your browser settings; doing so may affect third-party widgets.</p>
+    <p>Use <a href="#cookie-settings" data-cookie-settings>Change your cookie choice</a> at any time. Choosing <em>Reject</em> after an earlier <em>Accept</em> stops Google Analytics on the spot, tells Clarity to delete its cookies and stop recording, and prevents all three consent-based tools, including the OpenAI Ads pixel, from loading on later pages. Google Analytics and OpenAI cookies already set are left for you to remove through your browser, or they expire on their own. You can also delete or block cookies in your browser settings; doing so may affect third-party widgets.</p>
 
     <h2>Third-party content</h2>
     <p>Some pages (the homepage, <em>Start a project</em>, <em>Request an audit</em> and <em>Trust</em>) embed a review widget from Clutch. It loads from clutch.co when the page opens and Clutch may set its own technical cookies on its domain, for example its anti-bot cookies. The £499 offer page links to Clutch but does not embed the widget. No other third-party content loads before you choose.</p>
 
     <h2>Contact</h2>
     <p>For questions about this policy, contact <a href="mailto:hello@icewind.uk">hello@icewind.uk</a>. Our <a href="/privacy/">Privacy Notice</a> covers how we handle personal data more broadly.</p>
-    <p class="muted">Last updated: 16 October 2026.</p>
+    <p class="muted">Last updated: 26 October 2026.</p>
   </main>
   <footer><div class="wrap foot"><div><b>ICE WIND is a trading brand of ICEWIND DALE CONSULTING LTD, registered in England and Wales under company number 15925349.</b><br>ICO registration ZB838524 · £1m Public &amp; Products Liability Insurance · London, England<nav class="foot-links" aria-label="Footer links"><a href="/blog/">Blog</a><a href="/contact/">Contact</a><a href="/trust/">Trust &amp; Compliance</a><a href="/privacy/">Privacy Notice</a><a href="/cookies/">Cookie Policy</a><a href="/terms/">Terms</a></nav><div class="trust-badges"><div class="clutch-badge"><a class="clutch-fallback" href="https://clutch.co/profile/icewind-dale-consulting" target="_blank" rel="noopener noreferrer" aria-label="View ICE WIND on Clutch"><strong>Clutch<i>.</i></strong><span>View our profile</span></a></div><a class="google-badge" href="https://www.google.com/maps/place/?q=place_id:ChIJ10UktQ7ysmcR7WbNMtDxCVY" target="_blank" rel="noopener noreferrer" aria-label="ICE WIND on Google: rated 5.0 out of 5. Read our Google review, opens in a new tab."><span class="gb-mark">Google</span><span class="gb-score"><span class="gb-star" aria-hidden="true">&#9733;</span>5.0</span><span class="gb-link">Read our Google review <span aria-hidden="true">&rarr;</span></span></a></div></div><div>© 2026 ICEWIND DALE CONSULTING LTD.</div></div></footer>
 <script src="/assets/plausible.js?v=20261016e" defer></script>
-<script src="/assets/analytics.js?v=20261016e" defer></script>
+<script src="/assets/analytics.js?v=20261026a" defer></script>
 <script src="/assets/nav.js?v=20260929a" defer></script>
 </body>
 </html>

@@ -35,7 +35,7 @@ Do not "fix" any of them into a normal page.
 
 ## Layout
 
-40 URLs in `sitemap.xml`. The standard pages load `assets/theme.css` and `assets/theme-init.js` (the
+41 URLs in `sitemap.xml`. The standard pages load `assets/theme.css` and `assets/theme-init.js` (the
 persistent light/dark theme) plus `assets/nav.css` and `assets/nav.js`.
 
 ```
@@ -127,3 +127,7 @@ in the project folder, outside git:
 
 Read `../docs/` before changing copy, claims or SEO structure. Read `AGENTS.md` in this
 repository before changing code.
+
+## Homepage and About release — 2 November 2026
+
+The approved preview homepage and new `/about/` are promoted to production. Their layout is in `assets/preview.css` and `assets/home-layout.js`; their separate translations are in `assets/home-i18n.js` and `assets/home-i18n/` so other pages keep their current dictionaries. The homepage chat uses the existing Cloudflare `icewind-home-chat-staging` service, now allowing icewind.uk, with permanent conversation storage and Zoho receipts. The ordinary homepage form retains the existing production email and Zoho handlers. Limited Offer is unchanged. Roll back the site using the previous Railway deployment and restore the Worker origin/source configuration if required.

@@ -132,6 +132,6 @@ repository before changing code.
 
 The approved preview homepage and new `/about/` are promoted to production. Their layout is in `assets/preview.css` and `assets/home-layout.js`; their separate translations are in `assets/home-i18n.js` and `assets/home-i18n/` so other pages keep their current dictionaries. The homepage chat uses the existing Cloudflare `icewind-home-chat-staging` service, now allowing icewind.uk, with permanent conversation storage and Zoho receipts. The ordinary homepage form retains the existing production email and Zoho handlers. Limited Offer is unchanged. Roll back the site using the previous Railway deployment and restore the Worker origin/source configuration if required.
 
-## £499 website example — 2 November 2026
+## Package example withdrawn
 
-`/examples/plumbing/` is a ten-page fictional plumbing-company example linked inside the Limited Offer Package card. `scripts/build-offer-demo.py` generates the pages; `assets/offer-demo/` contains scoped styling, interactions, icon and locally served licensed photography. Demo pages are noindex and excluded from the commercial sitemap. Forms and contact buttons demonstrate behaviour without sending visitor data. The production Limited Offer lower form and mini form are unchanged.
+The plumbing demo and its Package link were withdrawn from production at the owner’s request. The previous version remains in Git history. Existing enquiry forms, homepage chat and all commercial offer terms are unchanged.

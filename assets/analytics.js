@@ -179,10 +179,11 @@
   }
   var eventsStarted = false;
   function startEvents() {
-    if (eventsStarted) return;
+    if (eventsStarted) { flushReceivedLeads(); return; }
     eventsStarted = true;
     bindEvents();
     fireLeadIfThankYou();
+    flushReceivedLeads();
   }
   function bindEvents() {
     document.addEventListener('click', function (e) {
@@ -251,7 +252,23 @@
     try {
       if (!/\/(?:start-a-project|request-an-audit|contact|limitedoffer)\/?$/.test(location.pathname)) return;
       if (!window.iwLeadSuccess()) return;
-      var page = location.pathname;
+      emitLeadEvents(location.pathname);
+    } catch (e) {}
+  }
+
+  // AJAX/chat receipts carry an opaque request ID only, never visitor details.
+  // Queue until analytics consent; repeated saved-chat replies count once.
+  var receivedLeadIds = new Set(), pendingReceivedLeads = [];
+  window.addEventListener('iw-enquiry-received', function (event) {
+    var id = event.detail && event.detail.id;
+    if (!isProd() || !/^\/limitedoffer\/?$/.test(location.pathname) || typeof id !== 'string' || !/^(?:chat-)?[a-f0-9-]{36}$/.test(id) || receivedLeadIds.has(id)) return;
+    receivedLeadIds.add(id); pendingReceivedLeads.push(id); flushReceivedLeads();
+  });
+  function flushReceivedLeads() {
+    if (!eventsStarted || getConsent() !== 'granted') return;
+    while (pendingReceivedLeads.length) { pendingReceivedLeads.shift(); emitLeadEvents(location.pathname); }
+  }
+  function emitLeadEvents(page) {
       window.gtag('event', 'generate_lead', { form_page: page });
       if (/\/limitedoffer\/?$/.test(page)) {
         window.gtag('event', 'ads_conversion___1', { form_page: page });
@@ -259,7 +276,6 @@
       }
       if (window.clarity) window.clarity('event', 'lead_form_success');
       if (window.iwLeadForm === 'inline-form') ev('mini_form_lead', { form_page: page });
-    } catch (e) {}
   }
 
   /* ---- consent banner UI (matches the ICE WIND design system) ---- */

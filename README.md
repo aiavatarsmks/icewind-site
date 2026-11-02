@@ -135,3 +135,9 @@ The approved preview homepage and new `/about/` are promoted to production. Thei
 ## Package example withdrawn
 
 The plumbing demo and its Package link were withdrawn from production at the owner’s request. The previous version remains in Git history. Existing enquiry forms, homepage chat and all commercial offer terms are unchanged.
+
+## Limited Offer chat promoted — 2 November 2026
+
+Owner-approved compact Limited Offer chat now replaces the upper mini form. It retains its separate session/context and permanent conversation archive. `assets/offer-chat.css`, `assets/offer-form.js`, and isolated `assets/offer-i18n.js` / `offer-i18n/` provide the offer layout, independent bottom form with shared receipt, and translations. The bottom form retains its native production email action as a fallback; JavaScript uses the durable email/Zoho route with production source metadata. Homepage assets and translations remain separate. Package has no example link.
+
+Server-acknowledged AJAX/chat receipts notify the existing consent-aware analytics without sending contact data. Analytics deduplicates receipts; preview and denied-consent GA/Ads events are excluded.

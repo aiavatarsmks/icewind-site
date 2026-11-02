@@ -126,6 +126,12 @@
 
   onReady(function () {
     var fired = {};
+    var receiptIds = new Set();
+    window.addEventListener('iw-enquiry-received', function (event) {
+      var id = event.detail && event.detail.id;
+      if (optedOut() || typeof id !== 'string' || !/^(?:chat-)?[a-f0-9-]{36}$/.test(id) || receiptIds.has(id)) return;
+      receiptIds.add(id); track('lead_form_success');
+    });
     function once(name, opts) {
       if (fired[name]) return;
       fired[name] = true;

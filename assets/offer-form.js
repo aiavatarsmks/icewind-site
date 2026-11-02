@@ -18,7 +18,7 @@ try{
  var requestId=previous?.signature===signature?previous.requestId:crypto.randomUUID();sessionStorage.setItem('iw-offer-form-request',JSON.stringify({signature,requestId}));data.requestId=requestId;
  var result=await api('/offer-form',data);
  if(result.body.code==='already_received'){wrap.hidden=false;say('Your enquiry has already been received through this conversation. Tick the box only if you want to send a separate enquiry.');}
- else if(result.response.ok&&result.body.ok){say('Thank you. ICE WIND has received your enquiry and the team will contact you soon.');if(!separate.checked){c.leadStatus='saved';sessionStorage.setItem('iw-offer-chat-session',JSON.stringify(c));}window.dispatchEvent(new CustomEvent('iw-enquiry-received',{detail:{id:requestId,channel:'form'}}));form.reset();}
+ else if(result.response.ok&&result.body.ok){say('Thank you. ICE WIND has received your enquiry and the team will contact you soon.');if(!separate.checked){c.leadStatus='saved';sessionStorage.setItem('iw-offer-chat-session',JSON.stringify(c));window.dispatchEvent(new Event('iw-offer-form-saved'));}window.dispatchEvent(new CustomEvent('iw-enquiry-received',{detail:{id:requestId,channel:'form'}}));form.reset();}
  else say('Delivery could not be fully confirmed. Your details are kept in the form. Try again or email hello@icewind.uk.');
 }catch{say('Delivery could not be fully confirmed. Your details are kept in the form. Try again or email hello@icewind.uk.');}
 finally{busy=false;send.disabled=false;form.removeAttribute('aria-busy');}

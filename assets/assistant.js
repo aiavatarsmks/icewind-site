@@ -10,6 +10,8 @@ function t(s){return window.IW_I18N?window.IW_I18N.t(s):s;}
 function language(){return window.IW_LANGUAGE||document.documentElement.lang||'en';}
 try{state=JSON.parse(sessionStorage.getItem(storageKey)||'null');}catch{/* A new session works without browser storage. */}
 function save(){try{sessionStorage.setItem(storageKey,JSON.stringify(state));}catch{}}
+// The bottom form may create the offer session before the first chat message.
+window.addEventListener('iw-offer-form-saved',function(){if(context!=='limited-offer'||busy||pending)return;try{var updated=JSON.parse(sessionStorage.getItem(storageKey)||'null');if(updated?.id&&updated?.token&&(!state||state.id===updated.id))state=updated;}catch{}});
 function reveal(){intro.hidden=true;prompts.hidden=true;thread.hidden=false;shell.classList.add('chat-active');}
 function links(el,text){
  var re=/(https:\/\/icewind\.uk\/[^\s<>"\])]*|hello@icewind\.uk)/g,at=0,m;

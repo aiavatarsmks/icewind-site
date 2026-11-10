@@ -1,0 +1,19 @@
+/* Small changes specific to the £699 package. The core layout mirrors the live offer. */
+.hero h1{max-width:21ch}
+.hero-time{max-width:42ch}
+.package-list li{align-items:start}
+.package-list li h3{max-width:25ch}
+.package-list li p{max-width:58ch}
+.form-status{display:block}
+.form-status[hidden]{display:none}
+@media(max-width:640px){
+  .hero h1{max-width:none}
+  .hero-points{grid-template-columns:1fr 1fr}
+  .package-list li h3{max-width:none}
+}
+
+/* Review: keep the original fonts, natural height and phone; compact copy does the work. */
+.hero h1{max-width:none}.hero-time{max-width:none}.hero .notes{font-size:.8125rem;line-height:1.45}.hero .notes p{max-width:62ch}
+@media(min-width:901px){.hero{padding-bottom:55px}}
+@media(max-width:900px){.hero h1{max-width:none}}
+@media(max-width:700px){.hero-points{grid-template-columns:1fr;font-size:.95rem}.hero .notes{font-size:.875rem;line-height:1.55}.hero .notes p{max-width:none}}

@@ -1210,7 +1210,6 @@
   "How much will hosting and the domain cost?": "¿Cuánto costarán el hosting y el dominio?",
   "ICE WIND AI assistant": "Asistente IA de ICE WIND",
   "IT services · Estonia": "Servicios de TI · Estonia",
-  "Is £499 a one-off payment?": "¿Los £499 son un pago único?",
   "Lamar Academy website homepage": "Página principal del sitio web de Lamar Academy",
   "Lamar Academy · Website by ICE WIND": "Lamar Academy · Sitio web de ICE WIND",
   "Launch & Website Care": "Lanzamiento y mantenimiento del sitio web",
@@ -1223,7 +1222,6 @@
   "No automatic renewal.": "Sin renovación automática.",
   "No obligation. We’ll reply within one business day.": "Sin compromiso. Respondemos en un día hábil.",
   "One team for design and development": "Un equipo para diseño y desarrollo",
-  "One-off payment": "Pago único",
   "Or call +44 7782 222054": "O llame al +44 7782 222054",
   "Page titles, metadata, clear content structure and appropriate structured data.": "Títulos de página, metadatos, estructura clara de contenido y datos estructurados adecuados.",
   "Pages, price and timing are agreed before work begins.": "Las páginas, el precio y el plazo se acuerdan antes de iniciar el trabajo.",
@@ -1273,7 +1271,6 @@
   "What's included": "Qué está incluido",
   "Which ten pages can I include?": "¿Qué diez páginas puedo incluir?",
   "Working with ICE WIND": "Trabajar con ICE WIND",
-  "Yes. The website package is a single payment of £499. Hosting and the domain are paid to their providers, and Website Care after the included month is optional at £49/month.": "Sí. El paquete del sitio web es un pago único de £499. El hosting y el dominio se pagan a sus proveedores, y el cuidado del sitio después del mes incluido es opcional a £49/mes.",
   "Yes. We will assess whether this fixed package fits, or whether a separate redesign quote makes more sense.": "Sí. Evaluaremos si este paquete fijo se ajusta, o si tiene más sentido una cotización separada para el rediseño.",
   "You can continue for £49/month if you choose, with no automatic renewal. New pages, redesigns and extra features are quoted separately.": "Puedes continuar por £49/mes si lo deseas, sin renovación automática. Nuevas páginas, rediseños y funcionalidades extra se cotizan por separado.",
   "Your complete business website": "Tu sitio web empresarial completo",
@@ -1289,5 +1286,8 @@
   "10-page website demo": "Ejemplo de sitio de 10 páginas",
   "See a £499 website": "Ver un sitio de £499",
   "Explore the full example": "Explorar el ejemplo completo",
-  "Describe your ideal website": "Describe tu sitio web ideal"
+  "Describe your ideal website": "Describe tu sitio web ideal",
+  "Do I need to pay the full £499 upfront?": "¿Debo pagar las £499 íntegramente por adelantado?",
+  "No. The £499 website package is paid in two stages: 50% (£249.50) when the project starts and 50% (£249.50) before delivery. VAT is added separately to each payment. Hosting and the domain are paid separately to their providers. The first month of Website Care is included; after that, it is optional at £49/month.": "No. El paquete web de £499 se paga en dos etapas: el 50% (£249.50) al iniciar el proyecto y el 50% (£249.50) antes de la entrega. El IVA se añade por separado a cada pago. El alojamiento y el dominio se pagan por separado a sus proveedores. El primer mes de Website Care está incluido; después es opcional por £49/mes.",
+  "One-off project cost · paid in two stages · VAT added separately": "Coste único del proyecto · pago en dos etapas · IVA aparte"
 }

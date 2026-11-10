@@ -1210,7 +1210,6 @@
   "How much will hosting and the domain cost?": "Скільки коштуватимуть хостинг і домен?",
   "ICE WIND AI assistant": "ICE WIND AI‑асистент",
   "IT services · Estonia": "IT‑послуги · Естонія",
-  "Is £499 a one-off payment?": "Чи є £499 одноразовим платежем?",
   "Lamar Academy website homepage": "Головна сторінка веб‑сайту Lamar Academy",
   "Lamar Academy · Website by ICE WIND": "Lamar Academy · Веб‑сайт від ICE WIND",
   "Launch & Website Care": "Запуск та підтримка сайту",
@@ -1223,7 +1222,6 @@
   "No automatic renewal.": "Автоматичне продовження відсутнє.",
   "No obligation. We’ll reply within one business day.": "Без зобов’язань. Ми відповімо протягом одного робочого дня.",
   "One team for design and development": "Одна команда для дизайну та розробки",
-  "One-off payment": "Одноразовий платіж",
   "Or call +44 7782 222054": "Або зателефонуйте +44 7782 222054",
   "Page titles, metadata, clear content structure and appropriate structured data.": "Назви сторінок, метадані, чітка структура контенту та відповідні структуровані дані.",
   "Pages, price and timing are agreed before work begins.": "Сторінки, вартість та терміни узгоджуються перед початком роботи.",
@@ -1273,7 +1271,6 @@
   "What's included": "Що включено",
   "Which ten pages can I include?": "Які десять сторінок я можу включити?",
   "Working with ICE WIND": "Співпраця з ICE WIND",
-  "Yes. The website package is a single payment of £499. Hosting and the domain are paid to their providers, and Website Care after the included month is optional at £49/month.": "Так. Пакет сайту — одноразовий платіж £499. Хостинг і домен сплачуються їх провайдерам, а підтримка сайту після включеного місяця — опціонально за £49/міс.",
   "Yes. We will assess whether this fixed package fits, or whether a separate redesign quote makes more sense.": "Так. Ми оцінемо, чи підходить цей фіксований пакет, чи більш доцільно окрема пропозиція на редизайн.",
   "You can continue for £49/month if you choose, with no automatic renewal. New pages, redesigns and extra features are quoted separately.": "Ви можете продовжити за £49/міс, якщо захочете, без автоматичного продовження. Нові сторінки, редизайни та додаткові функції оцінюються окремо.",
   "Your complete business website": "Ваш повний бізнес‑вебсайт",
@@ -1289,5 +1286,8 @@
   "10-page website demo": "Демонстрація сайту на 10 сторінок",
   "See a £499 website": "Переглянути сайт за £499",
   "Explore the full example": "Відкрити повний приклад",
-  "Describe your ideal website": "Опишіть свій ідеальний сайт"
+  "Describe your ideal website": "Опишіть свій ідеальний сайт",
+  "Do I need to pay the full £499 upfront?": "Чи потрібно сплачувати всі £499 наперед?",
+  "No. The £499 website package is paid in two stages: 50% (£249.50) when the project starts and 50% (£249.50) before delivery. VAT is added separately to each payment. Hosting and the domain are paid separately to their providers. The first month of Website Care is included; after that, it is optional at £49/month.": "Ні. Пакет сайту за £499 оплачується у два етапи: 50% (£249.50) на початку проєкту та 50% (£249.50) перед передачею сайту. VAT додається окремо до кожного платежу. Хостинг і домен оплачуються окремо їхнім провайдерам. Перший місяць Website Care включено; далі підтримка доступна за бажанням за £49 на місяць.",
+  "One-off project cost · paid in two stages · VAT added separately": "Одноразова вартість проєкту · оплата у два етапи · VAT окремо"
 }

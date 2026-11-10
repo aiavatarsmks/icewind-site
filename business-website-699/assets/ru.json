@@ -160,7 +160,6 @@
   "The chat is busy. Please try again later, or email hello@icewind.uk.": "Чат сейчас занят. Попробуйте позже или напишите на hello@icewind.uk.",
   "The reply could not be loaded. Your message is kept here. Try again, or email hello@icewind.uk.": "Не удалось загрузить ответ. Ваше сообщение сохранено здесь. Попробуйте ещё раз или напишите на hello@icewind.uk.",
   "Your previous conversation could not be restored. Please reload before sending another message.": "Не удалось восстановить предыдущую переписку. Обновите страницу перед отправкой нового сообщения.",
-  "Chat powered by AI. Conversations are saved by ICE WIND until deletion.": "Чат работает на ИИ. ICE WIND хранит переписку до её удаления.",
   "You are talking to ICE WIND’s AI assistant. Messages are processed through Cloudflare Workers AI to generate replies.": "Вы общаетесь с ИИ-ассистентом ICE WIND. Сообщения обрабатываются через Cloudflare Workers AI для подготовки ответов.",
   "Delivery could not be fully confirmed. Your details are kept in the form. Try again or email hello@icewind.uk.": "Доставку не удалось полностью подтвердить. Ваши данные сохранены в форме. Попробуйте ещё раз или напишите на hello@icewind.uk.",
   "Send this as a separate enquiry": "Отправить это как отдельный запрос",
@@ -198,5 +197,6 @@
   "Hosting + domain for year one*": "Хостинг + домен на первый год*",
   "Priority scheduling": "Приоритетный слот",
   "First month of Website Care": "Первый месяц Website Care",
-  "* One standard domain + suitable hosting for year one. Premium domains and special requirements cost extra.": "* Стандартный домен и подходящий хостинг на первый год. Премиум-домены и особые требования — за доплату."
+  "* One standard domain + suitable hosting for year one. Premium domains and special requirements cost extra.": "* Стандартный домен и подходящий хостинг на первый год. Премиум-домены и особые требования — за доплату.",
+  "Conversations are saved by ICE WIND until deletion.": "ICE WIND хранит переписку до её удаления."
 }

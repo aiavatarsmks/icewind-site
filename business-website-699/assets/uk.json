@@ -160,7 +160,6 @@
   "The chat is busy. Please try again later, or email hello@icewind.uk.": "Чат зараз зайнятий. Спробуйте пізніше або напишіть на hello@icewind.uk.",
   "The reply could not be loaded. Your message is kept here. Try again, or email hello@icewind.uk.": "Не вдалося завантажити відповідь. Ваше повідомлення збережено тут. Спробуйте ще раз або напишіть на hello@icewind.uk.",
   "Your previous conversation could not be restored. Please reload before sending another message.": "Не вдалося відновити попереднє листування. Оновіть сторінку перед надсиланням нового повідомлення.",
-  "Chat powered by AI. Conversations are saved by ICE WIND until deletion.": "Чат працює на ШІ. ICE WIND зберігає листування до його видалення.",
   "You are talking to ICE WIND’s AI assistant. Messages are processed through Cloudflare Workers AI to generate replies.": "Ви спілкуєтеся з ШІ-асистентом ICE WIND. Повідомлення обробляються через Cloudflare Workers AI для підготовки відповідей.",
   "Delivery could not be fully confirmed. Your details are kept in the form. Try again or email hello@icewind.uk.": "Доставку не вдалося повністю підтвердити. Ваші дані збережено у формі. Спробуйте ще раз або напишіть на hello@icewind.uk.",
   "Send this as a separate enquiry": "Надіслати це як окремий запит",
@@ -198,5 +197,6 @@
   "Hosting + domain for year one*": "Хостинг + домен на перший рік*",
   "Priority scheduling": "Пріоритетний слот",
   "First month of Website Care": "Перший місяць Website Care",
-  "* One standard domain + suitable hosting for year one. Premium domains and special requirements cost extra.": "* Стандартний домен і відповідний хостинг на перший рік. Преміум-домени та особливі вимоги — за доплату."
+  "* One standard domain + suitable hosting for year one. Premium domains and special requirements cost extra.": "* Стандартний домен і відповідний хостинг на перший рік. Преміум-домени та особливі вимоги — за доплату.",
+  "Conversations are saved by ICE WIND until deletion.": "ICE WIND зберігає листування до його видалення."
 }

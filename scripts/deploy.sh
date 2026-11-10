@@ -59,6 +59,7 @@ if [ "$FORCE" -eq 0 ] && [ -f "$STATE_FILE" ] && [ "$(cat "$STATE_FILE")" = "$HE
 fi
 
 step "Validating"
+node scripts/check-package-chat-labels.mjs
 node scripts/validate-structured-data.mjs
 node scripts/validate-domain-migration.mjs
 

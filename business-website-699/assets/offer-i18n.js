@@ -83,7 +83,7 @@
   }
   function load(language) {
     if (dictionaries[language]) return Promise.resolve();
-    return fetch('assets/' + language + '.json?v=20261110compact')
+    return fetch('assets/' + language + '.json?v=20261110label')
       .then(function (response) { if (!response.ok) throw new Error('Translations unavailable'); return response.json(); })
       .then(function (dictionary) { dictionaries[language] = dictionary; });
   }

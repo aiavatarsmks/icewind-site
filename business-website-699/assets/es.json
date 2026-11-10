@@ -160,7 +160,6 @@
   "The chat is busy. Please try again later, or email hello@icewind.uk.": "El chat está ocupado. Inténtalo más tarde o escribe a hello@icewind.uk.",
   "The reply could not be loaded. Your message is kept here. Try again, or email hello@icewind.uk.": "No se pudo cargar la respuesta. Tu mensaje se conserva aquí. Inténtalo de nuevo o escribe a hello@icewind.uk.",
   "Your previous conversation could not be restored. Please reload before sending another message.": "No se pudo recuperar la conversación anterior. Recarga la página antes de enviar otro mensaje.",
-  "Chat powered by AI. Conversations are saved by ICE WIND until deletion.": "Chat con IA. ICE WIND guarda las conversaciones hasta su eliminación.",
   "You are talking to ICE WIND’s AI assistant. Messages are processed through Cloudflare Workers AI to generate replies.": "Hablas con el asistente de IA de ICE WIND. Los mensajes se procesan con Cloudflare Workers AI para generar respuestas.",
   "Delivery could not be fully confirmed. Your details are kept in the form. Try again or email hello@icewind.uk.": "No se pudo confirmar la entrega completamente. Tus datos están guardados en el formulario. Inténtalo de nuevo o envía un correo a hello@icewind.uk.",
   "Send this as a separate enquiry": "Enviar esto como una consulta separada",
@@ -198,5 +197,6 @@
   "Hosting + domain for year one*": "Alojamiento + dominio: primer año*",
   "Priority scheduling": "Programación prioritaria",
   "First month of Website Care": "Primer mes de Website Care",
-  "* One standard domain + suitable hosting for year one. Premium domains and special requirements cost extra.": "* Un dominio estándar y alojamiento adecuado el primer año. Dominios prémium y requisitos especiales se cobran aparte."
+  "* One standard domain + suitable hosting for year one. Premium domains and special requirements cost extra.": "* Un dominio estándar y alojamiento adecuado el primer año. Dominios prémium y requisitos especiales se cobran aparte.",
+  "Conversations are saved by ICE WIND until deletion.": "ICE WIND guarda las conversaciones hasta que se eliminen."
 }

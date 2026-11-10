@@ -1153,7 +1153,6 @@
   "The chat is busy. Please try again later, or email hello@icewind.uk.": "Чат зараз зайнятий. Спробуйте пізніше або напишіть на hello@icewind.uk.",
   "The reply could not be loaded. Your message is kept here. Try again, or email hello@icewind.uk.": "Не вдалося завантажити відповідь. Ваше повідомлення збережено тут. Спробуйте ще раз або напишіть на hello@icewind.uk.",
   "Your previous conversation could not be restored. Please reload before sending another message.": "Не вдалося відновити попереднє листування. Оновіть сторінку перед надсиланням нового повідомлення.",
-  "Chat powered by AI. Conversations are saved by ICE WIND until deletion.": "Чат на базі ШІ. ICE WIND зберігає листування до його видалення.",
   "Chat privacy": "Про дані в чаті",
   "About this chat": "Про цей чат",
   "You are talking to ICE WIND’s AI assistant. Messages are processed through Cloudflare and OpenRouter to generate replies.": "Ви спілкуєтеся з ШІ-асистентом ICE WIND. Для підготовки відповідей повідомлення обробляються через Cloudflare та OpenRouter.",

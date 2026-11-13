@@ -9,6 +9,10 @@ The custom production domain is `icewind.uk`. The legacy domains are not served 
 their path-preserving permanent redirects are maintained in `../legacy-domain-redirect/` and
 hosted separately on Netlify.
 
+On the owner's Mac, use `scripts/railway-icewind.sh` for Railway CLI commands. It
+reads the ICE WIND production project token from the owner's private project
+folder, so another project's global Railway login cannot redirect a deploy.
+
 ## Before you change anything
 
 Read the actual file. Do not infer structure from a screenshot or from another page — the

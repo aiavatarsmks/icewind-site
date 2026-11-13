@@ -13,6 +13,13 @@ does not deploy production. Production changes require an explicit, approved dep
 post-deploy health check. The live domain is `icewind.uk`; path-preserving redirects from the
 legacy domains are a separate Netlify project maintained in `../legacy-domain-redirect/`.
 
+On the owner's Mac, `scripts/railway-icewind.sh` uses a production-environment
+project token stored at `/Users/maksimilin/Desktop/ICEWIND/.secrets/railway-icewind-production.token`
+(mode `600`, outside this Git repository). Use that wrapper for Railway commands
+on ICE WIND; it does not depend on or switch the CLI's global account. The deploy
+script uses it automatically when the token file exists and always targets the
+known ICE WIND project, production environment and site service IDs.
+
 Once a change is committed and approved, `scripts/deploy.sh` performs the whole sequence:
 it refuses to run on a dirty tree, runs both validators, pushes the branch, calls `railway up`,
 waits for `SUCCESS`, checks that `/`, `/sitemap.xml` and `/robots.txt` return 200, and notifies

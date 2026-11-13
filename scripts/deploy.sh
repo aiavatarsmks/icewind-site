@@ -14,6 +14,14 @@ cd "$(dirname "$0")/.."
 
 ORIGIN="https://icewind.uk"
 STATE_FILE=".git/icewind-last-deploy"   # inside .git, so it is never committed
+RAILWAY_PROJECT="97b20bc4-d824-4e05-a2a8-1f3c708f617f"
+RAILWAY_ENVIRONMENT="1d6328a7-9f62-4d2d-a58b-088a353ee12f"
+RAILWAY_SERVICE="0a622b40-61ba-4ddd-85af-a2740da6f092"
+if [ -f /Users/maksimilin/Desktop/ICEWIND/.secrets/railway-icewind-production.token ]; then
+  RAILWAY_CLI=(scripts/railway-icewind.sh)
+else
+  RAILWAY_CLI=(railway)
+fi
 SUBMIT_ALL=""
 PUSH=1
 FORCE=0
@@ -69,13 +77,13 @@ if [ "$PUSH" -eq 1 ]; then
 fi
 
 step "Deploying to Railway"
-railway up --detach
+"${RAILWAY_CLI[@]}" up --detach --project "$RAILWAY_PROJECT" --environment "$RAILWAY_ENVIRONMENT" --service "$RAILWAY_SERVICE"
 
 step "Waiting for the deployment"
 DEADLINE=$((SECONDS + 900))
 STATUS=""
 while [ "$SECONDS" -lt "$DEADLINE" ]; do
-  STATUS=$(railway status --json 2>/dev/null | node -e '
+  STATUS=$("${RAILWAY_CLI[@]}" status --project "$RAILWAY_PROJECT" --environment "$RAILWAY_ENVIRONMENT" --json 2>/dev/null | node -e '
     let raw = "";
     process.stdin.on("data", (chunk) => { raw += chunk; }).on("end", () => {
       try {

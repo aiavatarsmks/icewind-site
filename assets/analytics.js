@@ -202,7 +202,7 @@
      at the bottom. Reaching and starting each is an event, once per page load, so the
      path mini form -> main form is visible in Clarity and GA4. Never a value. */
   function bindOfferForms() {
-    if (!/^\/limitedoffer\/?$/.test(location.pathname)) return;
+    if (!/^\/(?:limitedoffer|business-website-699|offer-299|offer-1199)\/?$/.test(location.pathname)) return;
     var fired = {};
     function once(name) { if (!fired[name]) { fired[name] = true; ev(name); } }
     function viewed(selector, name) {
@@ -250,7 +250,7 @@
      false on a reload, back/forward or a hand-typed ?sent=true. */
   function fireLeadIfThankYou() {
     try {
-      if (!/\/(?:start-a-project|request-an-audit|contact|limitedoffer)\/?$/.test(location.pathname)) return;
+      if (!/\/(?:start-a-project|request-an-audit|contact|limitedoffer|business-website-699|offer-299|offer-1199)\/?$/.test(location.pathname)) return;
       if (!window.iwLeadSuccess()) return;
       emitLeadEvents(location.pathname);
     } catch (e) {}
@@ -261,7 +261,7 @@
   var receivedLeadIds = new Set(), pendingReceivedLeads = [];
   window.addEventListener('iw-enquiry-received', function (event) {
     var id = event.detail && event.detail.id;
-    if (!isProd() || !/^\/limitedoffer\/?$/.test(location.pathname) || typeof id !== 'string' || !/^(?:chat-)?[a-f0-9-]{36}$/.test(id) || receivedLeadIds.has(id)) return;
+    if (!isProd() || !/^\/(?:limitedoffer|business-website-699|offer-299|offer-1199)\/?$/.test(location.pathname) || typeof id !== 'string' || !/^(?:chat-)?[a-f0-9-]{36}$/.test(id) || receivedLeadIds.has(id)) return;
     receivedLeadIds.add(id); pendingReceivedLeads.push(id); flushReceivedLeads();
   });
   function flushReceivedLeads() {
@@ -269,13 +269,17 @@
     while (pendingReceivedLeads.length) { pendingReceivedLeads.shift(); emitLeadEvents(location.pathname); }
   }
   function emitLeadEvents(page) {
-      window.gtag('event', 'generate_lead', { form_page: page });
-      if (/\/limitedoffer\/?$/.test(page)) {
-        window.gtag('event', 'ads_conversion___1', { form_page: page });
+      var properties = { form_page: page };
+      if (/business-website-699/.test(page)) properties.package_id = 'package_699';
+      if (/offer-299/.test(page)) properties.package_id = 'offer_299';
+      if (/offer-1199/.test(page)) properties.package_id = 'offer_1199';
+      window.gtag('event', 'generate_lead', properties);
+      if (/\/(?:limitedoffer|business-website-699|offer-299|offer-1199)\/?$/.test(page)) {
+        window.gtag('event', 'ads_conversion___1', properties);
         if (oaiLoaded) window.oaiq('measure', 'lead_created', { type: 'customer_action' });
       }
       if (window.clarity) window.clarity('event', 'lead_form_success');
-      if (window.iwLeadForm === 'inline-form') ev('mini_form_lead', { form_page: page });
+      if (window.iwLeadForm === 'inline-form') ev('mini_form_lead', properties);
   }
 
   /* ---- consent banner UI (matches the ICE WIND design system) ---- */

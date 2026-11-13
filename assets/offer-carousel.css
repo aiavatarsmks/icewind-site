@@ -1,0 +1,31 @@
+.work-carousel{width:100%;max-width:100%;margin-inline:auto}
+.work-carousel .case-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:2px;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#5b94b4 transparent;padding:2px 2px 12px}
+.work-carousel .case-card{flex:0 0 44%;min-width:0;scroll-snap-align:start;display:flex;flex-direction:column}
+.work-carousel .case-image img{width:100%}
+.work-controls{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:12px}
+.work-count{font:600 .85rem 'Space Grotesk',sans-serif;color:var(--muted);min-width:52px;text-align:center}
+.work-arrow{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--bg-2);color:var(--frost);font-size:1.35rem;line-height:1;cursor:pointer}
+.work-arrow:hover:not(:disabled),.work-arrow:focus-visible{border-color:var(--ice);color:var(--ice)}
+.work-arrow:disabled{opacity:.65;cursor:default}
+@media(min-width:901px){
+  #work{padding-block:58px}
+  #work .section-heading{margin-bottom:20px}
+  #work .section-note{margin-top:14px}
+  .work-carousel{position:relative;width:min(100%,1120px);padding-inline:58px}
+  .work-carousel .case-grid{padding:2px;scrollbar-width:none}
+  .work-carousel .case-grid::-webkit-scrollbar{display:none}
+  .work-carousel .case-card{flex-basis:calc((100% - 40px)/3)}
+  .work-carousel .case-image img{aspect-ratio:16/9}
+  .work-carousel .case-body{min-height:190px;gap:6px;padding:15px 17px 16px}
+  .work-carousel .case-body h3{font-size:1.12rem}
+  .work-carousel .case-sector{font-size:.73rem}
+  .work-carousel .case-body>p:not(.case-sector){font-size:.82rem;line-height:1.45}
+  .work-carousel .card-link{font-size:.8rem;padding-top:2px}
+  .work-controls{position:absolute;inset:0;justify-content:space-between;margin:0;pointer-events:none}
+  .work-controls .work-arrow{pointer-events:auto}
+  .work-count{display:none}
+}
+@media(min-width:901px) and (max-width:1199px){.work-carousel .case-card{flex-basis:max(290px,calc((100% - 40px)/3))}}
+@media(max-width:900px){.work-carousel{width:100%}.work-carousel .case-grid{gap:16px}.work-carousel .case-card{flex-basis:72%;display:flex}}
+@media(max-width:700px){.work-carousel .case-card{flex-basis:82%}.work-carousel .case-body{padding:17px 18px 19px}.work-controls{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){.work-carousel .case-grid{scroll-behavior:auto}}

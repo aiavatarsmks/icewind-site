@@ -79,7 +79,7 @@
   }
   function load(language) {
     if (dictionaries[language]) return Promise.resolve();
-    return fetch('/assets/offer-i18n/' + language + '.json?v=20261110label')
+    return fetch('/assets/offer-i18n/' + language + '.json?v=20261112offers')
       .then(function (response) { if (!response.ok) throw new Error('Translations unavailable'); return response.json(); })
       .then(function (dictionary) { dictionaries[language] = dictionary; });
   }

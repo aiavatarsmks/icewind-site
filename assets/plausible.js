@@ -122,7 +122,7 @@
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
   /* ---- /limitedoffer/ goals ---- */
-  if (!/^\/limitedoffer\/?$/.test(location.pathname)) return;
+  if (!/^\/(?:limitedoffer|business-website-699|offer-299|offer-1199)\/?$/.test(location.pathname)) return;
 
   onReady(function () {
     var fired = {};
@@ -154,6 +154,27 @@
     watch('#included', 'Offer Details Viewed');
     watch('#work', 'Case Studies Viewed');
     watch('#offer-form', 'Contact Form Viewed');
+
+    /* Recalculate against the live document height, so the 50% and 75% goals
+       follow the shortened offer page and any responsive layout changes. */
+    var scrollQueued = false;
+    function checkScrollDepth() {
+      scrollQueued = false;
+      var height = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+      if (!height) return;
+      var reached = (window.scrollY + window.innerHeight) / height * 100;
+      if (reached >= 50) once('Scroll 50%', { interactive: false });
+      if (reached >= 75) once('Scroll 75%', { interactive: false });
+    }
+    function queueScrollDepth() {
+      if (scrollQueued) return;
+      scrollQueued = true;
+      window.requestAnimationFrame(checkScrollDepth);
+    }
+    window.addEventListener('scroll', queueScrollDepth, { passive: true });
+    window.addEventListener('resize', queueScrollDepth, { passive: true });
+    window.addEventListener('load', queueScrollDepth);
+    queueScrollDepth();
 
     /* Clicks: every click counts (a visitor may press the CTA twice on purpose). */
     function ctaClick(position) {
